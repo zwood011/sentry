@@ -1,0 +1,130 @@
+:root {
+    --background-grey: rgba(65, 68, 77, 0.556);
+    --black-low-opacity: rgba(255, 255, 255, 0.196);
+    --gradient-dark: linear-gradient(rgba(60, 62, 70, 0.832), var(--background-grey));
+}
+
+.App {
+    align-items: center;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    font-size: calc(10px + 1vmin);
+    text-align: center;
+}
+
+.Error-Container {
+    margin: 3rem;
+    width: 100%;
+    height: 5rem;
+    background-color: rgba(255, 0, 0, 0.662);
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.422), 0 -4px 8px rgba(0, 0, 0, 0.422);
+    border-radius: 8px;
+}
+
+body {
+    background: url('../assets/space.jpg') center center / cover no-repeat fixed;
+}
+
+nav {
+    margin: 0.3rem;
+    background: rgba(223, 225, 227, 0.663);
+    border-radius: 8px;
+    box-shadow: inset 0px 0px 2rem #0000006d;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px); /** ignore */
+    z-index: 10;
+}
+
+.Button {
+    background: rgba(101, 104, 105, 0.549);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    margin: 1rem;
+    padding: 12px 24px;
+}
+
+.Button:hover {
+    background: var(--gradient-dark);
+}
+
+.Button:active {
+    background: var(--background-grey);
+}
+
+.Card-Holder {
+    align-items: flex-start; /* Added to prevent cards from stretching */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    gap: 3rem;
+}
+
+.Card {
+    background: rgba(202, 206, 209, 0);
+    color: rgb(255, 255, 255);
+    border: 1px solid var(--black-low-opacity);
+    text-shadow: 2px 2px 5px black;
+    cursor: pointer;
+    box-shadow: inset 0px 0px 5rem #ffffff6d;
+    margin: 1rem; /* Adjust margin for even spacing in grid */
+    padding: 1em;
+    border-radius: 8px;
+    -webkit-user-select: none;
+    user-select: none;
+    transform: scale(1);
+    transition: transform 0.1s ease-in-out;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px); /* Add a blur effect */
+}
+
+.Card:hover {
+    transform: scale(1.02);
+}
+
+.Card:active {
+    transform: scale(0.9);
+}
+
+.Obj-Data {
+    border: 1px dotted var(--black-low-opacity);
+    margin: 10px;
+    padding: 10px;
+}
+
+.Loading-Container{
+    color: white;
+}
+
+.Spinning-Logo{
+    margin: 3rem;
+    width: 250px;
+    height: 250px;
+    animation: spin infinite 2s linear;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+@media only screen and (max-width: 600px) {
+    .Card-Holder {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media only screen and (min-width: 1920px) {
+    .Card-Holder {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}   
