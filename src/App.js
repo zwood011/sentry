@@ -8,8 +8,6 @@ function App() {
 
     return (
         <div className='App' role="main">
-            <h1>Hi</h1>
-            
             <Nav aria-label="Primary Navigation" />
             {switchVar && <CardHandler />}
         </div>
