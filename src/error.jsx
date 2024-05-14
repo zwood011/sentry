@@ -11,7 +11,7 @@ const Error = ({ message, retry }) => {
             <div className='Error-Container' role='alert'>
                 <h1>Error: {message}</h1>
                 <button onClick={clickHandler} aria-label='Retry loading'>
-                    Retry
+                    Retry like what?
                 </button>
             </div>
 
