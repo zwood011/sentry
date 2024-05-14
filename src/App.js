@@ -7,8 +7,8 @@ function App() {
     const switchVar = true;
 
     return (
-        <div className='App'>
-            <Nav />
+        <div className='App' role="main">
+            <Nav aria-label="Primary Navigation" />
             {switchVar && <CardHandler />}
         </div>
     );

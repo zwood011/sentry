@@ -8,22 +8,21 @@ const Card = ({ data }) => {
     const handleClick = (obj) => {
         setSelectedCard(selectedCard === obj ? null : obj);
     };
-
     return (
         <>
             {data.map((obj) => (
-                <div className='Card' key={obj.id} onClick={() => handleClick(obj)}>
-                    <div className='Card-Header'>
+                <article className='Card' key={obj.id} onClick={() => handleClick(obj)} aria-label={`Card for ${obj.fullname}`}>
+                    <header className='Card-Header'>
                         <h1>{obj.fullname}</h1>
-                        <h2>Last observed: {obj.last_obs}</h2>
+                        <time>Last observed: {obj.last_obs}</time>
 
                         {selectedCard && selectedCard.id === obj.id && (
-                            <div className='Card-Data'>
+                            <section className='Card-Data' aria-label='Detailed card data'>
                                 <CardData data={obj} />
-                            </div>
+                            </section>
                         )}
-                    </div>
-                </div>
+                    </header>
+                </article>
             ))}
         </>
     );

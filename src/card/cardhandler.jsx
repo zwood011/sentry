@@ -5,16 +5,16 @@ import Error from '../error';
 import Loading from '../loading';
 
 const CardHandler = () => {
-    const [objects, setObjects] = useState([]);
-    const [displayIndex, setDisplayIndex] = useState(9); // Initially display 9 cards
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const [objects, setObjects] = useState([]);
+    const [displayIndex, setDisplayIndex] = useState(8); // Initially display 9 cards
 
     //* maybe get the more advanced API this one is very limited
     const fetchData = () => {
         setLoading(true);
-        axios
-            .get('https://ssd-api.jpl.nasa.gov/sentry.api')
+     axios
+            .get('https://neo-nasa.netlify.app/.netlify/functions/index')
             .then((response) => {
                 const objects = response.data.data.map((obj) => ({
                     fullname: obj.fullname,
@@ -56,17 +56,16 @@ const CardHandler = () => {
 
     return (
         <>
-            <div className='Card-Holder'>
+            <div className='Card-Holder' role='presentation' aria-label='Card container'>
                 <Card data={objects.slice(0, displayIndex)} />
             </div>
 
             {displayIndex < objects.length && (
-                <button className='Button' onClick={handleLoadMore}>
+                <button className='Button' onClick={handleLoadMore} aria-label='Load more items'>
                     Show More
                 </button>
             )}
         </>
     );
 };
-
 export default CardHandler;
