@@ -61,7 +61,7 @@ nav {
 .Card-Holder {
     align-items: flex-start; /* Added to prevent cards from stretching */
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* Increase number of columns for better layout */
+    grid-template-columns: repeat(3, 1fr); /* Increase number of columns for better layout */
     justify-content: center;
     gap: 3rem;
 }

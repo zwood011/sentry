@@ -8,7 +8,7 @@ const CardHandler = () => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     const [objects, setObjects] = useState([]);
-    const [displayIndex, setDisplayIndex] = useState(8); // Initially display 9 cards
+    const [displayIndex, setDisplayIndex] = useState(6); // Initially display 9 cards
 
     //* maybe get the more advanced API this one is very limited
     const fetchData = () => {
