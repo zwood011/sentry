@@ -5,7 +5,7 @@
 }
 
 body {
-    background: url('../assets/space.jpg') center center / cover no-repeat fixed;
+    background: linear-gradient(to bottom right, #94f1e7, #a9d4de, #04c3f3, rgb(199, 199, 235));
 }
 
 nav {
@@ -61,18 +61,18 @@ nav {
 .Card-Holder {
     align-items: flex-start; /* Added to prevent cards from stretching */
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* Increase number of columns for better layout */
+    grid-template-columns: repeat(3, 1fr); /* Increase number of columns for better layout */
     justify-content: center;
     gap: 3rem;
 }
 
 .Card {
-    background: rgba(67, 72, 75, 0.364); /* Improve visibility */
+    background: rgba(97, 109, 117, 0.312); /* Improve visibility */
     color: rgb(255, 255, 255);
-    border: 1px solid var(--black-low-opacity);
     text-shadow: 2px 2px 5px black;
     cursor: pointer;
-    box-shadow: inset 0px 0px 5rem #ffffff6d;
+    align-content: center;
+    box-shadow: inset 0px 0px 2rem rgba(0, 0, 0, 0.619);
     margin: 1rem; /* Adjust margin for even spacing in grid */
     padding: 1.5em; /* Increase padding for better content display */
     border-radius: 8px;
@@ -82,6 +82,45 @@ nav {
     transition: transform 0.1s ease-in-out;
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px); /* Add a blur effect */
+    width: 20rem; /* All cards have the same width */
+    height: 15rem; /* All cards have the same height */
+}
+
+@media only screen and (max-width: 1200px) {
+    .Card-Holder {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .Card {
+        width: 15rem;
+        height: 15rem;
+    }
+
+    .Button {
+        padding: 10px 20px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .Card-Holder {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 2rem;
+    }
+
+    .Card {
+        width: 100%;
+        height: auto;
+    }
+
+    .Error-Container {
+        margin: 2rem;
+        height: auto;
+    }
+
+    .Button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
 }
 
 .Card:hover {
@@ -102,7 +141,7 @@ nav {
     color: white;
 }
 
-.Tip-Container{
+.Tip-Container {
     background-color: white;
     padding: 1rem;
 }
@@ -127,10 +166,20 @@ nav {
     .Card-Holder {
         grid-template-columns: repeat(1, 1fr);
     }
+
+    .Card {
+        width: 100%;
+        height: auto;
+    }
 }
 
 @media only screen and (min-width: 1920px) {
     .Card-Holder {
         grid-template-columns: repeat(6, 1fr); /* Increase to 6 columns for large screens */
+    }
+
+    .Card {
+        width: 25rem;
+        height: 25rem;
     }
 }
