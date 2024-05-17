@@ -82,8 +82,6 @@ nav {
     transition: transform 0.1s ease-in-out;
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px); /* Add a blur effect */
-    width: 20rem; /* All cards have the same width */
-    height: 15rem; /* All cards have the same height */
 }
 
 @media only screen and (max-width: 1200px) {
