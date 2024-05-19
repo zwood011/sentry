@@ -4,10 +4,16 @@
     --gradient-dark: linear-gradient(rgba(60, 62, 70, 0.832), var(--background-grey));
 }
 
+html,
 body {
-    background: linear-gradient(to bottom right, #94f1e7, #a9d4de, #04c3f3, rgb(199, 199, 235));
+    height: 100%;
+    margin: 0;
 }
 
+body {
+    background: linear-gradient(to bottom right, #94f1e7, #a9d4de, #04c3f3, rgb(199, 199, 235));
+    background-attachment: fixed;
+}
 nav {
     margin: 0.3rem;
     background: rgba(223, 225, 227, 0.332);
@@ -21,10 +27,17 @@ nav {
 .App {
     align-items: center;
     color: black;
+    background: none;
     display: flex;
     flex-direction: column;
     font-size: calc(12px + 2vmin); /* Increase font size for better readability */
     text-align: center;
+}
+
+.Filters {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
 }
 
 .Error-Container {
@@ -61,6 +74,8 @@ nav {
 .Card-Holder {
     align-items: flex-start; /* Added to prevent cards from stretching */
     display: grid;
+    margin: 1rem;
+    padding: 1rem;
     grid-template-columns: repeat(3, 1fr); /* Increase number of columns for better layout */
     justify-content: center;
     gap: 3rem;
@@ -73,7 +88,6 @@ nav {
     cursor: pointer;
     align-content: center;
     box-shadow: inset 0px 0px 2rem rgba(0, 0, 0, 0.619);
-    margin: 1rem; /* Adjust margin for even spacing in grid */
     padding: 1.5em; /* Increase padding for better content display */
     border-radius: 8px;
     -webkit-user-select: none;
@@ -84,49 +98,12 @@ nav {
     backdrop-filter: blur(10px); /* Add a blur effect */
 }
 
-@media only screen and (max-width: 1200px) {
-    .Card-Holder {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .Card {
-        width: 15rem;
-        height: 15rem;
-    }
-
-    .Button {
-        padding: 10px 20px;
-    }
-}
-
-@media only screen and (max-width: 768px) {
-    .Card-Holder {
-        grid-template-columns: repeat(1, 1fr);
-        gap: 2rem;
-    }
-
-    .Card {
-        width: 100%;
-        height: auto;
-    }
-
-    .Error-Container {
-        margin: 2rem;
-        height: auto;
-    }
-
-    .Button {
-        font-size: 14px;
-        padding: 8px 16px;
-    }
-}
-
 .Card:hover {
     transform: scale(1.02);
 }
 
 .Card:active {
-    transform: scale(0.9);
+    transform: scale(1);
 }
 
 .Obj-Data {
@@ -136,7 +113,12 @@ nav {
 }
 
 .Loading-Container {
-    color: white;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .Tip-Container {
@@ -151,6 +133,11 @@ nav {
     animation: spin infinite 2s linear;
 }
 
+.Footer-Container{
+    margin: 1rem;
+    padding: 1rem;
+}
+
 @keyframes spin {
     from {
         transform: rotate(0deg);
@@ -159,10 +146,21 @@ nav {
         transform: rotate(360deg);
     }
 }
-
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 700px) {
     .Card-Holder {
-        grid-template-columns: repeat(1, 1fr);
+        display: flex;
+        flex-direction: column;
+    }
+
+    .Card {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .Card-Holder {
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .Card {
