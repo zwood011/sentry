@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const Filters = ({ onFilterName, onFilterSize }) => {
+const Filters = ({ onFilterName, onFilterSize, onFilterOldest, onFilterNewest }) => {
     const [name, setName] = useState('');
 
     const handleNameChange = (event) => {
@@ -8,8 +8,16 @@ const Filters = ({ onFilterName, onFilterSize }) => {
         onFilterName(event.target.value);
     };
 
-    const handleButtonClick = () => {
+    const handleLargest = () => {
         onFilterSize();
+    };
+
+    const handleOldest = () => {
+        onFilterOldest();
+    };
+
+    const handleNewest = () => {
+        onFilterNewest();
     };
 
     return (
@@ -21,7 +29,24 @@ const Filters = ({ onFilterName, onFilterSize }) => {
                 onChange={handleNameChange}
                 aria-label='Filter objects'
             />
-            <button onClick={handleButtonClick}>Filter Largest</button>
+
+            <div className='dropdown'>
+                <button
+                    className='btn btn-secondary dropdown-toggle'
+                    type='button'
+                    id='dropdownMenuButton'
+                    data-toggle='dropdown'
+                    aria-haspopup='true'
+                    aria-expanded='false'>
+                    Dropdown button
+                </button>
+
+                <div className='dropdown-menu' aria-labelledby='dropdownMenuButton'>
+                    <button onClick={handleLargest}>Filter Largest</button>
+                    <button onClick={handleOldest}>Oldest</button>
+                    <button onClick={handleNewest}>Newest</button>
+                </div>
+            </div>
         </div>
     );
 };

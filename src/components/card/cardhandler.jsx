@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import Card from './card';
 import Error from '../error';
-import Loading from '../loading';
+import Card from './card';
+import Image from '../../assets/sad.jpg';
 
-const CardHandler = ({ loading, error, objects, retryFetch }) => {
+const CardHandler = ({ objects, error, retryFetch }) => {
     const [displayIndex, setDisplayIndex] = useState(9); // Initially display 6 cards
 
     const handleLoadMore = () => {
@@ -11,9 +11,15 @@ const CardHandler = ({ loading, error, objects, retryFetch }) => {
         setDisplayIndex(nextIndex);
     };
 
-    if (loading) return <Loading />;
     if (error) return <Error message={error.message} retry={retryFetch} />;
-    if (objects.length === 0) return <div>No Results</div>; //todo: css this
+
+    if (objects.length === 0)
+        return (
+            <div className='No-Results text-center'>
+                <h1>No Results</h1>
+                <img src={Image} className='img-fluid' alt='A very sad person' />
+            </div>
+        );
 
     return (
         <>

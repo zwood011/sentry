@@ -1,16 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
 import Filters from './components/filters';
+import Loading from './components/loading';
 import CardHandler from './components/card/cardhandler';
+import useFilteredObjects from './hooks/usefilteredobjects';
 
 function App() {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     const [objects, setObjects] = useState([]);
-    const [filteredObjects, setFilteredObjects] = useState([]);
-    const [render, setRender] = useState(false);
 
-    const fetchData = () => {
+    const fetchData = useCallback(() => {
         setLoading(true);
         axios
             .get('https://neo-nasa.netlify.app/.netlify/functions/index')
@@ -32,38 +32,38 @@ function App() {
                     v_inf: obj.v_inf,
                 }));
                 setObjects(objects);
-                setFilteredObjects(objects);
                 setLoading(false);
                 setError(null);
-                setRender(true);
             })
             .catch((error) => {
                 setError(error);
                 setLoading(false);
             });
-    };
+    }, []);
 
     useEffect(() => {
         fetchData();
-    }, []);
+    }, [fetchData]);
 
-    const handleFilterName = (newFilter) => {
-        const filtered = objects.filter((obj) => obj.fullname.toLowerCase().includes(newFilter.toLowerCase()));
-        setFilteredObjects(filtered);
-    };
+    const { filteredObjects, handleFilterName, handleFilterSize, handleFilterOldest, onFilterNewest } =
+        useFilteredObjects(objects);
 
-    const handleFilterSize = () => {
-        const filtered = [...filteredObjects].sort((a, b) => b.diameter - a.diameter);
-        setFilteredObjects(filtered);
-    };
+    if (loading) return <Loading />;
 
     return (
         <div className='App' role='main'>
-            {render && <Filters onFilterName={handleFilterName} onFilterSize={handleFilterSize} />}
+            {!loading && (
+                <Filters
+                    onFilterName={handleFilterName}
+                    onFilterSize={handleFilterSize}
+                    onFilterOldest={handleFilterOldest}
+                    onFilterNewest={onFilterNewest}
+                />
+            )}
 
-            <CardHandler loading={loading} error={error} objects={filteredObjects} retryFetch={fetchData} />
+            <CardHandler loading={loading} error={error} objects={filteredObjects} retryFetch={fetchData}/>
 
-            {render && (
+            {!loading && (
                 <footer>
                     <div className='Footer-Container'>
                         <p>Zachary Wood</p>
