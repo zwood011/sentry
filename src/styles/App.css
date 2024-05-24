@@ -28,7 +28,6 @@ nav {
 .App {
     align-items: center;
     color: black;
-    background: none;
     display: flex;
     flex-direction: column;
     font-size: calc(12px + 2vmin); /* Increase font size for better readability */
@@ -37,6 +36,8 @@ nav {
 
 .Filters {
     display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Adjust this to align items to the start for better alignment */
     gap: 1rem;
     padding: 1rem;
 }
@@ -132,11 +133,6 @@ nav {
     width: 250px;
     height: 250px;
     animation: spin infinite 2s linear;
-}
-
-.Footer-Container {
-    margin: 1rem;
-    padding: 1rem;
 }
 
 .No-Results {

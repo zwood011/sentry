@@ -3,12 +3,14 @@ import axios from 'axios';
 import Filters from './components/filters';
 import Loading from './components/loading';
 import CardHandler from './components/card/cardhandler';
-import useFilteredObjects from './hooks/usefilteredobjects';
+import useFilters from './hooks/usefilters';
 
-function App() {
+const App = () => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     const [objects, setObjects] = useState([]);
+
+    const date = new Date().getFullYear;
 
     const fetchData = useCallback(() => {
         setLoading(true);
@@ -45,8 +47,7 @@ function App() {
         fetchData();
     }, [fetchData]);
 
-    const { filteredObjects, handleFilterName, handleFilterSize, handleFilterOldest, onFilterNewest } =
-        useFilteredObjects(objects);
+    const { filteredObjects, onFilterName, onFilterSize, onFilterOldest, onFilterNewest } = useFilters(objects);
 
     if (loading) return <Loading />;
 
@@ -54,24 +55,22 @@ function App() {
         <div className='App' role='main'>
             {!loading && (
                 <Filters
-                    onFilterName={handleFilterName}
-                    onFilterSize={handleFilterSize}
-                    onFilterOldest={handleFilterOldest}
+                    onFilterName={onFilterName}
+                    onFilterSize={onFilterSize}
+                    onFilterOldest={onFilterOldest}
                     onFilterNewest={onFilterNewest}
                 />
             )}
 
-            <CardHandler loading={loading} error={error} objects={filteredObjects} retryFetch={fetchData}/>
+            <CardHandler loading={loading} error={error} objects={filteredObjects} retryFetch={fetchData} />
 
             {!loading && (
-                <footer>
-                    <div className='Footer-Container'>
-                        <p>Zachary Wood</p>
-                    </div>
+                <footer className='footer'>
+                    <p className='footerText' style={{color: 'white', textShadow: '1px 1px 3px black'}}>© {date} Zachary Wood. All rights reserved.</p>
                 </footer>
             )}
         </div>
     );
-}
+};
 
 export default App;

@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 const Error = ({ message, retry }) => {
     const clickHandler = () => {
@@ -16,12 +15,7 @@ const Error = ({ message, retry }) => {
             </div>
 
             <div className='Tip-Container'>
-                <h1>Network Issue?</h1>
-                <h2>
-                    It is possible you are on an incorrect URL. Please visit the following link:{' '}
-                    <Link to='https://neo-nasa.netlify.app/'>Neo-Nasa</Link>
-                </h2>
-                <p>If this solution does not resolve the issue, it is likely that your network connection is unstable or not operational.</p>
+                <p>Please make sure you have a stable internet connection and retry your request. If the issue persists, contact our support team for further assistance.</p>
             </div>
         </>
     );

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-const useFilteredObjects = (initialObjects) => {
+const useFilters = (initialObjects) => {
     const [objects, setObjects] = useState(initialObjects);
     const [filteredObjects, setFilteredObjects] = useState(initialObjects);
 
@@ -9,17 +9,17 @@ const useFilteredObjects = (initialObjects) => {
         setFilteredObjects(initialObjects);
     }, [initialObjects]);
 
-    const handleFilterName = (newFilter) => {
+    const onFilterName = (newFilter) => {
         const filtered = objects.filter((obj) => obj.fullname.toLowerCase().includes(newFilter.toLowerCase()));
         setFilteredObjects(filtered);
     };
 
-    const handleFilterSize = () => {
+    const onFilterSize = () => {
         const filtered = [...filteredObjects].sort((a, b) => b.diameter - a.diameter);
         setFilteredObjects(filtered);
     };
 
-    const handleFilterOldest = () => {
+    const onFilterOldest = () => {
         const filtered = [...filteredObjects].sort((a, b) => a.last_obs_jd - b.last_obs_jd);
         setFilteredObjects(filtered);
     };
@@ -31,11 +31,11 @@ const useFilteredObjects = (initialObjects) => {
 
     return {
         filteredObjects,
-        handleFilterName,
-        handleFilterSize,
-        handleFilterOldest,
+        onFilterName,
+        onFilterSize,
+        onFilterOldest,
         onFilterNewest,
     };
 };
 
-export default useFilteredObjects;
+export default useFilters;

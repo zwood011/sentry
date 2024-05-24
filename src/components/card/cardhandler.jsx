@@ -22,7 +22,7 @@ const CardHandler = ({ objects, error, retryFetch }) => {
         );
 
     return (
-        <>
+        <main>
             <div className='Card-Holder' role='presentation' aria-label='Card container'>
                 <Card data={objects.slice(0, displayIndex)} className='container-fluid' />
             </div>
@@ -32,7 +32,7 @@ const CardHandler = ({ objects, error, retryFetch }) => {
                     Show More
                 </button>
             )}
-        </>
+        </main>
     );
 };
 

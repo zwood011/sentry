@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Filters = ({ onFilterName, onFilterSize, onFilterOldest, onFilterNewest }) => {
     const [name, setName] = useState('');
@@ -8,20 +9,9 @@ const Filters = ({ onFilterName, onFilterSize, onFilterOldest, onFilterNewest })
         onFilterName(event.target.value);
     };
 
-    const handleLargest = () => {
-        onFilterSize();
-    };
-
-    const handleOldest = () => {
-        onFilterOldest();
-    };
-
-    const handleNewest = () => {
-        onFilterNewest();
-    };
-
     return (
-        <div className='Filters'>
+        <header className='Filters'>
+            <Link to='/' className="btn btn-secondary home-button">Home</Link>
             <input
                 type='text'
                 placeholder='Filter by name'
@@ -38,16 +28,16 @@ const Filters = ({ onFilterName, onFilterSize, onFilterOldest, onFilterNewest })
                     data-toggle='dropdown'
                     aria-haspopup='true'
                     aria-expanded='false'>
-                    Dropdown button
+                    Tools
                 </button>
-
+                
                 <div className='dropdown-menu' aria-labelledby='dropdownMenuButton'>
-                    <button onClick={handleLargest}>Filter Largest</button>
-                    <button onClick={handleOldest}>Oldest</button>
-                    <button onClick={handleNewest}>Newest</button>
+                    <button onClick={onFilterSize}>Filter Largest</button>
+                    <button onClick={onFilterOldest}>Oldest</button>
+                    <button onClick={onFilterNewest}>Newest</button>
                 </div>
             </div>
-        </div>
+        </header>
     );
 };
 
