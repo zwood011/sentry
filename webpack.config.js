@@ -1,5 +1,6 @@
 const TerserPlugin = require('terser-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     mode: 'production',
@@ -39,9 +40,6 @@ module.exports = {
         minimizer: [
             new TerserPlugin({
                 terserOptions: {
-                    ecma: undefined,
-                    warnings: false,
-                    parse: {},
                     compress: {
                         drop_console: true,
                         drop_debugger: true,
@@ -67,6 +65,11 @@ module.exports = {
                 minifyCSS: true,
                 minifyURLs: true,
             },
+        }),
+        new CopyWebpackPlugin({
+            patterns: [
+                { from: 'public/robots.txt', to: 'robots.txt' },
+            ],
         }),
     ],
     devServer: {
