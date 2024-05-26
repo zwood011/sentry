@@ -2,13 +2,6 @@
   publish = "dist"
   command = "npm run build"
 
-[[headers]]
-  for = "/*"
-    [headers.values]
-      User-agent = "*"
-      Allow = "/"
-      X-Robots-Tag = "follow,index"
-
 [[redirects]]
   from = "/sentry/*"
   to = "/index.html"
