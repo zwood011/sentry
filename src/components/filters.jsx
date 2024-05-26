@@ -11,7 +11,7 @@ const Filters = ({ onFilterName, onFilterSize, onFilterOldest, onFilterNewest })
 
     return (
         <header className='Filters'>
-            <Link to='/' className="btn btn-secondary home-button">Home</Link>
+            <Link to='/' className="btn btn-transparent header-button">Home</Link>
             <input
                 type='text'
                 placeholder='Filter by name'
@@ -22,7 +22,7 @@ const Filters = ({ onFilterName, onFilterSize, onFilterOldest, onFilterNewest })
 
             <div className='dropdown'>
                 <button
-                    className='btn btn-secondary dropdown-toggle'
+                    className='btn btn-transparent header-button dropdown-toggle'
                     type='button'
                     id='dropdownMenuButton'
                     data-toggle='dropdown'

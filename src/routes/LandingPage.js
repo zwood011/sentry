@@ -8,7 +8,7 @@ const LandingPage = () => {
     return (
         <div className='landing-container'>
             <header className='header'>
-                <h1 className='title'>Welcome to the NASA Sentry Project</h1>
+                <h1 className='title'>Sentry Grabber</h1>
                 <p className='subtitle'>Explore potentially hazardous asteroids data with ease</p>
                 <Link to='/sentry' className='button'>
                     View Project
@@ -25,7 +25,7 @@ const LandingPage = () => {
                     <h2 className='featureTitle'>Real-time Updates</h2>
                     <p className='featureDescription'>Stay updated with the latest data from NASA's Sentry API.</p>
                 </section>
-                
+
                 <section className='feature'>
                     <h2 className='featureTitle'>User-Friendly Interface</h2>
                     <p className='featureDescription'>Easily navigate and explore the information.</p>
@@ -34,6 +34,9 @@ const LandingPage = () => {
 
             <footer className='footer'>
                 <p className='footerText'>© {date} Zachary Wood. All rights reserved.</p>
+                <div className='Footer-Details'>
+                    <p>Powered by NASA CNEOS</p>
+                </div>
             </footer>
         </div>
     );

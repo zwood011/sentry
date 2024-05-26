@@ -6,7 +6,6 @@
     justify-content: center;
     text-align: center;
     min-height: 100vh;
-    background-color: #f4f4f9;
     padding: 20px;
   }
   
@@ -21,7 +20,7 @@
   
   .subtitle {
     font-size: 1.5em;
-    color: #666;
+    color: #504f4f;
   }
   
   .button {
@@ -55,13 +54,9 @@
     background-color: #fff;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     border-radius: 10px;
-    transition: transform 0.1s ease-in-out;
+    background: rgba(255, 255, 255, 0.133);
   }
 
-  .feature:hover{
-    transform: scale(1.02);
-  }
-  
   .featureTitle {
     font-size: 1.5em;
     color: #333;
@@ -69,7 +64,7 @@
   
   .featureDescription {
     font-size: 1em;
-    color: #666;
+    color: #4c4b4b;
   }
   
   .footer {
@@ -79,7 +74,6 @@
   }
   
   .footerText {
-    font-size: 1em;
-    color: #666;
+    font-size: 1.2rem;
+    color: #414040;
   }
-  

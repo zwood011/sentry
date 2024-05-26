@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 import Filters from './components/Filters';
 import Loading from './components/Loading';
@@ -61,18 +62,30 @@ const App = () => {
                         onFilterOldest={onFilterOldest}
                         onFilterNewest={onFilterNewest}
                     />
-                    
+
                     <div className='Page-Description'>
-                        <p className='Description-Text'>Data fetched from NASA's Sentry API</p>
-                        <a href='https://ssd-api.jpl.nasa.gov/doc/sentry.html'>API Link</a>
+                        <h1 className='Description-Header'>
+                            Data fetched from NASA's Sentry{' '}
+                            <Link className='Hyperlink' to='https://ssd-api.jpl.nasa.gov/doc/sentry.html'>
+                                API
+                            </Link>
+                        </h1>
+                        <p className='Description-Text'>
+                            Collect real-time data from NASA's{' '}
+                            <Link className='Hyperlink' to='https://cneos.jpl.nasa.gov/sentry/'>
+                                CNEOS
+                            </Link>{' '}
+                            impact monitoring system
+                        </p>
                     </div>
 
                     <CardHandler loading={loading} error={error} objects={filteredObjects} retryFetch={fetchData} />
 
                     <footer className='footer'>
-                        <p className='footerText' style={{ color: 'white', textShadow: '1px 1px 3px black' }}>
-                            © {date} Zachary Wood. All rights reserved.
-                        </p>
+                        <p className='footerText'>© {date} Zachary Wood. All rights reserved.</p>
+                        <div className='Footer-Details'>
+                            <p className="footerText">Powered by NASA CNEOS</p>
+                        </div>
                     </footer>
                 </>
             )}
