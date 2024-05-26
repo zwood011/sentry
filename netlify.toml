@@ -5,6 +5,6 @@
 [[headers]]
   for = "/*"
     [headers.values]
-      User-agent: *
-      Disallow: /
-      X-Robots-Tag: noindex
+      User-agent = "*"
+      Disallow = "/"
+      X-Robots-Tag = "index"
