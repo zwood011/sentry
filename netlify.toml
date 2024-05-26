@@ -6,5 +6,5 @@
   for = "/*"
     [headers.values]
       User-agent = "*"
-      Disallow = "/"
-      X-Robots-Tag = "index"
+      Allow = "/"
+      X-Robots-Tag = "follow,index"
