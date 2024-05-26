@@ -10,7 +10,6 @@
       X-Robots-Tag = "follow,index"
 
 [[redirects]]
-  from = "https://neo-nasa.netlify.app/sentry"
-  to = "https://neo-nasa.netlify.app/sentry"
+  from = "/sentry/*"
+  to = "/index.html"
   status = 200
-  force = true
