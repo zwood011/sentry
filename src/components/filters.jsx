@@ -10,7 +10,7 @@ const Filters = ({ onFilterName, onFilterSize, onFilterOldest, onFilterNewest })
     };
 
     return (
-        <header className='Filters'>
+        <header className='Filters container-fluid'>
             <Link to='/' className="btn btn-transparent header-button">Home</Link>
             <input
                 type='text'

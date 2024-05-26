@@ -25,7 +25,7 @@ body {
 .App {
     align-items: center;
     color: black;
-    display: flex;
+   display: flex;
     flex-direction: column;
     font-size: calc(12px + 2vmin); /* Increase font size for better readability */
     text-align: center;
@@ -33,15 +33,14 @@ body {
 
 .Filters {
     display: flex;
-    justify-content: center; /* Adjust this to align items to the start for better alignment */
-    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
     padding: 1rem;
     color: rgb(77, 77, 77);
     width: 100%;
     align-items: center;
     border-radius: 8px;
 }
-
 .Page-Description {
     padding: 1rem;
     border-radius: 8px;
@@ -54,7 +53,7 @@ body {
 }
 
 .Hyperlink:hover {
-    color: rgb(150, 167, 206);
+   color: rgb(150, 167, 206);
 }
 
 .Description-Header {
@@ -65,17 +64,17 @@ body {
     color: rgb(49, 46, 46);
 }
 
-.Error-Container {
+Error-Container {
     margin: 3rem;
     width: 100%;
     height: 5rem;
     background-color: rgba(255, 0, 0, 0.662);
-    color: black;
+   color: black;
     display: flex;
     align-items: center;
     justify-content: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.422), 0 -4px 8px rgba(0, 0, 0, 0.422);
-    border-radius: 8px;
+   border-radius: 8px;
 }
 
 .Button {

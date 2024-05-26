@@ -84,7 +84,7 @@ const App = () => {
                     <footer className='footer'>
                         <p className='footerText'>© {date} Zachary Wood. All rights reserved.</p>
                         <div className='Footer-Details'>
-                            <p className="footerText">Powered by NASA CNEOS</p>
+                            <p className='footerText'>Powered by NASA CNEOS</p>
                         </div>
                     </footer>
                 </>
