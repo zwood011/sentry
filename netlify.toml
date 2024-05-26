@@ -8,3 +8,8 @@
       User-agent = "*"
       Allow = "/"
       X-Robots-Tag = "follow,index"
+
+[[redirects]]
+  from = "/sentry/*"
+  to = "/sentry"
+  status = 200
