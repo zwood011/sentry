@@ -61,6 +61,7 @@ const App = () => {
                         onFilterOldest={onFilterOldest}
                         onFilterNewest={onFilterNewest}
                     />
+                    
                     <div className='Page-Description'>
                         <p className='Description-Text'>Data fetched from NASA's Sentry API</p>
                         <a href='https://ssd-api.jpl.nasa.gov/doc/sentry.html'>API Link</a>
