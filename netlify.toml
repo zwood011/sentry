@@ -1,6 +1,11 @@
 [build]
-  publish = "dist"
+  publish = "build"
   command = "npm run build"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Robots-Tag = "index, follow"
 
 [[redirects]]
   from = "/*"
