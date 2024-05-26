@@ -18,6 +18,7 @@ const Filters = ({ onFilterName, onFilterSize, onFilterOldest, onFilterNewest })
                 value={name}
                 onChange={handleNameChange}
                 aria-label='Filter objects'
+                className="Filter-Input form-control"
             />
 
             <div className='dropdown'>

@@ -28,7 +28,7 @@ const CardHandler = ({ objects, error, retryFetch }) => {
             </div>
 
             {displayIndex < objects.length && (
-                <button className='Button' onClick={handleLoadMore} aria-label='Load more items'>
+                <button className='Button-Load' onClick={handleLoadMore} aria-label='Load more items'>
                     Show More
                 </button>
             )}

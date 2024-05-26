@@ -16,29 +16,29 @@ const Card = ({ data }) => {
                     onClick={() => handleClick(obj)}
                     aria-label={`Card for ${obj.fullname}`}>
                     <div className='Card-Header'>
-                        <h1 className="Card-Name">{obj.fullname}</h1>
+                        <h1 className='Card-Name'>{obj.fullname}</h1>
                         <time>Last observed: {obj.last_obs}</time>
 
                         {selectedCard && selectedCard.id === obj.id && (
                             <section className='Card-Data' aria-label='Detailed card data'>
                                 <div className='Data-container' role='article' aria-label='Cumulative Hazard Rating'>
-                                    <h3>Cumulative Hazard Rating</h3>
-                                    <p>{obj.ps_cum}</p>
+                                    <h4 className='Data-Heading'>Cumulative Hazard Rating</h4>
+                                    <p className='Data-Data'>{obj.ps_cum}</p>
                                 </div>
 
                                 <div className='Data-container' role='article' aria-label='Diameter'>
-                                    <h3>Diameter</h3>
-                                    <p>{obj.diameter} km</p>
+                                    <h4 className='Data-Heading'>Diameter</h4>
+                                    <p className='Data-Data'>{obj.diameter} km</p>
                                 </div>
 
                                 <div className='Data-container' role='article' aria-label='Hyperbolic Excess Velocity'>
-                                    <h3>Hyperbolic Excess Velocity</h3>
-                                    <p>{obj.v_inf} km/s</p>
+                                    <h4 className='Data-Heading'>Hyperbolic Excess Velocity</h4>
+                                    <p className='Data-Data'>{obj.v_inf} km/s</p>
                                 </div>
 
                                 <div className='Data-container' role='article' aria-label='Range'>
-                                    <h3>Range</h3>
-                                    <p>Years: {obj.range}</p>
+                                    <h4 className='Data-Heading'>Range</h4>
+                                    <p className='Data-Data'>Years: {obj.range}</p>
                                 </div>
                             </section>
                         )}

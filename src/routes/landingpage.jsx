@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '../styles/landingpage.css';
+import '../styles/App.css';
 
 const LandingPage = () => {
     const date = new Date().getFullYear;
@@ -10,7 +10,7 @@ const LandingPage = () => {
             <header className='header'>
                 <h1 className='title'>Sentry Grabber</h1>
                 <p className='subtitle'>Explore potentially hazardous asteroids data with ease</p>
-                <Link to='/sentry' className='button'>
+                <Link to='/sentry' className='Button-Landing'>
                     View Project
                 </Link>
             </header>
@@ -32,11 +32,15 @@ const LandingPage = () => {
                 </section>
             </main>
 
-            <footer className='footer'>
+            <footer className='Footer-Landing'>
                 <p className='footerText'>© {date} Zachary Wood. All rights reserved.</p>
-                <div className='Footer-Details'>
-                    <p>Powered by NASA CNEOS</p>
-                </div>
+                    <p className='footerText'>
+                        Powered by{' '}
+                        <Link className='Hyperlink' to='https://cneos.jpl.nasa.gov/sentry/'>
+                            CNEOS
+                        </Link>{' '}
+                        impact monitoring system
+                    </p>
             </footer>
         </div>
     );

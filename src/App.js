@@ -63,29 +63,19 @@ const App = () => {
                         onFilterNewest={onFilterNewest}
                     />
 
-                    <div className='Page-Description'>
-                        <h1 className='Description-Header'>
-                            Data fetched from NASA's Sentry{' '}
-                            <Link className='Hyperlink' to='https://ssd-api.jpl.nasa.gov/doc/sentry.html'>
-                                API
-                            </Link>
-                        </h1>
-                        <p className='Description-Text'>
-                            Collect real-time data from NASA's{' '}
-                            <Link className='Hyperlink' to='https://cneos.jpl.nasa.gov/sentry/'>
-                                CNEOS
-                            </Link>{' '}
-                            impact monitoring system
-                        </p>
-                    </div>
-
                     <CardHandler loading={loading} error={error} objects={filteredObjects} retryFetch={fetchData} />
 
-                    <footer className='footer'>
+                    <footer className='Footer-Sentry'>
                         <p className='footerText'>© {date} Zachary Wood. All rights reserved.</p>
-                        <div className='Footer-Details'>
-                            <p className='footerText'>Powered by NASA CNEOS</p>
-                        </div>
+                            <div className='Page-Description'>
+                                <p className='Description-Text'>
+                                    Powered by{' '}
+                                    <Link className='Hyperlink' to='https://cneos.jpl.nasa.gov/sentry/'>
+                                        CNEOS
+                                    </Link>{' '}
+                                    impact monitoring system
+                                </p>
+                            </div>
                     </footer>
                 </>
             )}

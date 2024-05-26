@@ -13,10 +13,10 @@ body {
 body {
     background: linear-gradient(
         135deg,
-        rgba(255, 255, 255, 0.207),
-        rgb(173, 213, 252),
+        rgb(231, 220, 249),
+        rgb(210, 232, 243),
         rgb(193, 216, 252),
-        rgb(199, 214, 245)
+        rgb(233, 223, 248)
     );
 
     background-attachment: fixed;
@@ -25,9 +25,8 @@ body {
 .App {
     align-items: center;
     color: black;
-   display: flex;
+    display: flex;
     flex-direction: column;
-    font-size: calc(12px + 2vmin); /* Increase font size for better readability */
     text-align: center;
 }
 
@@ -35,14 +34,27 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    gap: 1rem;
+    margin: .5rem;
     padding: 1rem;
     color: rgb(77, 77, 77);
     width: 100%;
     align-items: center;
     border-radius: 8px;
 }
+
+.Filter-Input{
+    border-radius: 8px;
+    border: none;
+    width: 15rem;
+    background: rgba(255, 255, 255, 0.656);
+}
+
+.Filter-Input:active{
+    border: transparent;
+}
+
 .Page-Description {
-    padding: 1rem;
     border-radius: 8px;
     cursor: auto;
 }
@@ -53,43 +65,35 @@ body {
 }
 
 .Hyperlink:hover {
-   color: rgb(150, 167, 206);
+    color: rgb(150, 167, 206);
 }
 
-.Description-Header {
-    color: rgb(39, 38, 38);
-}
-
-.Description-Text {
-    color: rgb(49, 46, 46);
-}
-
-Error-Container {
+.Error-Container {
     margin: 3rem;
     width: 100%;
     height: 5rem;
     background-color: rgba(255, 0, 0, 0.662);
-   color: black;
+    color: black;
     display: flex;
     align-items: center;
     justify-content: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.422), 0 -4px 8px rgba(0, 0, 0, 0.422);
-   border-radius: 8px;
+    border-radius: 8px;
 }
 
-.Button {
+.Button-Load {
     border: none;
     background: transparent;
     border-radius: 5px;
     color: rgb(77, 77, 77);
     align-content: center;
     border: 2px solid rgba(0, 0, 0, 0.266);
-    font-size: 8px + 2vmin;
-    margin: 1rem;
-    padding: 12px 24px; /* Increase padding for better touch interaction */
+    font-size: 1rem;
+    padding: 1rem;
+    width: 10rem;
 }
 
-.Button:hover {
+.Button-Load:hover {
     background: rgba(255, 255, 255, 0.114);
 }
 
@@ -104,7 +108,7 @@ Error-Container {
 .Card-Holder {
     align-items: flex-start; /* Added to prevent cards from stretching */
     display: grid;
-    margin: 1rem;
+    margin-bottom: 3rem;
     padding: 1rem;
     grid-template-columns: repeat(3, 1fr); /* Increase number of columns for better layout */
     justify-content: center;
@@ -119,16 +123,18 @@ Error-Container {
 }
 
 .Card {
-    color: rgb(49, 49, 49);
+    color: rgba(46, 48, 49, 0.821);
+    font-size: 1.6em;
     cursor: pointer;
     align-content: center;
-    border: 2px solid rgba(0, 0, 0, 0.266);
-    padding: 1.5em; /* Increase padding for better content display */
-    border-radius: 8px;
+    padding: 1.5em;
     -webkit-user-select: none;
     user-select: none;
     transform: scale(1);
     transition: transform 0.1s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    background: #ffffff26;
 }
 
 .Card:hover {
@@ -139,6 +145,14 @@ Error-Container {
     border: 1px dotted var(--black-low-opacity);
     margin: 10px;
     padding: 10px;
+}
+
+.Data-Data{
+    font-size: 1.3rem;
+}
+
+.Card-Data{
+    margin-top: 1rem;
 }
 
 .Loading-Container {
@@ -166,22 +180,86 @@ Error-Container {
     padding: 2rem;
 }
 
-.Footer{
-    color: rgb(70, 69, 69);
-    padding: 1rem;
-    font-size: 1.2rem;
+.landing-container {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 100vh;
 }
 
-.Source-Link{
+.title {
+    font-size: 3em;
+    color: #333;
+}
+
+.subtitle {
+    font-size: 1.5em;
+    color: #504f4f;
+}
+
+.button {
+    display: inline-block;    
+    font-size: 1em;
+    color: #fff;
+    background-color: #007bff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+.features {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1200px;
+    margin: 3rem;
+}
+
+.Button-Landing{
+    text-decoration: none;
+}
+
+.feature {
+    flex: 1 1 30%;
+    margin: 10px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.133);
+}
+
+.featureTitle {
+    font-size: 1.5em;
+    color: #333;
+}
+
+.featureDescription {
+    font-size: 1em;
+    color: #4c4b4b;
+}
+
+.Footer-Sentry{
+    margin-top: 3rem;
+}
+
+.footerText {
+    font-size: 1.2rem;
+    color: #414040;
+}
+
+.Source-Link {
     text-decoration: none;
     color: rgb(27, 26, 26);
-  }
-
-  .Footer-Details{
-    display: flex;
-    justify-content: center;
-  }
-  
+}
 
 @keyframes spin {
     from {
