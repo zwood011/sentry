@@ -5,7 +5,22 @@
 [[headers]]
   for = "/*"
   [headers.values]
-    X-Robots-Tag = "index, follow"
+    [[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "ALLOW"
+    X-XSS-Protection = "1; mode=block"
+
+    #  Multi-value headers are expressed with multi-line strings
+	cache-control = '''
+	max-age=0,
+	no-cache,
+	no-store,
+	must-revalidate'''
+
+    # The Basic-Auth header may not be available on all plans.
+    Basic-Auth = "someuser:somepassword anotheruser:anotherpassword"
+   X-Robots-Tag = "index, follow"
 
 [[redirects]]
   from = "/*"
