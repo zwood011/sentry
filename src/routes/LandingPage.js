@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './styles/landingpage.css';
+import '../styles/landingpage.css';
 
 const LandingPage = () => {
     const date = new Date().getFullYear;
@@ -15,20 +15,22 @@ const LandingPage = () => {
                 </Link>
             </header>
 
-            <section className='features'>
-                <div className='feature'>
+            <main className='features'>
+                <section className='feature'>
                     <h2 className='featureTitle'>Interactive Cards</h2>
                     <p className='featureDescription'>Visualize asteroid data in an intuitive card format.</p>
-                </div>
-                <div className='feature'>
+                </section>
+
+                <section className='feature'>
                     <h2 className='featureTitle'>Real-time Updates</h2>
                     <p className='featureDescription'>Stay updated with the latest data from NASA's Sentry API.</p>
-                </div>
-                <div className='feature'>
+                </section>
+                
+                <section className='feature'>
                     <h2 className='featureTitle'>User-Friendly Interface</h2>
                     <p className='featureDescription'>Easily navigate and explore the information.</p>
-                </div>
-            </section>
+                </section>
+            </main>
 
             <footer className='footer'>
                 <p className='footerText'>© {date} Zachary Wood. All rights reserved.</p>

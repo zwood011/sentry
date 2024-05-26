@@ -83,6 +83,13 @@ nav {
     gap: 3rem;
 }
 
+.Card-Name {
+    display: block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
 .Card {
     background: rgba(97, 109, 117, 0.312); /* Improve visibility */
     color: rgb(255, 255, 255);

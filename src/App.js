@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
-import Filters from './components/filters';
-import Loading from './components/loading';
-import CardHandler from './components/card/cardhandler';
+import Filters from './components/Filters';
+import Loading from './components/Loading';
+import CardHandler from './components/card/CardHandler';
 import useFilters from './hooks/usefilters';
 
 const App = () => {
@@ -61,12 +61,19 @@ const App = () => {
                     onFilterNewest={onFilterNewest}
                 />
             )}
+            
+            <div className='Page-Description'>
+                <p className='Description-Text'>Data fetched from NASA's Sentry API</p>
+                <a href='https://ssd-api.jpl.nasa.gov/doc/sentry.html'>API Link</a>
+            </div>
 
             <CardHandler loading={loading} error={error} objects={filteredObjects} retryFetch={fetchData} />
 
             {!loading && (
                 <footer className='footer'>
-                    <p className='footerText' style={{color: 'white', textShadow: '1px 1px 3px black'}}>© {date} Zachary Wood. All rights reserved.</p>
+                    <p className='footerText' style={{ color: 'white', textShadow: '1px 1px 3px black' }}>
+                        © {date} Zachary Wood. All rights reserved.
+                    </p>
                 </footer>
             )}
         </div>

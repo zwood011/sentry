@@ -16,7 +16,7 @@ const Card = ({ data }) => {
                     onClick={() => handleClick(obj)}
                     aria-label={`Card for ${obj.fullname}`}>
                     <div className='Card-Header'>
-                        <h1>{obj.fullname}</h1>
+                        <h1 className="Card-Name">{obj.fullname}</h1>
                         <time>Last observed: {obj.last_obs}</time>
 
                         {selectedCard && selectedCard.id === obj.id && (
