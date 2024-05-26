@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import Filters from './components/Filters';
-import Loading from './components/Loading';
-import CardHandler from './components/card/CardHandler';
+import Filters from './components/filters';
+import Loading from './components/loading';
+import CardHandler from './components/card/cardhandler';
 import useFilters from './hooks/usefilters';
 
 const App = () => {
