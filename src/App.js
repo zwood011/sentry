@@ -54,27 +54,26 @@ const App = () => {
     return (
         <div className='App' role='main'>
             {!loading && (
-                <Filters
-                    onFilterName={onFilterName}
-                    onFilterSize={onFilterSize}
-                    onFilterOldest={onFilterOldest}
-                    onFilterNewest={onFilterNewest}
-                />
-            )}
-            
-            <div className='Page-Description'>
-                <p className='Description-Text'>Data fetched from NASA's Sentry API</p>
-                <a href='https://ssd-api.jpl.nasa.gov/doc/sentry.html'>API Link</a>
-            </div>
+                <>
+                    <Filters
+                        onFilterName={onFilterName}
+                        onFilterSize={onFilterSize}
+                        onFilterOldest={onFilterOldest}
+                        onFilterNewest={onFilterNewest}
+                    />
+                    <div className='Page-Description'>
+                        <p className='Description-Text'>Data fetched from NASA's Sentry API</p>
+                        <a href='https://ssd-api.jpl.nasa.gov/doc/sentry.html'>API Link</a>
+                    </div>
 
-            <CardHandler loading={loading} error={error} objects={filteredObjects} retryFetch={fetchData} />
+                    <CardHandler loading={loading} error={error} objects={filteredObjects} retryFetch={fetchData} />
 
-            {!loading && (
-                <footer className='footer'>
-                    <p className='footerText' style={{ color: 'white', textShadow: '1px 1px 3px black' }}>
-                        © {date} Zachary Wood. All rights reserved.
-                    </p>
-                </footer>
+                    <footer className='footer'>
+                        <p className='footerText' style={{ color: 'white', textShadow: '1px 1px 3px black' }}>
+                            © {date} Zachary Wood. All rights reserved.
+                        </p>
+                    </footer>
+                </>
             )}
         </div>
     );
