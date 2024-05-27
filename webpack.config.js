@@ -72,6 +72,7 @@ module.exports = {
         new CopyWebpackPlugin({
             patterns: [
                 { from: './public/robots.txt', to: './' },
+                { from: './public/BingSiteAuth.xml', to: './' },
             ],
         }),
     ],
