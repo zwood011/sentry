@@ -1,23 +1,17 @@
-import React from 'react';
-import { createRoot } from 'react-dom/client';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import LandingPage from './routes/landingpage';
-import App from './App';
+const fs = require('fs');
+const path = require('path');
 
+// React Router routes
 const routes = [
     {
         path: '/',
-        element: <LandingPage />,
+        element: '<LandingPage />',
     },
     {
-        path: 'sentry',
-        element: <App />,
+        path: '/sentry',
+        element: '<App />',
     },
 ];
-
-const router = createBrowserRouter(routes);
-
-createRoot(document.getElementById('root')).render(<RouterProvider router={router} />);
 
 // Function to extract all paths from the routes
 const extractPaths = (routes) => {
@@ -38,17 +32,17 @@ const extractPaths = (routes) => {
 
 // Function to generate XML sitemap
 const generateSitemap = (paths) => {
-    const baseUrl = 'https://neo-nasa.netlify.app/';
+    const baseUrl = 'https://neo-nasa.netlify.app';
     const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${paths
-    .map(
-        (path) => `
+        .map(
+            (path) => `
     <url>
         <loc>${baseUrl}${path}</loc>
     </url>`
-    )
-    .join('')}
+        )
+        .join('')}
 </urlset>`;
 
     return xml;
@@ -57,4 +51,8 @@ ${paths
 // Generate the sitemap
 const paths = extractPaths(routes);
 const sitemap = generateSitemap(paths);
-console.log(sitemap);
+
+// Write sitemap to public directory
+fs.writeFileSync(path.join(__dirname, 'public', 'sitemap.xml'), sitemap);
+
+console.log('Sitemap generated!');
