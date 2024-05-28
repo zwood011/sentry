@@ -10,6 +10,10 @@ const LandingPage = () => {
             <header className='header'>
                 <h1 className='title'>Sentry Grabber</h1>
                 <p className='subtitle'>Explore potentially hazardous asteroids data with ease</p>
+                <p>
+                    This site is currently hosted for development testing. This project is in early stages. Like
+                    early, early.
+                </p>
                 <Link to='/sentry' className='Button-Landing'>
                     View Project
                 </Link>
@@ -34,13 +38,13 @@ const LandingPage = () => {
 
             <footer className='Footer-Landing'>
                 <p className='footerText'>© {date} Zachary Wood. All rights reserved.</p>
-                    <p className='footerText'>
-                        Powered by{' '}
-                        <Link className='Hyperlink' to='https://cneos.jpl.nasa.gov/sentry/'>
-                            CNEOS
-                        </Link>{' '}
-                        impact monitoring system
-                    </p>
+                <p className='footerText'>
+                    Powered by{' '}
+                    <Link className='Hyperlink' to='https://cneos.jpl.nasa.gov/sentry/'>
+                        CNEOS
+                    </Link>{' '}
+                    impact monitoring system
+                </p>
             </footer>
         </div>
     );
