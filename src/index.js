@@ -1,18 +1,21 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './styles/index.css';
-import App from './App';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import LandingPage from './routes/landingpage';
+import * as React from 'react';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-    <React.StrictMode>
-        <Router>
-            <Routes>
-                <Route path='/' element={<LandingPage />} />
-                <Route path='/sentry' element={<App />} />
-            </Routes>
-        </Router>
-    </React.StrictMode>
-);
+import { createRoot } from 'react-dom/client';
+import { createBrowserRouter, RouterProvider} from 'react-router-dom';
+import LandingPage from './routes/landingpage';
+import App from './App';
+
+const router = createBrowserRouter([
+    {
+        path: '/',
+        element: (
+            <LandingPage />
+        ),
+    },
+    {
+        path: 'sentry',
+        element: <App />
+    },
+]);
+
+createRoot(document.getElementById('root')).render(<RouterProvider router={router} />);
