@@ -11,8 +11,8 @@ const LandingPage = () => {
                 <h1 className='title'>Sentry Grabber</h1>
                 <p className='subtitle'>Explore potentially hazardous asteroids data with ease</p>
                 <p>
-                    This site is currently hosted for development testing. This project is in early stages. Like
-                    early, early.
+                    This site is currently hosted for development testing. This project is in early stages. Like early,
+                    early.
                 </p>
                 <Link to='/sentry' className='Button-Landing'>
                     View Project
