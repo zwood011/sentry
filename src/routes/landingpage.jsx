@@ -12,7 +12,7 @@ const LandingPage = () => {
                 <p className='subtitle'>Explore potentially hazardous asteroids data with ease</p>
                 <p>
                     This site is currently hosted for development testing. This project is in early stages. Like early,
-                    early.
+                    early. Everything within this site is subject to change.
                 </p>
                 <Link to='/sentry' className='Button-Landing'>
                     View Project
