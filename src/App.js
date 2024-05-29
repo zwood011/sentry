@@ -57,7 +57,7 @@ const App = () => {
         <>
             <div>
                 <Helmet>
-                    <title>Asteroid Cards</title>
+                    <title>Sentry Cards</title>
                     <link rel='canonical' href='https://neo-nasa.netlify.app/sentry' />
                 </Helmet>
             </div>

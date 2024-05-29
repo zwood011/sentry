@@ -11,9 +11,10 @@ const LandingPage = () => {
             <div>
                 <Helmet>
                     <title>Sentry Grabber</title>
+                    <link rel='canonical' href='https://neo-nasa.netlify.app/' />
                 </Helmet>
             </div>
-            
+
             <div className='landing-container'>
                 <header className='header'>
                     <h1 className='title'>Sentry Grabber</h1>
