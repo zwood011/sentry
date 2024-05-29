@@ -55,12 +55,11 @@ const App = () => {
 
     return (
         <>
-            <div>
-                <Helmet>
-                    <title>Sentry Cards</title>
-                    <link rel='canonical' href='https://neo-nasa.netlify.app/sentry' />
-                </Helmet>
-            </div>
+            <Helmet>
+                <title>Sentry Cards</title>
+                <link rel='canonical' href='https://neo-nasa.netlify.app/sentry' />
+            </Helmet>
+
             <div className='App' role='main'>
                 {!loading && (
                     <>
