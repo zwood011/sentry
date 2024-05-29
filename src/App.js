@@ -5,7 +5,6 @@ import Filters from './components/filters';
 import Loading from './components/loading';
 import CardHandler from './components/card/cardhandler';
 import useFilters from './hooks/usefilters';
-import { Helmet } from 'react-helmet';
 
 const App = () => {
     const [loading, setLoading] = useState(true);
@@ -55,11 +54,6 @@ const App = () => {
 
     return (
         <>
-            <Helmet>
-                <title>Sentry Cards</title>
-                <link rel='canonical' href='https://neo-nasa.netlify.app/sentry' />
-            </Helmet>
-
             <div className='App' role='main'>
                 {!loading && (
                     <>

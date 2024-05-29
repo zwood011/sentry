@@ -1,18 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/App.css';
-import { Helmet } from 'react-helmet';
 
 const LandingPage = () => {
     const date = new Date().getFullYear();
 
     return (
         <>
-            <Helmet>
-                <title>Sentry Grabber</title>
-                <link rel='canonical' href='https://neo-nasa.netlify.app/' />
-            </Helmet>
-
             <div className='landing-container'>
                 <header className='header'>
                     <h1 className='title'>Sentry Grabber</h1>
