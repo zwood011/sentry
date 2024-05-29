@@ -5,6 +5,7 @@ import Filters from './components/filters';
 import Loading from './components/loading';
 import CardHandler from './components/card/cardhandler';
 import useFilters from './hooks/usefilters';
+import { Helmet } from 'react-helmet';
 
 const App = () => {
     const [loading, setLoading] = useState(true);
@@ -53,20 +54,27 @@ const App = () => {
     if (loading) return <Loading />;
 
     return (
-        <div className='App' role='main'>
-            {!loading && (
-                <>
-                    <Filters
-                        onFilterName={onFilterName}
-                        onFilterSize={onFilterSize}
-                        onFilterOldest={onFilterOldest}
-                        onFilterNewest={onFilterNewest}
-                    />
+        <>
+            <div>
+                <Helmet>
+                    <title>Asteroid Cards</title>
+                    <link rel='canonical' href='https://neo-nasa.netlify.app/sentry' />
+                </Helmet>
+            </div>
+            <div className='App' role='main'>
+                {!loading && (
+                    <>
+                        <Filters
+                            onFilterName={onFilterName}
+                            onFilterSize={onFilterSize}
+                            onFilterOldest={onFilterOldest}
+                            onFilterNewest={onFilterNewest}
+                        />
 
-                    <CardHandler loading={loading} error={error} objects={filteredObjects} retryFetch={fetchData} />
+                        <CardHandler loading={loading} error={error} objects={filteredObjects} retryFetch={fetchData} />
 
-                    <footer className='Footer-Sentry'>
-                        <p className='footerText'>© {date} Zachary Wood. All rights reserved.</p>
+                        <footer className='Footer-Sentry'>
+                            <p className='footerText'>© {date} Zachary Wood. All rights reserved.</p>
                             <div className='Page-Description'>
                                 <p className='Description-Text'>
                                     Powered by{' '}
@@ -76,10 +84,11 @@ const App = () => {
                                     impact monitoring system
                                 </p>
                             </div>
-                    </footer>
-                </>
-            )}
-        </div>
+                        </footer>
+                    </>
+                )}
+            </div>
+        </>
     );
 };
 
