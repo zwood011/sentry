@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import '../styles/App.css';
 
 const LandingPage = () => {
-    const date = new Date().getFullYear;
+    const date = new Date().getFullYear();
 
     return (
         <div className='landing-container'>

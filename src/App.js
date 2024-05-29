@@ -11,7 +11,7 @@ const App = () => {
     const [error, setError] = useState(null);
     const [objects, setObjects] = useState([]);
 
-    const date = new Date().getFullYear;
+    const date = new Date().getFullYear();
 
     const fetchData = useCallback(() => {
         setLoading(true);
