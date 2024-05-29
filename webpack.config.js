@@ -73,7 +73,7 @@ module.exports = {
             patterns: [
                 { from: './public/robots.txt', to: './' },
                 { from: './public/BingSiteAuth.xml', to: './' },
-                { from: './public/sitemap.xml', to: './' },
+                { from: './public/pagemap.xml', to: './' },
             ],
         }),
     ],

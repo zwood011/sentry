@@ -53,6 +53,6 @@ const paths = extractPaths(routes);
 const sitemap = generateSitemap(paths);
 
 // Write sitemap to public directory
-fs.writeFileSync(path.join(__dirname, 'public', 'sitemap.xml'), sitemap);
+fs.writeFileSync(path.join(__dirname, 'public', 'pagemap.xml'), sitemap);
 
 console.log('Sitemap generated!');
