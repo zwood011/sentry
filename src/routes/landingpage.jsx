@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/App.css';
+import { Helmet } from 'react-helmet-async';
 
 const LandingPage = () => {
     const date = new Date().getFullYear();
@@ -8,12 +9,22 @@ const LandingPage = () => {
     return (
         <>
             <div className='landing-container'>
+                <Helmet>
+                    <title>Sentry Grabber</title>
+                    *
+                    <meta
+                        name='description'
+                        data-rh='true'
+                        content='real-time asteroid data, NASA asteroid data, user-friendly asteroid tracker interface, intuitive asteroid card format, asteroid warning updates'
+                    />
+                </Helmet>
+
                 <header className='header'>
                     <h1 className='title'>Sentry Grabber</h1>
                     <p className='subtitle'>Explore potentially hazardous asteroids data with ease</p>
                     <p>
-                        early. Everything within this site is subject to change. This site is currently hosted for
-                        development testing. This project is in early stages. Like early,
+                        This site is currently hosted for development testing. This project is in early stages and
+                        everything within this site is subject to change.
                     </p>
                     <Link to='/sentry' className='Button-Landing'>
                         View Project

@@ -5,6 +5,7 @@ import Filters from './components/filters';
 import Loading from './components/loading';
 import CardHandler from './components/card/cardhandler';
 import useFilters from './hooks/usefilters';
+import { Helmet } from 'react-helmet-async';
 
 const App = () => {
     const [loading, setLoading] = useState(true);
@@ -55,6 +56,15 @@ const App = () => {
     return (
         <>
             <div className='App' role='main'>
+                <Helmet>
+                    <title>Card Fetcher</title>
+                    <meta
+                        name='description'
+                        data-rh='true'
+                        content='Data related to Earth impact risk, close-approaches, and much more.'
+                    />
+                </Helmet>
+
                 {!loading && (
                     <>
                         <Filters
