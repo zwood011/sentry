@@ -4,7 +4,6 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import LandingPage from './routes/landingpage';
 import App from './App';
-import Error404 from './routes/Error404';
 
 const routes = [
     {
@@ -14,10 +13,6 @@ const routes = [
     {
         path: 'sentry',
         element: <App />,
-    },
-    {
-        path: '404',
-        element: <Error404 />,
     },
 ];
 
