@@ -15,7 +15,7 @@ const CardHandler = ({ objects, error, retryFetch }) => {
 
     if (objects.length === 0)
         return (
-            <div className='No-Results text-center'>
+            <div className='No-Results text-center' aria-live='polite' aria-atomic='true'>
                 <h1>No Results</h1>
                 <img src={Image} className='img-fluid' alt='A very sad person' />
             </div>
@@ -24,7 +24,7 @@ const CardHandler = ({ objects, error, retryFetch }) => {
     return (
         <main>
             <div className='Card-Holder' role='presentation' aria-label='Card container'>
-                <Card data={objects.slice(0, displayIndex)} className='container-fluid' />
+                <Card data={objects.slice(0, displayIndex)} className='container-fluid' aria-label='Loaded cards' />
             </div>
 
             {displayIndex < objects.length && (

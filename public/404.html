@@ -33,31 +33,32 @@
             margin: 0.2rem;
         }
 
-        .text-404{
+        .text-404 {
             color: rgb(101, 101, 101);
         }
 
-        .btn{
+        .btn {
             margin: 0px .2rem 0px .2rem;
         }
-
     </style>
 </head>
 
 <body>
-    <div class="container-404">
-        <div class="error-item">
+    <div class="container-404" aria-label="404 Error Page">
+        <div class="error-item" aria-label="Error Header">
             <h1>Oh no!</h1>
             <h2 class="text-404">404</h2>
         </div>
 
-        <div class="error-item">
+        <div class="error-item" aria-label="Error Message">
             <p>The page you requested was not found.</p>
         </div>
 
-        <div class="error-item">
-            <a class="btn btn-primary btn-lg" href="https://neo-nasa.netlify.app/">Home Page</a>
-            <a class="btn btn-dark btn-lg" href="https://neo-nasa.netlify.app/support">Contact Support</a>
+        <div class="error-item" aria-label="Navigation Links">
+            <a class="btn btn-primary btn-lg" href="https://neo-nasa.netlify.app/" aria-label="Go to Home Page">Home
+                Page</a>
+            <a class="btn btn-dark btn-lg" href="https://neo-nasa.netlify.app/support"
+                aria-label="Contact Support">Contact Support</a>
         </div>
     </div>
 </body>

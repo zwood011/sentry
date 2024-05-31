@@ -11,14 +11,16 @@ const Filters = ({ onFilterName, onFilterSize, onFilterOldest, onFilterNewest })
 
     return (
         <header className='Filters container-fluid'>
-            <Link to='/' className="btn btn-transparent header-button">Home</Link>
+            <Link to='/' className='btn btn-transparent header-button' aria-label='Home page'>
+                Home
+            </Link>
             <input
                 type='text'
                 placeholder='Filter by name'
                 value={name}
                 onChange={handleNameChange}
-                aria-label='Filter objects'
-                className="Filter-Input form-control"
+                aria-label='Filter objects by name'
+                className='Filter-Input form-control'
             />
 
             <div className='dropdown'>
@@ -28,14 +30,21 @@ const Filters = ({ onFilterName, onFilterSize, onFilterOldest, onFilterNewest })
                     id='dropdownMenuButton'
                     data-toggle='dropdown'
                     aria-haspopup='true'
-                    aria-expanded='false'>
+                    aria-expanded='false'
+                    aria-label='Tools dropdown'>
                     Tools
                 </button>
-                
+
                 <div className='dropdown-menu' aria-labelledby='dropdownMenuButton'>
-                    <button onClick={onFilterSize}>Filter Largest</button>
-                    <button onClick={onFilterOldest}>Oldest</button>
-                    <button onClick={onFilterNewest}>Newest</button>
+                    <button onClick={onFilterSize} aria-label='Filter by largest size'>
+                        Filter Largest
+                    </button>
+                    <button onClick={onFilterOldest} aria-label='Filter by oldest'>
+                        Oldest
+                    </button>
+                    <button onClick={onFilterNewest} aria-label='Filter by newest'>
+                        Newest
+                    </button>
                 </div>
             </div>
         </header>

@@ -26,12 +26,12 @@ const LandingPage = () => {
                         This site is currently hosted for development testing. This project is in early stages and
                         everything within this site is subject to change.
                     </p>
-                    <Link to='/sentry' className='Button-Landing'>
+                    <Link to='/sentry' className='Button-Landing' aria-label='View Project'>
                         View Project
                     </Link>
                 </header>
 
-                <main className='features'>
+                <main className='features' role='main'>
                     <section className='feature'>
                         <h2 className='featureTitle'>Interactive Cards</h2>
                         <p className='featureDescription'>Visualize asteroid data in an intuitive card format.</p>
@@ -48,11 +48,14 @@ const LandingPage = () => {
                     </section>
                 </main>
 
-                <footer className='Footer-Landing'>
+                <footer className='Footer-Landing' role='contentinfo'>
                     <p className='footerText'>© {date} Zachary Wood. All rights reserved.</p>
                     <p className='footerText'>
                         Powered by{' '}
-                        <Link className='Hyperlink' to='https://cneos.jpl.nasa.gov/sentry/'>
+                        <Link
+                            className='Hyperlink'
+                            to='https://cneos.jpl.nasa.gov/sentry/'
+                            aria-label='CNEOS impact monitoring system'>
                             CNEOS
                         </Link>{' '}
                         impact monitoring system

@@ -72,16 +72,27 @@ const App = () => {
                             onFilterSize={onFilterSize}
                             onFilterOldest={onFilterOldest}
                             onFilterNewest={onFilterNewest}
+                            aria-label='Filtering options'
                         />
 
-                        <CardHandler loading={loading} error={error} objects={filteredObjects} retryFetch={fetchData} />
+                        <CardHandler
+                            loading={loading}
+                            error={error}
+                            objects={filteredObjects}
+                            retryFetch={fetchData}
+                            aria-live='polite'
+                            aria-relevant='additions removals'
+                        />
 
                         <footer className='Footer-Sentry'>
                             <p className='footerText'>© {date} Zachary Wood. All rights reserved.</p>
-                            <div className='Page-Description'>
+                            <div className='Page-Description' aria-label='Page Description'>
                                 <p className='Description-Text'>
                                     Powered by{' '}
-                                    <Link className='Hyperlink' to='https://cneos.jpl.nasa.gov/sentry/'>
+                                    <Link
+                                        className='Hyperlink'
+                                        to='https://cneos.jpl.nasa.gov/sentry/'
+                                        aria-label='CNEOS impact monitoring system'>
                                         CNEOS
                                     </Link>{' '}
                                     impact monitoring system
