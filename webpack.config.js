@@ -74,6 +74,7 @@ module.exports = {
                 { from: './public/robots.txt', to: './' },
                 { from: './public/BingSiteAuth.xml', to: './' },
                 { from: './public/neomap.xml', to: './' },
+                { from: './public/404.html', to: './' },
             ],
         }),
     ],
