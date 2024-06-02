@@ -57,11 +57,11 @@ const App = () => {
         <>
             <div className='App' role='main'>
                 <Helmet>
-                    <title>Card Fetcher</title>
+                    <title>Card Fetcher | Earth Impact Data | Neo-Nasa</title>
                     <meta
                         name='description'
                         data-rh='true'
-                        content='Data related to Earth impact risk, close-approaches, and much more.'
+                        content='Explore comprehensive data related to Earth impact risk, close-approaches, and asteroid monitoring from Neo-Nasareal-time asteroid data, NASA asteroid data, user-friendly asteroid tracker interface, intuitive asteroid card format, asteroid warning updates.'
                     />
                 </Helmet>
 
@@ -72,7 +72,7 @@ const App = () => {
                             onFilterSize={onFilterSize}
                             onFilterOldest={onFilterOldest}
                             onFilterNewest={onFilterNewest}
-                            aria-label='Filtering options'
+                            aria-label='Filtering options for Earth impact data'
                         />
 
                         <CardHandler
