@@ -1,21 +1,35 @@
-import React, { useState, useEffect } from 'react';
 
-function ErrorBoundary({ children }) {
-    const [hasError, setHasError] = useState(false);
+        import React, { Component } from 'react';
 
-    const ErrorFallback = () => (
-        <div>
-            <h2>Something went wrong :C</h2>
-        </div>
-    );
+        class ErrorBoundary extends Component {
+          constructor(props) {
+            super(props);
+            this.state = { hasError: false, error: null };
+          }
 
-    useEffect(() => {
-        const handleError = () => setHasError(true);
-        window.addEventListener('error', handleError);
-        return () => window.removeEventListener('error', handleError);
-    }, []);
+          static getDerivedStateFromError(error) {
+            return { hasError: true, error };
+          }
 
-    return hasError ? <ErrorFallback /> : children;
-}
+          render() {
+            const { hasError, error } = this.state;
 
-export default ErrorBoundary;
+            if (hasError) {
+              return <ErrorFallback error={error} />;
+            }
+
+            return this.props.children;
+          }
+        }
+
+        const ErrorFallback = ({ error }) => (
+          <div style={{ textAlign: 'center', display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+            <div>
+              <h2>An error has occurred☹️</h2>
+              <p>Error message: {error.message}</p>
+              {/* You can add more error details here */}
+            </div>
+          </div>
+        );
+
+        export default ErrorBoundary;
