@@ -58,16 +58,16 @@ const App = () => {
 
     return (
         <>
-            <div className='App' role='main'>
-                <Helmet>
-                    <title>Card Fetcher | Earth Impact Data | Neo-Nasa</title>
-                    <meta
-                        name='description'
-                        data-rh='true'
-                        content='Explore comprehensive data related to Earth impact risk, close-approaches, and asteroid monitoring from Neo-Nasareal-time asteroid data, NASA asteroid data, user-friendly asteroid tracker interface, intuitive asteroid card format, asteroid warning updates.'
-                    />
-                </Helmet>
+            <Helmet>
+                <title>Card Fetcher | Earth Impact Data</title>
+                <meta
+                    name='description'
+                    data-rh='true'
+                    content='Explore comprehensive data related to Earth impact risk, close-approaches, and asteroid monitoring from Neo-Nasareal-time asteroid data, NASA asteroid data, user-friendly asteroid tracker interface, intuitive asteroid card format, asteroid warning updates.'
+                />
+            </Helmet>
 
+            <div className='App' role='main'>
                 {!loading && (
                     <>
                         <Filters
@@ -77,6 +77,20 @@ const App = () => {
                             onFilterNewest={onFilterNewest}
                             aria-label='Filtering options for Earth impact data'
                         />
+
+                        <header className='text-header'>
+                            <h1>Earth Impact Data</h1>
+                            <p>
+                                Explore comprehensive data brought to you by the{' '}
+                                <Link
+                                    className='Hyperlink'
+                                    to='https://cneos.jpl.nasa.gov/sentry/'
+                                    aria-label='CNEOS impact monitoring system'>
+                                    CNEOS
+                                </Link>{' '}
+                                impact monitoring system
+                            </p>
+                        </header>
 
                         <CardHandler
                             loading={loading}

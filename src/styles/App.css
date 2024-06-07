@@ -16,6 +16,13 @@ body {
     background-attachment: fixed;
 }
 
+.text-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
 .App {
     align-items: center;
     color: black;

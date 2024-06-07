@@ -10,7 +10,7 @@ const Filters = ({ onFilterName, onFilterSize, onFilterOldest, onFilterNewest })
     };
 
     return (
-        <header className='Filters container-fluid'>
+        <nav className='Filters container-fluid'>
             <Link to='/' className='btn btn-transparent header-button' aria-label='Home page'>
                 Home
             </Link>
@@ -47,7 +47,7 @@ const Filters = ({ onFilterName, onFilterSize, onFilterOldest, onFilterNewest })
                     </button>
                 </div>
             </div>
-        </header>
+        </nav>
     );
 };
 
