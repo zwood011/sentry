@@ -7,6 +7,7 @@ const Card = ({ data }) => {
     const handleClick = (obj) => {
         setSelectedCard(selectedCard === obj ? null : obj);
     };
+
     return (
         <>
             {data.map((obj) => (
