@@ -1,11 +1,14 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import { Helmet } from 'react-helmet-async';
+
+import './styles/App.css';
+
 import Filters from './components/filters';
 import Loading from './components/loading';
 import CardHandler from './components/card/cardhandler';
 import useFilters from './hooks/usefilters';
-import { Helmet } from 'react-helmet-async';
 
 const App = () => {
     const [loading, setLoading] = useState(true);

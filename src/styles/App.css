@@ -11,13 +11,7 @@ body {
 }
 
 body {
-    background: linear-gradient(
-        135deg,
-        rgb(231, 220, 249),
-        rgb(210, 232, 243),
-        rgb(193, 216, 252),
-        rgb(233, 223, 248)
-    );
+    background: linear-gradient(135deg, rgb(231, 220, 249), rgb(210, 232, 243), rgb(193, 216, 252), rgb(233, 223, 248));
 
     background-attachment: fixed;
 }
@@ -35,7 +29,7 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     gap: 1rem;
-    margin: .5rem;
+    margin: 0.5rem;
     padding: 1rem;
     color: rgb(77, 77, 77);
     width: 100%;
@@ -43,14 +37,14 @@ body {
     border-radius: 8px;
 }
 
-.Filter-Input{
+.Filter-Input {
     border-radius: 8px;
     border: none;
     width: 15rem;
     background: rgba(255, 255, 255, 0.656);
 }
 
-.Filter-Input:active{
+.Filter-Input:active {
     border: transparent;
 }
 
@@ -148,11 +142,11 @@ body {
     padding: 10px;
 }
 
-.Data-Data{
+.Data-Data {
     font-size: 1.3rem;
 }
 
-.Card-Data{
+.Card-Data {
     margin-top: 1rem;
 }
 
@@ -202,7 +196,7 @@ body {
 }
 
 .button {
-    display: inline-block;    
+    display: inline-block;
     font-size: 1em;
     color: #fff;
     background-color: #007bff;
@@ -224,7 +218,7 @@ body {
     margin: 3rem;
 }
 
-.Button-Landing{
+.Button-Landing {
     text-decoration: none;
 }
 
@@ -248,7 +242,7 @@ body {
     color: #4c4b4b;
 }
 
-.Footer-Sentry{
+.Footer-Sentry {
     margin-top: 3rem;
 }
 
