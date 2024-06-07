@@ -39,7 +39,7 @@ const App = () => {
                 setLoading(false);
                 setError(null);
             })
-            .catc((error) => {
+            .catch((error) => {
                 setError(error);
                 setLoading(false);
             });
