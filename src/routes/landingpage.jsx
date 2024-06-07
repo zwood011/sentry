@@ -6,12 +6,6 @@ import { Helmet } from 'react-helmet-async';
 const LandingPage = () => {
     const date = new Date().getFullYear();
 
-    return(
-        <div>
-            <Howdy />
-        </div>
-    )
-
     return (
         <>
             <div className='landing-container'>
