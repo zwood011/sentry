@@ -1,78 +1,138 @@
-body {
-    margin: 0;
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
+<!DOCTYPE html>
+<html lang="en">
 
-code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
-}
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="./favicon.ico">
+    <link rel="manifest" href="/manifest.webmanifest">
 
-noscript {
-    width: 100%;
-    height: 100vh;
-    padding: 5rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    box-sizing: border-box;
-    background: linear-gradient(135deg, #cccfe0, 30%, #f5f5f5);
-    color: #333;
-}
+    <!-- Include your CSS styles here -->
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
 
-noscript h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    color: #444;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-}
+        code {
+            font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+        }
 
-noscript h2 {
-    font-size: 1.5rem;
-    margin: 1rem 0;
-    color: #555;
-}
+        noscript {
+            width: 100%;
+            height: 100vh;
+            padding: 5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            box-sizing: border-box;
+            background: linear-gradient(135deg, #cccfe0, 30%, #f5f5f5);
+            color: #333;
+        }
 
-noscript p {
-    font-size: 1.2rem;
-    margin: 1rem 0;
-    color: #5d5d5d;
-}
+        noscript h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #444;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
 
-noscript a {
-    text-decoration: none;
-    margin: 0.5rem 0;
-    color: rgb(125, 139, 201);
-}
+        noscript h2 {
+            font-size: 1.5rem;
+            margin: 1rem 0;
+            color: #555;
+        }
 
-@media (max-width: 768px) {
-    noscript {
-        padding: 2rem;
-    }
+        noscript p {
+            font-size: 1.2rem;
+            margin: 1rem 0;
+            color: #5d5d5d;
+        }
 
-    noscript h1 {
-        font-size: 2rem;
-    }
+        noscript a {
+            text-decoration: none;
+            margin: 0.5rem 0;
+            color: rgb(125, 139, 201);
+        }
 
-    noscript h2 {
-        font-size: 1.25rem;
-    }
-}
+        @media (max-width: 768px) {
+            noscript {
+                padding: 2rem;
+            }
 
-@media (max-width: 480px) {
-    noscript {
-        padding: 1rem;
-    }
+            noscript h1 {
+                font-size: 2rem;
+            }
 
-    noscript h1 {
-        font-size: 1.5rem;
-    }
+            noscript h2 {
+                font-size: 1.25rem;
+            }
+        }
 
-    noscript h2 {
-        font-size: 1rem;
-    }
-}
+        @media (max-width: 480px) {
+            noscript {
+                padding: 1rem;
+            }
+
+            noscript h1 {
+                font-size: 1.5rem;
+            }
+
+            noscript h2 {
+                font-size: 1rem;
+            }
+        }
+    </style>
+
+    <!-- Other meta tags and links -->
+    <title>Sentry Grabber - Explore Potentially Hazardous Asteroids Data, Asteroid Monitoring, Near-Earth Objects,
+        Real-time Asteroid Data</title>
+    <link rel="stylesheet" href="../src/styles/index.css">
+    <!-- Other links for icons, SEO tags, etc. -->
+</head>
+
+<body>
+    <noscript>
+        <h1>Oh no! What happened?</h1>
+        <h2>This Web Application is build using the <a href="https://react.dev">React</a> library, by <a
+                href="https://about.meta.com">Meta</a>. This
+            library lists JavaScript as an essential dependency.</h2>
+
+        <p>Questions regarding enabling JavaScript? Head over to <a
+                href="https://support.google.com/adsense/answer/12654?hl=en"><i>support.google.com</i></a>. Solutions
+            will
+            vary across browsers.</p>
+    </noscript>
+
+    <div id="root"></div>
+
+    <!--Script dependencies-->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7H/UibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-X397JFXC8Y"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'G-X397JFXC8Y');
+    </script>
+</body>
+
+</html>
