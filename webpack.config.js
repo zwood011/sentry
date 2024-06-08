@@ -40,14 +40,10 @@ module.exports = {
         minimizer: [
             new TerserPlugin({
                 terserOptions: {
-                    ecma: undefined,
-                    warnings: false,
-                    parse: {},
                     compress: {
                         drop_console: true,
                         drop_debugger: true,
                     },
-                    mangle: true
                 },
                 extractComments: false,
             }),
@@ -76,9 +72,9 @@ module.exports = {
                 { from: './public/BingSiteAuth.xml', to: './' },
                 { from: './public/neomap.xml', to: './' },
                 { from: './public/404.html', to: './' },
-                { from: './public/manifest.webmanifest', to: './' }, 
-                { from: './public/favicon.ico', to: './' }, 
-                { from: './public/mstile-150.png', to: './' }, 
+                { from: './public/manifest.webmanifest', to: './' },
+                { from: './public/favicon.ico', to: './' },
+                { from: './public/mstile-150.png', to: './' },
             ],
         }),
     ],
