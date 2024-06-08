@@ -9,30 +9,72 @@ const LandingPage = () => {
 
     useEffect(() => {
         const title = document.querySelector('.title');
-        const main = document.querySelectorAll('main');
+        const subtitle = document.querySelector('.subtitle');
+        const subText = document.querySelector('.sub-text');
+        const button = document.querySelector('.Button-Landing');
+        const features = document.querySelectorAll('.feature');
 
         if (title) {
             animate({
-                from: { transform: 'translateY(-15px) translateZ(0px)', opacity: 0 },
-                to: { transform: 'translateY(0px) translateZ(0px)', opacity: 1 },
+                from: { opacity: 0, y: -50 },
+                to: { opacity: 1, y: 0 },
+                duration: 1000,
                 onUpdate: (latest) => {
-                    title.style.transform = latest.transform;
                     title.style.opacity = latest.opacity;
+                    title.style.transform = `translateY(${latest.y}px)`;
                 },
-                duration: 1400,
             });
         }
-        main.forEach((feature) => {
+
+        if (subtitle) {
             animate({
-                from: { transform: 'translateY(20px) translateZ(0px)', opacity: 0 },
-                to: { transform: 'translateY(0px) translateZ(0px)', opacity: 1 },
+                from: { opacity: 0, y: -30 },
+                to: { opacity: 1, y: 0 },
+                duration: 1000,
                 onUpdate: (latest) => {
-                    feature.style.transform = latest.transform;
-                    feature.style.opacity = latest.opacity;
+                    subtitle.style.opacity = latest.opacity;
+                    subtitle.style.transform = `translateY(${latest.y}px)`;
                 },
-                duration: 1400,
             });
-        });
+        }
+
+        if (subText) {
+            animate({
+                from: { opacity: 0, y: -20 },
+                to: { opacity: 1, y: 0 },
+                duration: 1000,
+                onUpdate: (latest) => {
+                    subText.style.opacity = latest.opacity;
+                    subText.style.transform = `translateY(${latest.y}px)`;
+                },
+            });
+        }
+
+        if (button) {
+            animate({
+                from: { opacity: 0, y: -10 },
+                to: { opacity: 1, y: 0 },
+                duration: 1000,
+                onUpdate: (latest) => {
+                    button.style.opacity = latest.opacity;
+                    button.style.transform = `translateY(${latest.y}px)`;
+                },
+            });
+        }
+
+        if (features.length > 0) {
+            features.forEach((feature) => {
+                animate({
+                    from: { opacity: 0, y: 20 },
+                    to: { opacity: 1, y: 0 },
+                    duration: 1000,
+                    onUpdate: (latest) => {
+                        feature.style.opacity = latest.opacity;
+                        feature.style.transform = `translateY(${latest.y}px)`;
+                    },
+                });
+            });
+        }
     }, []);
 
     return (
@@ -40,10 +82,8 @@ const LandingPage = () => {
             <div className='landing-container'>
                 <Helmet>
                     <title>Sentry Grabber</title>
-
                     <meta
                         name='description'
-                        data-rh='true'
                         content='real-time asteroid data, NASA asteroid data, user-friendly asteroid tracker interface, intuitive asteroid card format, asteroid warning updates'
                     />
                 </Helmet>
