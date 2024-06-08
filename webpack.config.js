@@ -52,7 +52,7 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             template: './public/index.html',
-            favicon: './public/favicon.ico',
+            favicon: './public/favicon-48.png',
             minify: {
                 removeComments: true,
                 collapseWhitespace: true,
@@ -73,7 +73,7 @@ module.exports = {
                 { from: './public/neomap.xml', to: './' },
                 { from: './public/404.html', to: './' },
                 { from: './public/manifest.webmanifest', to: './' },
-                { from: './public/favicon.ico', to: './' },
+                { from: './public/favicon-48.png', to: './' },
                 { from: './public/mstile-150.png', to: './' },
                 { from: './public/apple-touch-icon.png', to: './' },
             ],
