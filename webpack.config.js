@@ -47,7 +47,7 @@ module.exports = {
                         drop_console: true,
                         drop_debugger: true,
                     },
-                    mangle: true,
+                    mangle: true
                 },
                 extractComments: false,
             }),
@@ -72,7 +72,13 @@ module.exports = {
         }),
         new CopyWebpackPlugin({
             patterns: [
-                { from: './public', to: './' },
+                { from: './public/robots.txt', to: './' },
+                { from: './public/BingSiteAuth.xml', to: './' },
+                { from: './public/neomap.xml', to: './' },
+                { from: './public/404.html', to: './' },
+                { from: './public/manifest.webmanifest', to: './' }, 
+                { from: './public/favicon.ico', to: './' }, 
+                { from: './public/mstile-150.png', to: './' }, 
             ],
         }),
     ],
