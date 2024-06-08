@@ -70,15 +70,7 @@ const App = () => {
             <div className='App' role='main'>
                 {!loading && (
                     <>
-                        <Filters
-                            onFilterName={onFilterName}
-                            onFilterSize={onFilterSize}
-                            onFilterOldest={onFilterOldest}
-                            onFilterNewest={onFilterNewest}
-                            aria-label='Filtering options for Earth impact data'
-                        />
-
-                        <header className='text-header'>
+                        <header className='app-header'>
                             <h1>Earth Impact Data</h1>
                             <p>
                                 Explore comprehensive data brought to you by the{' '}
@@ -90,16 +82,27 @@ const App = () => {
                                 </Link>{' '}
                                 impact monitoring system
                             </p>
+                            <nav>
+                                <Filters
+                                    onFilterName={onFilterName}
+                                    onFilterSize={onFilterSize}
+                                    onFilterOldest={onFilterOldest}
+                                    onFilterNewest={onFilterNewest}
+                                    aria-label='Filtering options for Earth impact data'
+                                />
+                            </nav>
                         </header>
 
-                        <CardHandler
-                            loading={loading}
-                            error={error}
-                            objects={filteredObjects}
-                            retryFetch={fetchData}
-                            aria-live='polite'
-                            aria-relevant='additions removals'
-                        />
+                        <main>
+                            <CardHandler
+                                loading={loading}
+                                error={error}
+                                objects={filteredObjects}
+                                retryFetch={fetchData}
+                                aria-live='polite'
+                                aria-relevant='additions removals'
+                            />
+                        </main>
 
                         <footer className='Footer-Sentry'>
                             <p className='footerText'>© {date} Zachary Wood. All rights reserved.</p>

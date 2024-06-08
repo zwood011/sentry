@@ -18,7 +18,8 @@ const LandingPage = () => {
                         content='real-time asteroid data, NASA asteroid data, user-friendly asteroid tracker interface, intuitive asteroid card format, asteroid warning updates'
                     />
                 </Helmet>
-                <header className='header'>
+
+                <header className='landing-header'>
                     <h1 className='title'>Sentry Grabber</h1>
                     <p className='subtitle'>Explore potentially hazardous asteroids data with ease</p>
                     <p>

@@ -10,7 +10,7 @@ const Filters = ({ onFilterName, onFilterSize, onFilterOldest, onFilterNewest })
     };
 
     return (
-        <nav className='Filters container-fluid'>
+        <div className='Filters container-fluid'>
             <Link to='/' className='btn btn-transparent header-button' aria-label='Home page'>
                 Home
             </Link>
@@ -28,7 +28,7 @@ const Filters = ({ onFilterName, onFilterSize, onFilterOldest, onFilterNewest })
                     className='btn btn-transparent header-button dropdown-toggle'
                     type='button'
                     id='dropdownMenuButton'
-                    data-toggle='dropdown'
+                    data-bs-toggle='dropdown'
                     aria-haspopup='true'
                     aria-expanded='false'
                     aria-label='Tools dropdown'>
@@ -36,18 +36,18 @@ const Filters = ({ onFilterName, onFilterSize, onFilterOldest, onFilterNewest })
                 </button>
 
                 <div className='dropdown-menu' aria-labelledby='dropdownMenuButton'>
-                    <button onClick={onFilterSize} aria-label='Filter by largest size'>
+                    <button onClick={onFilterSize} className='dropdown-item' aria-label='Filter by largest size'>
                         Filter Largest
                     </button>
-                    <button onClick={onFilterOldest} aria-label='Filter by oldest'>
+                    <button onClick={onFilterOldest} className='dropdown-item' aria-label='Filter by oldest'>
                         Oldest
                     </button>
-                    <button onClick={onFilterNewest} aria-label='Filter by newest'>
+                    <button onClick={onFilterNewest} className='dropdown-item' aria-label='Filter by newest'>
                         Newest
                     </button>
                 </div>
             </div>
-        </nav>
+        </div>
     );
 };
 
