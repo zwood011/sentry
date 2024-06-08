@@ -1,10 +1,39 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { animate } from 'popmotion';
 import '../styles/App.css';
 import { Helmet } from 'react-helmet-async';
 
 const LandingPage = () => {
     const date = new Date().getFullYear();
+
+    useEffect(() => {
+        const title = document.querySelector('.title');
+        const main = document.querySelectorAll('main');
+
+        if (title) {
+            animate({
+                from: { transform: 'translateY(-15px) translateZ(0px)', opacity: 0 },
+                to: { transform: 'translateY(0px) translateZ(0px)', opacity: 1 },
+                onUpdate: (latest) => {
+                    title.style.transform = latest.transform;
+                    title.style.opacity = latest.opacity;
+                },
+                duration: 1400,
+            });
+        }
+        main.forEach((feature) => {
+            animate({
+                from: { transform: 'translateY(20px) translateZ(0px)', opacity: 0 },
+                to: { transform: 'translateY(0px) translateZ(0px)', opacity: 1 },
+                onUpdate: (latest) => {
+                    feature.style.transform = latest.transform;
+                    feature.style.opacity = latest.opacity;
+                },
+                duration: 1400,
+            });
+        });
+    }, []);
 
     return (
         <>
@@ -22,7 +51,7 @@ const LandingPage = () => {
                 <header className='landing-header'>
                     <h1 className='title'>Sentry Grabber</h1>
                     <p className='subtitle'>Explore potentially hazardous asteroids data with ease</p>
-                    <p>
+                    <p className='sub-text'>
                         This site is currently hosted for development testing. This project is in early stages and
                         everything within this site is subject to change.
                     </p>
