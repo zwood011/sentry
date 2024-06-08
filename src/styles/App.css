@@ -18,11 +18,12 @@ body {
 
 .app-header {
     display: flex;
-    margin: 1rem;
+    margin: 1rem 1rem 0 1rem;
     padding: 1rem;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    animation: slide-in 0.5s;
 }
 
 .landing-header {
@@ -93,6 +94,7 @@ body {
     background: transparent;
     border-radius: 5px;
     color: rgb(77, 77, 77);
+    margin-top: 1.5rem;
     align-content: center;
     border: 2px solid rgba(0, 0, 0, 0.266);
     font-size: 1rem;
@@ -115,11 +117,11 @@ body {
 .Card-Holder {
     align-items: flex-start; /* Added to prevent cards from stretching */
     display: grid;
-    margin-bottom: 3rem;
-    padding: 1rem;
+    margin: 0.5rem;
+    padding: 0.5rem;
     grid-template-columns: repeat(3, 1fr); /* Increase number of columns for better layout */
     justify-content: center;
-    gap: 3rem;
+    gap: 4rem;
 }
 
 .Card-Name {
@@ -131,36 +133,39 @@ body {
 
 .Card {
     color: rgba(46, 48, 49, 0.821);
-    font-size: 1.6em;
+    font-size: 1.4em; /* Adjusted font size */
     cursor: pointer;
-    align-content: center;
-    padding: 1.5em;
-    max-width: 22rem;
+    padding: 1em; /* Reduced padding */
+    max-width: 20rem; /* Reduced max-width */
     -webkit-user-select: none;
     user-select: none;
     transform: scale(1);
     transition: transform 0.1s ease-in-out;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Reduced box shadow */
+    border-radius: 8px; /* Reduced border radius */
     background: #ffffff26;
+    animation: pop-in 0.5s;
 }
 
 .Card:hover {
     transform: scale(1.02);
 }
 
-.Card::before .Obj-Data {
-    border: 1px dotted var(--black-low-opacity);
-    margin: 10px;
-    padding: 10px;
-}
-
 .Data-Data {
-    font-size: 1.3rem;
+    font-size: 1.2rem; /* Adjusted font size */
 }
 
 .Card-Data {
-    margin-top: 1rem;
+    opacity: 0;
+    max-height: 0;
+    padding: 1rem 2rem 0 2rem;
+    overflow: hidden;
+    transition: max-height 0.8s ease, opacity 0.8s ease; /* Add transition property */
+}
+
+.Card-Data.visible {
+    opacity: 1;
+    max-height: 1000px; /* Adjust the maximum height as per your requirement */
 }
 
 .Loading-Container {
@@ -203,7 +208,52 @@ body {
     color: #333;
     margin-bottom: 1rem;
 }
+/* Add this CSS to your App.css or create a new CSS file */
 
+/* Define the animation */
+@keyframes fadeInBounce {
+    0% {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    20% {
+        transform: translateY(0);
+        opacity: 0.9;
+    }
+    40% {
+        transform: translateY(-20%);
+        opacity: 1;
+    }
+    60% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    80% {
+        opacity: 1;
+        transform: translateY(-2.5%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* Apply animation to each letter */
+.AnimatedLetters span {
+    display: inline-block;
+    opacity: 0;
+    animation: fadeInBounce 2s ease forwards;
+}
+
+/* Add animation delay to each letter */
+.AnimatedLetters span:nth-child(1) {
+    animation-delay: 0s; /* Adjust delay for the first letter */
+}
+
+.AnimatedLetters span:nth-child(2) {
+    animation-delay: 0.1s; /* Adjust delay for the second letter */
+}
+
+/* Add more nth-child selectors for additional letters as needed */
 .subtitle {
     font-size: 1.5em;
     color: #504f4f;
@@ -276,6 +326,24 @@ body {
     }
     to {
         transform: rotate(360deg);
+    }
+}
+
+@keyframes slide-in {
+    0% {
+        transform: translateY(-100%) scale(0);
+    }
+    100% {
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes pop-in {
+    0% {
+        transform: translateY(100%) scale(0);
+    }
+    100% {
+        transform: translateY(0) scale(1);
     }
 }
 

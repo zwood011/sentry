@@ -1,80 +1,67 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { animate } from 'popmotion';
-import '../styles/App.css';
+import '../styles/App.css'; // Import your CSS file here
 import { Helmet } from 'react-helmet-async';
+
+// Animating the h1 letters individually in this component
+const AnimatedLetters = ({ text }) => {
+    const [letters, setLetters] = useState([]);
+
+    useEffect(() => {
+        const letterArray = text.split('').map((letter, index) => ({
+            letter,
+            key: `${letter}-${index}`,
+            animationDelay: `${index * 0.1}s`, // Adjust the delay as needed
+        }));
+        setLetters(letterArray);
+    }, [text]);
+
+    useEffect(() => {
+        const animatedLetters = document.querySelectorAll('.AnimatedLetters span');
+        animatedLetters.forEach((letter, index) => {
+            letter.style.transition = 'opacity 1.2s ease-in-out';
+            letter.style.opacity = 0;
+            setTimeout(() => {
+                letter.style.opacity = 1;
+            }, index * 100);
+        });
+    }, [letters]);
+
+    return (
+        <h1 className='AnimatedLetters'>
+            {letters.map(({ letter, key, animationDelay }) => (
+                <span key={key} style={{ animationDelay }}>
+                    {letter === ' ' ? '\u00A0' : letter}
+                </span>
+            ))}
+        </h1>
+    );
+};
 
 const LandingPage = () => {
     const date = new Date().getFullYear();
 
+    // Fades in the feature class
     useEffect(() => {
-        const title = document.querySelector('.title');
-        const subtitle = document.querySelector('.subtitle');
-        const subText = document.querySelector('.sub-text');
-        const button = document.querySelector('.Button-Landing');
         const features = document.querySelectorAll('.feature');
+        features.forEach((feature, index) => {
+            feature.style.transition = 'opacity .8s ease-in-out';
+            feature.style.opacity = 0;
+            setTimeout(() => {
+                feature.style.opacity = 1;
+            }, index * 100);
+        });
 
-        if (title) {
-            animate({
-                from: { opacity: 0, y: -50 },
-                to: { opacity: 1, y: 0 },
-                duration: 1000,
-                onUpdate: (latest) => {
-                    title.style.opacity = latest.opacity;
-                    title.style.transform = `translateY(${latest.y}px)`;
-                },
-            });
-        }
-
-        if (subtitle) {
-            animate({
-                from: { opacity: 0, y: -30 },
-                to: { opacity: 1, y: 0 },
-                duration: 1000,
-                onUpdate: (latest) => {
-                    subtitle.style.opacity = latest.opacity;
-                    subtitle.style.transform = `translateY(${latest.y}px)`;
-                },
-            });
-        }
-
-        if (subText) {
-            animate({
-                from: { opacity: 0, y: -20 },
-                to: { opacity: 1, y: 0 },
-                duration: 1000,
-                onUpdate: (latest) => {
-                    subText.style.opacity = latest.opacity;
-                    subText.style.transform = `translateY(${latest.y}px)`;
-                },
-            });
-        }
-
-        if (button) {
-            animate({
-                from: { opacity: 0, y: -10 },
-                to: { opacity: 1, y: 0 },
-                duration: 1000,
-                onUpdate: (latest) => {
-                    button.style.opacity = latest.opacity;
-                    button.style.transform = `translateY(${latest.y}px)`;
-                },
-            });
-        }
-
-        if (features.length > 0) {
-            features.forEach((feature) => {
-                animate({
-                    from: { opacity: 0, y: 20 },
-                    to: { opacity: 1, y: 0 },
-                    duration: 1000,
-                    onUpdate: (latest) => {
-                        feature.style.opacity = latest.opacity;
-                        feature.style.transform = `translateY(${latest.y}px)`;
-                    },
-                });
-            });
-        }
+        const subtitle = document.querySelector('.subtitle');
+        const subtext = document.querySelector('.sub-text');
+        subtitle.style.transition = 'opacity .8s ease-in-out';
+        subtext.style.transition = 'opacity .8s ease-in-out';
+        subtitle.style.opacity = 0;
+        subtext.style.opacity = 0;
+        setTimeout(() => {
+            subtitle.style.opacity = 1;
+            subtext.style.opacity = 1;
+        }, 0);
     }, []);
 
     return (
@@ -89,7 +76,9 @@ const LandingPage = () => {
                 </Helmet>
 
                 <header className='landing-header'>
-                    <h1 className='title'>Sentry Grabber</h1>
+                    <div className='title'>
+                        <AnimatedLetters text='Sentry Grabber' />
+                    </div>
                     <p className='subtitle'>Explore potentially hazardous asteroids data with ease</p>
                     <p className='sub-text'>
                         This site is currently hosted for development testing. This project is in early stages and
