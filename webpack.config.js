@@ -72,14 +72,7 @@ module.exports = {
         }),
         new CopyWebpackPlugin({
             patterns: [
-                { from: './public/robots.txt', to: './' },
-                { from: './public/BingSiteAuth.xml', to: './' },
-                { from: './public/neomap.xml', to: './' },
-                { from: './public/404.html', to: './' },
-                { from: './public/manifest.webmanifest', to: './' },
-                { from: './public/favicon.ico', to: './' },
-                { from: './public/mstile-150.png', to: './' },
-                { from: './public/apple-touch-icon.png', to: './' },
+                { from: './public', to: './' },
             ],
         }),
     ],
