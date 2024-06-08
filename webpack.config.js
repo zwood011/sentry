@@ -75,7 +75,7 @@ module.exports = {
                 { from: './public/manifest.webmanifest', to: './' },
                 { from: './public/favicon.ico', to: './' },
                 { from: './public/mstile-150.png', to: './' },
-                { from: './public/favicon-32.png', to: './' },
+                { from: './public/apple-touch-icon.png', to: './' },
             ],
         }),
     ],
