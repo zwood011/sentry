@@ -2,6 +2,11 @@
   publish = "dist"
   command = "npm run build"
 
+[[headers]]
+  for = "/sitemap_index.xml"
+  [headers.values]
+    Content-Type = "application/xml"
+
 [[redirects]]
   from = "/sentry/*"
   to = "/index.html"
