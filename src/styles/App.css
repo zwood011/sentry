@@ -25,7 +25,11 @@ body {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    animation: slide-in 0.5s;
+    margin-bottom: 1rem;
+}
+
+.header-button {
+    padding: 1rem;
 }
 
 .app-nav-item {
@@ -103,7 +107,7 @@ body {
     border: 2px solid rgba(0, 0, 0, 0.266);
     font-size: 1rem;
     padding: 1rem;
-    margin-bottom: 3rem;
+    margin: 2rem;
     width: 10rem;
 }
 
@@ -158,7 +162,7 @@ body {
 }
 
 time {
-    white-space: nowrap;
+    white-space: wrap;
 }
 .Data-Data {
     font-size: 1.3rem; /* Adjusted font size */
@@ -208,6 +212,10 @@ time {
 
 .sub-text {
     padding: 1rem;
+}
+
+.Footer-Sentry {
+    margin-top: 2rem;
 }
 
 .footerText {
