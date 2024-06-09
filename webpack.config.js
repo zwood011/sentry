@@ -1,7 +1,6 @@
 const TerserPlugin = require('terser-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const Dotenv = require('dotenv-webpack');
 
 module.exports = {
     mode: 'production',
@@ -78,9 +77,6 @@ module.exports = {
                 { from: './public/mstile-150.png', to: './' },
                 { from: './public/apple-touch-icon.png', to: './' },
             ],
-        }),
-        new Dotenv({
-            path: './.env.production',
         }),
     ],
     devServer: {
