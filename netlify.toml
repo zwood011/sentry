@@ -2,7 +2,6 @@
   publish = "dist"
   command = "npm run build"
 
-
 [[redirects]]
   from = "/sentry/*"
   to = "/index.html"
@@ -12,6 +11,7 @@
   for = "/sitemap_index.xml"
   [headers.values]
     Content-Type = "application/xml"
+    X-Content-Type-Options = "nosniff"
 
 [[headers]]
   for = "/"
@@ -22,7 +22,8 @@
     Strict-Transport-Security = "max-age=31536000; includeSubDomains"
     Content-Security-Policy = "default-src 'self';"
     Access-Control-Allow-Origin = "*"
-
+    X-Content-Type-Options = "nosniff"
+    Content-Type = "text/html"
 
 [[headers]]
   for = "/sentry"
@@ -33,3 +34,5 @@
     Strict-Transport-Security = "max-age=31536000; includeSubDomains"
     Content-Security-Policy = "default-src 'self';"
     Access-Control-Allow-Origin = "*"
+    X-Content-Type-Options = "nosniff"
+    Content-Type = "text/html"
