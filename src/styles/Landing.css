@@ -1,0 +1,207 @@
+
+* {
+     box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, rgb(231, 220, 249), rgb(210, 232, 243), rgb(193, 216, 252), rgb(233, 223, 248));
+
+    background-attachment: fixed;
+}
+
+
+.landing-container {
+     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     text-align: center;
+     min-height: 100vh;
+     margin-top: 2rem;
+}
+
+.title {
+     font-size: 3em;
+     color: rgb(51, 51, 51);
+     margin-bottom: 1rem;
+}
+
+ h1 {
+     margin-top: 0px;
+     margin-bottom: 0.5rem;
+     font-weight: 500;
+     line-height: 1.2;
+     color: var(--bs-heading-color);
+}
+
+/* Define the animation */
+@keyframes fadeInBounce {
+     0% {
+         opacity: 0;
+         transform: translateY(-100%);
+     }
+     20% {
+         transform: translateY(0);
+         opacity: 0.9;
+     }
+     40% {
+         transform: translateY(-20%);
+         opacity: 1;
+     }
+     60% {
+         opacity: 1;
+         transform: translateY(0);
+     }
+     80% {
+         opacity: 1;
+         transform: translateY(-2.5%);
+     }
+     100% {
+         opacity: 1;
+         transform: translateY(0);
+     }
+}
+
+/* Apply animation to each letter */
+.AnimatedLetters span {
+     display: inline-block;
+     opacity: 0;
+     animation: fadeInBounce 2s ease forwards;
+}
+
+.AnimatedLetters span:nth-child(1) {
+     animation-delay: 0s; /* Adjust delay for the first letter */
+}
+
+.AnimatedLetters span:nth-child(2) {
+     animation-delay: 0.1s; /* Adjust delay for the second letter */
+}
+
+inline-style {
+    animation-delay: 0s;
+}
+
+p {
+     margin-top: 0px;
+     margin-bottom: 1rem;
+}
+
+.subtitle {
+     font-size: 1.5em;
+     color: rgb(80, 79, 79);
+}
+
+.sub-text {
+     padding: 1rem;
+}
+
+a {
+     color: rgba(var(--bs-link-color-rgb),var(--bs-link-opacity,1));
+     text-decoration: underline;
+}
+
+.Button-Landing {
+     text-decoration: none;
+}
+
+a:hover {
+     --bs-link-color-rgb: var(--bs-link-hover-color-rgb);
+}
+
+.features {
+     display: flex;
+     justify-content: space-around;
+     flex-wrap: wrap;
+     width: 100%;
+     max-width: 1200px;
+     margin: 3rem;
+}
+
+@media only screen and (max-width: 1000px){
+    .features {
+         margin-top: 2rem;
+    }
+}
+.feature {
+     flex: 1 1 30%;
+     padding: 20px;
+     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 8px;
+     border-radius: 10px;
+     background: rgba(255, 255, 255, 0.133);
+     margin: 0px 1rem 2rem;
+}
+
+ h2 {
+     margin-top: 0px;
+     margin-bottom: 0.5rem;
+     font-weight: 500;
+     line-height: 1.2;
+     color: var(--bs-heading-color);
+}
+
+.featureTitle {
+     font-size: 1.5em;
+     color: rgb(51, 51, 51);
+}
+
+.featureDescription {
+     font-size: 1em;
+     color: rgb(76, 75, 75);
+}
+
+.footerText {
+     font-size: 1.2rem;
+     color: rgb(65, 64, 64);
+}
+
+.Hyperlink {
+     text-decoration: none;
+     color: rgb(93, 110, 135);
+}
+
+.Hyperlink:hover {
+     color: rgb(150, 167, 206);
+}
+
+
+@keyframes fadeInBounce {
+    0% {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    20% {
+        transform: translateY(0);
+        opacity: 0.9;
+    }
+    40% {
+        transform: translateY(-20%);
+        opacity: 1;
+    }
+    60% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    80% {
+        opacity: 1;
+        transform: translateY(-2.5%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.AnimatedLetters span {
+    display: inline-block;
+    opacity: 0;
+    animation: fadeInBounce 2s ease forwards;
+}
+
+.AnimatedLetters span:nth-child(1) {
+    animation-delay: 0s; /* Adjust delay for the first letter */
+}
+
+.AnimatedLetters span:nth-child(2) {
+    animation-delay: 0.1s; /* Adjust delay for the second letter */
+}
