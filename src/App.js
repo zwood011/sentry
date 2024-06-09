@@ -11,6 +11,8 @@ import CardHandler from './components/card/cardhandler';
 import useFilters from './hooks/usefilters';
 
 const App = () => {
+    //TODO: Fix Card Titles - Large titles get cut off
+
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     const [objects, setObjects] = useState([]);

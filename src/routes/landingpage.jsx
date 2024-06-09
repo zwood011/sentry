@@ -3,30 +3,6 @@ import { Link } from 'react-router-dom';
 import '../styles/App.css'; // Import your CSS file here
 import { Helmet } from 'react-helmet-async';
 
-// Animating the h1 letters individually in this component
-const AnimatedLetters = ({ text }) => {
-    const [letters, setLetters] = useState([]);
-
-    useEffect(() => {
-        const letterArray = text.split('').map((letter, index) => ({
-            letter,
-            key: `${letter}-${index}`,
-            animationDelay: `${index * 0.1}s`, // Adjust the delay as needed
-        }));
-        setLetters(letterArray);
-    }, [text]);
-
-    return (
-        <h1 className='AnimatedLetters'>
-            {letters.map(({ letter, key, animationDelay }) => (
-                <span key={key} style={{ animationDelay }}>
-                    {letter === ' ' ? '\u00A0' : letter}
-                </span>
-            ))}
-        </h1>
-    );
-};
-
 const LandingPage = () => {
     const date = new Date().getFullYear();
 
@@ -115,3 +91,27 @@ const LandingPage = () => {
 };
 
 export default LandingPage;
+
+//* Not worth creating a separate file so I shoved it down here
+const AnimatedLetters = ({ text }) => {
+    const [letters, setLetters] = useState([]);
+
+    useEffect(() => {
+        const letterArray = text.split('').map((letter, index) => ({
+            letter,
+            key: `${letter}-${index}`,
+            animationDelay: `${index * 0.1}s`, // Adjust the delay as needed
+        }));
+        setLetters(letterArray);
+    }, [text]);
+
+    return (
+        <h1 className='AnimatedLetters'>
+            {letters.map(({ letter, key, animationDelay }) => (
+                <span key={key} style={{ animationDelay }}>
+                    {letter === ' ' ? '\u00A0' : letter}
+                </span>
+            ))}
+        </h1>
+    );
+};
