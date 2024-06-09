@@ -43,7 +43,6 @@ const App = () => {
                 }));
                 setObjects(objects);
                 setLoading(false);
-                setErrorMessage('hi');
             })
             .catch((error) => {
                 setErrorMessage(error);
