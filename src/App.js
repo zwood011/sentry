@@ -98,7 +98,7 @@ const App = () => {
 
                         <main>
                             <CardHandler
-                                loading={loading}
+                                isLoading={loading}
                                 error={error}
                                 objects={filteredObjects}
                                 retryFetch={fetchData}
