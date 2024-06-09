@@ -56,7 +56,7 @@ module.exports = {
         }),
     ],
     devServer: {
-        contentBase: path.join(__dirname, 'public'),
-        publicPath: '/public',
-    },
+        contentBase: path.join(__dirname, 'dist'),
+        publicPath: '/',
+    },    
 };
