@@ -3,7 +3,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const path = require('path');
 
-
 module.exports = {
     mode: 'production',
     entry: './src/index.js',
@@ -69,12 +68,14 @@ module.exports = {
             },
         }),
         new CopyWebpackPlugin({
-            patterns: [{ from: 'public', to: '.' }],
+            patterns: [
+                { from: 'public/', to: '.' },
+                { from: 'src/styles/index.css', to: '.' },
+            ],
         }),
     ],
     devServer: {
         contentBase: path.join(__dirname, 'public'),
         publicPath: '/',
-    }
-    
+    },
 };
