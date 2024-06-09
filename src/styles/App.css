@@ -135,17 +135,6 @@ body {
     white-space: nowrap;
     overflow: hidden;
 }
-@keyframes pop-in {
-    0% {
-        transform: translateY(100%) scale(0);
-        opacity: 0;
-    }
-    100% {
-        transform: translateY(0) scale(1);
-        opacity: 1;
-    }
-}
-
 .Card {
     color: rgba(46, 48, 49, 0.821);
     font-size: 1.4em; /* Adjusted font size */
@@ -159,7 +148,7 @@ body {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Reduced box shadow */
     border-radius: 8px; /* Reduced border radius */
     background: #ffffff26;
-    animation: pop-in 0.5s ease-in-out forwards;
+    animation: pop-in 0.5s;
 }
 
 .Card.selected {
@@ -368,6 +357,14 @@ time {
     }
 }
 
+@keyframes pop-in {
+    0% {
+        transform: translateY(100%) scale(0);
+    }
+    100% {
+        transform: translateY(0) scale(1);
+    }
+}
 @media only screen and (max-width: 1000px) {
     .landing-header,
     .features {
