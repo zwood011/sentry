@@ -4,101 +4,8 @@
 
 body {
     background: linear-gradient(135deg, rgb(231, 220, 249), rgb(210, 232, 243), rgb(193, 216, 252), rgb(233, 223, 248));
+
     background-attachment: fixed;
-}
-
-/* Tools container */
-.tools-container {
-    display: flex;
-    justify-content: center;
-    margin: 2rem;
-    gap: 3rem;
-    padding: 1rem;
-    flex-wrap: wrap; /* Ensure tools wrap */
-}   
-
-.landing-main{
-    margin: 3rem 0 3rem 0;
-}
-
-.main-h2{
-    color: rgba(59, 59, 59, 0.945);
-}
-
-.tool-category {
-    background: #ffffff32;
-    padding: 1rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-    width: calc(20vw + 2rem);
-    height: calc(40vh + 2rem);
-}
-
-.tool-category h2 {
-    margin-top: 0;
-    font-size: 1.5rem;
-    color: #343a40;
-}
-
-.tool-category p {
-    margin: 0.5rem 0;
-    color: #6c757d;
-    line-height: 1.6;
-}
-@media screen and (min-width: 1400px) {
-    .tool-category {
-        width: calc(25vw + 2rem); /* Increase width for smaller screens */
-        height: calc(37vh + 2rem); /* Consistent height adjustment for smaller screens */
-    }
-}
-
-@media screen and (max-width: 910px) {
-    .tool-category {
-        width: calc(30vw + 2rem);
-        height: calc(37vh + 2rem); /* Consistent height adjustment for medium screens */
-    }
-}
-
-@media screen and (max-width: 740px) {
-    .tool-category {
-        width: calc(40vw + 2rem);
-        height: calc(37vh + 2rem); /* Consistent height adjustment for smaller screens */
-    }
-}
-@media screen and (max-width: 425px) {
-    .tool-category {
-        width: calc(50vw + 2rem);
-        height: calc(37vh + 2rem); /* Consistent height adjustment for smallest screens */
-    }
-}
-
-/* Responsive Heights */
-@media screen and (min-height: 750px) {
-    .tool-category {
-        height: calc(30vh + 2rem);
-    }
-}
-
-@media screen and (max-height: 565px) {
-    .tool-category {
-        height: calc(50vh + 2rem);
-    }
-}
-@media screen and (max-height: 440px) {
-    .tool-category {
-        height: calc(60vh + 2rem); /* Adjust the height accordingly */
-    }
-}
-@media screen and (max-width: 390px) and (max-height: 550px) {
-    .tool-category {
-        height: calc(65vh + 2rem); /* Adjust the height accordingly */
-    }
-}
-@media screen and (max-width: 297px) and (max-height: 682px) {
-    .tool-category {
-        height: calc(50vh + 2rem); /* Adjust the height a tag bigger */
-    }
 }
 
 .landing-container {
@@ -214,7 +121,6 @@ a:hover {
         margin-top: 2rem;
     }
 }
-
 .feature {
     flex: 1 1 30%;
     padding: 20px;

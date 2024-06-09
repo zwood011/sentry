@@ -52,42 +52,24 @@ const LandingPage = () => {
                         <Link to='/sentry' className='Button-Landing' aria-label='View Project'>
                             View Project
                         </Link>
-                    </nav>  
-                    </header>
+                    </nav>
+                </header>
 
-                <main className='landing-main' role='main'>
-                    <h2 className="main-h2">Frontend Tools Applied</h2>
-                    <div className='tools-container'>
-                        <section className='tool-category'>
-                            <h2>Misc </h2>
-                            <p>Google Analytics GA4</p>
-                            <p>Google Tag Manager</p>
-                            <p>cdnjs</p>
-                            <p>jsDelivr</p>
-                            <p>jQuery CDN</p>
-                            <p>core.js</p>
-                        </section>
+                <main className='features' role='main'>
+                    <section className='feature'>
+                        <h2 className='featureTitle'>Interactive Cards</h2>
+                        <p className='featureDescription'>Visualize asteroid data in an intuitive card format.</p>
+                    </section>
 
-                        <section className='tool-category'>
-                            <h2>Main Libraries</h2>
-                            <p>React</p>
-                            <p>Emotion</p>
-                            <p>Bootstrap 5.3.3</p>
-                            <p>Express.js</p>
-                            <p>Popper 2.11.8</p>
-                            <p>jQuery UI 1.13.3</p>
-                        </section>
+                    <section className='feature'>
+                        <h2 className='featureTitle'>Real-time Updates</h2>
+                        <p className='featureDescription'>Stay updated with the latest data from NASA's Sentry API.</p>
+                    </section>
 
-                        <section className='tool-category'>
-                            <h2>Minor Libraries</h2>
-                            <p>React</p>
-                            <p>React Router 6</p>
-                            <p>core-js 3.37.1</p>
-                            <p>jQuery 3.2.1</p>
-                            <p>Open Graph</p>
-                            <p>GraphQL</p>
-                        </section>
-                    </div>
+                    <section className='feature'>
+                        <h2 className='featureTitle'>User-Friendly Interface</h2>
+                        <p className='featureDescription'>Easily navigate and explore the information.</p>
+                    </section>
                 </main>
 
                 <footer className='Footer-Landing' role='contentinfo'>
@@ -118,7 +100,7 @@ const AnimatedLetters = ({ text }) => {
         const letterArray = text.split('').map((letter, index) => ({
             letter,
             key: `${letter}-${index}`,
-            animationDelay: `${index * 0.1}s`, // Adjust as needed
+            animationDelay: `${index * 0.1}s`, // Adjust the delay as needed
         }));
         setLetters(letterArray);
     }, [text]);
