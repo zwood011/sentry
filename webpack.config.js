@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 
+
 module.exports = {
     mode: 'production',
     entry: './src/index.js',
@@ -59,6 +60,7 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             template: './public/index.html',
+            template: './index.html',
             filename: 'index.html',
             inject: 'body',
         }),
