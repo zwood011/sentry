@@ -4,7 +4,7 @@
     --gradient-dark: linear-gradient(rgba(60, 62, 70, 0.832), var(--background-grey));
 }
 
-*{
+* {
     box-sizing: border-box;
 }
 
@@ -134,13 +134,23 @@ body {
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
-
 }
+@keyframes pop-in {
+    0% {
+        transform: translateY(100%) scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+}
+
 .Card {
     color: rgba(46, 48, 49, 0.821);
     font-size: 1.4em; /* Adjusted font size */
-    cursor: pointser;
-    padding: 2rem; /* Reduced padding */
+    cursor: pointer;
+    padding: 1em; /* Reduced padding */
     max-width: 20rem; /* Reduced max-width */
     -webkit-user-select: none;
     user-select: none;
@@ -149,22 +159,23 @@ body {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Reduced box shadow */
     border-radius: 8px; /* Reduced border radius */
     background: #ffffff26;
+    animation: pop-in 0.5s ease-in-out forwards;
 }
 
 .Card.selected {
     transform: scale(1.2);
-    transition: transform .45s ease, width 0.3s ease, height 0.3s ease;
+    transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease;
 }
 
 .Card.selected .Card-Name {
     font-size: 1em; /* Make font size smaller */
 }
 
-.Data-Heading{
+.Data-Heading {
     font-size: 1.2rem;
 }
 
-time{
+time {
     white-space: nowrap;
 }
 .Data-Data {
@@ -176,6 +187,7 @@ time{
     max-height: 0;
     padding: 1rem 2rem 0 2rem;
     overflow: hidden;
+    transition: max-height 0.8s ease, opacity 0.8s ease; /* Add transition property */
 }
 
 .Card-Data.visible {
@@ -222,7 +234,9 @@ time{
     color: #333;
     margin-bottom: 1rem;
 }
+/* Add this CSS to your App.css or create a new CSS file */
 
+/* Define the animation */
 @keyframes fadeInBounce {
     0% {
         opacity: 0;
@@ -249,23 +263,23 @@ time{
         transform: translateY(0);
     }
 }
-
-/* Apply animations */
+/* Apply animation to each letter */
 .AnimatedLetters span {
     display: inline-block;
     opacity: 0;
     animation: fadeInBounce 2s ease forwards;
 }
 
-/* Add animation */
+/* Add animation delay to each letter */
 .AnimatedLetters span:nth-child(1) {
-    animation-delay: 0s;
+    animation-delay: 0s; /* Adjust delay for the first letter */
 }
 
 .AnimatedLetters span:nth-child(2) {
-    animation-delay: 0.1s;
+    animation-delay: 0.1s; /* Adjust delay for the second letter */
 }
 
+/* Add more nth-child selectors for additional letters as needed */
 .subtitle {
     font-size: 1.5em;
     color: #504f4f;
@@ -381,8 +395,7 @@ time{
     }
 }
 
-@media only screen and (min-width: 680px) and (max-width: 900px),
-only screen and (max-width: 680px) {
+@media only screen and (min-width: 680px) and (max-width: 900px), only screen and (max-width: 680px) {
     .Card-Holder {
         display: flex;
         flex-wrap: wrap;
