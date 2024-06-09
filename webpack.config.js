@@ -1,6 +1,8 @@
 const TerserPlugin = require('terser-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const path = require('path');
+
 
 module.exports = {
     mode: 'production',
@@ -67,20 +69,12 @@ module.exports = {
             },
         }),
         new CopyWebpackPlugin({
-            patterns: [
-                { from: './public/robots.txt', to: './' },
-                { from: './public/BingSiteAuth.xml', to: './' },
-                { from: './public/sitemap_index.xml', to: './' },
-                { from: './public/404.html', to: './' },
-                { from: './public/manifest.webmanifest', to: './' },
-                { from: './public/favicon-48.png', to: './' },
-                { from: './public/mstile-150.png', to: './' },
-                { from: './public/apple-touch-icon.png', to: './' },
-                { from: './styles/index.css', to: './' },
-            ],
+            patterns: [{ from: 'public', to: '.' }],
         }),
     ],
     devServer: {
-        historyApiFallback: true,
-    },
+        contentBase: path.join(__dirname, 'public'),
+        publicPath: '/',
+    }
+    
 };
