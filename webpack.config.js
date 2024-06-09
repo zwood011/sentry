@@ -2,7 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
-
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     mode: 'production',
@@ -60,12 +60,14 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             template: './public/index.html',
-            template: './index.html',
             filename: 'index.html',
             inject: 'body',
         }),
         new MiniCssExtractPlugin({
             filename: '[name].[contenthash].css',
+        }),
+        new CopyWebpackPlugin({
+            patterns: [{ from: 'public', to: './' }],
         }),
     ],
 };
