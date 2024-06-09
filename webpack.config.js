@@ -67,6 +67,9 @@ module.exports = {
                 minifyURLs: true,
             },
         }),
+        new CopyWebpackPlugin({
+            patterns: [{ from: 'public', to: '.' }],
+        }),
     ],
     devServer: {
         contentBase: path.join(__dirname, 'public'),
