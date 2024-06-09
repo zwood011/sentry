@@ -12,10 +12,9 @@ body {
 
 body {
     background: linear-gradient(135deg, rgb(231, 220, 249), rgb(210, 232, 243), rgb(193, 216, 252), rgb(233, 223, 248));
-
     background-attachment: fixed;
+    background-size: cover;
 }
-
 .app-header {
     display: flex;
     padding: 1rem;
