@@ -52,7 +52,7 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             template: './public/index.html',
-            favicon: './favicon-48.png',
+            favicon: './public/favicon-48.png',
             minify: {
                 removeComments: true,
                 collapseWhitespace: true,
