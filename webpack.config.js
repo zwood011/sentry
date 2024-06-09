@@ -1,7 +1,5 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
@@ -9,7 +7,7 @@ module.exports = {
     entry: './src/index.js',
     output: {
         filename: 'bundle.js',
-        path: path.resolve(__dirname, 'dist'),
+        path: __dirname + '/dist',
         publicPath: '/',
     },
     module: {
@@ -26,21 +24,15 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                use: [MiniCssExtractPlugin.loader, 'css-loader'],
+                use: ['style-loader', 'css-loader'],
             },
             {
                 test: /\.(png|jpe?g|gif)$/i,
-                use: [
-                    {
-                        loader: 'file-loader',
-                        options: {
-                            outputPath: 'images',
-                        },
-                    },
-                ],
+                type: 'asset/resource',
             },
         ],
     },
+
     resolve: {
         extensions: ['.js', '.jsx'],
     },
@@ -58,12 +50,36 @@ module.exports = {
         ],
     },
     plugins: [
-        new MiniCssExtractPlugin({
-            filename: '[name].[contenthash].css',
-        }),
         new HtmlWebpackPlugin({
             template: './public/index.html',
-            filename: 'index.html',
+            favicon: './public/favicon-48.png',
+            minify: {
+                removeComments: true,
+                collapseWhitespace: true,
+                removeRedundantAttributes: true,
+                useShortDoctype: true,
+                removeEmptyAttributes: true,
+                removeStyleLinkTypeAttributes: true,
+                keepClosingSlash: true,
+                minifyJS: true,
+                minifyCSS: true,
+                minifyURLs: true,
+            },
+        }),
+        new CopyWebpackPlugin({
+            patterns: [
+                { from: './public/robots.txt', to: './' },
+                { from: './public/BingSiteAuth.xml', to: './' },
+                { from: './public/sitemap_index.xml', to: './' },
+                { from: './public/404.html', to: './' },
+                { from: './public/manifest.webmanifest', to: './' },
+                { from: './public/favicon-48.png', to: './' },
+                { from: './public/mstile-150.png', to: './' },
+                { from: './public/apple-touch-icon.png', to: './' },
+            ],
         }),
     ],
+    devServer: {
+        historyApiFallback: true,
+    },
 };
