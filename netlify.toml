@@ -2,12 +2,28 @@
   publish = "dist"
   command = "npm run build"
 
-[[headers]]
-  for = "/sitemap_index.xml"
-  [headers.values]
-    Content-Type = "application/xml"
 
 [[redirects]]
   from = "/sentry/*"
   to = "/index.html"
   status = 200
+
+[[headers]]
+  for = "/sitemap_index.xml"
+  [headers.values]
+    Content-Type = "application/xml"
+
+[[headers]]
+  for = "/"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Robots-Tag = "index, follow"
+
+    
+[[headers]]
+  for = "/sentry"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Robots-Tag = "index, follow"
