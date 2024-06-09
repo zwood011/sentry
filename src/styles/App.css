@@ -74,16 +74,20 @@ body {
 }
 
 .Error-Container {
-    margin: 3rem;
-    width: 100%;
-    height: 5rem;
-    background-color: rgba(255, 0, 0, 0.662);
+    width: calc(100% - 2rem); /* Adjust width to leave 1rem margin on each side */
+    height: auto;
+    padding: 1rem;
+    background-color: rgba(255, 0, 0, 0.19);
     color: black;
+    flex-direction: column;
+    row-gap: 1rem;
     display: flex;
     align-items: center;
+    max-width: 1200px;
     justify-content: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.422), 0 -4px 8px rgba(0, 0, 0, 0.422);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
     border-radius: 8px;
+    margin: 0 auto; /* Center the container */
 }
 
 .Button-Load {
@@ -176,7 +180,6 @@ body {
 }
 
 .Tip-Container {
-    background-color: white;
     padding: 1rem;
 }
 

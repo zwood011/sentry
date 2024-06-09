@@ -12,9 +12,10 @@ import useFilters from './hooks/usefilters';
 
 const App = () => {
     //TODO: Fix Card Titles - Large titles get cut off
+    //* Look into designing error.jsx/ErrorBundary.jsx/Loading.jsx/404.html further
 
     const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
+    const [errorMessage, setErrorMessage] = useState(null);
     const [objects, setObjects] = useState([]);
 
     const date = new Date().getFullYear();
@@ -42,10 +43,10 @@ const App = () => {
                 }));
                 setObjects(objects);
                 setLoading(false);
-                setError(null);
+                setErrorMessage('hi');
             })
             .catch((error) => {
-                setError(error);
+                setErrorMessage(error);
                 setLoading(false);
             });
     }, []);
@@ -99,7 +100,7 @@ const App = () => {
                         <main>
                             <CardHandler
                                 isLoading={loading}
-                                error={error}
+                                errorMessage={errorMessage}
                                 objects={filteredObjects}
                                 retryFetch={fetchData}
                                 aria-live='polite'
