@@ -14,7 +14,7 @@
     X-Frame-Options = "DENY"
     X-XSS-Protection = "1; mode=block"
     Strict-Transport-Security = "max-age=31536000; includeSubDomains"
-    Content-Security-Policy: default-src 'self' https:; font-src 'self' https: data:; script-src 'self' https: 'sha256-qznLcsROx4GACP2dmMiIqAAKCyUlaumoXRwABQt2uQvgRpqsBK=' 'sha256-KyZXEAgAmpSk+uDDb570MlpckeY8TY5no9Jmq2UVzWOq0xszVc='; style-src 'self' https: 'sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuPHma/pTk='; img-src 'self' https: data:; frame-src 'self' https:; connect-src 'self' https:; base-uri 'none'; object-src 'none';
+    Content-Security-Policy = "default-src 'self' https:; font-src 'self' https: data:; script-src 'self' https: 'sha256-qznLcsROx4GACP2dmMiIqAAKCyUlaumoXRwABQt2uQvgRpqsBK=' 'sha256-KyZXEAgAmpSk+uDDb570MlpckeY8TY5no9Jmq2UVzWOq0xszVc='; style-src 'self' https: 'sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuPHma/pTk='; img-src 'self' https: data:; frame-src 'self' https:; connect-src 'self' https:; base-uri 'none'; object-src 'none';"
     Access-Control-Allow-Origin = "https://*.neo-nasa.netlify.app"
     X-Robots-Tag = "index, follow"
     X-Content-Type-Options = "nosniff"
