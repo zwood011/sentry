@@ -13,8 +13,7 @@
     X-Frame-Options = "DENY"
     X-XSS-Protection = "1; mode=block"
     Strict-Transport-Security = "max-age=31536000; includeSubDomains"
-    Content-Security-Policy = "default-src 'self'; style-src 'self' 'unsafe-inline';"
-    Access-Control-Allow-Origin = "*"
+    Access-Control-Allow-Origin = "https://*.neo-nasa.netlify.app"
     X-Robots-Tag = "index, follow"
     X-Content-Type-Options = "nosniff"
 
@@ -22,16 +21,6 @@
   for = "/*.html"
   [headers.values]
     Content-Type = "text/html"
-
-[[headers]]
-  for = "/*.css"
-  [headers.values]
-    Content-Type = "text/css"
-
-[[headers]]
-  for = "/*.js"
-  [headers.values]
-    Content-Type = "application/javascript"
 
 [[headers]]
   for = "/sitemap_index.xml"
