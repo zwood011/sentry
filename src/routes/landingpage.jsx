@@ -16,17 +16,6 @@ const AnimatedLetters = ({ text }) => {
         setLetters(letterArray);
     }, [text]);
 
-    useEffect(() => {
-        const animatedLetters = document.querySelectorAll('.AnimatedLetters span');
-        animatedLetters.forEach((letter, index) => {
-            letter.style.transition = 'opacity 1.2s ease-in-out';
-            letter.style.opacity = 0;
-            setTimeout(() => {
-                letter.style.opacity = 1;
-            }, index * 100);
-        });
-    }, [letters]);
-
     return (
         <h1 className='AnimatedLetters'>
             {letters.map(({ letter, key, animationDelay }) => (
