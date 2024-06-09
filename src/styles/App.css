@@ -4,6 +4,10 @@
     --gradient-dark: linear-gradient(rgba(60, 62, 70, 0.832), var(--background-grey));
 }
 
+*{
+    box-sizing: border-box;
+}
+
 html,
 body {
     height: 100%;
@@ -130,8 +134,8 @@ body {
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
-}
 
+}
 .Card {
     color: rgba(46, 48, 49, 0.821);
     font-size: 1.4em; /* Adjusted font size */
@@ -153,8 +157,19 @@ body {
     transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease;
 }
 
+.Card.selected .Card-Name {
+    font-size: 1em; /* Make font size smaller */
+}
+
+.Data-Heading{
+    font-size: 1.2rem;
+}
+
+time{
+    white-space: nowrap;
+}
 .Data-Data {
-    font-size: 1.2rem; /* Adjusted font size */
+    font-size: 1.3rem; /* Adjusted font size */
 }
 
 .Card-Data {
@@ -351,12 +366,8 @@ body {
         transform: translateY(0) scale(1);
     }
 }
-
 @media only screen and (max-width: 1000px) {
-    .landing-header {
-        margin-top: 2rem;
-    }
-
+    .landing-header,
     .features {
         margin-top: 2rem;
     }
@@ -364,9 +375,8 @@ body {
 
 @media only screen and (max-width: 1200px) {
     .Card-Holder {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
     }
-
     .Card {
         width: 100%;
         height: auto;
@@ -377,31 +387,32 @@ body {
     .Card-Holder {
         grid-template-columns: repeat(6, 1fr); /* Increase to 6 columns for large screens */
     }
-
     .Card {
         width: 25rem;
         height: 25rem;
     }
 }
 
-@media only screen and (min-width: 600px) {
-    .No-Results {
-        width: 50vh;
-    }
-
-    .Card {
-        padding: 2vw, 1vw, 2vw, 1vw;
-        width: 100%;
-    }
-}
-@media only screen and (max-width: 680px) {
+@media only screen and (min-width: 680px) and (max-width: 900px),
+only screen and (max-width: 680px) {
     .Card-Holder {
-        grid-template-columns: 1fr;
+        display: flex;
         flex-wrap: wrap;
+        grid-template-columns: 1fr;
     }
-
     .Card {
         width: 100%;
         height: auto;
+    }
+}
+
+@media only screen and (min-width: 900px) and (max-width: 1200px) {
+    .Card-Holder {
+        gap: calc(0.8vw + 5rem);
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .Card {
+        padding: 2rem;
     }
 }

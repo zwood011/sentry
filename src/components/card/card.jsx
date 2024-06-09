@@ -8,11 +8,18 @@ const Card = ({ data }) => {
         setSelectedCard(selectedCard === obj ? null : obj);
     };
 
+    const renderData = (dataName, input, id) => (
+        <div className={dataName.replace(/\s+/g, '-')}>
+            <h4 className='Data-Heading'>{dataName}</h4>
+            <p className='Data-Data'>{input}</p>
+        </div>
+    );
+
     return (
         <>
             {data.map((obj) => (
                 <article
-                    className={`Card ${selectedCard && selectedCard.id === obj.id ? 'selected' : ''}`}
+                    className={`Card ${selectedCard?.id === obj.id ? 'selected' : ''}`}
                     key={obj.id}
                     onClick={() => handleClick(obj)}
                     aria-label={`Card for ${obj.fullname}`}>
@@ -21,30 +28,17 @@ const Card = ({ data }) => {
                         <time>Last observed: {obj.last_obs}</time>
                     </div>
 
-                    <section
-                        className={`Card-Data ${selectedCard && selectedCard.id === obj.id ? 'visible' : ''}`}
-                        data-id={obj.id}
-                        aria-label='Detailed card data'>
-                        <div className='Data-container' role='article' aria-label='Cumulative Hazard Rating'>
-                            <h4 className='Data-Heading'>Cumulative Hazard Rating</h4>
-                            <p className='Data-Data'>{obj.ps_cum}</p>
-                        </div>
-
-                        <div className='Data-container' role='article' aria-label='Diameter'>
-                            <h4 className='Data-Heading'>Diameter</h4>
-                            <p className='Data-Data'>{obj.diameter} km</p>
-                        </div>
-
-                        <div className='Data-container' role='article' aria-label='Hyperbolic Excess Velocity'>
-                            <h4 className='Data-Heading'>Hyperbolic Excess Velocity</h4>
-                            <p className='Data-Data'>{obj.v_inf} km/s</p>
-                        </div>
-
-                        <div className='Data-container' role='article' aria-label='Range'>
-                            <h4 className='Data-Heading'>Range</h4>
-                            <p className='Data-Data'>Years: {obj.range}</p>
-                        </div>
-                    </section>
+                    {selectedCard?.id === obj.id && (
+                        <section
+                            className={`Card-Data ${selectedCard?.id === obj.id ? 'visible' : ''}`}
+                            data-id={obj.id}
+                            aria-label='Detailed card data'>
+                            {renderData('Cumulative Hazard Rating', obj.ps_cum)}
+                            {renderData('Diameter', `${obj.diameter} km`)}
+                            {renderData('Hyperbolic Excess Velocity', `${obj.v_inf} km/s`)}
+                            {renderData('Range', `Years: ${obj.range}`)}
+                        </section>
+                    )}
                 </article>
             ))}
         </>

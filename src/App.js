@@ -12,7 +12,8 @@ import useFilters from './hooks/usefilters';
 
 const App = () => {
     //TODO: Fix Card Titles - Large titles get cut off
-    //* Look into designing error.jsx/ErrorBundary.jsx/Loading.jsx/404.html further
+    //TODO: Look into designing error.jsx/ErrorBundary.jsx/Loading.jsx/404.html further
+    //TODO: Potentionally minimize loading by making a CDN
 
     const [loading, setLoading] = useState(true);
     const [errorMessage, setErrorMessage] = useState(null);
