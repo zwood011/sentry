@@ -12,6 +12,9 @@
   [headers.values]
     X-Frame-Options = "DENY"
     X-XSS-Protection = "1; mode=block"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains"
+    Content-Security-Policy = "default-src 'self'; style-src 'self' 'unsafe-inline';"
+    Access-Control-Allow-Origin = "*"
     X-Robots-Tag = "index, follow"
     Strict-Transport-Security = "max-age=31536000; includeSubDomains"
     X-Content-Type-Options = "nosniff"
@@ -20,7 +23,7 @@
   for = "/*.html"
   [headers.values]
     Content-Type = "text/html"
-  
+
 [[headers]]
   for = "/*.css"
   [headers.values]
@@ -35,3 +38,4 @@
   for = "/sitemap_index.xml"
   [headers.values]
     Content-Type = "application/xml"
+    X-Robots-Tag = "noindex, follow"
