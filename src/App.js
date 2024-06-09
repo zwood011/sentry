@@ -48,7 +48,7 @@ const App = () => {
                 setLoading(false);
             })
             .catch((error) => {
-                setErrorMessage(error);
+                setErrorMessage(error.message);
                 setLoading(false);
             });
     }, []);
