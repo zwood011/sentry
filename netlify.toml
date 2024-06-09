@@ -25,6 +25,11 @@
     Content-Type = "text/html"
 
 [[headers]]
+  for = "/*.css"
+    [headers.values]
+      Content-Type = "text/css"
+
+[[headers]]
   for = "/sitemap_index.xml"
   [headers.values]
     Content-Type = "application/xml"
