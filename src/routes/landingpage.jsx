@@ -57,33 +57,18 @@ const LandingPage = () => {
 
                 <main className='features' role='main'>
                     <section className='feature'>
-                        <h2>Misc </h2>
-                        <p>Google Analytics GA4</p>
-                        <p>Google Tag Manager</p>
-                        <p>cdnjs</p>
-                        <p>jsDelivr</p>
-                        <p>jQuery CDN</p>
-                        <p>core.js</p>
+                        <h2 className='featureTitle'>Interactive Cards</h2>
+                        <p className='featureDescription'>Visualize asteroid data in an intuitive card format.</p>
                     </section>
 
                     <section className='feature'>
-                        <h2>Main Libraries</h2>
-                        <p>React</p>
-                        <p>Emotion</p>
-                        <p>Bootstrap 5.3.3</p>
-                        <p>Express.js</p>
-                        <p>Popper 2.11.8</p>
-                        <p>jQuery UI 1.13.3</p>
+                        <h2 className='featureTitle'>Real-time Updates</h2>
+                        <p className='featureDescription'>Stay updated with the latest data from NASA's Sentry API.</p>
                     </section>
 
-                    <section className='ml'>
-                        <h2>Minor Libraries</h2>
-                        <p>React</p>
-                        <p>React Router 6</p>
-                        <p>core-js 3.37.1</p>
-                        <p>jQuery 3.2.1</p>
-                        <p>Open Graph</p>
-                        <p>GraphQL</p>
+                    <section className='feature'>
+                        <h2 className='featureTitle'>User-Friendly Interface</h2>
+                        <p className='featureDescription'>Easily navigate and explore the information.</p>
                     </section>
                 </main>
 
