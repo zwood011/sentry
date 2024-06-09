@@ -9,7 +9,7 @@ module.exports = {
     output: {
         filename: 'bundle.js',
         path: __dirname + '/dist',
-        publicPath: '/',
+        publicPath: '/public',
     },
     module: {
         rules: [
@@ -67,15 +67,9 @@ module.exports = {
                 minifyURLs: true,
             },
         }),
-        new CopyWebpackPlugin({
-            patterns: [
-                { from: 'public/', to: '.' },
-                { from: 'src/styles/index.css', to: '.' },
-            ],
-        }),
     ],
     devServer: {
         contentBase: path.join(__dirname, 'public'),
-        publicPath: '/',
+        publicPath: '/public',
     },
 };
