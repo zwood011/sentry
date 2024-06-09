@@ -29,3 +29,8 @@
   [headers.values]
     Content-Type = "application/xml"
     X-Robots-Tag = "noindex, follow"
+
+[[headers]]
+  for = "/*.css"
+  [headers.values]
+    Content-Type = "text/css"
