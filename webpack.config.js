@@ -76,7 +76,6 @@ module.exports = {
                 { from: './public/favicon-48.png', to: './' },
                 { from: './public/mstile-150.png', to: './' },
                 { from: './public/apple-touch-icon.png', to: './' },
-                { from: './styles/index.css', to: './' },
             ],
         }),
     ],
