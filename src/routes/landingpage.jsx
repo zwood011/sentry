@@ -30,15 +30,15 @@ const LandingPage = () => {
 
     return (
         <>
-            <div className='landing-container'>
-                <Helmet>
-                    <title>Sentry Grabber</title>
-                    <meta
-                        name='description'
-                        content='real-time asteroid data, NASA asteroid data, user-friendly asteroid tracker interface, intuitive asteroid card format, asteroid warning updates'
-                    />
-                </Helmet>
+            <Helmet>
+                <title>Sentry Grabber</title>
+                <meta
+                    name='description'
+                    content='real-time asteroid data, NASA asteroid data, user-friendly asteroid tracker interface, intuitive asteroid card format, asteroid warning updates'
+                />
+            </Helmet>
 
+            <div className='landing-container'>
                 <header className='landing-header'>
                     <div className='title'>
                         <AnimatedLetters text='Sentry Grabber' />
