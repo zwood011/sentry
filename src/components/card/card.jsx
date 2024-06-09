@@ -12,7 +12,7 @@ const Card = ({ data }) => {
         <>
             {data.map((obj) => (
                 <article
-                    className='Card'
+                    className={`Card ${selectedCard && selectedCard.id === obj.id ? 'selected' : ''}`}
                     key={obj.id}
                     onClick={() => handleClick(obj)}
                     aria-label={`Card for ${obj.fullname}`}>
@@ -50,6 +50,5 @@ const Card = ({ data }) => {
         </>
     );
 };
-
 
 export default Card;

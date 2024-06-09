@@ -22,7 +22,7 @@ const CardHandler = ({ objects, error, retryFetch }) => {
         );
 
     return (
-        <div className="cardhandler-container">
+        <div className='cardhandler-container'>
             <div className='Card-Holder' role='presentation' aria-label='Card container'>
                 <Card data={objects.slice(0, displayIndex)} className='container-fluid' aria-label='Loaded cards' />
             </div>

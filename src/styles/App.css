@@ -11,13 +11,9 @@ body {
 }
 
 body {
-    background: rgb(231, 220, 249);
-    background: -webkit-linear-gradient(135deg, rgb(231, 220, 249), rgb(210, 232, 243), rgb(193, 216, 252), rgb(233, 223, 248));
-    background: -o-linear-gradient(135deg, rgb(231, 220, 249), rgb(210, 232, 243), rgb(193, 216, 252), rgb(233, 223, 248));
-    background: -moz-linear-gradient(135deg, rgb(231, 220, 249), rgb(210, 232, 243), rgb(193, 216, 252), rgb(233, 223, 248));
     background: linear-gradient(135deg, rgb(231, 220, 249), rgb(210, 232, 243), rgb(193, 216, 252), rgb(233, 223, 248));
+
     background-attachment: fixed;
-    background-size: cover;
 }
 
 .app-header {
@@ -148,8 +144,9 @@ body {
     animation: pop-in 0.5s;
 }
 
-.Card:hover {
-    transform: scale(1.02);
+.Card.selected {
+    transform: scale(1.2);
+    transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease;
 }
 
 .Data-Data {
@@ -260,7 +257,7 @@ body {
     color: #504f4f;
 }
 
-.sub-text{
+.sub-text {
     padding: 1rem;
 }
 
@@ -389,7 +386,7 @@ body {
         width: 50vh;
     }
 
-    .Card{
+    .Card {
         padding: 2vw, 1vw, 2vw, 1vw;
         width: 100%;
     }
