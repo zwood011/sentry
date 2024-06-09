@@ -118,7 +118,7 @@ const App = () => {
     return (
         <>
             <Helmet>
-                <title>Card Fetcher | Earth Impact Data</title>
+                <title>Card Fetcher | Sentry Grabber</title>
                 <meta
                     name='description'
                     data-rh='true'
