@@ -132,7 +132,7 @@ body {
     color: rgba(46, 48, 49, 0.821);
     font-size: 1.4em; /* Adjusted font size */
     cursor: pointer;
-    padding: 1em; /* Reduced padding */
+    padding: 2rem; /* Reduced padding */
     max-width: 20rem; /* Reduced max-width */
     -webkit-user-select: none;
     user-select: none;
@@ -223,7 +223,6 @@ time {
         transform: rotate(360deg);
     }
 }
-
 @media only screen and (min-width: 1920px) {
     .Card-Holder {
         grid-template-columns: repeat(6, 1fr);
