@@ -18,7 +18,6 @@ body {
 
 .app-header {
     display: flex;
-    margin: 1rem 1rem 0 1rem;
     padding: 1rem;
     align-items: center;
     justify-content: center;
@@ -26,8 +25,12 @@ body {
     animation: slide-in 0.5s;
 }
 
-.landing-header {
+.app-nav-item {
     margin: 1rem;
+}
+
+.landing-header {
+    margin-top: 2rem;
 }
 
 .App {
@@ -43,8 +46,6 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     gap: 1rem;
-    margin: 0.5rem;
-    padding: 1rem;
     color: rgb(77, 77, 77);
     width: 100%;
     align-items: center;
@@ -54,7 +55,7 @@ body {
 .Filter-Input {
     border-radius: 8px;
     border: none;
-    width: 15rem;
+    width: auto;
     background: rgba(255, 255, 255, 0.656);
 }
 
@@ -117,8 +118,8 @@ body {
 .Card-Holder {
     align-items: flex-start; /* Added to prevent cards from stretching */
     display: grid;
-    margin: 0.5rem;
-    padding: 0.5rem;
+    margin: 1rem;
+    padding: 1rem;
     grid-template-columns: repeat(3, 1fr); /* Increase number of columns for better layout */
     justify-content: center;
     gap: 4rem;
@@ -384,70 +385,5 @@ body {
 @media only screen and (min-width: 600px) {
     .No-Results {
         width: 50vw;
-    }
-}
-
-/* Landing Page Media Queries */
-
-/* Small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
-   .landing-container {
-        padding: 1rem;
-    }
-
-   .title,.subtitle,.featureTitle {
-        font-size: 1.5em; /* Smaller font size for mobile */
-    }
-
-   .feature {
-        flex-basis: 100%; /* Full width on small screens */
-        padding: 1rem;
-    }
-
-   .Card {
-        width: 100%;
-        height: auto;
-    }
-}
-
-/* Medium devices (tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
-   .landing-container {
-        padding: 2rem;
-    }
-
-   .title,.subtitle,.featureTitle {
-        font-size: 2em; /* Larger font size for tablets */
-    }
-
-   .feature {
-        flex-basis: 50%; /* Half width on medium screens */
-        padding: 2rem;
-    }
-
-   .Card {
-        width: 50%;
-        height: auto;
-    }
-}
-
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {
-   .landing-container {
-        padding: 3rem;
-    }
-
-   .title,.subtitle,.featureTitle {
-        font-size: 2.5em; /* Even larger font size for laptops/desktops */
-    }
-
-   .feature {
-        flex-basis: 30%; /* Third width on large screens */
-        padding: 3rem;
-    }
-
-   .Card {
-        width: 30%;
-        height: auto;
     }
 }

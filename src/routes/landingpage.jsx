@@ -30,15 +30,14 @@ const AnimatedLetters = ({ text }) => {
 const LandingPage = () => {
     const date = new Date().getFullYear();
 
-    // Fades in the feature class
     useEffect(() => {
         const features = document.querySelectorAll('.feature');
-        features.forEach((feature, index) => {
+        features.forEach((feature) => {
             feature.style.transition = 'opacity .8s ease-in-out';
             feature.style.opacity = 0;
             setTimeout(() => {
                 feature.style.opacity = 1;
-            }, index * 100);
+            }, 100);
         });
 
         const subtitle = document.querySelector('.subtitle');
@@ -73,9 +72,11 @@ const LandingPage = () => {
                         This site is currently hosted for development testing. This project is in early stages and
                         everything within this site is subject to change.
                     </p>
-                    <Link to='/sentry' className='Button-Landing' aria-label='View Project'>
-                        View Project
-                    </Link>
+                    <nav>
+                        <Link to='/sentry' className='Button-Landing' aria-label='View Project'>
+                            View Project
+                        </Link>
+                    </nav>
                 </header>
 
                 <main className='features' role='main'>

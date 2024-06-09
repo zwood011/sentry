@@ -14,14 +14,6 @@ const Filters = ({ onFilterName, onFilterSize, onFilterOldest, onFilterNewest })
             <Link to='/' className='btn btn-transparent header-button' aria-label='Home page'>
                 Home
             </Link>
-            <input
-                type='text'
-                placeholder='Filter by name'
-                value={name}
-                onChange={handleNameChange}
-                aria-label='Filter objects by name'
-                className='Filter-Input form-control'
-            />
 
             <div className='dropdown'>
                 <button
@@ -45,6 +37,14 @@ const Filters = ({ onFilterName, onFilterSize, onFilterOldest, onFilterNewest })
                     <button onClick={onFilterNewest} className='dropdown-item' aria-label='Filter by newest'>
                         Newest
                     </button>
+                    <input
+                        type='text'
+                        placeholder='Filter by name'
+                        value={name}
+                        onChange={handleNameChange}
+                        aria-label='Filter objects by name'
+                        className='Filter-Input form-control'
+                    />
                 </div>
             </div>
         </div>

@@ -71,8 +71,18 @@ const App = () => {
                 {!loading && (
                     <>
                         <header className='app-header'>
-                            <h1>Earth Impact Data</h1>
-                            <p>
+                            <nav>
+                                <Filters
+                                    className='app-nav-item'
+                                    onFilterName={onFilterName}
+                                    onFilterSize={onFilterSize}
+                                    onFilterOldest={onFilterOldest}
+                                    onFilterNewest={onFilterNewest}
+                                    aria-label='Filtering options for Earth impact data'
+                                />
+                            </nav>
+                            <h1 className='app-nav-item'>Earth Impact Data</h1>
+                            <p className='app-nav-item'>
                                 Explore comprehensive data brought to you by the{' '}
                                 <Link
                                     className='Hyperlink'
@@ -82,15 +92,6 @@ const App = () => {
                                 </Link>{' '}
                                 impact monitoring system
                             </p>
-                            <nav>
-                                <Filters
-                                    onFilterName={onFilterName}
-                                    onFilterSize={onFilterSize}
-                                    onFilterOldest={onFilterOldest}
-                                    onFilterNewest={onFilterNewest}
-                                    aria-label='Filtering options for Earth impact data'
-                                />
-                            </nav>
                         </header>
 
                         <main>
