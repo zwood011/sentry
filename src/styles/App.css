@@ -139,8 +139,8 @@ body {
 .Card {
     color: rgba(46, 48, 49, 0.821);
     font-size: 1.4em; /* Adjusted font size */
-    cursor: pointer;
-    padding: 1em; /* Reduced padding */
+    cursor: pointser;
+    padding: 2rem; /* Reduced padding */
     max-width: 20rem; /* Reduced max-width */
     -webkit-user-select: none;
     user-select: none;
