@@ -1,6 +1,7 @@
 const TerserPlugin = require('terser-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+
 module.exports = {
     mode: 'production',
     entry: './src/index.js',
