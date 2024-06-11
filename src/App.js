@@ -11,59 +11,6 @@ import Loading from './components/loading';
 import CardHandler from './components/card/cardhandler';
 import useFilters from './hooks/usefilters';
 
-const slideInFromTop = keyframes`
-  0% {
-    transform: translateY(-100%);
-    opacity: 0;
-  }
-  20% {
-    opacity: 0.2;
-  }
-  40% {
-    opacity: 0.4;
-  }
-  60% {
-    opacity: 0.6;
-  }
-  80% {
-    opacity: 0.8;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-`;
-
-const slideInFromBottom = keyframes`
-  0% {
-    transform: translateY(100%);
-    opacity: 0;
-  }
-  20% {
-    opacity: 0;
-  }
-  40% {
-    opacity: 0;
-  }
-  60% {
-    opacity: .4;
-  }
-  80% {
-    opacity: 0.5;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-`;
-const headerAnimation = css`
-    animation: ${slideInFromTop} 0.5s ease;
-`;
-
-const mainAnimation = css`
-    animation: ${slideInFromBottom} 0.8s ease;
-`;
-
 const App = () => {
     //TODO: Fix Card Titles - Large titles get cut off
     //TODO: Fix background visual error, especially bad on mobile devices
@@ -126,33 +73,37 @@ const App = () => {
                 />
             </Helmet>
 
-            <div className='App' role='main'>
+            <div className='App container-fluid' role='main'>
                 {!loading && (
                     <>
-                        <header className={headerAnimation}>
-                            <div className='app-header'>
-                                <nav>
-                                    <Filters
-                                        className='app-nav-item'
-                                        onFilterName={onFilterName}
-                                        onFilterSize={onFilterSize}
-                                        onFilterOldest={onFilterOldest}
-                                        onFilterNewest={onFilterNewest}
-                                        aria-label='Filtering options for Earth impact data'
-                                    />
-                                </nav>
-                                <h1 className='app-nav-item'>Earth Impact Data</h1>
-                                <p className='app-nav-item'>
-                                    Explore comprehensive data brought to you by the{' '}
-                                    <Link
-                                        className='Hyperlink'
-                                        to='https://cneos.jpl.nasa.gov/sentry/'
-                                        aria-label='CNEOS impact monitoring system'>
-                                        CNEOS
-                                    </Link>{' '}
-                                    impact monitoring system
-                                </p>
-                            </div>
+                        <header className={`${headerAnimation} app-header container-fluid`}>
+                            <nav>
+                                <Filters
+                                    className='app-nav-item'
+                                    onFilterName={onFilterName}
+                                    onFilterSize={onFilterSize}
+                                    onFilterOldest={onFilterOldest}
+                                    onFilterNewest={onFilterNewest}
+                                    aria-label='Filtering options for Earth impact data'
+                                />
+                            </nav>
+                            <h1 className='app-nav-item app-h1'>Earth Impact Data</h1>
+                            <h2 className='app-nav-item app-h2'>
+                                Explore comprehensive data brought to you by{' '}
+                                <Link
+                                    className='Hyperlink'
+                                    to='https://cneos.jpl.nasa.gov/sentry/'
+                                    aria-label='CNEOS impact monitoring system'>
+                                    CNEOS
+                                </Link>
+                            </h2>
+                            <p className='app-sub-text'>
+                                Have any ideas regarding features or design? Please do not hesitate to share your ideas
+                                through my{' '}
+                                <Link className='Hyperlink' to='https://github.com/zwood011/neo-nasa-api'>
+                                    e-mail
+                                </Link>
+                            </p>
                         </header>
 
                         <main className={mainAnimation}>
@@ -166,7 +117,7 @@ const App = () => {
                             />
                         </main>
 
-                        <footer className='Footer-Sentry'>
+                        <footer className='Footer-Sentry container-fluid'>
                             <p className='footerText'>© {date} Zachary Wood. All rights reserved.</p>
                             <div className='Page-Description' aria-label='Page Description'>
                                 <p className='Description-Text'>
@@ -189,3 +140,57 @@ const App = () => {
 };
 
 export default App;
+
+//* Emotion CSS Animations
+const slideInFromTop = keyframes`
+    0% {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    20% {
+      opacity: 0.2;
+    }
+    40% {
+      opacity: 0.4;
+    }
+    60% {
+      opacity: 0.6;
+    }
+    80% {
+      opacity: 0.8;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  `;
+
+const slideInFromBottom = keyframes`
+    0% {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    20% {
+      opacity: 0;
+    }
+    40% {
+      opacity: 0;
+    }
+    60% {
+      opacity: .4;
+    }
+    80% {
+      opacity: 0.5;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  `;
+const headerAnimation = css`
+    animation: ${slideInFromTop} 0.5s ease;
+`;
+
+const mainAnimation = css`
+    animation: ${slideInFromBottom} 0.8s ease;
+`;

@@ -38,12 +38,12 @@ const LandingPage = () => {
                 />
             </Helmet>
 
-            <div className='landing-container'>
-                <header className='landing-header'>
+            <div className='landing-container container-fluid'>
+                <header className='landing-header container-fluid'>
                     <div className='title'>
                         <AnimatedLetters text='Sentry Grabber' />
                     </div>
-                    <p className='subtitle'>Explore potentially hazardous asteroids data with ease</p>
+                    <h2 className='subtitle'>Explore potentially hazardous asteroids data with ease</h2>
                     <p className='sub-text'>
                         This site is currently hosted for development testing. This project is in early stages and
                         everything within this site is subject to change.

@@ -19,7 +19,7 @@ const Card = ({ data }) => {
         <>
             {data.map((obj) => (
                 <article
-                    className={`Card ${selectedCard?.id === obj.id ? 'selected' : ''}`}
+                    className={`Card ${selectedCard?.id === obj.id ? 'selected' : ''} `}
                     key={obj.id}
                     onClick={() => handleClick(obj)}
                     aria-label={`Card for ${obj.fullname}`}>
