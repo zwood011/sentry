@@ -15,33 +15,21 @@ body {
 }
 
 body {
-    background-image: url('/src/assets/background.jpg');
-    background-size: cover;
-    background-position: center;
-    background-color: rgba(253, 253, 253, 0.555);
-    background-blend-mode: overlay;
+    background: linear-gradient(135deg, rgb(231, 220, 249), rgb(210, 232, 243), rgb(193, 216, 252), rgb(233, 223, 248));
+    background-attachment: fixed;
 }
 
-.app-header{
-    margin-bottom: 2rem;
+.app-header {
+    display: flex;
     padding: 1rem;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 1rem;
 }
 
 .header-button {
-    margin-top: 1rem;
-    font-size: 1.4rem;
-}
-
-.app-h1 {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-    color: #333;
-}
-
-.app-h2 {
-    font-size: 1.2rem;
-    color: #4a4a4a;
-    margin-bottom: 1.5rem;
+    padding: 1rem;
 }
 
 .app-nav-item {
@@ -156,7 +144,7 @@ body {
     transition: transform 0.1s ease-in-out;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Reduced box shadow */
     border-radius: 8px; /* Reduced border radius */
-    background: #ffffff3e;
+    background: #ffffff26;
     animation: pop-in 0.5s;
 }
 
@@ -227,7 +215,7 @@ time {
 }
 
 .Footer-Sentry {
-    margin: 2rem;
+    margin-top: 2rem;
 }
 
 .footerText {
