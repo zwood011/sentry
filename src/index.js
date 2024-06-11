@@ -1,3 +1,15 @@
+/**
+ * The main entry point for the React application.
+ *
+ * This file sets up the React Router and renders the application with the necessary providers and error handling.
+ *
+ * The main routes are defined in the `routes` array, which maps paths to their corresponding components.
+ *
+ * The `AppRouter` component wraps the routes and renders them within the `Router` component from `react-router-dom`.
+ *
+ * The application is then rendered using `createRoot` from `react-dom/client`, with the `HelmetProvider` and `ErrorBoundary` components providing additional functionality.
+ */
+
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';

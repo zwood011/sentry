@@ -31,9 +31,12 @@ const ErrorFallback = ({ error }) => (
             height: '100vh',
         }}>
         <div>
-            <h2>An error has occurred☹️</h2>
-            <p>Error message: {error.message}</p>
-            {/* You can add more error details here */}
+            <h1>An error has been detected!</h1>
+            <h3>Error: {error.message}</h3>
+            <p>
+                The developer has been notified of this issue and will provide a fix as soon as possible. Strong
+                apologies for any inconvenience caused.
+            </p>
         </div>
     </div>
 );

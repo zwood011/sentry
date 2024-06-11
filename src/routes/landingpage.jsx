@@ -1,3 +1,25 @@
+/**
+ * LandingPage Component
+ *
+ * The `LandingPage` component serves as the landing page for the application, using the root route directory (/)
+ *
+ * @component
+ *
+ * @returns {JSX.Element} The rendered UI of the landing page, provides navigation to App.js (/sentry)
+ *
+ * @example
+ * return (
+ *   <LandingPage />
+ * );
+ *
+ * @dependencies
+ * - React hooks: `useState`, `useEffect`
+ * - React Router: `Link` from `react-router-dom`
+ * - Styling: CSS from '../styles/Landing.css'
+ * - SEO: `Helmet` from 'react-helmet-async'
+ * - Custom Component: `AnimatedLetters` for animating the header text
+ */
+
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/Landing.css';
@@ -92,7 +114,7 @@ const LandingPage = () => {
 
 export default LandingPage;
 
-//* Not worth creating a separate file so I shoved it down here
+// Only used with one element, not worth creating a separate file
 const AnimatedLetters = ({ text }) => {
     const [letters, setLetters] = useState([]);
 

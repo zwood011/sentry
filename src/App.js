@@ -1,3 +1,56 @@
+/**
+ * App Component
+ *
+ * The `App` component serves as the main interface for the application. It fetches asteroid data from the NASA API,
+ * manages application state, handles animations, and renders the primary sections of the /sentry route, including
+ * the header, main content, and footer.
+ *
+ * API Endpoint (https://neo-nasa.netlify.app/.netlify/functions/index) for fetching asteroid data from the CNEOS Impact Monitoring System ,by NASA.
+ *
+ * @component
+ *
+ * @returns {JSX.Element} The rendered UI of the application, featuring the main architecture and components for the /sentry route.
+ *
+ * @description
+ * The `App` component encompasses the following functionalities:
+ *
+ * ### Data Fetching
+ * - **Fetches asteroid data**: Utilizes `axios` to request data from the NASA API endpoint, managing loading and error states.
+ *
+ * ### Defines objects in useFilters.jsx
+ * - **Filters asteroid data**: Employs a custom hook, `useFilters`, to send the fetched data to useFilters.jsx to handle the filtering logic, which gets visually manipulated by Filters.jsx
+ *
+ * ### Dynamic SEO and Metadata
+ * - **Improves SEO**: Utilizes `Helmet` to set the document title and meta descriptions, boosting SEO and enhancing user engagement.
+ *
+ * ### State Management
+ * - **Loading**: Indicates if the application is loading data.
+ * - **Error Message**: Holds any error messages encountered during data fetches, passed to `Error` component for user-friendly display.
+ * - **Asteroid Data**: Stores the original asteroid data fetched from the NASA API.
+ *
+ * @example Basic component rendering in React
+ * return (
+ *   <App />
+ * );
+ *
+ * @state {boolean} loading - Indicates the loading state during data fetches.
+ * @state {string|null} errorMessage - Holds any error messages during data fetching, sent to the `Error` component.
+ * @state {Array<Object>} objects - Stores asteroid data fetched from the NASA API.
+ *
+ * @function fetchData - Fetches asteroid data from the API, updates state with fetched data, and manages loading and error states.
+ *
+ * @hook useEffect - Triggers `fetchData` on component mount and when the function changes.
+ *
+ * @dependencies
+ * - React hooks: `useState`, `useEffect`, `useCallback`
+ * - Routing: `Link` from `react-router-dom`
+ * - HTTP Requests: `axios` for API calls
+ * - SEO: `Helmet` for setting meta tags and titles
+ * - Styling: `css` and `keyframes` from `@emotion/css`
+ * - Custom Components: `Filters`, `Loading`, `CardHandler`
+ * - Custom Hooks: `useFilters` for filtering asteroid data
+ */
+
 import React, { useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
@@ -11,63 +64,8 @@ import Loading from './components/loading';
 import CardHandler from './components/card/cardhandler';
 import useFilters from './hooks/usefilters';
 
-const slideInFromTop = keyframes`
-  0% {
-    transform: translateY(-100%);
-    opacity: 0;
-  }
-  20% {
-    opacity: 0.2;
-  }
-  40% {
-    opacity: 0.4;
-  }
-  60% {
-    opacity: 0.6;
-  }
-  80% {
-    opacity: 0.8;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-`;
-
-const slideInFromBottom = keyframes`
-  0% {
-    transform: translateY(100%);
-    opacity: 0;
-  }
-  20% {
-    opacity: 0;
-  }
-  40% {
-    opacity: 0;
-  }
-  60% {
-    opacity: .4;
-  }
-  80% {
-    opacity: 0.5;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-`;
-const headerAnimation = css`
-    animation: ${slideInFromTop} 0.5s ease;
-`;
-
-const mainAnimation = css`
-    animation: ${slideInFromBottom} 0.8s ease;
-`;
-
 const App = () => {
-    //TODO: Fix Card Titles - Large titles get cut off
-    //TODO: Fix background visual error, do this by removing background from body and diversify it
-    //TODO: Re-add animation for Card-Data
+    //TODO: Fix background visual error, remove background from the body tag
     //TODO: Look into designing error.jsx/ErrorBundary.jsx/Loading.jsx/404.html further
     //TODO: Potentionally minimize loading by making a CDN
 
@@ -189,3 +187,57 @@ const App = () => {
 };
 
 export default App;
+
+// Emotion animations, placed down here for visual convenience
+const slideInFromTop = keyframes`
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.2;
+  }
+  40% {
+    opacity: 0.4;
+  }
+  60% {
+    opacity: 0.6;
+  }
+  80% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+`;
+
+const slideInFromBottom = keyframes`
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 0;
+  }
+  60% {
+    opacity: .4;
+  }
+  80% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+`;
+const headerAnimation = css`
+    animation: ${slideInFromTop} 0.5s ease;
+`;
+
+const mainAnimation = css`
+    animation: ${slideInFromBottom} 0.8s ease;
+`;
