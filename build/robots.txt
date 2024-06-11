@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+
+Sitemap: https://neo-nasa.netlify.app/sitemap_index.xml
