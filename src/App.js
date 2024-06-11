@@ -24,7 +24,7 @@
  * ### Dynamic SEO and Metadata
  * - **Improves SEO**: Utilizes `Helmet` to set the document title and meta descriptions, boosting SEO and enhancing user engagement.
  *
- * ### State Management
+ * ### State Managements
  * - **Loading**: Indicates if the application is loading data.
  * - **Error Message**: Holds any error messages encountered during data fetches, passed to `Error` component for user-friendly display.
  * - **Asteroid Data**: Stores the original asteroid data fetched from the NASA API.
@@ -35,7 +35,7 @@
  * );
  *
  * @state {boolean} loading - Indicates the loading state during data fetches.
- * @state {string|null} errorMessage - Holds any error messages during data fetching and sends it to the `Error.jsx` component for
+ * @state {string|null} errorMessage - Holds any error messages during data fetching and sends it to the `Error.jsx` component for user-friendly rendering.
  * @state {Array<Object>} objects - Stores asteroid data fetched from the NASA CNEOS API.
  *
  * @function fetchData - Fetches asteroid data from the API, updates state with fetched data, and manages loading and error states.
