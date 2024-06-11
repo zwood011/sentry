@@ -17,8 +17,9 @@
  * ### Data Fetching
  * - **Fetches asteroid data**: Utilizes `axios` to request data from the NASA API endpoint, managing loading and error states.
  *
- * ### Defines objects in useFilters.jsx
- * - **Filters asteroid data**: Employs a custom hook, `useFilters`, to send the fetched data to useFilters.jsx to handle the filtering logic, which gets visually manipulated by Filters.jsx
+ * ### Data Transfering
+ * - Employs a custom hook, `useFilters.jsx`, to send the fetched data to useFilters.jsx to handle the filtering logic, which gets visually manipulated by Filters.jsx
+ *   Sends data to 'cardhandler.jsx' to handle the card rendering that displays the data.
  *
  * ### Dynamic SEO and Metadata
  * - **Improves SEO**: Utilizes `Helmet` to set the document title and meta descriptions, boosting SEO and enhancing user engagement.
@@ -34,12 +35,12 @@
  * );
  *
  * @state {boolean} loading - Indicates the loading state during data fetches.
- * @state {string|null} errorMessage - Holds any error messages during data fetching, sent to the `Error` component.
- * @state {Array<Object>} objects - Stores asteroid data fetched from the NASA API.
+ * @state {string|null} errorMessage - Holds any error messages during data fetching and sends it to the `Error.jsx` component for
+ * @state {Array<Object>} objects - Stores asteroid data fetched from the NASA CNEOS API.
  *
  * @function fetchData - Fetches asteroid data from the API, updates state with fetched data, and manages loading and error states.
  *
- * @hook useEffect - Triggers `fetchData` on component mount and when the function changes.
+ * @hook useEffect - Triggers `fetchData` on component mount, when function changes, or when the retry button is clicked in the 'Error.jsx' component.
  *
  * @dependencies
  * - React hooks: `useState`, `useEffect`, `useCallback`
