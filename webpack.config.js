@@ -4,9 +4,13 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     mode: 'production',
-    entry: './src/index.js',
+    entry: {
+        main: './src/index.js',
+        vendor: ['react', 'react-dom'],
+        style: './src/styles/App.css',
+    },
     output: {
-        filename: 'bundle.js',
+        filename: '[name].bundle.js',
         path: __dirname + '/dist',
         publicPath: '/',
     },
@@ -32,11 +36,16 @@ module.exports = {
             },
         ],
     },
-
     resolve: {
         extensions: ['.js', '.jsx'],
     },
+    performance: {
+        hints: false,
+        maxEntrypointSize: 512000,
+        maxAssetSize: 512000,
+    },
     optimization: {
+        minimize: true,
         minimizer: [
             new TerserPlugin({
                 terserOptions: {
@@ -48,7 +57,22 @@ module.exports = {
                 extractComments: false,
             }),
         ],
+        splitChunks: {
+            cacheGroups: {
+                vendor: {
+                    test: /[\\/]node_modules[\\/]/,
+                    chunks: 'all',
+                },
+                styles: {
+                    name: 'styles',
+                    test: /\.css$/,
+                    chunks: 'all',
+                    enforce: true,
+                },
+            },
+        },
     },
+
     plugins: [
         new HtmlWebpackPlugin({
             template: './public/index.html',

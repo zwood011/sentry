@@ -1,57 +1,3 @@
-/**
- * App Component
- *
- * The `App` component serves as the main interface for the application. It fetches asteroid data from the NASA API,
- * manages application state, handles animations, and renders the primary sections of the /sentry route, including
- * the header, main content, and footer.
- *
- * API Endpoint (https://neo-nasa.netlify.app/.netlify/functions/index) for fetching asteroid data from the CNEOS Impact Monitoring System by NASA.
- *
- * @component
- *
- * @returns {JSX.Element} The rendered UI of the application, featuring the main architecture (header, main (cardhandler.jsx), and footer)
- *
- * @description
- * The `App` component encompasses the following functionalities:
- *
- * ### Data Fetching
- * - **Fetches asteroid data**: Utilizes `axios` to request data from the NASA API endpoint, managing loading and error states.
- *
- * ### Data Transfering
- * - Employs a custom hook, `useFilters.jsx`, to send the fetched data to useFilters.jsx to handle the filtering logic, which gets visually manipulated by Filters.jsx
- *   Sends data to 'cardhandler.jsx' to handle the card rendering that displays the data.
- *
- * ### Dynamic SEO and Metadata
- * - **Improves SEO**: Utilizes `Helmet` to set the document title and meta descriptions, boosting SEO and enhancing user engagement.
- *
- * ### State Managements
- * - **Loading**: Indicates if the application is loading data.
- * - **Error Message**: Holds any error messages encountered during data fetches, passed to `Error` component for user-friendly display.
- * - **Asteroid Data**: Stores the original asteroid data fetched from the NASA API.
- *
- * @example Basic component rendering in React
- * return (
- *   <App />
- * );
- *
- * @state {boolean} loading - Indicates the loading state during data fetches.
- * @state {string|null} errorMessage - Holds any error messages during data fetching and sends it to the `Error.jsx` component for user-friendly rendering.
- * @state {Array<Object>} objects - Stores asteroid data fetched from the NASA CNEOS API.
- *
- * @function fetchData - Fetches asteroid data from the API, updates state with fetched data, and manages loading and error states.
- *
- * @hook useEffect - Triggers `fetchData` on component mount, when function changes, or when the retry button is clicked in the 'Error.jsx' component.
- *
- * @dependencies
- * - React hooks: `useState`, `useEffect`, `useCallback`
- * - Routing: `Link` from `react-router-dom`
- * - HTTP Requests: `axios` for API calls
- * - SEO: `Helmet` for setting meta tags and titles
- * - Styling: `css` and `keyframes` from `@emotion/css`
- * - Custom Components: `Filters`, `Loading`, `CardHandler`
- * - Custom Hooks: `useFilters` for filtering asteroid data
- */
-
 import React, { useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
@@ -60,10 +6,11 @@ import { css, keyframes } from '@emotion/css';
 
 import './styles/App.css';
 
-import Filters from './components/filters';
+import useFilters from './hooks/usefilters';
 import Loading from './components/loading';
 import CardHandler from './components/card/cardhandler';
-import useFilters from './hooks/usefilters';
+
+const Filters = React.lazy(() => import('./components/filters'));
 
 const App = () => {
     //TODO: Fix background visual error, remove background from the body tag

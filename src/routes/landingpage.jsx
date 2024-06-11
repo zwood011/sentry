@@ -1,26 +1,3 @@
-/**
- * LandingPage Component
- *
- * The `LandingPage` component serves as the landing page for the application, using the root route directory (/)
- * It provides basic page rendering and navigation to the main application (/sentry).
- *
- * @component
- *
- * @returns {JSX.Element} The rendered UI of the landing page
- *
- * @example
- * return (
- *   <LandingPage />
- * );
- *
- * @dependencies
- * - React hooks: `useState`, `useEffect`
- * - React Router: `Link` from `react-router-dom`
- * - Styling: CSS from '../styles/Landing.css'
- * - SEO: `Helmet` from 'react-helmet-async'
- * - Custom Component: `AnimatedLetters` for animating the header text
- */
-
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/Landing.css';

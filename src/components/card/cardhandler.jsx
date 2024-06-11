@@ -1,48 +1,7 @@
-/**
- * CardHandler Component
- *
- * The `CardHandler` component manages the display of asteroid cards based on the data received from the parent component. It handles pagination, error states, and loading indicators to provide a seamless user experience.
- *
- * @component
- *
- * @param {Array<Object>} objects - An array of asteroid objects fetched from the NASA API.
- * @param {string|null} errorMessage - An error message indicating any issues encountered during data fetching.
- * @param {boolean} isLoading - Indicates whether data is currently being fetched.
- * @param {Function} retryFetch - A callback function to retry fetching data in case of an error.
- *
- * @returns {JSX.Element} The rendered UI displaying asteroid cards, loading indicators, or error messages.
- *
- * @description
- * The `CardHandler` component encompasses the following functionalities:
- *
- * ### Displaying Asteroid Cards
- * - **Pagination**: Controls the display of asteroid cards, allowing users to load more cards as needed.
- * - **Error Handling**: Renders an error message if data fetching fails, providing users with an option to retry.
- * - **Loading Indicator**: Displays a loading indicator while data is being fetched, enhancing user experience.
- *
- * @example
- * return (
- *   <CardHandler
- *     objects={asteroidData}
- *     errorMessage={error}
- *     isLoading={isLoading}
- *     retryFetch={fetchData}
- *   />
- * );
- *
- * @state {number} displayIndex - Tracks the index of the last displayed asteroid card for pagination.
- *
- * @function handleLoadMore - Increases the display index to load more asteroid cards when the "Show More" button is clicked.
- *
- * @dependencies
- * - React hooks: `useState`
- * - Custom Components: `Card`, `Error`
- */
-
 import React, { useState } from 'react';
 import Card from './card';
-import Image from '../../assets/sad.jpg';
 import Error from '../error';
+import imageCompression from 'browser-image-compression'; // Import the package
 
 const CardHandler = ({ objects, errorMessage, isLoading, retryFetch }) => {
     const [displayIndex, setDisplayIndex] = useState(9); // Initially display 9 cards
@@ -57,13 +16,29 @@ const CardHandler = ({ objects, errorMessage, isLoading, retryFetch }) => {
         return <Error message={sendMessage} retryFetch={retryFetch} />;
     }
 
+    // Browser Image Compression used with the object.length & isLoading conditional rendering
     if (!isLoading && objects.length === 0) {
-        return (
-            <div className='No-Results text-center' aria-live='polite' aria-atomic='true'>
-                <h1>No Results</h1>
-                <img src={Image} className='img-fluid' alt='A very sad person' />
-            </div>
-        );
+        const compressImage = async (image) => {
+            const compressedImage = await imageCompression(image, {
+                maxSizeMB: 1,
+                maxWidthOrHeight: 1000,
+            });
+            return compressedImage;
+        };
+
+        compressImage(Image)
+            .then(compressedImage => {
+                const compressedImageUrl = URL.createObjectURL(compressedImage);
+                return (
+                    <div className='No-Results text-center' aria-live='polite' aria-atomic='true'>
+                        <h1>No Results</h1>
+                        <img src={compressedImageUrl} className='img-fluid' alt='A very sad person' />
+                    </div>
+                );
+            })
+            .catch(() => {
+                return null; // Return default image if this fails
+            });
     }
 
     return (
