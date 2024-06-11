@@ -5,11 +5,11 @@
  * manages application state, handles animations, and renders the primary sections of the /sentry route, including
  * the header, main content, and footer.
  *
- * API Endpoint (https://neo-nasa.netlify.app/.netlify/functions/index) for fetching asteroid data from the CNEOS Impact Monitoring System ,by NASA.
+ * API Endpoint (https://neo-nasa.netlify.app/.netlify/functions/index) for fetching asteroid data from the CNEOS Impact Monitoring System by NASA.
  *
  * @component
  *
- * @returns {JSX.Element} The rendered UI of the application, featuring the main architecture and components for the /sentry route.
+ * @returns {JSX.Element} The rendered UI of the application, featuring the main architecture (header, main (cardhandler.jsx), and footer)
  *
  * @description
  * The `App` component encompasses the following functionalities:

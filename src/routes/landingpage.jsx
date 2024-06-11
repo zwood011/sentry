@@ -2,10 +2,11 @@
  * LandingPage Component
  *
  * The `LandingPage` component serves as the landing page for the application, using the root route directory (/)
+ * It provides basic page rendering and navigation to the main application (/sentry).
  *
  * @component
  *
- * @returns {JSX.Element} The rendered UI of the landing page, provides navigation to App.js (/sentry)
+ * @returns {JSX.Element} The rendered UI of the landing page
  *
  * @example
  * return (
