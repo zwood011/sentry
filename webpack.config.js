@@ -1,7 +1,8 @@
 const TerserPlugin = require('terser-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+/* const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+use at the bottom of plugins: new BundleAnalyzerPlugin(), */
 
 module.exports = {
     mode: 'production',
@@ -35,6 +36,21 @@ module.exports = {
             {
                 test: /\.(png|jpe?g|gif)$/i,
                 type: 'asset/resource',
+            },
+            {
+                test: /\.(png|jpg|webp|gif|svg|mp4)$/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: '[path][name].[ext]?[hash]',
+                            context: 'myApp',
+                            publicPath: '/myApp',
+                            useRelativePath: true,
+                            emitFile: false,
+                        },
+                    },
+                ],
             },
         ],
     },
@@ -119,7 +135,6 @@ module.exports = {
                 { from: './public/apple-touch-icon.png', to: './' },
             ],
         }),
-        new BundleAnalyzerPlugin(),
     ],
     devServer: {
         historyApiFallback: true,
