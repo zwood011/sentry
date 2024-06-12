@@ -90,6 +90,21 @@ module.exports = {
                 minifyCSS: true,
                 minifyURLs: true,
             },
+            // Use dynamic import() to import critical package
+            postProcess: (content) => {
+                return import('critical').then((critical) => {
+                    return critical
+                        .generate({
+                            base: 'dist/',
+                            html: content,
+                            inline: true,
+                            width: 1300,
+                            height: 900,
+                            minify: true,
+                        })
+                        .then((output) => output);
+                });
+            },
         }),
         new CopyWebpackPlugin({
             patterns: [
