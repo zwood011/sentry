@@ -4,11 +4,12 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 
 import ErrorBoundary from './components/ErrorBoundary';
+import LandingPage from './routes/landingpage'; // Import the landing page component directly
 
 const routes = [
     {
         path: '/',
-        element: import('./routes/landingpage'),
+        element: <LandingPage />,
     },
     {
         path: 'sentry',
@@ -16,10 +17,6 @@ const routes = [
     },
 ];
 
-/* The primary purpose for Suspense is to suspend the rendering of a component tree until some
- condition is met, like lazy loading or data fetching. When a component wrapped in Suspense,
- React tries to render and encounters a lazy-loaded component that
- hasn't loaded yet. React will "suspend" the rendering of that component and its subtree." */
 const AppRouter = () => (
     <Router>
         <Suspense fallback={<div>Loading...</div>}>
