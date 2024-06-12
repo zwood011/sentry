@@ -19,6 +19,10 @@ const useFilters = (initialObjects) => {
         setFilteredObjects(filtered);
     };
 
+    const onClear = () => {
+        setFilteredObjects(objects);
+    };
+
     const onFilterSize = () => {
         const filtered = [...filteredObjects].sort((a, b) => b.diameter - a.diameter);
         setFilteredObjects(filtered);
@@ -40,6 +44,7 @@ const useFilters = (initialObjects) => {
         onFilterSize,
         onFilterOldest,
         onFilterNewest,
+        onClear,
     };
 };
 

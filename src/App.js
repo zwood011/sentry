@@ -1,3 +1,7 @@
+/* 
+See a visualization of the data flow at https://neo-nasa.netlify.app/dataflow.png
+*/
+
 import React, { useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
@@ -23,10 +27,6 @@ const App = () => {
 
     const date = new Date().getFullYear();
 
-    /* 
-  See a visualization of the data flow at 
-  https://neo-nasa.netlify.app/dataflow.png
-*/
     const fetchData = useCallback(() => {
         setLoading(true);
         axios
@@ -61,7 +61,7 @@ const App = () => {
         fetchData();
     }, [fetchData]);
 
-    const { filteredObjects, onFilterName, onFilterSize, onFilterOldest, onFilterNewest } = useFilters(objects);
+    const { filteredObjects, onFilterName, onFilterSize, onFilterOldest, onFilterNewest, onClear } = useFilters(objects);
 
     if (loading) return <Loading />;
 
@@ -88,6 +88,7 @@ const App = () => {
                                         onFilterSize={onFilterSize}
                                         onFilterOldest={onFilterOldest}
                                         onFilterNewest={onFilterNewest}
+                                        onClear={onClear}
                                         aria-label='Filtering options for Earth impact data'
                                     />
                                 </nav>
