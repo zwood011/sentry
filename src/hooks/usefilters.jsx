@@ -1,12 +1,7 @@
-/**
- * Custom React hook for filtering an array of objects fetched from the App.js component
- * This hook provides filtering functionality based on
- * various criteria, which is utilized by the Filters component to allow users
- * to apply different filters to the data.
- *
- * @param {Object[]} initialObjects - The initial array of objects fetched from the NASA API.
- * @returns {Object} The filtered array of objects based on the applied filters.
- */
+/* 
+  See a visualization of the data flow at 
+  https://neo-nasa.netlify.app/dataflow.png☺
+*/
 
 import { useState, useEffect } from 'react';
 

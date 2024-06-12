@@ -10,11 +10,6 @@ import useFilters from './hooks/usefilters';
 import Loading from './components/loading';
 import CardHandler from './components/card/cardhandler';
 
-/* 
-  See a visualization of the data flow at 
-  https://neo-nasa.netlify.app/dataflow.png☺
-*/
-
 const Filters = React.lazy(() => import('./components/filters'));
 
 const App = () => {
@@ -28,6 +23,10 @@ const App = () => {
 
     const date = new Date().getFullYear();
 
+    /* 
+  See a visualization of the data flow at 
+  https://neo-nasa.netlify.app/dataflow.png
+*/
     const fetchData = useCallback(() => {
         setLoading(true);
         axios

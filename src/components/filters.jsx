@@ -1,40 +1,15 @@
-/**
- * Filters Component
- * 
- * This component provides a set of filters for data fetched from the NASA API. Users can filter data by name, size, and observation dates. 
- * It integrates with the `useFilters` hook to manage filter states and functions.
- * 
- * @param {Object} props - The properties passed to the component.
- * @param {Function} props.onFilterName - A callback function to filter objects by their name.
- * This function should accept a string representing the name to filter by.
- * @param {Function} props.onFilterSize - A callback function to filter objects by their size (diameter) in descending order. 
- * This function does not take any parameters.
- * @param {Function} props.onFilterOldest - A callback function to filter objects by the oldest observation date.
- * This function does not take any parameters.
- * @param {Function} props.onFilterNewest - A callback function to filter objects by the newest observation date.
- * This function does not take any parameters.
- * 
- * @returns {JSX.Element} A rendered set of elements including buttons and a text input for user interaction.
- * 
- * @example
- * <Filters
- *   onFilterName={handleFilterName}
- *   onFilterSize={handleFilterSize}
- *   onFilterOldest={handleFilterOldest}
- *   onFilterNewest={handleFilterNewest}
- * />
- * 
- * @component
- * @function
- * @name Filters
- */
 
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
+/* 
+  See a visualization of the data flow at 
+  https://neo-nasa.netlify.app/dataflow.png☺
+*/
+
 const Filters = ({ onFilterName, onFilterSize, onFilterOldest, onFilterNewest }) => {
     const [name, setName] = useState('');
-
+    
     const handleNameChange = (event) => {
         setName(event.target.value);
         onFilterName(event.target.value);
