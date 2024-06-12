@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Card from './card';
-import Image from '../../assets/sad.jpg';
+import Image from '../../assets/sad.webp';
 import Error from '../error';
 
 const CardHandler = ({ objects, errorMessage, isLoading, retryFetch }) => {

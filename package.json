@@ -61,7 +61,8 @@
         "terser-webpack-plugin": "^5.3.10",
         "url-loader": "^4.1.1",
         "uuid": "^10.0.0",
-        "webpack": "^5.91.0"
+        "webpack": "^5.91.0",
+        "webpack-bundle-analyzer": "^4.10.2"
     },
     "main": "webpack.config.js",
     "keywords": [
