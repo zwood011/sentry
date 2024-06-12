@@ -1,5 +1,5 @@
 import React from 'react';
-import Logo from '../assets/logo.webp';
+import Logo from '../assets/logo.png';
 
 const Loading = () => {
     return (
