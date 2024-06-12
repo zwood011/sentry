@@ -16,7 +16,7 @@ const routes = [
     {
         path: 'sentry',
         element: (
-            <Suspense fallback={<div>Loading...</div>}>
+            <Suspense>
                 <App />
             </Suspense>
         ),
