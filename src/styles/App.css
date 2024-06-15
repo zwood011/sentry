@@ -4,21 +4,6 @@
     --gradient-dark: linear-gradient(rgba(60, 62, 70, 0.832), var(--background-grey));
 }
 
-* {
-    box-sizing: border-box;
-}
-
-html,
-body {
-    height: 100%;
-    margin: 0;
-}
-
-body {
-    background: linear-gradient(135deg, rgb(231, 220, 249), rgb(210, 232, 243), rgb(193, 216, 252), rgb(233, 223, 248));
-    background-attachment: fixed;
-}
-
 .app-header {
     display: flex;
     padding: 1rem;

@@ -6,13 +6,15 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { Helmet } from 'react-helmet-async';
-import { css, keyframes } from '@emotion/css';
+import { css } from '@emotion/css';
+
 
 import './styles/App.css';
 
 import useFilters from './hooks/usefilters';
 import Loading from './components/loading';
 import CardHandler from './components/card/cardhandler';
+import { slideInFromBottom, slideInFromTop } from './components/animations';
 
 const Filters = React.lazy(() => import('./components/filters'));
 
@@ -25,6 +27,8 @@ const App = () => {
   const [errorMessage, setErrorMessage] = useState(null);
   const [objects, setObjects] = useState([]);
 
+  const headerAnimation = css`animation: ${slideInFromTop} 0.5s ease;`;
+  const mainAnimation = css`animation: ${slideInFromBottom} 0.8s ease;`;
   const date = new Date().getFullYear();
 
   const fetchData = useCallback(() => {
@@ -140,57 +144,3 @@ const App = () => {
 };
 
 export default App;
-
-// Emotion animations, placed down here for visual convenience
-const slideInFromTop = keyframes`
-  0% {
-    transform: translateY(-100%);
-    opacity: 0;
-  }
-  20% {
-    opacity: 0.2;
-  }
-  40% {
-    opacity: 0.4;
-  }
-  60% {
-    opacity: 0.6;
-  }
-  80% {
-    opacity: 0.8;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-`;
-
-const slideInFromBottom = keyframes`
-  0% {
-    transform: translateY(100%);
-    opacity: 0;
-  }
-  20% {
-    opacity: 0;
-  }
-  40% {
-    opacity: 0;
-  }
-  60% {
-    opacity: .4;
-  }
-  80% {
-    opacity: 0.5;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-`;
-const headerAnimation = css`
-    animation: ${slideInFromTop} 0.5s ease;
-`;
-
-const mainAnimation = css`
-    animation: ${slideInFromBottom} 0.8s ease;
-`;
