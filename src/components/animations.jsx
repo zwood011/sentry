@@ -67,7 +67,7 @@ const AnimatedLetters = ({ text }) => {
   return (
     <h1 className='AnimatedLetters'>
       {letters.map(({ letter, key, animationDelay }) => (
-        <span key={key} style={{ animationDelay }}>
+        <span key={key} style={{ animationDelay }} className='AnimatedLetter'>
           {letter === ' ' ? '\u00A0' : letter}
         </span>
       ))}

@@ -20,18 +20,19 @@ const LandingPage = () => {
             <div className='landing-container container-fluid'>
                 <header className='landing-header container-fluid'>
                     <div className='title'>
-                        <AnimatedLetters text='Sentry Grabber' />
+                        <AnimatedLetters text='Sentry Grabber' className="letter-color-fade"/>
                     </div>
                     <h2 className='subtitle'>Explore potentially hazardous asteroids data with ease</h2>
-                    <p className='sub-text fadein'>
-                        This site is currently hoste-d for development testing. This project is in early stages and
-                        everything within this site is subject to change.
-                    </p>
-                    <nav>
-                        <Link to='/sentry' className='Button-Landing' aria-label='View Project'>
-                            View Project
-                        </Link>
-                    </nav>
+                    <div className='sub-text fadein'>
+                        <p>This site is currently hosted for development testing. This project is in early stages and
+                            everything within this site is subject to change.
+                        </p>
+                        <nav>
+                            <Link to='/sentry' className='Button-Landing' aria-label='View Project'>
+                                View Project
+                            </Link>
+                        </nav>
+                    </div>
                 </header>
 
                 <main className='features' role='main'>

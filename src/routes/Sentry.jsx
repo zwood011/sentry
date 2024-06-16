@@ -83,6 +83,17 @@ const Sentry = () => {
             <header className={headerAnimation}>
               <div className='app-header'>
                 <nav>
+                  <h1 className='app-nav-item'>Earth Impact Data</h1>
+                  <p className='app-nav-item'>
+                    Explore comprehensive data brought to you by the{' '}
+                    <Link
+                      className='Hyperlink'
+                      to='https://cneos.jpl.nasa.gov/sentry/'
+                      aria-label='CNEOS impact monitoring system'>
+                      CNEOS
+                    </Link>{' '}
+                    impact monitoring system
+                  </p>
                   <Filters
                     className='app-nav-item'
                     onFilterName={onFilterName}
@@ -93,17 +104,6 @@ const Sentry = () => {
                     aria-label='Filtering options for Earth impact data'
                   />
                 </nav>
-                <h1 className='app-nav-item'>Earth Impact Data</h1>
-                <p className='app-nav-item'>
-                  Explore comprehensive data brought to you by the{' '}
-                  <Link
-                    className='Hyperlink'
-                    to='https://cneos.jpl.nasa.gov/sentry/'
-                    aria-label='CNEOS impact monitoring system'>
-                    CNEOS
-                  </Link>{' '}
-                  impact monitoring system
-                </p>
               </div>
             </header>
 
@@ -121,7 +121,7 @@ const Sentry = () => {
             <footer className='Footer-Sentry'>
               <p className='footerText'>© {date} Zachary Wood. All rights reserved.</p>
               <div className='Page-Description' aria-label='Page Description'>
-                <p className='Description-Text'>
+                <p className="Description-Text">
                   Powered by{' '}
                   <Link
                     className='Hyperlink'

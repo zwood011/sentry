@@ -1,3 +1,18 @@
+/* Only used to style Landingpage, all global css 
+styles are currently in Sentry.css */
+
+:root {
+    --background-dark: #1a1a1a;
+    --background-grey: #2e2e2e;
+    --primary-accent: #ff6347;
+    --secondary-accent: #4caf50;
+    --text-light: #e0e0e0;
+    --text-dark: #cccccc;
+    --border-radius: 10px;
+    --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    --transition: all 0.3s ease;
+}
+
 .landing-container {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: flex;
@@ -6,26 +21,42 @@
     justify-content: center;
     text-align: center;
     min-height: 100vh;
-    margin-top: 2rem;
+    padding: 1em;
+    background-color: var(--background-dark);
+    color: var(--text-light);
+}
+
+.landing-header {
+    margin: 1rem;
+    padding: 1rem;
 }
 
 .title {
     font-size: 3em;
-    color: rgb(51, 51, 51);
+    padding: 1rem;
+    color: var(--text-light);
+    /* Use theme text color */
     margin-bottom: 1rem;
 }
 
 h1 {
-    margin-top: 0px;
+    margin-top: 0;
     margin-bottom: 0.5rem;
     font-weight: 500;
     line-height: 1.2;
-    color: var(--bs-heading-color);
+    color: var(--text-light);
 }
 
 .subtitle,
 .sub-text {
     transition: opacity 0.8s fadein;
+    color: var(--text-light);
+}
+
+.sub-text,
+.title,
+.subtitle {
+    margin: 1rem;
 }
 
 @keyframes fadein {
@@ -38,9 +69,6 @@ h1 {
     }
 }
 
-
-
-/* Define the animation */
 @keyframes fadeInBounce {
     0% {
         opacity: 0;
@@ -55,6 +83,8 @@ h1 {
     40% {
         transform: translateY(-20%);
         opacity: 1;
+        color: rgb(255, 165, 76);
+        text-shadow: 0 0 8px #ff6347;
     }
 
     60% {
@@ -82,43 +112,50 @@ h1 {
 
 .AnimatedLetters span:nth-child(1) {
     animation-delay: 0s;
-    /* Adjust delay for the first letter */
 }
 
 .AnimatedLetters span:nth-child(2) {
     animation-delay: 0.1s;
-    /* Adjust delay for the second letter */
 }
 
-inline-style {
+.inline-style {
     animation-delay: 0s;
 }
 
 p {
-    margin-top: 0px;
+    margin-top: 0;
     margin-bottom: 1rem;
+    color: var(--text-light);
 }
 
 .subtitle {
     font-size: 1.5em;
-    color: rgb(80, 79, 79);
+    color: var(--text-dark);
+    padding: 1rem;
 }
 
 .sub-text {
     padding: 1rem;
+    background-color: var(--background-grey);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    color: var(--text-light);
 }
 
 a {
-    color: rgba(var(--bs-link-color-rgb), var(--bs-link-opacity, 1));
+    color: var(--primary-accent);
     text-decoration: underline;
+    transition: var(--transition);
 }
 
 .Button-Landing {
     text-decoration: none;
+    color: var(--primary-accent);
+    transition: var(--transition);
 }
 
 a:hover {
-    --bs-link-color-rgb: var(--bs-link-hover-color-rgb);
+    color: var(--secondary-accent);
 }
 
 .features {
@@ -127,7 +164,8 @@ a:hover {
     flex-wrap: wrap;
     width: 100%;
     max-width: 1200px;
-    margin: 3rem;
+    margin: 1em;
+    padding: 1rem;
 }
 
 @media only screen and (max-width: 1000px) {
@@ -139,40 +177,42 @@ a:hover {
 .feature {
     flex: 1 1 30%;
     padding: 20px;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 8px;
-    border-radius: 10px;
-    background: rgba(255, 255, 255, 0.133);
-    margin: 0px 1rem 2rem;
+    box-shadow: var(--box-shadow);
+    border-radius: var(--border-radius);
+    background-color: var(--background-grey);
+    color: var(--text-light);
+    margin: 0 1rem 2rem;
 }
 
 h2 {
-    margin-top: 0px;
+    margin-top: 0;
     margin-bottom: 0.5rem;
     font-weight: 500;
     line-height: 1.2;
-    color: var(--bs-heading-color);
+    color: var(--text-light);
 }
 
 .featureTitle {
     font-size: 1.5em;
-    color: rgb(51, 51, 51);
+    color: var(--text-light);
 }
 
 .featureDescription {
     font-size: 1em;
-    color: rgb(76, 75, 75);
+    color: var(--text-dark);
 }
 
 .footerText {
     font-size: 1.2rem;
-    color: rgb(65, 64, 64);
+    color: var(--text-dark);
 }
 
 .Hyperlink {
     text-decoration: none;
-    color: rgb(93, 110, 135);
+    color: var(--primary-accent);
+    transition: var(--transition);
 }
 
 .Hyperlink:hover {
-    color: rgb(150, 167, 206);
+    color: var(--secondary-accent);
 }
