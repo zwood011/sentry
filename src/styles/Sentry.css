@@ -14,7 +14,8 @@
     box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
     height: 100%;
     margin: 0;
     background: var(--background-dark);
@@ -24,7 +25,7 @@ html, body {
     line-height: 1.6;
 }
 
-header{
+header {
     width: 100%;
 }
 
@@ -157,13 +158,14 @@ header{
     cursor: pointer;
 }
 
-.Button-Load:hover{
+.Button-Load:hover {
     background: rgba(255, 255, 255, 0.114);
     border-color: var(--primary-accent);
 }
 
 .Card-Holder {
-    align-items: flex-start; /** Prevents cards from stretching */
+    align-items: flex-start;
+    /** Prevents cards from stretching */
     display: grid;
     margin: 1rem;
     padding: 1rem;
@@ -174,11 +176,14 @@ header{
 
 .Card {
     color: var(--text-light);
-    font-size: 1.4em;
+    font-size: 1.3em;
     cursor: pointer;
-    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
     max-width: 20rem;
     -webkit-user-select: none;
+    padding: 2rem;
     user-select: none;
     transform: scale(1);
     transition: transform 0.1s ease-in-out;
@@ -200,9 +205,17 @@ header{
     transform: scale(1.1);
 }
 
-.Card.selected .Card-Name {
-    font-size: 1em;
-    color: var(--text-light);
+.Card-Header {
+    width: 100%;
+}
+
+.Card.a0101955 {
+    font-size: .8667em;
+}
+
+.Card-Name {
+    width: 100%;
+    font-size: 1.5em;
 }
 
 .Data-Heading {
@@ -301,6 +314,7 @@ time {
     from {
         transform: rotate(0deg);
     }
+
     to {
         transform: rotate(360deg);
     }
@@ -309,11 +323,6 @@ time {
 @media only screen and (min-width: 1920px) {
     .Card-Holder {
         grid-template-columns: repeat(6, 1fr);
-    }
-
-    .Card {
-        width: 25rem;
-        height: 25rem;
     }
 }
 
@@ -324,11 +333,6 @@ only screen and (max-width: 680px) {
         flex-wrap: wrap;
         grid-template-columns: 1fr;
     }
-
-    .Card {
-        width: 100%;
-        height: auto;
-    }
 }
 
 @media only screen and (min-width: 900px) and (max-width: 1200px) {
@@ -336,10 +340,6 @@ only screen and (max-width: 680px) {
         gap: calc(5rem + 0.8vw);
         display: flex;
         flex-wrap: wrap;
-    }
-
-    .Card {
-        padding: 2rem;
     }
 }
 

@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
   https://neo-nasa.netlify.app/dataflow.png
 */
 
+
 const Filters = ({ onFilterName, onFilterSize, onFilterOldest, onFilterNewest, onClear }) => {
     const [name, setName] = useState('');
 
@@ -23,6 +24,7 @@ const Filters = ({ onFilterName, onFilterSize, onFilterOldest, onFilterNewest, o
             <button onClick={onClear} className='btn btn-secondary header-button' aria-label='Clear filters'>
                 Filter Reset
             </button>
+
             <div className='dropdown'>
                 <button
                     className='btn btn-dark header-button dropdown-toggle'
