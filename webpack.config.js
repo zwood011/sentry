@@ -9,7 +9,7 @@ module.exports = {
     entry: {
         main: './src/index.js',
         vendor: ['react', 'react-dom'],
-        style: './src/styles/App.css',
+        style: './src/styles/Sentry.css',
     },
     output: {
         filename: '[name].bundle.js',
