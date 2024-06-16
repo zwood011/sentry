@@ -1,23 +1,22 @@
 /* 
 See a visualization of the data flow at https://neo-nasa.netlify.app/dataflow.png
+App is replaced by 'Sentry'
 */
 
 import React, { useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { Helmet } from 'react-helmet-async';
-import { css } from '@emotion/css';
 
-import './styles/App.css';
+import '../styles/Sentry.css';
 
-import useFilters from './hooks/usefilters';
-import Loading from './components/loading';
-import CardHandler from './components/card/cardhandler';
-import { slideInFromBottom, slideInFromTop } from './components/animations';
+import useFilters from '../hooks/usefilters';
+import Loading from '../components/loading';
+import CardHandler from '../components/card/cardhandler';
+import { headerAnimation, mainAnimation } from '../components/animations';
+const Filters = React.lazy(() => import('../components/filters'));
 
-const Filters = React.lazy(() => import('./components/filters'));
-
-const App = () => {
+const Sentry = () => {
   //! TODO: Fix background visual error, remove background from the body tag
   //? TODO: Wrap .features in an animation
   //?* TODO: Look into designing error - ErrorBundary - Loading - 404 further
@@ -26,8 +25,6 @@ const App = () => {
   const [errorMessage, setErrorMessage] = useState(null);
   const [objects, setObjects] = useState([]);
 
-  const headerAnimation = css`animation: ${slideInFromTop} 0.5s ease;`;
-  const mainAnimation = css`animation: ${slideInFromBottom} 0.8s ease;`;
   const date = new Date().getFullYear();
 
   const fetchData = useCallback(() => {
@@ -60,11 +57,13 @@ const App = () => {
       });
   }, []);
 
+  //* Add objects to the useFilters params
+  const { filteredObjects, onFilterName, onFilterSize, onFilterOldest, onFilterNewest, onClear } = useFilters(objects);
+
   useEffect(() => {
     fetchData();
   }, [fetchData]);
 
-  const { filteredObjects, onFilterName, onFilterSize, onFilterOldest, onFilterNewest, onClear } = useFilters(objects);
 
   if (loading) return <Loading />;
 
@@ -142,4 +141,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default Sentry;

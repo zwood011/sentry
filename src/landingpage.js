@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '../styles/Landing.css';
+import './styles/Landing.css';
 import { Helmet } from 'react-helmet-async';
-import { AnimatedLetters } from '../components/animations';
+import { AnimatedLetters } from './components/animations';
 
 const LandingPage = () => {
     const date = new Date().getFullYear();

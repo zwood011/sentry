@@ -1,5 +1,5 @@
 import React from 'react';
-import { keyframes } from '@emotion/css';
+import { keyframes, css } from '@emotion/css';
 import { useState, useEffect } from 'react';
 
 const slideInFromTop = keyframes`
@@ -26,28 +26,30 @@ const slideInFromTop = keyframes`
 `;
 
 const slideInFromBottom = keyframes`
-  0% {
+0% {
     transform: translateY(100%);
     opacity: 0;
   }
   20% {
     opacity: 0;
-  }
-  40% {
-    opacity: 0;
-  }
-  60% {
-    opacity: 0.4;
-  }
-  80% {
-    opacity: 0.5;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-`;
+    }
+    40% {
+      opacity: 0;
+      }
+      60% {
+        opacity: 0.4;
+        }
+        80% {
+          opacity: 0.5;
+          }
+          100% {
+            transform: translateY(0);
+            opacity: 1;
+            }
+            `;
 
+const headerAnimation = css`animation: ${slideInFromTop} 0.5s ease;`;
+const mainAnimation = css`animation: ${slideInFromBottom} 0.8s ease;`;
 
 const AnimatedLetters = ({ text }) => {
   const [letters, setLetters] = useState([]);
@@ -58,6 +60,7 @@ const AnimatedLetters = ({ text }) => {
       key: `${letter}-${index}`,
       animationDelay: `${index * 0.1}s`,
     }));
+
     setLetters(letterArray);
   }, [text]);
 
@@ -72,4 +75,4 @@ const AnimatedLetters = ({ text }) => {
   );
 };
 
-export { slideInFromTop, slideInFromBottom, AnimatedLetters };
+export { AnimatedLetters, headerAnimation, mainAnimation };

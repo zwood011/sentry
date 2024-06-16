@@ -4,9 +4,9 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 
 import ErrorBoundary from './components/ErrorBoundary';
-import LandingPage from './routes/landingpage';
+import LandingPage from '../src/landingpage';
 
-const App = lazy(() => import('./App'));
+const Sentry = lazy(() => import('./routes/Sentry'));
 
 const routes = [
     {
@@ -17,7 +17,7 @@ const routes = [
         path: 'sentry',
         element: (
             <Suspense>
-                <App />
+                <Sentry />
             </Suspense>
         ),
     },
