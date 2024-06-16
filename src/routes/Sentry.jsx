@@ -83,17 +83,19 @@ const Sentry = () => {
             <header className={headerAnimation}>
               <div className='app-header'>
                 <nav>
-                  <h1 className='app-nav-item'>Earth Impact Data</h1>
-                  <p className='app-nav-item'>
-                    Explore comprehensive data brought to you by the{' '}
+                  <h1 className='app-nav-item h1-sentry'>Earth Impact Data</h1>
+                  <h2 className='app-nav-item h2-sentry'>
+                    Comprehensive data layed out in a multi-card format
+                  </h2>
+                  <h3 className="app-nav-item h3-sentry">
+                    CNEOS Impact Monitoring {' '}
                     <Link
                       className='Hyperlink'
                       to='https://cneos.jpl.nasa.gov/sentry/'
                       aria-label='CNEOS impact monitoring system'>
-                      CNEOS
-                    </Link>{' '}
-                    impact monitoring system
-                  </p>
+                      API
+                    </Link>
+                  </h3>
                   <Filters
                     className='app-nav-item'
                     onFilterName={onFilterName}

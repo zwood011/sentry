@@ -42,6 +42,14 @@ header {
     box-shadow: var(--box-shadow);
 }
 
+.h2-sentry {
+    font-size: 1.4em;
+}
+
+.h3-sentry {
+    font-size: 1em;
+}
+
 .header-button {
     padding: 0.5rem 1rem;
     border-radius: var(--border-radius);
@@ -96,8 +104,6 @@ header {
     gap: 1rem;
     width: 100%;
     align-items: center;
-    color: var(--text-light);
-    padding: 1rem;
 }
 
 .Filter-Input {
@@ -210,7 +216,7 @@ header {
 }
 
 .Card.a0101955 {
-    font-size: .8667em;
+    font-size: .862em;
 }
 
 .Card-Name {
@@ -343,9 +349,12 @@ only screen and (max-width: 680px) {
     }
 }
 
-@media only screen and (max-width: 1200px) {
-    .Card {
-        width: 100%;
-        height: auto;
+@media only screen and (min-width: 1200px) {
+    .h2-sentry {
+        font-size: 1.8em;
+    }
+
+    .h3-sentry {
+        font-size: 1.4em;
     }
 }
