@@ -75,4 +75,5 @@ const AnimatedLetters = ({ text }) => {
   );
 };
 
+
 export { AnimatedLetters, headerAnimation, mainAnimation };

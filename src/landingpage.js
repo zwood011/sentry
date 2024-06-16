@@ -20,7 +20,7 @@ const LandingPage = () => {
             <div className='landing-container container-fluid'>
                 <header className='landing-header container-fluid'>
                     <div className='title'>
-                        <AnimatedLetters text='Sentry Grabber' className="letter-color-fade"/>
+                        <AnimatedLetters text='Sentry Grabber' className="letter-color-fade" />
                     </div>
                     <h2 className='subtitle'>Explore potentially hazardous asteroids data with ease</h2>
                     <div className='sub-text fadein'>
