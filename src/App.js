@@ -8,7 +8,6 @@ import axios from 'axios';
 import { Helmet } from 'react-helmet-async';
 import { css } from '@emotion/css';
 
-
 import './styles/App.css';
 
 import useFilters from './hooks/usefilters';
@@ -19,9 +18,9 @@ import { slideInFromBottom, slideInFromTop } from './components/animations';
 const Filters = React.lazy(() => import('./components/filters'));
 
 const App = () => {
-  //TODO: Fix background visual error, remove background from the body tag
-  //TODO: Look into designing error.jsx/ErrorBundary.jsx/Loading.jsx/404.html further
-  //TODO: Potentionally minimize loading by making a CDN
+  //! TODO: Fix background visual error, remove background from the body tag
+  //? TODO: Wrap .features in an animation
+  //?* TODO: Look into designing error - ErrorBundary - Loading - 404 further
 
   const [loading, setLoading] = useState(true);
   const [errorMessage, setErrorMessage] = useState(null);
