@@ -178,6 +178,7 @@ header {
     grid-template-columns: repeat(3, 1fr);
     justify-content: center;
     gap: 4rem;
+    transition: var(--transition);
 }
 
 .Card {
@@ -193,6 +194,7 @@ header {
     user-select: none;
     transform: scale(1);
     transition: transform 0.1s ease-in-out;
+    transition: var(--transition);
     box-shadow: var(--box-shadow);
     border-radius: var(--border-radius);
     background-color: var(--background-grey);
