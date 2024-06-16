@@ -17,9 +17,8 @@ import { headerAnimation, mainAnimation } from '../components/animations';
 const Filters = React.lazy(() => import('../components/filters'));
 
 const Sentry = () => {
-  //! TODO: Fix background visual error, remove background from the body tag
   //? TODO: Wrap .features in an animation
-  //?* TODO: Look into designing error - ErrorBundary - Loading - 404 further
+  //?* TODO: Look into designing error - ErrorBundary - Loading - Cards/Mobile BG - 404 further
 
   const [loading, setLoading] = useState(true);
   const [errorMessage, setErrorMessage] = useState(null);

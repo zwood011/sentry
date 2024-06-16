@@ -226,6 +226,17 @@ time {
         transform: rotate(360deg);
     }
 }
+
+@media (max-width: 767px) {
+    body {
+        background:  rgba(205, 227, 255, 0.695);
+    }
+    .Card {
+        /* Adjust the gradient to ensure it works well on mobile */
+        margin: 1rem 0 1rem 0;
+        background: linear-gradient(135deg, rgba(231, 220, 249, 0.308), rgba(49, 54, 56, 0.074), rgba(193, 216, 252, 0), rgba(93, 80, 113, 0.133));
+    }
+}
 @media only screen and (min-width: 1920px) {
     .Card-Holder {
         grid-template-columns: repeat(6, 1fr);

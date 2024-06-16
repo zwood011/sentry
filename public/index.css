@@ -32,12 +32,3 @@ noscript ul {
 noscript a {
     text-decoration: none;
 }
-
-@media (max-width: 767px) {
-    body {
-        background: linear-gradient(135deg, rgb(231, 220, 249), rgb(210, 232, 243), rgb(193, 216, 252), rgb(233, 223, 248));
-        background-position: center center;
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
-}
