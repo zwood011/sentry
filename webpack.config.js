@@ -119,6 +119,7 @@ module.exports = {
                 { from: './public/mstile-150.png', to: './' },
                 { from: './public/apple-touch-icon.png', to: './' },
                 { from: './public/dataflow.png', to: './' },
+                { from: './public/index.css', to: './' },
             ],
         }),
     ],

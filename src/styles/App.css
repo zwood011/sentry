@@ -61,10 +61,6 @@
     background: rgba(255, 255, 255, 0.656);
 }
 
-.Filter-Input:active {
-    border: transparent;
-}
-
 .Page-Description {
     border-radius: 8px;
     cursor: auto;

@@ -52,7 +52,7 @@ const Filters = ({ onFilterName, onFilterSize, onFilterOldest, onFilterNewest, o
                             value={name}
                             onChange={handleNameChange}
                             aria-label='Filter objects by name'
-                            className='Filter-Input form-control'
+                            className='Filter-Input form-control sub-text'
                         />
                     </div>
                 </div>

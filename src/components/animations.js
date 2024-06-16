@@ -1,4 +1,4 @@
-// animations.jsx
+import React from 'react';
 import { keyframes } from '@emotion/css';
 import { useState, useEffect } from 'react';
 
