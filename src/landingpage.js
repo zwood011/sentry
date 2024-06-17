@@ -36,7 +36,7 @@ const LandingPage = () => {
                         </p>
                         <nav>
                             <Link to='/sentry' className='Button-Landing' aria-label='View Project'>
-                                View Project
+                                Explore Project
                             </Link>
                         </nav>
                     </div>
