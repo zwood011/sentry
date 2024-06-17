@@ -18,6 +18,10 @@ nav {
     box-shadow: var(--box-shadow);
 }
 
+.h1-sentry{
+    padding-bottom: 2rem;
+}
+
 .app-nav-side {
     width: 100%;
     background: rgba(0, 0, 0, 0.238);
