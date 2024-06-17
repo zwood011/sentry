@@ -65,6 +65,14 @@
     color: var(--text-dark);
 }
 
+.No-Results {
+    padding: 2rem;
+    background: var(--background-grey);
+    color: var(--text-dark);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
 .Card-Data {
     opacity: 0;
     max-height: 0;

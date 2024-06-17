@@ -34,11 +34,3 @@
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
 }
-
-.No-Results {
-    padding: 2rem;
-    background: var(--background-grey);
-    color: var(--text-dark);
-    border-radius: var(--border-radius);
-    box-shadow: var(--box-shadow);
-}
