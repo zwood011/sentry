@@ -21,8 +21,7 @@ const CardHandler = ({ objects, errorMessage, isLoading, retryFetch }) => {
     if (!isLoading && objects.length === 0) {
         return (
             <div className='No-Results text-center' aria-live='polite' aria-atomic='true'>
-                <h1>No Results</h1>
-                <img src={Image} className='img-fluid' alt='A very sad person' />
+                <h1 className="nr-h1">No Results</h1>
             </div>
         );
     }
