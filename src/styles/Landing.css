@@ -4,7 +4,7 @@ styles are currently in Sentry.css */
 :root {
     --background-dark: #1a1a1a;
     --background-grey: #2e2e2e;
-    --primary-accent: #ff6347;
+    --primary-accent: #fa9672;
     --secondary-accent: #fbaa9b;
     --text-light: #e0e0e0;
     --text-dark: #cccccc;
@@ -79,8 +79,8 @@ h1 {
     40% {
         transform: translateY(-20%);
         opacity: 1;
-        color: rgb(255, 165, 76);
-        text-shadow: 0 0 8px #ff6347;
+        color: #f3b39c;
+        text-shadow: 0 0 8px #ff9114;
     }
 
     60% {
