@@ -5,7 +5,7 @@ styles are currently in Sentry.css */
     --background-dark: #1a1a1a;
     --background-grey: #2e2e2e;
     --primary-accent: #ff6347;
-    --secondary-accent: #4caf50;
+    --secondary-accent: #fbaa9b;
     --text-light: #e0e0e0;
     --text-dark: #cccccc;
     --border-radius: 10px;
@@ -21,22 +21,18 @@ styles are currently in Sentry.css */
     justify-content: center;
     text-align: center;
     min-height: 100vh;
-    padding: 1em;
     background-color: var(--background-dark);
     color: var(--text-light);
 }
 
 .landing-header {
-    margin: 1rem;
     padding: 1rem;
 }
 
 .title {
     font-size: 3em;
-    padding: 1rem;
     color: var(--text-light);
     /* Use theme text color */
-    margin-bottom: 1rem;
 }
 
 h1 {

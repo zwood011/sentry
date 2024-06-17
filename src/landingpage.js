@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './styles/Landing.css';
 import { Helmet } from 'react-helmet-async';
@@ -6,6 +6,13 @@ import { AnimatedLetters } from './components/animations';
 
 const LandingPage = () => {
     const date = new Date().getFullYear();
+
+    useEffect(() => {
+        const noscriptElement = document.querySelector('noscript');
+        if (noscriptElement) {
+            noscriptElement.remove();
+        }
+    }, []);
 
     return (
         <>

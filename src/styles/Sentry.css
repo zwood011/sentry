@@ -2,7 +2,7 @@
     --background-dark: #1a1a1a;
     --background-grey: #2e2e2e;
     --primary-accent: #ff6347;
-    --secondary-accent: #ff9d00;
+    --secondary-accent: #fbaa9b;
     --text-light: #e0e0e0;
     --text-dark: #cccccc;
     --border-radius: 10px;
@@ -82,7 +82,7 @@ header {
 .dropdown-item {
     text-align: center;
     padding: 1.4rem;
-    color: white;   
+    color: white;
 }
 
 .dropdown-item:hover {
