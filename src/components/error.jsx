@@ -1,5 +1,8 @@
 import React from 'react';
 
+import '../styles/Loading-Errors.css';
+
+
 const Error = ({ message, retryFetch }) => {
     const clickHandler = () => {
         retryFetch();

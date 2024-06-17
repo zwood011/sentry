@@ -1,18 +1,3 @@
-/* Only used to style Landingpage, all global css 
-styles are currently in Sentry.css */
-
-:root {
-    --background-dark: #1a1a1a;
-    --background-grey: #2e2e2e;
-    --primary-accent: #fa9672;
-    --secondary-accent: #fbaa9b;
-    --text-light: #e0e0e0;
-    --text-dark: #cccccc;
-    --border-radius: 10px;
-    --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    --transition: all 0.3s ease;
-}
-
 .landing-container {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: flex;

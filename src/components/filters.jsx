@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
+import '../styles/Filters.css';
+
 /* 
   See a visualization of the data flow at 
   https://neo-nasa.netlify.app/dataflow.png

@@ -1,0 +1,102 @@
+.Card-Holder {
+    align-items: flex-start;
+    /** Prevents cards from stretching */
+    display: grid;
+    margin: 1rem;
+    padding: 1rem;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    gap: 4rem;
+    transition: var(--transition);
+}
+
+.Card {
+    color: var(--text-light);
+    font-size: 1.3em;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    max-width: 20rem;
+    -webkit-user-select: none;
+    padding: 2rem;
+    user-select: none;
+    transform: scale(1);
+    transition: transform 0.1s ease-in-out;
+    transition: var(--transition);
+    box-shadow: var(--box-shadow);
+    border-radius: var(--border-radius);
+    background-color: var(--background-grey);
+    animation: pop-in 0.5s;
+    border: 2px solid transparent;
+    position: relative;
+}
+
+.Card:hover {
+    border-color: var(--primary-accent);
+    background-color: rgb(51, 51, 51);
+    color: var(--text-light);
+}
+
+.Card.selected {
+    transform: scale(1.1);
+}
+
+.Card-Header {
+    width: 100%;
+}
+
+.Card.a0101955 {
+    font-size: .862em;
+}
+
+.Card-Name {
+    width: 100%;
+    font-size: 1.5em;
+}
+
+.Data-Heading {
+    font-size: 1.2rem;
+    color: var(--text-light);
+}
+
+.Data-Data {
+    font-size: 1.3rem;
+    color: var(--text-dark);
+}
+
+.Card-Data {
+    opacity: 0;
+    max-height: 0;
+    padding: 1rem 2rem 0 2rem;
+    overflow: hidden;
+    transition: max-height 0.8s ease, opacity 0.8s ease;
+}
+
+.Card-Data.visible {
+    opacity: 1;
+    max-height: 1000px;
+}
+
+@media only screen and (min-width: 1920px) {
+    .Card-Holder {
+        grid-template-columns: repeat(6, 1fr);
+    }
+}
+
+@media only screen and (min-width: 680px) and (max-width: 900px),
+only screen and (max-width: 680px) {
+    .Card-Holder {
+        display: flex;
+        flex-wrap: wrap;
+        grid-template-columns: 1fr;
+    }
+}
+
+@media only screen and (min-width: 900px) and (max-width: 1200px) {
+    .Card-Holder {
+        gap: calc(5rem + 0.8vw);
+        display: flex;
+        flex-wrap: wrap;
+    }
+}

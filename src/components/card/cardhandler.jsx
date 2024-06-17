@@ -3,6 +3,8 @@ import Card from './card';
 import Image from '../../assets/sad.webp';
 import Error from '../error';
 
+import '../../styles/CardHandler.css';
+
 const CardHandler = ({ objects, errorMessage, isLoading, retryFetch }) => {
     const [displayIndex, setDisplayIndex] = useState(9); // Initially display 9 cards
 

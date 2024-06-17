@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../../styles/Sentry.css';
+import '../../styles/CardHandler.css';
 
 const Card = ({ data }) => {
     const [selectedCard, setSelectedCard] = useState(null);

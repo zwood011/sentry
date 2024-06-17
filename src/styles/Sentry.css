@@ -1,45 +1,30 @@
-:root {
-    --background-dark: #1a1a1a;
-    --background-grey: #2e2e2e;
-    --primary-accent: #fa9672;
-    --secondary-accent: #fbaa9b;
-    --text-light: #e0e0e0;
-    --text-dark: #cccccc;
-    --border-radius: 10px;
-    --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    --transition: all 0.3s ease;
-}
-
-* {
-    box-sizing: border-box;
-}
-
-html,
-body {
-    height: 100%;
-    margin: 0;
-    background: var(--background-dark);
-    color: var(--text-light);
-    font-family: 'Roboto', sans-serif;
-    padding: 0;
-    line-height: 1.6;
-}
-
 header {
+    width: 100%;
+}
+
+nav {
     width: 100%;
 }
 
 .app-header {
     display: flex;
-    padding: 1rem;
     width: 100%;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    margin-bottom: 1rem;
+    padding-top: 2rem;
     background: rgba(0, 0, 0, 0.238);
     color: var(--text-light);
     box-shadow: var(--box-shadow);
+}
+
+.app-nav-side {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.238);
+    color: var(--text-light);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
 }
 
 .h2-sentry {
@@ -48,51 +33,6 @@ header {
 
 .h3-sentry {
     font-size: 1em;
-}
-
-.header-button {
-    padding: 0.5rem 1rem;
-    border-radius: var(--border-radius);
-    border: none;
-    margin: 1rem 0;
-    background-color: var(--primary-accent);
-    color: var(--text-light);
-    transition: var(--transition);
-    cursor: pointer;
-}
-
-.header-button:hover {
-    background-color: var(--secondary-accent);
-}
-
-.dropdown-menu.show {
-    background: rgba(0, 0, 0, 0.926);
-}
-
-.dropdown-flex {
-    display: flex;
-    flex-direction: column;
-    background: rgba(0, 0, 0, 0.356);
-    align-items: center;
-    justify-content: center;
-    border-radius: var(--border-radius);
-    box-shadow: var(--box-shadow);
-}
-
-.dropdown-item {
-    text-align: center;
-    padding: 1.4rem;
-    color: white;
-}
-
-.dropdown-item:hover {
-    background-color: var(--primary-accent);
-    color: var(--text-light);
-}
-
-.app-nav-item {
-    margin: 1rem;
-    color: var(--text-light);
 }
 
 .App {
@@ -104,32 +44,6 @@ header {
     color: var(--text-light);
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
-}
-
-.Filters {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1rem;
-    width: 100%;
-    align-items: center;
-}
-
-.Filter-Input {
-    border: none;
-    width: auto;
-    box-shadow: none;
-    color: white;
-}
-
-.Filter-Input::first-line {
-    color: white;
-}
-
-.Filter-Input:focus,
-.Filter-Input:hover {
-    outline: none;
-    background: #ff634789;
 }
 
 .Page-Description {
@@ -151,23 +65,6 @@ header {
     color: var(--secondary-accent);
 }
 
-.Error-Container {
-    width: calc(100% - 2rem);
-    height: auto;
-    padding: 1rem;
-    background-color: rgba(255, 0, 0, 0.19);
-    color: var(--text-dark);
-    display: flex;
-    flex-direction: column;
-    row-gap: 1rem;
-    align-items: center;
-    max-width: 1200px;
-    justify-content: center;
-    border-radius: var(--border-radius);
-    margin: 0 auto;
-    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
-}
-
 .Button-Load {
     border: 2px solid var(--background-grey);
     background: var(--background-dark);
@@ -177,131 +74,13 @@ header {
     padding: 1rem;
     width: 10rem;
     transition: var(--transition);
-    margin: 2rem;
+    margin-bottom: 2rem;
     cursor: pointer;
 }
 
 .Button-Load:hover {
     background: rgba(255, 255, 255, 0.114);
     border-color: var(--primary-accent);
-}
-
-.Card-Holder {
-    align-items: flex-start;
-    /** Prevents cards from stretching */
-    display: grid;
-    margin: 1rem;
-    padding: 1rem;
-    grid-template-columns: repeat(3, 1fr);
-    justify-content: center;
-    gap: 4rem;
-    transition: var(--transition);
-}
-
-.Card {
-    color: var(--text-light);
-    font-size: 1.3em;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    max-width: 20rem;
-    -webkit-user-select: none;
-    padding: 2rem;
-    user-select: none;
-    transform: scale(1);
-    transition: transform 0.1s ease-in-out;
-    transition: var(--transition);
-    box-shadow: var(--box-shadow);
-    border-radius: var(--border-radius);
-    background-color: var(--background-grey);
-    animation: pop-in 0.5s;
-    border: 2px solid transparent;
-    position: relative;
-}
-
-.Card:hover {
-    border-color: var(--primary-accent);
-    background-color: rgb(51, 51, 51);
-    color: var(--text-light);
-}
-
-.Card.selected {
-    transform: scale(1.1);
-}
-
-.Card-Header {
-    width: 100%;
-}
-
-.Card.a0101955 {
-    font-size: .862em;
-}
-
-.Card-Name {
-    width: 100%;
-    font-size: 1.5em;
-}
-
-.Data-Heading {
-    font-size: 1.2rem;
-    color: var(--text-light);
-}
-
-time {
-    white-space: wrap;
-}
-
-.Data-Data {
-    font-size: 1.3rem;
-    color: var(--text-dark);
-}
-
-.Card-Data {
-    opacity: 0;
-    max-height: 0;
-    padding: 1rem 2rem 0 2rem;
-    overflow: hidden;
-    transition: max-height 0.8s ease, opacity 0.8s ease;
-}
-
-.Card-Data.visible {
-    opacity: 1;
-    max-height: 1000px;
-}
-
-.Loading-Container {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    background: var(--background-dark);
-    color: var(--text-light);
-}
-
-.Tip-Container {
-    padding: 1rem;
-    background: var(--background-grey);
-    color: var(--text-light);
-    border-radius: var(--border-radius);
-    box-shadow: var(--box-shadow);
-}
-
-.Spinning-Logo {
-    margin: 3rem;
-    width: 250px;
-    height: 250px;
-    animation: spin infinite 2s linear;
-}
-
-.No-Results {
-    padding: 2rem;
-    background: var(--background-grey);
-    color: var(--text-dark);
-    border-radius: var(--border-radius);
-    box-shadow: var(--box-shadow);
 }
 
 .subtitle {
@@ -327,45 +106,12 @@ time {
 }
 
 .Page-Description {
-    background-color: #4b4b4b20;
+    background-color: #4b4b4b14;
     align-content: center;
 }
 
 .Description-Text {
     display: inline;
-}
-
-@keyframes spin {
-    from {
-        transform: rotate(0deg);
-    }
-
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-@media only screen and (min-width: 1920px) {
-    .Card-Holder {
-        grid-template-columns: repeat(6, 1fr);
-    }
-}
-
-@media only screen and (min-width: 680px) and (max-width: 900px),
-only screen and (max-width: 680px) {
-    .Card-Holder {
-        display: flex;
-        flex-wrap: wrap;
-        grid-template-columns: 1fr;
-    }
-}
-
-@media only screen and (min-width: 900px) and (max-width: 1200px) {
-    .Card-Holder {
-        gap: calc(5rem + 0.8vw);
-        display: flex;
-        flex-wrap: wrap;
-    }
 }
 
 @media only screen and (min-width: 1200px) {

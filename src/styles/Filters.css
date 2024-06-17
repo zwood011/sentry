@@ -1,0 +1,71 @@
+.Filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+    align-items: center;
+}
+
+.Filter-Input {
+    border: none;
+    width: auto;
+    box-shadow: none;
+    color: white;
+}
+
+.Filter-Input::first-line {
+    color: white;
+}
+
+.Filter-Input:focus,
+.Filter-Input:hover {
+    outline: none;
+    background: #56535200;
+}
+
+.header-button {
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius);
+    border: none;
+    margin: 3rem 0;
+    background-color: var(--primary-accent);
+    color: var(--text-light);
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.header-button:hover {
+    background-color: var(--secondary-accent);
+}
+
+.dropdown-menu.show {
+    background: rgba(0, 0, 0, 0.926);
+}
+
+.dropdown-flex {
+    display: flex;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.356);
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.dropdown-item {
+    text-align: center;
+    padding: 1.4rem;
+    color: white;
+}
+
+.dropdown-item:hover {
+    background-color: var(--primary-accent);
+    color: var(--text-light);
+}
+
+@media only screen and (max-width: 420px) {
+    .header-button {
+        margin: 1em;
+    }
+}

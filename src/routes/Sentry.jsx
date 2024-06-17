@@ -17,8 +17,7 @@ import { headerAnimation, mainAnimation } from '../components/animations';
 const Filters = React.lazy(() => import('../components/filters'));
 
 const Sentry = () => {
-  //? TODO: Wrap .features in an animation
-  //?* TODO: Look into designing error - ErrorBundary - Loading - Cards/Mobile BG - 404 further
+  //?* TODO: Design error - ErrorBundary - Loading - Cards/Mobile BG - 404 - dropdown further
 
   const [loading, setLoading] = useState(true);
   const [errorMessage, setErrorMessage] = useState(null);
@@ -84,18 +83,20 @@ const Sentry = () => {
               <div className='app-header'>
                 <nav>
                   <h1 className='app-nav-item h1-sentry'>Earth Impact Data</h1>
-                  <h2 className='app-nav-item h2-sentry'>
-                    Comprehensive data layed out in a multi-card format
-                  </h2>
-                  <h3 className="app-nav-item h3-sentry">
-                    CNEOS Impact Monitoring {' '}
-                    <Link
-                      className='Hyperlink'
-                      to='https://cneos.jpl.nasa.gov/sentry/'
-                      aria-label='CNEOS impact monitoring system'>
-                      API
-                    </Link>
-                  </h3>
+                  <div className='app-nav-side container-fluid'>
+                    <h2 className='app-nav-item h2-sentry'>
+                      Comprehensive data layed out in a multi-card format
+                    </h2>
+                    <h3 className="app-nav-item h3-sentry">
+                      CNEOS Impact Monitoring {' '}
+                      <Link
+                        className='Hyperlink'
+                        to='https://cneos.jpl.nasa.gov/sentry/'
+                        aria-label='CNEOS impact monitoring system'>
+                        API
+                      </Link>
+                    </h3>
+                  </div>
                   <Filters
                     className='app-nav-item'
                     onFilterName={onFilterName}
