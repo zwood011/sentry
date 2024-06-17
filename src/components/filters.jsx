@@ -17,7 +17,7 @@ const Filters = ({ onFilterName, onFilterSize, onFilterOldest, onFilterNewest, o
 
     return (
         <div className='Filters container-fluid'>
-            <Link to='/' className='btn btn-primary header-button' aria-label='Home page'>
+            <Link to='/' className='btn btn-secondary header-button' aria-label='Home page'>
                 Home Page
             </Link>
 
