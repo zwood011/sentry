@@ -65,15 +65,24 @@ header {
     background-color: var(--secondary-accent);
 }
 
+.dropdown-menu.show {
+    background: rgba(0, 0, 0, 0.926);
+}
+
 .dropdown-flex {
     display: flex;
     flex-direction: column;
+    background: rgba(0, 0, 0, 0.356);
     align-items: center;
     justify-content: center;
-    background-color: var(--background-grey);
-    color: var(--text-light);
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
+}
+
+.dropdown-item {
+    text-align: center;
+    padding: 1.4rem;
+    color: white;
 }
 
 .dropdown-item:hover {
@@ -107,12 +116,20 @@ header {
 }
 
 .Filter-Input {
-    border-radius: var(--border-radius);
     border: none;
     width: auto;
-    background: var(--background-dark);
-    color: var(--text-light);
-    padding: 0.5rem;
+    box-shadow: none;
+    color: white;
+}
+
+.Filter-Input::first-line {
+    color: white;
+}
+
+.Filter-Input:focus,
+.Filter-Input:hover {
+    outline: none;
+    background: #ff634789;
 }
 
 .Page-Description {
