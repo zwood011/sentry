@@ -5,7 +5,8 @@ import { AnimatedLetters } from './animations';
 const Loading = () => {
     return (
         <div className='Loading-Container' role='alert' aria-busy='true'>
-            <AnimatedLetters text='Fetching Data' className="letter-color-fade" />
+            <h1>Fetching Data</h1>
+            <AnimatedLetters text=' .  .  .  .  . ' className="letter-color-fade" />
             <img className='Spinning-Logo' src={Logo} alt='Loading logo' aria-label='Loading' />
         </div>
     );

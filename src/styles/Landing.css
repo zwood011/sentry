@@ -103,6 +103,10 @@ h1 {
     }
 }
 
+.AnimatedLetters {
+    display: inline;
+}
+
 /* Apply animation to each letter */
 .AnimatedLetters span {
     display: inline-block;
