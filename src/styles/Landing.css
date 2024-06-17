@@ -68,19 +68,19 @@ h1 {
 @keyframes fadeInBounce {
     0% {
         opacity: 0;
-        transform: translateY(-100%);
+        transform: rotate(-3deg) translateY(-100%);
     }
 
     20% {
-        transform: translateY(0);
+        transform: rotate(3deg) translateY(0);
         opacity: 0.9;
     }
 
     40% {
-        transform: translateY(-20%);
+        transform: rotate(-3deg) translateY(-20%);
         opacity: 1;
-        color: #f3b39c;
-        text-shadow: 0 0 8px #ff9114;
+        color: #fa9672;
+        text-shadow: 0 0 8px #404040;
     }
 
     60% {
@@ -90,12 +90,12 @@ h1 {
 
     80% {
         opacity: 1;
-        transform: translateY(-2.5%);
+        transform: rotate(0deg) translateY(-2.5%);
     }
 
     100% {
         opacity: 1;
-        transform: translateY(0);
+        transform: translateY(-0);
     }
 }
 
@@ -165,7 +165,6 @@ a:hover {
     width: 100%;
     max-width: 1200px;
     margin: 1em;
-    padding: 1rem;
 }
 
 @media only screen and (max-width: 1000px) {
