@@ -17,8 +17,6 @@ todo- Add a github link and possibly contact info to the footer of sentry and la
 
 ? Finish off meta tags, favicon implementation, etc in index.html
 
-! Style no-results in CardHandler.css
-
 ? Potentionally add one more filter 
 
 * Make loading animation loop
