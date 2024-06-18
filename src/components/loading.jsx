@@ -7,7 +7,7 @@ const Loading = () => {
     return (
         <div className='Loading-Container' role='alert' aria-busy='true'>
             <h1>Fetching Data</h1>
-            <AnimatedLetters text='. _ . _ . _ . _ . _. _ . _ . _' />
+            <AnimatedLetters text='. _ . _ . _ . _ . _ . _ . _ . _' />
         </div>
     );
 };
