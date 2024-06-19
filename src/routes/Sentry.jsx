@@ -68,7 +68,7 @@ const Sentry = () => {
   return (
     <>
       <Helmet>
-        <title>Card Fetcher | Sentry Grabber</title>
+        <title>Sentry Grabber | Card Fetcher</title>
         <meta
           name='description'
           data-rh='true'

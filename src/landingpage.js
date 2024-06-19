@@ -19,13 +19,12 @@ const LandingPage = () => {
     return (
         <>
             <Helmet>
-                <title>Sentry Grabber</title>
+                <title>Sentry Grabber | Landing</title>
                 <meta
                     name='description'
                     content='real-time asteroid data, NASA asteroid data, user-friendly asteroid tracker interface, intuitive asteroid card format, asteroid warning updates'
                 />
             </Helmet>
-
             <div className='landing-container container-fluid'>
                 <header className='landing-header container-fluid'>
                     <div className='title'>
