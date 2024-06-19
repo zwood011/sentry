@@ -1,15 +1,12 @@
-import React, { Suspense, lazy } from 'react';
-import { createRoot } from 'react-dom/client';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { HelmetProvider } from 'react-helmet-async';
+/*  
+! Add more data and labels from the API, research the years category? 
 
-import ErrorBoundary from './components/ErrorBoundary';
-import LandingPage from '../src/landingpage';
+? Add theme switcher
 
-const Sentry = lazy(() => import('./routes/Sentry'));
+! inconsistent media queries in-between 549px - 760px for the card/cardhandler
 
-/* 
-!       Add more data and labels from the API, research the years category? 
+! Fix filter buttons' text, it looks weird. Maybe the gradient as well
+
 
 TODO:   Add a question mark button (?) next to the label of the complex terms. This mark will have a popup
 ?       -that renders a modal or popup. I think chrome implemented one not too long ago?
@@ -22,12 +19,22 @@ TODO:   Add a github repo and possibly contact info to the footer of sentry and 
 
 TODO:   Finish off meta tags, favicon implementation, etc in index.html
 
-?       Add animation to cards when .Button-Load (Load More) is clicked
+*       Add animation to cards when .Button-Load (Load More) is clicked
 
-        Final styling and touches (maybe media queries- not sure how this looks on tablet sizes)
+*       Final styling and touches (maybe media queries- not sure how this looks on tablet sizes)
 
-        Why am I such a perfectionist?? WHY ARE THERE SO MANY SCREEN SIZES???? #grayhair
+        WHY ARE THERE SO MANY SCREEN SIZES????
 */
+
+import React, { Suspense, lazy } from 'react';
+import { createRoot } from 'react-dom/client';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
+
+import ErrorBoundary from './components/ErrorBoundary';
+import LandingPage from '../src/landingpage';
+
+const Sentry = lazy(() => import('./routes/Sentry'));
 
 const routes = [
     {

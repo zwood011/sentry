@@ -33,15 +33,14 @@
     font-family: 'Arial Narrow Bold', sans-serif;
     font-size: 1.2em;
     background: rgb(243, 155, 155);
-    color: rgb(255, 255, 255);
+    color: rgb(230, 230, 230);
     transition: var(--transition);
-    text-shadow: 1px 1.2px .22em rgb(0, 0, 0);
     cursor: pointer;
 }
 
 .header-button:hover {
     background-color: rgba(243, 155, 155, 0.733);
-    color: rgb(198, 198, 198);
+    color: rgb(182, 182, 182);
 }
 
 .dropdown-menu.show {
@@ -69,33 +68,49 @@
     color: var(--text-light);
 }
 
-@media only screen and (max-width: 550px) {
-    .Filters {
-        margin: 2.5rem 0 2.5rem 0;
-        gap: 3rem;
+@media only screen and (max-width: 343px){
+    .Filters{
+        gap: .2rem;
     }
 
-    .header-button {
-        font-size: 1em;
-        margin: 0;
-        padding: .5rem;
+    .header-button{
+        padding: .1rem;
     }
 }
 
-@media only screen and (max-width: 443px) {
-    .Filters {
-        gap: 1rem;
-    }
-}
-
-@media only screen and (max-width: 369px) {
+@media only screen and (min-width: 344px) and (max-width: 425px){
     .Filters {
         padding: 0;
-        gap: 1rem;
+        gap: .6rem;
+        font-size: 1em;
     }
 
     .header-button {
-        padding: .5rem .2rem .5rem .2rem;
+        padding: .3rem .1rem .3rem .1rem;
+    }
+
+    .header-button a{
+        margin: .1rem;
+    }
+}
+
+@media only screen and (min-width: 424px) and (max-width: 614px),
+only screen and (max-width: 680px) {
+    .Filters{
+        margin: 1.5rem .5rem 1.5rem .5rem;
+        gap: 1rem;
+    }
+    .header-button{
+        font-size: .75em;
+        padding: .5rem 1em .5rem 1rem;
+        margin: .2rem;
+    }
+}
+
+@media only screen and (min-width: 550px) and (max-width: 760px),
+only screen and (max-width: 680px) {
+    .header-button{
+        padding: .5rem 1em .5rem 1rem;
     }
 }
 

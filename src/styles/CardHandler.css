@@ -85,6 +85,41 @@
     max-height: 1000px;
 }
 
+@media only screen and (max-width: 362px) {
+    .Card {
+        padding: .5rem .1rem .5rem .1rem;
+    }
+
+    .time-text {
+        font-size: .8em;
+    }
+}
+
+@media only screen and (max-width: 423px) {
+    .Card {
+        padding: 1rem .1rem 1rem .1rem;
+    }
+
+    .time-text {
+        font-size: .8em;
+    }
+}
+
+@media only screen and (min-width: 424px) and (max-width: 900px),
+only screen and (max-width: 680px) {
+    .Card-Holder {
+        display: grid;
+        /* Stick with grid for responsiveness */
+        grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+    }
+}
+
+@media only screens and (max-width: 520px) {
+    .time-text {
+        font-size: 1em;
+    }
+}
+
 @media only screen and (min-width: 1920px) {
     .Card-Holder {
         grid-template-columns: repeat(6, 1fr);
