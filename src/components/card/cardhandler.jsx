@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import Card from './card';
-import Image from '../../assets/sad.webp';
 import Error from '../error';
 
 import '../../styles/CardHandler.css';

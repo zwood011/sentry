@@ -4,6 +4,8 @@ import './styles/Landing.css';
 import { Helmet } from 'react-helmet-async';
 import { AnimatedLetters } from './components/animations';
 
+import './styles/Landing.css';
+
 const LandingPage = () => {
     const date = new Date().getFullYear();
 

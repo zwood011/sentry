@@ -9,21 +9,24 @@ import LandingPage from '../src/landingpage';
 const Sentry = lazy(() => import('./routes/Sentry'));
 
 /* 
-! Before finishing up this project:
+!       Add more data and labels from the API, research the years category? 
 
-* Replace placeholder text across the site
+TODO:   Add a question mark button (?) next to the label of the complex terms. This mark will have a popup
+?       -that renders a modal or popup. I think chrome implemented one not too long ago?
 
-todo- Add a github repo and possibly contact info to the footer of sentry and landing
+*       Replace placeholder text across the site
 
-? Finish off meta tags, favicon implementation, etc in index.html
+TODO:   Add a github repo and possibly contact info to the footer of sentry and landing
 
-? Potentionally add one more filter 
+?       Potentionally add one more filter option
 
-* Make loading animation loop
+TODO:   Finish off meta tags, favicon implementation, etc in index.html
 
-? Add animation to load more button + cards
+?       Add animation to cards when .Button-Load (Load More) is clicked
 
- Final styling and tweaks
+        Final styling and touches (maybe media queries- not sure how this looks on tablet sizes)
+
+        Why am I such a perfectionist?? WHY ARE THERE SO MANY SCREEN SIZES???? #grayhair
 */
 
 const routes = [

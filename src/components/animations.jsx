@@ -75,5 +75,29 @@ const AnimatedLetters = ({ text }) => {
   );
 };
 
+const AnimatedLoader = ({ text }) => {
+  const [letters, setLetters] = useState([]);
 
-export { AnimatedLetters, headerAnimation, mainAnimation };
+  useEffect(() => {
+    const letterArray = text.split('').map((letter, index) => ({
+      letter,
+      key: `${letter}-${index}`,
+      animationDelay: `${index * 0.1}s`,
+    }));
+
+    setLetters(letterArray);
+  }, [text]);
+
+  return (
+    <h1 className='AnimatedLoader'>
+      {letters.map(({ letter, key, animationDelay }) => (
+        <span key={key} style={{ animationDelay }} className='AnimatedLoad'>
+          {letter === ' ' ? '\u00A0' : letter}
+        </span>
+      ))}
+    </h1>
+  );
+};
+
+
+export { AnimatedLetters, AnimatedLoader, headerAnimation, mainAnimation };
