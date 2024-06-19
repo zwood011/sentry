@@ -1,12 +1,12 @@
 :root {
     --background-dark: #1a1a1a;
     --background-grey: #2e2e2e;
-    --primary-accent: #ff8b60;
+    --primary-accent: rgb(253, 145, 145);
     --secondary-accent: #fbaa9b;
     --text-light: #e0e0e0;
     --text-dark: #cccccc;
     --border-radius: 10px;
-    --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    --box-shadow-white: 0px .3px 2rem rgb(37, 37, 37);
     --transition: all 0.3s ease;
 }
 
@@ -17,12 +17,15 @@
 html,
 body {
     height: 100%;
-    margin: 0;
     background: var(--background-dark);
     color: var(--text-light);
     font-family: 'Roboto', sans-serif;
-    padding: 0;
     line-height: 1.6;
+}
+
+main {
+    width: 100%;
+    background: rgba(84, 51, 51, 0);
 }
 
 noscript {

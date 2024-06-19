@@ -50,10 +50,11 @@ h1 {
     }
 }
 
-@keyframes fadeInBounce {
+@keyframes fadeInBounceLanding {
     0% {
         opacity: 0;
         transform: rotate(-3deg) translateY(-100%);
+        color: white;
     }
 
     20% {
@@ -64,13 +65,14 @@ h1 {
     40% {
         transform: rotate(-3deg) translateY(-20%);
         opacity: 1;
-        color: #fa9672;
-        text-shadow: 0 0 8px #404040;
+        color: #e8e8e8;
+        text-shadow: 0 0 .1em #d0cfcf;
     }
 
     60% {
         opacity: 1;
         transform: translateY(0);
+        color: white;
     }
 
     80% {
@@ -92,7 +94,7 @@ h1 {
 .AnimatedLetters span {
     display: inline-block;
     opacity: 0;
-    animation: fadeInBounce 2s ease forwards;
+    animation: fadeInBounceLanding 2s ease forwards;
 }
 
 .AnimatedLetters span:nth-child(1) {

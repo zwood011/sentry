@@ -2,7 +2,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 1rem;
+    gap: 5rem;
     width: 100%;
     align-items: center;
 }
@@ -21,32 +21,37 @@
 .Filter-Input:focus,
 .Filter-Input:hover {
     outline: none;
-    background: #56535200;
+    background: #fbcdcd00;
 }
 
 .header-button {
-    padding: 0.5rem 1rem;
+    padding: 0;
+    margin: 0;
     border-radius: var(--border-radius);
     border: none;
     margin: 3rem 0;
-    background-color: var(--primary-accent);
-    color: var(--text-light);
+    font-family: 'Arial Narrow Bold', sans-serif;
+    font-size: 1.2em;
+    background: rgb(243, 155, 155);
+    color: rgb(255, 255, 255);
     transition: var(--transition);
+    text-shadow: 1px 1.2px .22em rgb(0, 0, 0);
     cursor: pointer;
 }
 
 .header-button:hover {
-    background-color: var(--secondary-accent);
+    background-color: rgba(243, 155, 155, 0.733);
+    color: rgb(198, 198, 198);
 }
 
 .dropdown-menu.show {
-    background: rgba(0, 0, 0, 0.926);
+    background: rgb(70, 70, 70);
 }
 
 .dropdown-flex {
     display: flex;
     flex-direction: column;
-    background: rgba(0, 0, 0, 0.356);
+    background: rgba(0, 0, 0, 0);
     align-items: center;
     justify-content: center;
     border-radius: var(--border-radius);
@@ -60,12 +65,55 @@
 }
 
 .dropdown-item:hover {
-    background-color: var(--primary-accent);
+    background-color: rgba(255, 191, 191, 0.173);
     color: var(--text-light);
 }
 
-@media only screen and (max-width: 420px) {
-    .header-button {
-        margin: 1em;
+@media only screen and (max-width: 550px) {
+    .Filters {
+        margin: 2.5rem 0 2.5rem 0;
+        gap: 3rem;
     }
+
+    .header-button {
+        font-size: 1em;
+        margin: 0;
+        padding: .5rem;
+    }
+}
+
+@media only screen and (max-width: 443px) {
+    .Filters {
+        gap: 1rem;
+    }
+}
+
+@media only screen and (max-width: 369px) {
+    .Filters {
+        padding: 0;
+        gap: 1rem;
+    }
+
+    .header-button {
+        padding: .5rem .2rem .5rem .2rem;
+    }
+}
+
+@media only screen and (min-width: 760px) {
+    .Filters {
+        padding: 0;
+        gap: 8rem;
+    }
+
+    .header-button {
+        padding: .5rem 1rem .5rem 1rem;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .Filters {
+        padding: 0;
+        gap: 8rem;
+    }
+
 }
