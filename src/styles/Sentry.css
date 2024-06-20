@@ -156,8 +156,7 @@ nav {
     padding: 1rem 2rem 1rem 2rem;
     border-radius: var(--border-radius);
     align-self: center;
-    width: 50vw;
-    background-color: var(--background-grey);
+    width: 100%;
 }
 
 .Description-Text {
