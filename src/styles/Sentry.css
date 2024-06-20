@@ -119,8 +119,8 @@ nav {
     font-size: 1rem;
     padding: 1rem;
     width: 10rem;
+    margin-top: 2.5rem;
     transition: var(--transition);
-    margin: .3rem 3rem 1rem 3rem;
     cursor: pointer;
 }
 

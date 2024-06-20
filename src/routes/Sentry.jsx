@@ -75,8 +75,8 @@ const Sentry = () => {
         />
       </Helmet>
 
-      <div className='App' role='main'>
-        {!loading && (
+      {!loading && (
+        <div className='App' role='main'>
           <>
             <header className={headerAnimation}>
               <div className='padding-space'></div>
@@ -88,7 +88,6 @@ const Sentry = () => {
                     <h2 className='app-nav-item h2-sentry'>
                       Comprehensive data layed out in a multi-card format
                     </h2>
-
                     <h3 className="app-nav-item h3-sentry">
                       CNEOS Impact Monitoring {' '}
                       <Link
@@ -107,8 +106,7 @@ const Sentry = () => {
                     onFilterOldest={onFilterOldest}
                     onFilterNewest={onFilterNewest}
                     onClear={onClear}
-                    aria-label='Filtering options for Earth impact data'
-                  />
+                    aria-label='Filtering options for Earth impact data' />
                 </nav>
               </div>
             </header>
@@ -120,12 +118,12 @@ const Sentry = () => {
                 objects={filteredObjects}
                 retryFetch={fetchData}
                 aria-live='polite'
-                aria-relevant='additions removals'
-              />
+                aria-relevant='additions removals' />
             </main>
 
             <footer className='Footer-Sentry'>
               <p className='sentry-footerText'>© {date} Zachary Wood. All rights reserved.</p>
+
               <div className='Page-Description' aria-label='Page Description'>
                 <p className="Description-Text">
                   Powered by{' '}
@@ -140,10 +138,10 @@ const Sentry = () => {
               </div>
             </footer>
           </>
-        )}
 
-        <BGParticles />
-      </div>
+          <BGParticles />
+        </div>
+      )}
     </>
   );
 };
