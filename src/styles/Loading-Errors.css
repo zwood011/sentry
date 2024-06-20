@@ -37,7 +37,7 @@
 
 .Tip-Container {
     padding: 1.4rem 1.4rem .85rem 1.4rem;
-    margin: .85rem;   
+    margin: .85rem;
     background: rgba(70, 70, 70, 0.463);
     color: var(--text-light);
     border-radius: var(--border-radius);
@@ -55,7 +55,7 @@
     color: var(--text-light);
 }
 
-.btn-loading-retry{
+.btn-loading-retry {
     padding: 1rem 3rem 1rem 3rem;
 }
 
