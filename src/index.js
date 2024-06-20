@@ -3,13 +3,14 @@
 
 ? Add theme switcher
 
-! inconsistent media queries in-between 549px - 760px for the card/cardhandler
+! DESIGN CARDS FURTHER- they just slap the data on a card, make it look nicer
+
+TODO: Mobile margins are inconsistent on /sentry, it's allowing horizontal scrolls
 
 ! Fix filter buttons' text, it looks weird. Maybe the gradient as well
 
-
-TODO:   Add a question mark button (?) next to the label of the complex terms. This mark will have a popup
-?       -that renders a modal or popup. I think chrome implemented one not too long ago?
+TODO:   Add a question mark button (?) next to the label of complex terms
+?       -Renders a modal or popup. I think chrome implemented one not too long ago
 
 *       Replace placeholder text across the site
 

@@ -8,10 +8,18 @@
     min-height: 100vh;
     background-color: var(--background-dark);
     color: var(--text-light);
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.particles {
+    z-index: 0;
 }
 
 .landing-header {
     padding: 1rem;
+    z-index: 10;
 }
 
 .title {
@@ -154,6 +162,10 @@ a:hover {
     margin: 1em;
 }
 
+.feature {
+    z-index: 10;
+}
+
 @media only screen and (max-width: 1000px) {
     .features {
         margin-top: 2rem;
@@ -191,6 +203,7 @@ h2 {
 .footerText {
     font-size: 1.2rem;
     color: var(--text-dark);
+    z-index: 10;
 }
 
 .Hyperlink {

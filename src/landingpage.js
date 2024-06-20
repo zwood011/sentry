@@ -1,20 +1,87 @@
-import React, { useEffect } from 'react';
+import { useEffect, useMemo, useState } from "react";
+import Particles, { initParticlesEngine } from "@tsparticles/react";
+import { loadSlim } from "@tsparticles/slim";
+import React from 'react';
 import { Link } from 'react-router-dom';
 import './styles/Landing.css';
 import { Helmet } from 'react-helmet-async';
 import { AnimatedLetters } from './components/animations';
 
-import './styles/Landing.css';
-
 const LandingPage = () => {
+    const [init, setInit] = useState(false);
     const date = new Date().getFullYear();
 
     useEffect(() => {
+        initParticlesEngine(async (engine) => {
+            await loadSlim(engine);
+        }).then(() => {
+            setInit(true);
+        });
+
         const noscriptElement = document.querySelector('noscript');
         if (noscriptElement) {
             noscriptElement.remove();
         }
     }, []);
+
+    const options = useMemo(() => ({
+        fpsLimit: 144,
+        interactivity: {
+            events: {
+                onClick: {
+                    enable: true,
+                    mode: "push",
+                },
+                onHover: {
+                    enable: true,
+                    mode: "light",
+                },
+            },
+            modes: {
+                push: {
+                    quantity: 4,
+                },
+            },
+        },
+        particles: {
+            color: {
+                value: "#A9A9A9",
+            },
+            links: {
+                color: "#d3d3d3",
+                distance: 150,
+                enable: true,
+                opacity: 0.2,
+                width: 1,
+            },
+            move: {
+                direction: "none",
+                enable: true,
+                outModes: {
+                    default: "bounce",
+                },
+                random: false,
+                speed: 2,
+                straight: false,
+            },
+            number: {
+                density: {
+                    enable: true,
+                },
+                value: 55,
+            },
+            opacity: {
+                value: 0.4,
+            },
+            shape: {
+                type: "circle",
+            },
+            size: {
+                value: { min: 1, max: 3 },
+            },
+        },
+        detectRetina: true,
+    }), []);
 
     return (
         <>
@@ -25,6 +92,7 @@ const LandingPage = () => {
                     content='real-time asteroid data, NASA asteroid data, user-friendly asteroid tracker interface, intuitive asteroid card format, asteroid warning updates'
                 />
             </Helmet>
+
             <div className='landing-container container-fluid'>
                 <header className='landing-header container-fluid'>
                     <div className='title'>
@@ -73,6 +141,8 @@ const LandingPage = () => {
                         impact monitoring system
                     </p>
                 </footer>
+
+                {init && <Particles id="tsparticles" className="particles" options={options} />}
             </div>
         </>
     );
