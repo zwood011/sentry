@@ -14,7 +14,7 @@ nav {
 .padding-space {
     padding: .5rem;
     position: relative;
-    background: rgb(21, 21, 21);
+    background: rgb(25, 25, 25);
 }
 
 .app-header {
@@ -23,7 +23,7 @@ nav {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background: rgb(21, 21, 21);
+    background: rgb(25, 25, 25);
     color: var(--text-light);
     box-shadow: var(--box-shadow);
     position: relative;
@@ -47,8 +47,8 @@ nav {
 
 .h1-sentry {
     padding: 2rem 0 2rem 0;
-    background: rgb(21, 21, 21);
     position: relative;
+    z-index: 5;
 }
 
 .app-nav-item {
@@ -57,7 +57,7 @@ nav {
 
 .app-nav-side {
     width: 100%;
-    background-color: rgba(32, 32, 32, 0.85);
+    background-color: rgba(32, 32, 32);
     color: var(--text-light);
     padding: 2rem;
     display: flex;
@@ -67,12 +67,8 @@ nav {
 }
 
 .h2-sentry {
-    font-size: 1.4em;
-    padding-bottom: 1.5rem;
-}
-
-.h3-sentry {
     font-size: 1em;
+    padding-bottom: 1.5rem;
 }
 
 .App {
@@ -122,6 +118,8 @@ nav {
     margin-top: 2.5rem;
     transition: var(--transition);
     cursor: pointer;
+    position: relative;
+    z-index: 10;
 }
 
 .Button-Load:hover {
@@ -150,6 +148,16 @@ nav {
     position: relative;
     display: flex;
     flex-direction: column;
+}
+
+.Footer-Description {
+    position: relative;
+    z-index: 5;
+    padding: 1rem 2rem 1rem 2rem;
+    border-radius: var(--border-radius);
+    align-self: center;
+    width: 50vw;
+    background-color: var(--background-grey);
 }
 
 .Description-Text {

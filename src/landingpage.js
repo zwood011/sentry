@@ -14,7 +14,7 @@ const LandingPage = () => {
                 <title>Sentry Grabber</title>
                 <meta
                     name='description'
-                    content='real-time asteroid data, NASA asteroid data, user-friendly asteroid tracker interface, intuitive asteroid card format, asteroid warning updates'
+                    content='Real-time asteroid data, NASA asteroid data, user-friendly asteroid tracker interface, intuitive asteroid card format, asteroid warning updates'
                 />
             </Helmet>
 
@@ -25,9 +25,7 @@ const LandingPage = () => {
                     </div>
                     <h2 className='subtitle'>Explore potentially hazardous asteroid data with ease</h2>
                     <div className='sub-text fadein'>
-                        <p>This site is currently hosted for development testing. This project is in early stages and
-                            everything within this site is subject to change.
-                        </p>
+                        <p>Your go-to platform for accessing real-time data from NASA. Discover detailed information and asteroid specifications through intuitive multi-card formatting</p>
                         <nav>
                             <Link to='/sentry' className='Button-Landing' aria-label='View Project'>
                                 Explore Project
@@ -38,18 +36,18 @@ const LandingPage = () => {
 
                 <main className='features' role='main'>
                     <section className='feature'>
-                        <h2 className='featureTitle'>Interactive Cards</h2>
-                        <p className='featureDescription'>Visualize asteroid data in an intuitive card format.</p>
+                        <h2 className='featureTitle'>Detailed Specifications</h2>
+                        <p className='featureDescription'>Access detailed specifications and data for each asteroid, presented in an easy-to-read card structure</p>
                     </section>
 
                     <section className='feature'>
                         <h2 className='featureTitle'>Real-time Updates</h2>
-                        <p className='featureDescription'>Stay updated with the latest data from NASA's Sentry API.</p>
+                        <p className='featureDescription'>Stay updated with the latest information from NASA's Sentry API, ensuring you have current data at your fingertips</p>
                     </section>
 
                     <section className='feature'>
                         <h2 className='featureTitle'>User-Friendly Interface</h2>
-                        <p className='featureDescription'>Easily navigate and explore the information.</p>
+                        <p className='featureDescription'>Critically designed to support a user-friendly interface for seamless interaction</p>
                     </section>
                 </main>
 

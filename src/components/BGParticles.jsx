@@ -34,19 +34,19 @@ const BGParticles = () => {
             },
             modes: {
                 push: {
-                    quantity: 4,
+                    quantity: 3,
                 },
             },
         },
         particles: {
             color: {
-                value: "#A9A9A9",
+                value: "#fcb6b6",
             },
             links: {
-                color: "#d3d3d3",
+                color: "#ffffff",
                 distance: 150,
                 enable: true,
-                opacity: 0.2,
+                opacity: 0.15,
                 width: 1,
             },
             move: {
@@ -56,14 +56,14 @@ const BGParticles = () => {
                     default: "bounce",
                 },
                 random: false,
-                speed: 2,
+                speed: 1.5,
                 straight: false,
             },
             number: {
                 density: {
                     enable: true,
                 },
-                value: 90,
+                value: 60,
             },
             opacity: {
                 value: 0.4,

@@ -10,8 +10,6 @@
 TODO:   Add a question mark button (?) next to the label of complex terms
 ?       -Renders a modal or popup. I think chrome implemented one not too long ago
 
-*       Replace placeholder text across the site
-
 TODO:   Add a github repo and possibly contact info to the footer of sentry and landing
 
 ?       Potentionally add one more filter option

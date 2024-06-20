@@ -86,9 +86,9 @@ const Sentry = () => {
                   <h1 className='app-nav-item h1-sentry'>Earth Impact Data</h1>
                   <div className='app-nav-side container-fluid'>
                     <h2 className='app-nav-item h2-sentry'>
-                      Comprehensive data layed out in a multi-card format
+                      Experience Seamless and Real-Time Updates with a User-Centric design
                     </h2>
-                    <h3 className="app-nav-item h3-sentry">
+                    <p className="app-nav-item h3-sentry">
                       CNEOS Impact Monitoring {' '}
                       <Link
                         className='Hyperlink'
@@ -96,7 +96,7 @@ const Sentry = () => {
                         aria-label='CNEOS impact monitoring system'>
                         API
                       </Link>
-                    </h3>
+                    </p>
                   </div>
 
                   <Filters
@@ -124,7 +124,7 @@ const Sentry = () => {
             <footer className='Footer-Sentry'>
               <p className='sentry-footerText'>© {date} Zachary Wood. All rights reserved.</p>
 
-              <div className='Page-Description' aria-label='Page Description'>
+              <div className='Footer-Description' aria-label='Footer Description'>
                 <p className="Description-Text">
                   Powered by{' '}
                   <Link

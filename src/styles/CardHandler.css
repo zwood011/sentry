@@ -5,6 +5,7 @@
     width: 100%;
     margin: 0 auto;
     padding: 3rem;
+    background: rgb(31, 31, 31);
     grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
     justify-content: center;
     gap: 4rem;
@@ -26,7 +27,7 @@
     transition: var(--transition);
     box-shadow: var(--box-shadow);
     border-radius: var(--border-radius);
-    background-color: var(--background-grey);
+    background-color: rgb(47, 47, 47);
     animation: pop-in 0.5s;
     border: 2px solid transparent;
     position: relative;
