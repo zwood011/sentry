@@ -63,7 +63,7 @@ const BGParticles = () => {
                 density: {
                     enable: true,
                 },
-                value: 55,
+                value: 85,
             },
             opacity: {
                 value: 0.4,
