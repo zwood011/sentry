@@ -98,7 +98,7 @@ const LandingPage = () => {
                     <div className='title'>
                         <AnimatedLetters text='Sentry Grabber' className="letter-color-fade" />
                     </div>
-                    <h2 className='subtitle'>Explore potentially hazardous asteroids data with ease</h2>
+                    <h2 className='subtitle'>Explore potentially hazardous asteroid data with ease</h2>
                     <div className='sub-text fadein'>
                         <p>This site is currently hosted for development testing. This project is in early stages and
                             everything within this site is subject to change.
