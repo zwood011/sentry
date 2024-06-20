@@ -4,7 +4,7 @@
     position: relative;
     width: 100%;
     margin: 0 auto;
-    background-color: var(--background-dark);
+    background: rgba(16, 16, 16, 0.5);
     padding: 3rem;
     grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
     justify-content: center;

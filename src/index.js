@@ -1,13 +1,11 @@
 /*  
-! Add more data and labels from the API, research the years category? 
+! Add more data and labels from the API, research categories more
 
 ? Add theme switcher
 
+* The large asteroid name still has irregular sizing
+
 ! DESIGN CARDS FURTHER- they just slap the data on a card, make it look nicer
-
-TODO: Mobile margins are inconsistent on /sentry, it's allowing horizontal scrolls
-
-! Fix filter buttons' text, it looks weird. Maybe the gradient as well
 
 TODO:   Add a question mark button (?) next to the label of complex terms
 ?       -Renders a modal or popup. I think chrome implemented one not too long ago
@@ -21,8 +19,6 @@ TODO:   Add a github repo and possibly contact info to the footer of sentry and 
 TODO:   Finish off meta tags, favicon implementation, etc in index.html
 
 *       Add animation to cards when .Button-Load (Load More) is clicked
-
-*       Final styling and touches (maybe media queries- not sure how this looks on tablet sizes)
 
         WHY ARE THERE SO MANY SCREEN SIZES????
 */

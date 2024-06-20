@@ -125,7 +125,7 @@ const Sentry = () => {
             </main>
 
             <footer className='Footer-Sentry'>
-              <p className='footerText'>© {date} Zachary Wood. All rights reserved.</p>
+              <p className='sentry-footerText'>© {date} Zachary Wood. All rights reserved.</p>
               <div className='Page-Description' aria-label='Page Description'>
                 <p className="Description-Text">
                   Powered by{' '}

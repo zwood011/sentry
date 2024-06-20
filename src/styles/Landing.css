@@ -201,7 +201,6 @@ h2 {
 }
 
 .footerText {
-    font-size: 1.2rem;
     color: var(--text-dark);
     z-index: 10;
 }
