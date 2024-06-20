@@ -7,6 +7,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { Helmet } from 'react-helmet-async';
+import BGParticles from '../components/BGParticles';
 
 import '../styles/Sentry.css';
 
@@ -17,8 +18,6 @@ import { headerAnimation, mainAnimation } from '../components/animations';
 const Filters = React.lazy(() => import('../components/filters'));
 
 const Sentry = () => {
-  //?* TODO: Design error - ErrorBundary - Loading - Cards/Mobile BG - 404 - dropdown further
-
   const [loading, setLoading] = useState(true);
   const [errorMessage, setErrorMessage] = useState(null);
   const [objects, setObjects] = useState([]);
@@ -80,6 +79,8 @@ const Sentry = () => {
         {!loading && (
           <>
             <header className={headerAnimation}>
+              <div className='padding-space'></div>
+
               <div className='app-header'>
                 <nav>
                   <h1 className='app-nav-item h1-sentry'>Earth Impact Data</h1>
@@ -87,6 +88,7 @@ const Sentry = () => {
                     <h2 className='app-nav-item h2-sentry'>
                       Comprehensive data layed out in a multi-card format
                     </h2>
+
                     <h3 className="app-nav-item h3-sentry">
                       CNEOS Impact Monitoring {' '}
                       <Link
@@ -97,6 +99,7 @@ const Sentry = () => {
                       </Link>
                     </h3>
                   </div>
+
                   <Filters
                     className='app-nav-item'
                     onFilterName={onFilterName}
@@ -138,6 +141,8 @@ const Sentry = () => {
             </footer>
           </>
         )}
+
+        <BGParticles />
       </div>
     </>
   );

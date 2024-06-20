@@ -1,6 +1,5 @@
 .Error-Container {
     position: relative;
-    /* Crucial for pseudo-elements */
     width: 100%;
     padding: 3rem 1rem 3rem 1rem;
     background: linear-gradient(120deg, rgba(0, 0, 0, 0.444), 1%, rgb(226, 168, 168), 90%, rgba(255, 255, 255, 0.159));
