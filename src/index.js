@@ -31,31 +31,24 @@ import LandingPage from '../src/landingpage';
 
 const Sentry = lazy(() => import('./routes/Sentry'));
 
-const routes = [
-    {
-        path: '/',
-        element: <LandingPage />,
-    },
-    {
-        path: 'sentry',
-        element: (
-            <Suspense>
-                <Sentry />
-            </Suspense>
-        ),
-    },
-];
-
-createRoot(document.getElementById('root')).render(
+const App = () => (
     <Router>
         <HelmetProvider>
             <ErrorBoundary>
                 <Routes>
-                    {routes.map(({ path, element }) => (
-                        <Route key={path} path={path} element={element} />
-                    ))}
+                    <Route path="/" element={<LandingPage />} />
+                    <Route 
+                        path="/sentry" 
+                        element={
+                            <Suspense>
+                                <Sentry />
+                            </Suspense>
+                        } 
+                    />
                 </Routes>
             </ErrorBoundary>
         </HelmetProvider>
     </Router>
 );
+
+createRoot(document.getElementById('root')).render(<App />);
