@@ -1,10 +1,10 @@
 ## 📚 Main stack
-[![My Skills](https://skillicons.dev/icons?i=react,js,css,emotion,bootstrap,webpack,npm,git)](https://skillicons.dev)
+[![My Skills](https://skillicons.dev/icons?i=react,js,css,emotion,bootstrap,jest,webpack,npm,git)](https://skillicons.dev)
 
 <br>
 
 ## ❓ Looking into
-[![Skills](https://skillicons.dev/icons?i=sass,jest,redux,next)](https://skillicons.dev)
+[![Skills](https://skillicons.dev/icons?i=sass,redux,next)](https://skillicons.dev)
 
 <br>
 
