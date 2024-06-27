@@ -1,23 +1,20 @@
-###### Depedencies Last Updated: 6/26/2024
-
-<br>
-
-# Site Hosting
-[![Netlify Status](https://api.netlify.com/api/v1/badges/4a2c2b1f-33bb-4141-9771-d0529a2435df/deploy-status)](https://neo-nasa.netlify.app)
-
-<br>
-
-# 📚 Main stack
+## 📚 Main stack
 [![My Skills](https://skillicons.dev/icons?i=react,js,css,emotion,bootstrap,webpack,npm,git)](https://skillicons.dev)
 
 <br>
 
-# ❓ Looking into
+## ❓ Looking into
 [![Skills](https://skillicons.dev/icons?i=sass,jest,redux,next)](https://skillicons.dev)
 
 <br>
 
-## <img src="https://static-00.iconduck.com/assets.00/file-json-o-icon-512x512-i5jkc5fy.png" width="30" />  &nbsp; Dependencies
+## Site Hosting
+[![Netlify Status](https://api.netlify.com/api/v1/badges/4a2c2b1f-33bb-4141-9771-d0529a2435df/deploy-status)](https://neo-nasa.netlify.app)
+
+
+<br>
+
+### <img src="https://static-00.iconduck.com/assets.00/file-json-o-icon-512x512-i5jkc5fy.png" width="25" />  &nbsp; Dependencies
 ###### Webpack, Emotion, tsParticles, Jest, React, ESLint
 
 
@@ -46,7 +43,7 @@
 
 <br>
 
-## <img src="https://static-00.iconduck.com/assets.00/file-json-o-icon-512x512-i5jkc5fy.png" width="30" />  &nbsp; DevDependencies
+### <img src="https://static-00.iconduck.com/assets.00/file-json-o-icon-512x512-i5jkc5fy.png" width="25" />  &nbsp; DevDependencies
 ###### Webpack, React, Axios, Babel
 
 | Dependency                                    | Version   | Description                                                       |
@@ -68,3 +65,7 @@
 | uuid                                          | ^10.0.0   | Generates unique IDs.                                            |
 | webpack                                       | ^5.92.0   | Module bundler for JavaScript.                                   |
 | webpack-bundle-analyzer                       | ^4.10.2   | Analyzes the size of Webpack output files.                       |
+
+<br>
+
+###### Last Updated: 6/26/2024
