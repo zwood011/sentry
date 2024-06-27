@@ -17,7 +17,8 @@
 
 ###### Last Updated: 6/26/2024
 
-## Dependencies
+## <img src="https://static-00.iconduck.com/assets.00/file-json-o-icon-512x512-i5jkc5fy.png" width="30" />  &nbsp; Dependencies
+
 
 | Dependency                               | Version   | Description                                                 |
 |------------------------------------------|-----------|-------------------------------------------------------------|
@@ -44,7 +45,7 @@
 
 <br>
 
-## DevDependencies
+## <img src="https://static-00.iconduck.com/assets.00/file-json-o-icon-512x512-i5jkc5fy.png" width="30" />  &nbsp; DevDependencies
 
 | Dependency                                    | Version   | Description                                                       |
 |-----------------------------------------------|-----------|-------------------------------------------------------------------|
