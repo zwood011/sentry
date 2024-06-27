@@ -13,7 +13,7 @@
 
 <br>
 
-# [![My Skills](https://skillicons.dev/icons?i=npm)](https://skillicons.dev) Dependencies (Current, not cleaned)
+# [![My Skills](https://skillicons.dev/icons?i=npm)](https://skillicons.dev) Dependencies - Current, not cleaned or optimized yet
 
 | Dependency                               | Version   | Description                                                 |
 |------------------------------------------|-----------|-------------------------------------------------------------|
@@ -40,7 +40,7 @@
 
 <br>
 
-## DevDependencies (Current, not cleaned)
+## DevDependencies - Current, not cleaned or optimized yet
 
 | Dependency                                    | Version   | Description                                                       |
 |-----------------------------------------------|-----------|-------------------------------------------------------------------|
