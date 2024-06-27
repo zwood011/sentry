@@ -15,7 +15,9 @@
 
 # [![My Skills](https://skillicons.dev/icons?i=npm)](https://skillicons.dev)&nbsp; Package Manager
 
-## &nbsp; Dependencies
+###### Last Updated: 6/26/2024
+
+## Dependencies
 
 | Dependency                               | Version   | Description                                                 |
 |------------------------------------------|-----------|-------------------------------------------------------------|
@@ -42,7 +44,7 @@
 
 <br>
 
-## &nbsp; DevDependencies
+## DevDependencies
 
 | Dependency                                    | Version   | Description                                                       |
 |-----------------------------------------------|-----------|-------------------------------------------------------------------|
