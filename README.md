@@ -15,6 +15,7 @@
 <br>
 
 ### <img src="https://static-00.iconduck.com/assets.00/file-json-o-icon-512x512-i5jkc5fy.png" width="25" />  &nbsp; Dependencies
+##### My webpack configs are a little funky right now
 ###### Webpack, Emotion, tsParticles, Jest, React (Helmet), ESLint
 
 
