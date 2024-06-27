@@ -16,6 +16,7 @@
 ###### Last Updated: 6/26/2024
 
 ## <img src="https://static-00.iconduck.com/assets.00/file-json-o-icon-512x512-i5jkc5fy.png" width="30" />  &nbsp; Dependencies
+###### Webpack, Emotion, tsParticles, Jest, React, ESLint
 
 
 | Dependency                               | Version   | Description                                                 |
@@ -44,6 +45,7 @@
 <br>
 
 ## <img src="https://static-00.iconduck.com/assets.00/file-json-o-icon-512x512-i5jkc5fy.png" width="30" />  &nbsp; DevDependencies
+###### Webpack, React, Axios, Babel
 
 | Dependency                                    | Version   | Description                                                       |
 |-----------------------------------------------|-----------|-------------------------------------------------------------------|
