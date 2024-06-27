@@ -4,7 +4,7 @@
 <br>
 
 # 📚 Main stack
-[![My Skills](https://skillicons.dev/icons?i=react,js,css,emotion,bootstrap,webpack)](https://skillicons.dev)
+[![My Skills](https://skillicons.dev/icons?i=react,js,css,emotion,bootstrap,webpack,npm)](https://skillicons.dev)
 
 <br>
 
@@ -12,8 +12,6 @@
 [![Skills](https://skillicons.dev/icons?i=sass,jest,redux,next)](https://skillicons.dev)
 
 <br>
-
-# [![My Skills](https://skillicons.dev/icons?i=npm)](https://skillicons.dev)&nbsp; Package Manager
 
 ###### Last Updated: 6/26/2024
 
