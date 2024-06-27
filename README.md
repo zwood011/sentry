@@ -1,9 +1,9 @@
-## 📚 Main stack
+## Main stack
 [![My Skills](https://skillicons.dev/icons?i=react,js,css,emotion,bootstrap,jest,webpack,npm,git)](https://skillicons.dev)
 
 <br>
 
-## ❓ Looking into
+## Looking into
 [![Skills](https://skillicons.dev/icons?i=sass,redux,next)](https://skillicons.dev)
 
 <br>
