@@ -1,6 +1,4 @@
-<br>
-
-###### Last Updated: 6/26/2024
+##### Last Updated: 6/26/2024
 
 <br>
 
