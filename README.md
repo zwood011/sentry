@@ -13,8 +13,7 @@
 
 <br>
 
-# [![My Skills](https://skillicons.dev/icons?i=npm)](https://skillicons.dev) Dependencies - Current, not cleaned or optimized yet
-
+# [![My Skills](https://skillicons.dev/icons?i=npm)](https://skillicons.dev) Dependencies - Current, not cleaned
 | Dependency                               | Version   | Description                                                 |
 |------------------------------------------|-----------|-------------------------------------------------------------|
 | @emotion/css                             | ^11.11.2  | CSS-in-JS styling library.                                  |
@@ -40,7 +39,7 @@
 
 <br>
 
-## DevDependencies - Current, not cleaned or optimized yet
+## DevDependencies - Current, not cleaned
 
 | Dependency                                    | Version   | Description                                                       |
 |-----------------------------------------------|-----------|-------------------------------------------------------------------|
