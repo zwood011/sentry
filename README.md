@@ -4,7 +4,7 @@
 <br>
 
 # 📚 Main stack
-[![My Skills](https://skillicons.dev/icons?i=react,js,css,emotion,bootstrap,webpack,npm)](https://skillicons.dev)
+[![My Skills](https://skillicons.dev/icons?i=react,js,css,emotion,bootstrap,webpack,npm,git)](https://skillicons.dev)
 
 <br>
 
