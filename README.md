@@ -15,7 +15,7 @@
 <br>
 
 ### <img src="https://static-00.iconduck.com/assets.00/file-json-o-icon-512x512-i5jkc5fy.png" width="25" />  &nbsp; Dependencies
-###### Webpack, Emotion, tsParticles, Jest, React (Helmet), ESLint
+###### Webpack, Emotion, tsParticles, React (Helmet), ESLint, Jest
 
 
 | Dependency                               | Version   | Description                                                 |
