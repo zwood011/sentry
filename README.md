@@ -1,3 +1,5 @@
+###### Last Updated: 6/26/2024
+
 # Site Hosting
 [![Netlify Status](https://api.netlify.com/api/v1/badges/4a2c2b1f-33bb-4141-9771-d0529a2435df/deploy-status)](https://neo-nasa.netlify.app)
 
@@ -12,8 +14,6 @@
 [![Skills](https://skillicons.dev/icons?i=sass,jest,redux,next)](https://skillicons.dev)
 
 <br>
-
-###### Last Updated: 6/26/2024
 
 ## <img src="https://static-00.iconduck.com/assets.00/file-json-o-icon-512x512-i5jkc5fy.png" width="30" />  &nbsp; Dependencies
 ###### Webpack, Emotion, tsParticles, Jest, React, ESLint
