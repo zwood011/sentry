@@ -13,7 +13,7 @@
 
 <br>
 
-###### Last Updated: 6/26/2024
+###### Dependency list was last updated on 6/26/2024
 
 ## <img src="https://static-00.iconduck.com/assets.00/file-json-o-icon-512x512-i5jkc5fy.png" width="30" />  &nbsp; Dependencies
 ###### Webpack, Emotion, tsParticles, Jest, React, ESLint
