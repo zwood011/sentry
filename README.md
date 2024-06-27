@@ -13,7 +13,10 @@
 
 <br>
 
-# [![My Skills](https://skillicons.dev/icons?i=npm)](https://skillicons.dev) Dependencies - Not Cleaned
+# [![My Skills](https://skillicons.dev/icons?i=npm)](https://skillicons.dev)&nbsp; Package Manager
+
+## &nbsp; Dependencies
+
 | Dependency                               | Version   | Description                                                 |
 |------------------------------------------|-----------|-------------------------------------------------------------|
 | @emotion/css                             | ^11.11.2  | CSS-in-JS styling library.                                  |
@@ -39,7 +42,7 @@
 
 <br>
 
-## DevDependencies - Not Cleaned
+## &nbsp; DevDependencies
 
 | Dependency                                    | Version   | Description                                                       |
 |-----------------------------------------------|-----------|-------------------------------------------------------------------|
