@@ -9,7 +9,6 @@ import axios from 'axios';
 import { Helmet } from 'react-helmet-async';
 import BGParticles from '../components/BGParticles';
 
-import '../styles/Sentry.css';
 
 import useFilters from '../hooks/usefilters';
 import Loading from '../components/loading';
@@ -54,13 +53,12 @@ const Sentry = () => {
       });
   }, []);
 
-  //* Add objects to the useFilters params
+  //* Add objects to useFilters params
   const { filteredObjects, onFilterName, onFilterSize, onFilterOldest, onFilterNewest, onClear } = useFilters(objects);
 
   useEffect(() => {
     fetchData();
   }, [fetchData]);
-
 
   if (loading) return <Loading />;
 
@@ -77,7 +75,6 @@ const Sentry = () => {
 
       {!loading && (
         <div className='App' role='main'>
-          <>
             <header className={headerAnimation}>
               <div className='padding-space'></div>
 
@@ -137,7 +134,6 @@ const Sentry = () => {
                 </p>
               </div>
             </footer>
-          </>
 
           <BGParticles />
         </div>

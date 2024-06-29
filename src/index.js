@@ -10,13 +10,13 @@
 TODO:   Add a question mark button (?) next to the label of complex terms
 ?       -Renders a modal or popup. I think chrome implemented one not too long ago
 
-TODO:   Add a github repo and possibly contact info to the footer of sentry and landing
-
 ?       Potentionally add one more filter option
 
-TODO:   Finish off meta tags, favicon implementation, etc in index.html
-
 *       Add animation to cards when .Button-Load (Load More) is clicked
+
+TODO:   Add a github repo and possibly contact info to the footer of sentry and landing
+
+TODO:   Finish off meta tags, favicon implementation, etc in index.html
 
         WHY ARE THERE SO MANY SCREEN SIZES????
 */
