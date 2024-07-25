@@ -1,8 +1,10 @@
+const path = require('path');
 const TerserPlugin = require('terser-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-/* const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
-use at the bottom of plugins: new BundleAnalyzerPlugin(), */
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const { DefinePlugin } = require('webpack');
+// const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
 module.exports = {
     mode: 'production',
@@ -14,7 +16,7 @@ module.exports = {
     output: {
         filename: '[name].bundle.js',
         chunkFilename: '[name].chunk.js',
-        path: __dirname + '/dist',
+        path: path.resolve(__dirname, 'dist'),
         publicPath: '/',
     },
     module: {
@@ -36,6 +38,9 @@ module.exports = {
             {
                 test: /\.(png|jpe?g|gif|webp)$/i,
                 type: 'asset/resource',
+                generator: {
+                    filename: 'images/[hash][ext][query]',
+                },
             },
         ],
     },
@@ -75,8 +80,8 @@ module.exports = {
             },
         },
     },
-
     plugins: [
+        new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
             template: './public/index.html',
             favicon: './public/favicons/favicon-48.png',
@@ -92,7 +97,6 @@ module.exports = {
                 minifyCSS: true,
                 minifyURLs: true,
             },
-            // Use dynamic import() to import critical package
             postProcess: (content) => {
                 return import('critical').then((critical) => {
                     return critical
@@ -122,8 +126,18 @@ module.exports = {
                 { from: './public/index.css', to: './' },
             ],
         }),
+        new DefinePlugin({
+            'process.env.NODE_ENV': JSON.stringify('production'),
+        }),
+        // new BundleAnalyzerPlugin(), |  uncomment when you need to analyze your bundle
     ],
     devServer: {
         historyApiFallback: true,
+        static: {
+            directory: path.join(__dirname, 'dist'),
+        },
+        compress: true,
+        port: 9000,
     },
+    devtool: 'source-map',
 };
