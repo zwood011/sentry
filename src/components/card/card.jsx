@@ -30,7 +30,6 @@ const Card = ({ data }) => {
 
                     <section
                         className={`Card-Data ${selectedCard?.id === obj.id ? 'visible' : ''}`}
-                        data-id={obj.id}
                         aria-label='Detailed card data'>
                         {renderData('Cumulative Hazard Rating', obj.ps_cum)}
                         {renderData('Diameter', `${obj.diameter} km`)}
