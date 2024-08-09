@@ -9,7 +9,6 @@ import axios from 'axios';
 import { Helmet } from 'react-helmet-async';
 import BGParticles from '../components/BGParticles';
 
-
 import useFilters from '../hooks/usefilters';
 import Loading from '../components/loading';
 import CardHandler from '../components/card/cardhandler';
