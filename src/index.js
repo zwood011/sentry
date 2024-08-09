@@ -1,24 +1,23 @@
 /*  
-! Add more data and labels from the API, research categories more
+!       Add more data and labels from the API, research categories more
 
-? Add theme switcher
+!       DESIGN CARDS FURTHER- they just slap the data on a card, make it look nicer
 
-* The large asteroid name still has irregular sizing
+?       Add theme switcher
 
-! DESIGN CARDS FURTHER- they just slap the data on a card, make it look nicer
+?       Add animation to cards when .Button-Load (Load More) is clicked
 
-TODO:   Add a question mark button (?) next to the label of complex terms
-?       -Renders a modal or popup. I think chrome implemented one not too long ago
+*       Add a couple more filter options
 
-?       Potentionally add one more filter option
+*       The large asteroid name still has irregular sizing
 
-*       Add animation to cards when .Button-Load (Load More) is clicked
+TODO:   Add a question mark button (?) that renders a popup
 
 TODO:   Add a github repo and possibly contact info to the footer of sentry and landing
 
-TODO:   Finish off meta tags, favicon implementation, etc in index.html
+TODO:   Finish off meta tags(and seo), aria, favicon implementation, etc in index.html
 
-        WHY ARE THERE SO MANY SCREEN SIZES????
+       !!! WHY ARE THERE SO MANY SCREEN SIZES????
 */
 
 import React, { Suspense, lazy } from 'react';
@@ -37,13 +36,13 @@ const App = () => (
             <ErrorBoundary>
                 <Routes>
                     <Route path="/" element={<LandingPage />} />
-                    <Route 
-                        path="/sentry" 
+                    <Route
+                        path="/sentry"
                         element={
                             <Suspense>
                                 <Sentry />
                             </Suspense>
-                        } 
+                        }
                     />
                 </Routes>
             </ErrorBoundary>
