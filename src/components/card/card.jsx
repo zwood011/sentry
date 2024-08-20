@@ -8,7 +8,7 @@ const Card = ({ data }) => {
         setSelectedCard(selectedCard === obj ? null : obj);
     };
 
-    const renderData = (dataName, input, id) => (
+    const renderData = (dataName, input) => (
         <div className={dataName.replace(/\s+/g, '-')}>
             <h4 className='Data-Heading'>{dataName}</h4>
             <p className='Data-Data'>{input}</p>
