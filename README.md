@@ -1,5 +1,5 @@
 ## Main stack
-[![My Skills](https://skillicons.dev/icons?i=react,js,css,html,emotion,bootstrap,jest,webpack,npm,git)](https://skillicons.dev)
+[![My Skills](https://skillicons.dev/icons?i=react,js,css,html,emotion,bootstrap,jest,webpack,npm)](https://skillicons.dev)
 
 <br>
 
