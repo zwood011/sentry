@@ -20,7 +20,7 @@ TODO:   Finish off meta tags(and seo), aria, favicon implementation, etc in inde
        !!! WHY ARE THERE SO MANY SCREEN SIZES????
 */
 
-import React, { lazy } from 'react';
+import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
@@ -28,7 +28,7 @@ import { HelmetProvider } from 'react-helmet-async';
 import ErrorBoundary from './components/ErrorBoundary';
 import LandingPage from '../src/landingpage';
 
-const Sentry = lazy(() => import('./routes/Sentry'));
+import Sentry from '../src/routes/Sentry.jsx';
 
 const App = () => (
     <Router>
