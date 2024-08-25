@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <sitemap>
-    <loc>https://neo-nasa.netlify.app/</loc>
+    <loc>https://sentrygrabber.netlify.app/</loc>
     <lastmod>2024-06-09</lastmod>
   </sitemap>
   <sitemap>
-    <loc>https://neo-nasa.netlify.app/sentry</loc>
+    <loc>https://sentrygrabber.netlify.app/sentry</loc>
     <lastmod>2024-06-09</lastmod>
   </sitemap>
 </sitemapindex>
