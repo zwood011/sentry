@@ -3,6 +3,8 @@ See a visualization of the data flow at https://neo-nasa.netlify.app/dataflow.pn
 App is replaced by 'Sentry'
 */
 
+//! Supermassive Component
+
 import React, { useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
@@ -74,65 +76,65 @@ const Sentry = () => {
 
       {!loading && (
         <div className='App' role='main'>
-            <header className={headerAnimation}>
-              <div className='padding-space'></div>
+          <header className={headerAnimation}>
+            <div className='padding-space'></div>
 
-              <div className='app-header'>
-                <nav>
-                  <h1 className='app-nav-item h1-sentry'>Earth Impact Data</h1>
-                  <div className='app-nav-side container-fluid'>
-                    <h2 className='app-nav-item h2-sentry'>
-                      Experience Seamless and Real-Time Updates with a User-Centric design
-                    </h2>
-                    <p className="app-nav-item h3-sentry">
-                      CNEOS Impact Monitoring {' '}
-                      <Link
-                        className='Hyperlink'
-                        to='https://cneos.jpl.nasa.gov/sentry/'
-                        aria-label='CNEOS impact monitoring system'>
-                        API
-                      </Link>
-                    </p>
-                  </div>
+            <div className='app-header'>
+              <nav>
+                <h1 className='app-nav-item h1-sentry'>Earth Impact Data</h1>
+                <div className='app-nav-side container-fluid'>
+                  <h2 className='app-nav-item h2-sentry'>
+                    Experience Seamless and Real-Time Updates with a User-Centric design
+                  </h2>
+                  <p className="app-nav-item h3-sentry">
+                    CNEOS Impact Monitoring {' '}
+                    <Link
+                      className='Hyperlink'
+                      to='https://cneos.jpl.nasa.gov/sentry/'
+                      aria-label='CNEOS impact monitoring system'>
+                      API
+                    </Link>
+                  </p>
+                </div>
 
-                  <Filters
-                    className='app-nav-item'
-                    onFilterName={onFilterName}
-                    onFilterSize={onFilterSize}
-                    onFilterOldest={onFilterOldest}
-                    onFilterNewest={onFilterNewest}
-                    onClear={onClear}
-                    aria-label='Filtering options for Earth impact data' />
-                </nav>
-              </div>
-            </header>
+                <Filters
+                  className='app-nav-item'
+                  onFilterName={onFilterName}
+                  onFilterSize={onFilterSize}
+                  onFilterOldest={onFilterOldest}
+                  onFilterNewest={onFilterNewest}
+                  onClear={onClear}
+                  aria-label='Filtering options for Earth impact data' />
+              </nav>
+            </div>
+          </header>
 
-            <main className={mainAnimation}>
-              <CardHandler
-                isLoading={loading}
-                errorMessage={errorMessage}
-                objects={filteredObjects}
-                retryFetch={fetchData}
-                aria-live='polite'
-                aria-relevant='additions removals' />
-            </main>
+          <main className={mainAnimation}>
+            <CardHandler
+              isLoading={loading}
+              errorMessage={errorMessage}
+              objects={filteredObjects}
+              retryFetch={fetchData}
+              aria-live='polite'
+              aria-relevant='additions removals' />
+          </main>
 
-            <footer className='Footer-Sentry'>
-              <p className='sentry-footerText'>© {date} Zachary Wood. All rights reserved.</p>
+          <footer className='Footer-Sentry'>
+            <p className='sentry-footerText'>© {date} Zachary Wood. All rights reserved.</p>
 
-              <div className='Footer-Description' aria-label='Footer Description'>
-                <p className="Description-Text">
-                  Powered by{' '}
-                  <Link
-                    className='Hyperlink'
-                    to='https://cneos.jpl.nasa.gov/sentry/'
-                    aria-label='CNEOS impact monitoring system'>
-                    CNEOS
-                  </Link>{' '}
-                  impact monitoring system
-                </p>
-              </div>
-            </footer>
+            <div className='Footer-Description' aria-label='Footer Description'>
+              <p className="Description-Text">
+                Powered by{' '}
+                <Link
+                  className='Hyperlink'
+                  to='https://cneos.jpl.nasa.gov/sentry/'
+                  aria-label='CNEOS impact monitoring system'>
+                  CNEOS
+                </Link>{' '}
+                impact monitoring system
+              </p>
+            </div>
+          </footer>
 
           <BGParticles />
         </div>
