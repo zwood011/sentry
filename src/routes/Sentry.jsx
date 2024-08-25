@@ -25,7 +25,7 @@ const Sentry = () => {
   const fetchData = useCallback(() => {
     setLoading(true);
     axios
-      .get('https://neo-nasa.netlify.app/.netlify/functions/index')
+      .get('https://sentrygrabber.netlify.app/.netlify/functions/index')
       .then((response) => {
         const objects = response.data.data.map((obj) => ({
           fullname: obj.fullname,
