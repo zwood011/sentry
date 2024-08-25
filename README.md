@@ -4,7 +4,7 @@
 <br>
 
 ## Looking into
-[![Skills](https://skillicons.dev/icons?i=sass,redux,next)](https://skillicons.dev)
+[![Skills](https://skillicons.dev/icons?i=sass,redux)](https://skillicons.dev)
 
 <br>
 
