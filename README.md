@@ -14,7 +14,7 @@
 
 <br>
 
-### &nbsp; Dependencies
+### Dependencies
 ###### Webpack, Emotion, tsParticles, React (Helmet), ESLint, Jest
 
 
@@ -43,7 +43,7 @@
 
 <br>
 
-### &nbsp; DevDependencies
+### DevDependencies
 ###### Webpack, React (Router), Axios, Babel
 
 | Dependency                                    | Version   | Description                                                       |
