@@ -1,21 +1,22 @@
 /* 
-See a visualization of the data flow at https://neo-nasa.netlify.app/dataflow.png
-App is replaced by 'Sentry'
+  Breaking down this supermassive component will potentionally
+  add useless complexity for the scope of this project.
 */
-
-//! Supermassive Component
 
 import React, { useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
 import { Helmet } from 'react-helmet-async';
-import BGParticles from '../components/BGParticles';
-
+import axios from 'axios';
 import useFilters from '../hooks/usefilters';
+
+import BGParticles from '../components/BGParticles';
 import Loading from '../components/loading';
 import CardHandler from '../components/card/cardhandler';
 import { headerAnimation, mainAnimation } from '../components/animations';
+
+
 const Filters = React.lazy(() => import('../components/filters'));
+
 
 const Sentry = () => {
   const [loading, setLoading] = useState(true);
