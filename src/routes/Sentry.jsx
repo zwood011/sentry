@@ -1,7 +1,5 @@
-/* 
-  Breaking down this supermassive component will potentionally
-  add useless complexity for the scope of this project.
-*/
+/* Breaking down this supermassive component will potentially
+   add useless complexity for the scope of this portfolio project. */
 
 import React, { useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
@@ -14,18 +12,19 @@ import Loading from '../components/loading';
 import CardHandler from '../components/card/cardhandler';
 import { headerAnimation, mainAnimation } from '../components/animations';
 
-
-const Filters = React.lazy(() => import('../components/filters'));
-
+import Filters from '../components/filters';
 
 const Sentry = () => {
   const [loading, setLoading] = useState(true);
   const [errorMessage, setErrorMessage] = useState(null);
+
+  /* [objects, setObjects] is used as a storage for the original indexing of the raw objects.
+     This state is then passed down as a parameter to the useFilters.js custom hook for reference. [Line 58] */
   const [objects, setObjects] = useState([]);
 
-  const date = new Date().getFullYear();
+  const date = new Date().getFullYear(); //! Create and move this to Footer.jsx WHEN refactored
 
-  const fetchData = useCallback(() => {
+  const fetchData = useCallback(() => { //! Create and move this to FetchData.jsx IF refactored
     setLoading(true);
     axios
       .get('https://sentrygrabber.netlify.app/.netlify/functions/index')
@@ -46,21 +45,22 @@ const Sentry = () => {
           ts_max: obj.ts_max,
           v_inf: obj.v_inf,
         }));
-        setObjects(objects);
-        setLoading(false);
+        setObjects(objects); // Stores the original raw data to be passed down to useFilters.js. [Line 62]
+        setLoading(false);   // My own take on creating conditional loading without React Suspense. [Line 68]
       })
       .catch((error) => {
-        setErrorMessage(error.message);
+        setErrorMessage(error.message); // Prop drilled 2 layers, from Sentry.jsx --> CardHandler.jsx --> Error.jsx [Line 119, CardHandler.jsx Line 15]
         setLoading(false);
       });
   }, []);
 
-  //* Add objects to useFilters params
-  const { filteredObjects, onFilterName, onFilterSize, onFilterOldest, onFilterNewest, onClear } = useFilters(objects);
+  // Send the original objects to useFilters.js so it can construct functions for filtering the raw data.
+  const { filteredObjects, filters } = useFilters(objects);
+  // Refactor the functions & filteredObjects state exported by useFilters.js.
 
   useEffect(() => {
-    fetchData();
-  }, [fetchData]);
+    fetchData(); // Fetch the data when the component has loaded.
+  }, [fetchData]); //! If this project migrates to next.js then this should update to run on the server.
 
   if (loading) return <Loading />;
 
@@ -98,14 +98,18 @@ const Sentry = () => {
                   </p>
                 </div>
 
+                {/* Functions, refactored from useFilters.js [Line 58], get assigned to buttons
+                 in Filters.jsx below. Functions are invoked when a button element is clicked. */}
                 <Filters
                   className='app-nav-item'
-                  onFilterName={onFilterName}
-                  onFilterSize={onFilterSize}
-                  onFilterOldest={onFilterOldest}
-                  onFilterNewest={onFilterNewest}
-                  onClear={onClear}
-                  aria-label='Filtering options for Earth impact data' />
+                  onFilterName={filters.onFilterName} p
+                  onFilterSize={filters.onFilterSize}
+                  onFilterOldest={filters.onFilterOldest}
+                  onFilterNewest={filters.onFilterNewest}
+                  onClear={filters.onClear}
+                  aria-label='Interactive filtering options for Earth impact data' />
+                {/* When a function is invoked, the filteredObjects state is updated to reflect the new filtering order.
+                 This updated state is then passed down to CardHandler for rendering. */}
               </nav>
             </div>
           </header>
@@ -114,10 +118,11 @@ const Sentry = () => {
             <CardHandler
               isLoading={loading}
               errorMessage={errorMessage}
-              objects={filteredObjects}
               retryFetch={fetchData}
               aria-live='polite'
-              aria-relevant='additions removals' />
+              aria-relevant='additions removals'
+              objects={filteredObjects} />
+            {/* Pass down the updated objects for rendering. The default state value for [filteredObjects] will always match [objects] unless a filter is invoked. */}
           </main>
 
           <footer className='Footer-Sentry'>
