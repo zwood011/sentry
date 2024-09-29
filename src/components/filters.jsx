@@ -3,12 +3,6 @@ import { Link } from 'react-router-dom';
 
 import '../styles/Filters.css';
 
-/* 
-  See a visualization of the data flow at 
-  https://neo-nasa.netlify.app/dataflow.png
-*/
-
-
 const Filters = ({ onFilterName, onFilterSize, onFilterOldest, onFilterNewest, onClear }) => {
     const [name, setName] = useState('');
 
