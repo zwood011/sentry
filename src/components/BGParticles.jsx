@@ -12,11 +12,6 @@ const BGParticles = () => {
         }).then(() => {
             setInit(true);
         });
-
-        const noscriptElement = document.querySelector('noscript');
-        if (noscriptElement) {
-            noscriptElement.remove();
-        }
     }, []);
 
     const options = useMemo(() => ({
