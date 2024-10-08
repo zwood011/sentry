@@ -18,7 +18,7 @@ const Sentry = () => {
   const [loading, setLoading] = useState(true);
   const [errorMessage, setErrorMessage] = useState(null);
 
-  /* [objects, setObjects] is used as a storage for the original indexing of the raw objects.
+  /* [objects, setObjects] is used as a storage for the original indexing of fetched data.
      This state is then passed down as a parameter to the useFilters.js custom hook for reference. [Line 58] */
   const [objects, setObjects] = useState([]);
 
@@ -109,7 +109,7 @@ const Sentry = () => {
                   onClear={filters.onClear}
                   aria-label='Interactive filtering options for Earth impact data' />
                 {/* When a function is invoked, the filteredObjects state is updated to reflect the new filtering order.
-                 This updated state is then passed down to CardHandler for rendering. */}
+                  This updated state is then passed down to CardHandler for rendering. */}
               </nav>
             </div>
           </header>
