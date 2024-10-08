@@ -11,8 +11,8 @@ import BGParticles from '../components/BGParticles';
 import Loading from '../components/loading';
 import CardHandler from '../components/card/cardhandler';
 import { headerAnimation, mainAnimation } from '../components/animations';
-
 import Filters from '../components/filters';
+import Footer from '../components/Footer';
 
 const Sentry = () => {
   const [loading, setLoading] = useState(true);
@@ -22,9 +22,7 @@ const Sentry = () => {
      This state is then passed down as a parameter to the useFilters.js custom hook for reference. [Line 58] */
   const [objects, setObjects] = useState([]);
 
-  const date = new Date().getFullYear(); //! Create and move this to Footer.jsx WHEN refactored
-
-  const fetchData = useCallback(() => { //! Create and move this to FetchData.jsx IF refactored
+  const fetchData = useCallback(() => { //? Create and move this to a custom hook IF refactored
     setLoading(true);
     axios
       .get('https://sentrygrabber.netlify.app/.netlify/functions/index')
@@ -60,7 +58,7 @@ const Sentry = () => {
 
   useEffect(() => {
     fetchData(); // Fetch the data when the component has loaded.
-  }, [fetchData]); //! If this project migrates to next.js then this should update to run on the server.
+  }, [fetchData]); //? If this project migrates to Next.js then it would be better to fetch this on the server.
 
   if (loading) return <Loading />;
 
@@ -125,23 +123,7 @@ const Sentry = () => {
             {/* Pass down the updated objects for rendering. The default state value for [filteredObjects] will always match [objects] unless a filter is invoked. */}
           </main>
 
-          <footer className='Footer-Sentry'>
-            <p className='sentry-footerText'>© {date} Zachary Wood. All rights reserved.</p>
-
-            <div className='Footer-Description' aria-label='Footer Description'>
-              <p className="Description-Text">
-                Powered by{' '}
-                <Link
-                  className='Hyperlink'
-                  to='https://cneos.jpl.nasa.gov/sentry/'
-                  aria-label='CNEOS impact monitoring system'>
-                  CNEOS
-                </Link>{' '}
-                impact monitoring system
-              </p>
-            </div>
-          </footer>
-
+          <Footer />
           <BGParticles />
         </div>
       )}

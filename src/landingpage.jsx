@@ -6,10 +6,9 @@ import './styles/Landing.css';
 import { Helmet } from 'react-helmet-async';
 import { AnimatedLetters } from './components/animations';
 import BGParticles from './components/BGParticles';
+import Footer from './components/Footer';
 
 const LandingPage = () => {
-    const date = new Date().getFullYear();
-
     return (
         <>
             <Helmet>
@@ -53,20 +52,7 @@ const LandingPage = () => {
                     </section>
                 </main>
 
-                <footer className='Footer-Landing' role='contentinfo'>
-                    <p className='footerText'>© {date} Zachary Wood. All rights reserved.</p>
-                    <p className='footerText'>
-                        Powered by{' '}
-                        <Link
-                            className='Hyperlink'
-                            to='https://cneos.jpl.nasa.gov/sentry/'
-                            aria-label='CNEOS impact monitoring system'>
-                            CNEOS
-                        </Link>{' '}
-                        impact monitoring system
-                    </p>
-                </footer>
-
+                <Footer />
                 <BGParticles />
             </div>
         </>
