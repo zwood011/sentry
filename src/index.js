@@ -1,9 +1,7 @@
-/*  
-!       Add more data and labels from the API, research categories more
+/*
+!       Design cards futher with UX in mind- the cards need clarification
 
-!       DESIGN CARDS FURTHER- they just slap the data on a card, make it look nicer
-
-?       Add theme switcher
+TODO:   Add a question mark button (?) that renders a popup
 
 ?       Add animation to cards when .Button-Load (Load More) is clicked
 
@@ -11,16 +9,12 @@
 
 *       The large asteroid name still has irregular sizing
 
-TODO:   Add a question mark button (?) that renders a popup
-
 TODO:   Add a github repo and possibly contact info to the footer of sentry and landing
 
 TODO:   Finish off meta tags(and seo), aria, favicon implementation, etc in index.html
-
-       !!! WHY ARE THERE SO MANY SCREEN SIZES????
 */
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
@@ -30,20 +24,26 @@ import LandingPage from '../src/landingpage';
 
 import Sentry from '../src/routes/Sentry.jsx';
 
-const App = () => (
-    <Router>
-        <HelmetProvider>
-            <ErrorBoundary>
-                <Routes>
-                    <Route path="/" element={<LandingPage />} />
-                    <Route
-                        path="/sentry"
-                        element={<Sentry />}
-                    />
-                </Routes>
-            </ErrorBoundary>
-        </HelmetProvider>
-    </Router>
-);
+const App = () => {
+    useEffect(() => {
+        const noscriptElement = document.querySelector('noscript');
+        if (noscriptElement) {
+            noscriptElement.remove();
+        }
+    }, []);
+
+    return (
+        <Router>
+            <HelmetProvider>
+                <ErrorBoundary>
+                    <Routes>
+                        <Route path="/" element={<LandingPage />} />
+                        <Route path="/sentry" element={<Sentry />} />
+                    </Routes>
+                </ErrorBoundary>
+            </HelmetProvider>
+        </Router>
+    );
+};
 
 createRoot(document.getElementById('root')).render(<App />);
