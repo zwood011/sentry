@@ -4,7 +4,9 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const { DefinePlugin } = require('webpack');
-// const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const CompressionPlugin = require('compression-webpack-plugin');
 
 module.exports = {
     mode: 'production',
@@ -14,8 +16,8 @@ module.exports = {
         style: './src/styles/Sentry.css',
     },
     output: {
-        filename: '[name].bundle.js',
-        chunkFilename: '[name].chunk.js',
+        filename: '[name].[contenthash].js',
+        chunkFilename: '[name].[contenthash].chunk.js',
         path: path.resolve(__dirname, 'dist'),
         publicPath: '/',
     },
@@ -28,16 +30,22 @@ module.exports = {
                     loader: 'babel-loader',
                     options: {
                         presets: ['@babel/preset-env', '@babel/preset-react'],
+                        plugins: ['@babel/plugin-transform-runtime'],
                     },
                 },
             },
             {
                 test: /\.css$/,
-                use: ['style-loader', 'css-loader'],
+                use: [MiniCssExtractPlugin.loader, 'css-loader'],
             },
             {
                 test: /\.(png|jpe?g|gif|webp)$/i,
-                type: 'asset/resource',
+                type: 'asset',
+                parser: {
+                    dataUrlCondition: {
+                        maxSize: 10 * 1024, // 10kb
+                    },
+                },
                 generator: {
                     filename: 'images/[hash][ext][query]',
                 },
@@ -48,7 +56,7 @@ module.exports = {
         extensions: ['.js', '.jsx'],
     },
     performance: {
-        hints: false,
+        hints: 'warning',
         maxEntrypointSize: 512000,
         maxAssetSize: 512000,
     },
@@ -64,21 +72,19 @@ module.exports = {
                 },
                 extractComments: false,
             }),
+            new CssMinimizerPlugin(),
         ],
         splitChunks: {
+            chunks: 'all',
             cacheGroups: {
                 vendor: {
                     test: /[\\/]node_modules[\\/]/,
+                    name: 'vendors',
                     chunks: 'all',
-                },
-                styles: {
-                    name: 'styles',
-                    test: /\.css$/,
-                    chunks: 'all',
-                    enforce: true,
                 },
             },
         },
+        runtimeChunk: 'single',
     },
     plugins: [
         new CleanWebpackPlugin(),
@@ -96,20 +102,6 @@ module.exports = {
                 minifyJS: true,
                 minifyCSS: true,
                 minifyURLs: true,
-            },
-            postProcess: (content) => {
-                return import('critical').then((critical) => {
-                    return critical
-                        .generate({
-                            base: 'dist/',
-                            html: content,
-                            inline: true,
-                            width: 1300,
-                            height: 900,
-                            minify: true,
-                        })
-                        .then((output) => output);
-                });
             },
         }),
         new CopyWebpackPlugin({
@@ -129,15 +121,13 @@ module.exports = {
         new DefinePlugin({
             'process.env.NODE_ENV': JSON.stringify('production'),
         }),
-        // new BundleAnalyzerPlugin(), |  uncomment when you need to analyze your bundle
+        new MiniCssExtractPlugin({
+            filename: '[name].[contenthash].css',
+            chunkFilename: '[id].[contenthash].css',
+        }),
+        new CompressionPlugin({
+            test: /\.(js|css|html|svg)$/,
+            algorithm: 'gzip',
+        }),
     ],
-    devServer: {
-        historyApiFallback: true,
-        static: {
-            directory: path.join(__dirname, 'dist'),
-        },
-        compress: true,
-        port: 9000,
-    },
-    devtool: 'source-map',
 };
