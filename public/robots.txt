@@ -1,5 +1,2 @@
 User-agent: *
 Allow: /
-
-
-Sitemap: https://sentrygrabber.netlify.app/sitemap_index.xml
