@@ -28,9 +28,3 @@ Content-Type = "text/html"
 for = "/*.css"
 [headers.values]
 Content-Type = "text/css"
-
-[[headers]]
-for = "/sitemap_index.xml"
-[headers.values]
-Content-Type = "application/xml"
-X-Robots-Tag = "noindex, follow"
