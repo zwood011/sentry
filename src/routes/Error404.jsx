@@ -73,7 +73,6 @@ const Error404 = () => {
 
                 <BGParticles />
             </div>
-    </>
         </>
     );
 };
