@@ -23,6 +23,7 @@ import ErrorBoundary from './components/ErrorBoundary';
 import LandingPage from '../src/landingpage';
 
 import Sentry from '../src/routes/Sentry.jsx';
+import Error404 from './routes/Error404'; // Assume NotFound component is created
 
 const App = () => {
     useEffect(() => {
@@ -39,6 +40,7 @@ const App = () => {
                     <Routes>
                         <Route path="/" element={<LandingPage />} />
                         <Route path="/sentry" element={<Sentry />} />
+                        <Route path="*" element={<Error404 />} />
                     </Routes>
                 </ErrorBoundary>
             </HelmetProvider>
