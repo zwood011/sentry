@@ -2,16 +2,6 @@
 publish = "dist"
 command = "npm run build"
 
-[[redirects]]
-from = "/404"
-to = "/404.html"
-status = 200
-
-[[redirects]]
-from = "/*"
-to = "/index.html"
-status = 200
-
 [[headers]]
 for = "/*"
 [headers.values]
