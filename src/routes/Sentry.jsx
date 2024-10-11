@@ -19,7 +19,7 @@ const Sentry = () => {
   const [errorMessage, setErrorMessage] = useState(null);
 
   /* [objects, setObjects] is used as a storage for the original indexing of fetched data.
-     This state is then passed down as a parameter to the useFilters.js custom hook for reference. [Line 58] */
+     This state is then passed down as a parameter to the useFilters.js custom hook for reference. [Line 56] */
   const [objects, setObjects] = useState([]);
 
   const fetchData = useCallback(() => { //? Create and move this to a custom hook IF refactored
@@ -96,7 +96,7 @@ const Sentry = () => {
                   </p>
                 </div>
 
-                {/* Functions, refactored from useFilters.js [Line 58], get assigned to buttons
+                {/* Functions, refactored from useFilters.js [Line 56], get assigned to buttons
                  in Filters.jsx below. Functions are invoked when a button element is clicked. */}
                 <Filters
                   className='app-nav-item'
