@@ -9,7 +9,7 @@ const Card = ({ data }) => {
     };
 
     const renderData = (dataName, input) => (
-        <div className={dataName.replace(/\s+/g, '-')}>
+        <div className={dataName.replace(/\s+/g, '-')} key={dataName}>
             <h4 className='Data-Heading'>{dataName}</h4>
             <p className='Data-Data'>{input}</p>
         </div>

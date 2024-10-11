@@ -140,6 +140,10 @@ nav {
     box-shadow: var(--box-shadow);
 }
 
+.card-count{
+    padding: 1rem;
+}
+
 .Footer-Landing {
     width: 100%;
     background: rgb(21, 21, 21);

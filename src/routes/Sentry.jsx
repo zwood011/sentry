@@ -17,6 +17,7 @@ import Footer from '../components/Footer';
 const Sentry = () => {
   const [loading, setLoading] = useState(true);
   const [errorMessage, setErrorMessage] = useState(null);
+  const [count, setCount] = useState(null);
 
   /* [objects, setObjects] is used as a storage for the original indexing of fetched data.
      This state is then passed down as a parameter to the useFilters.js custom hook for reference. [Line 56] */
@@ -43,6 +44,7 @@ const Sentry = () => {
           ts_max: obj.ts_max,
           v_inf: obj.v_inf,
         }));
+        setCount(response.data.count);
         setObjects(objects); // Stores the original raw data to be passed down to useFilters.js. [Line 62]
         setLoading(false);   // My own take on creating conditional loading without React Suspense. [Line 68]
       })
@@ -117,6 +119,7 @@ const Sentry = () => {
               isLoading={loading}
               errorMessage={errorMessage}
               retryFetch={fetchData}
+              count={count}
               aria-live='polite'
               aria-relevant='additions removals'
               objects={filteredObjects} />
