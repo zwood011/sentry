@@ -30,8 +30,9 @@ const CardHandler = ({ objects, errorMessage, isLoading, retryFetch, count }) =>
             <div className="card-count">
                 <h2>Total Cards: {count}</h2>
             </div>
+
             <div className='Card-Holder' role='presentation' aria-label='Card container'>
-                <Card data={objects.slice(0, displayIndex)} className='container-fluid' aria-label='Loaded cards'/>
+                <Card data={objects.slice(0, displayIndex)} className='container-fluid' aria-label='Loaded cards' />
             </div>
 
             {displayIndex < objects.length && (
