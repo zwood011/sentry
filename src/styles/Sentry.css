@@ -140,7 +140,7 @@ nav {
     box-shadow: var(--box-shadow);
 }
 
-.Footer-Sentry {
+.Footer-Landing {
     width: 100%;
     background: rgb(21, 21, 21);
     color: var(--text-light);
