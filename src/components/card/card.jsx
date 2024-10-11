@@ -15,6 +15,13 @@ const Card = ({ data }) => {
         </div>
     );
 
+    const dataFields = [
+        { name: 'Cumulative Hazard Rating', getValue: (obj) => obj.ps_cum },
+        { name: 'Diameter', getValue: (obj) => `${obj.diameter} km` },
+        { name: 'Hyperbolic Excess Velocity', getValue: (obj) => `${obj.v_inf} km/s` },
+        { name: 'Range', getValue: (obj) => `Years: ${obj.range}` },
+    ];
+
     return (
         <>
             {data.map((obj) => (
@@ -31,10 +38,7 @@ const Card = ({ data }) => {
                     <section
                         className={`Card-Data ${selectedCard?.id === obj.id ? 'visible' : ''}`}
                         aria-label='Detailed card data'>
-                        {renderData('Cumulative Hazard Rating', obj.ps_cum)}
-                        {renderData('Diameter', `${obj.diameter} km`)}
-                        {renderData('Hyperbolic Excess Velocity', `${obj.v_inf} km/s`)}
-                        {renderData('Range', `Years: ${obj.range}`)}
+                        {dataFields.map(({ name, getValue }) => renderData(name, getValue(obj)))}
                     </section>
                 </article>
 
