@@ -8,10 +8,10 @@ const Card = ({ data }) => {
         setSelectedCard(selectedCard === obj ? null : obj);
     };
 
-    const renderData = (dataName, data) => (
-        <div className={dataName.replace(/\s+/g, '-')} key={dataName}>
-            <h4 className='Data-Heading'>{dataName}</h4>
-            <p className='Data-Data'>{data}</p>
+    const renderData = (name, input) => (
+        <div className={name.replace(/\s+/g, '-')} key={name}>
+            <h4 className='Data-Heading'>{name}</h4>
+            <p className='Data-Data'>{input}</p>
         </div>
     );
 
@@ -26,7 +26,7 @@ const Card = ({ data }) => {
         <>
             {data.map((obj) => (
                 <article
-                    className={`Card ${obj.id} ${selectedCard?.id === obj.id ? 'selected' : ''}`}
+                    className={`Card ${obj.id} ${selectedCard?.id === obj.id ? 'selected' : null}`}
                     key={obj.id}
                     onClick={() => handleClick(obj)}
                     aria-label={`Card for ${obj.fullname}`}>
@@ -36,7 +36,7 @@ const Card = ({ data }) => {
                     </div>
 
                     <section
-                        className={`Card-Data ${selectedCard?.id === obj.id ? 'visible' : ''}`}
+                        className={`Card-Data ${selectedCard?.id === obj.id ? 'visible' : null}`}
                         aria-label='Detailed card data'>
                         {dataFields.map(({ name, data }) => renderData(name, data(obj)))}
                     </section>
