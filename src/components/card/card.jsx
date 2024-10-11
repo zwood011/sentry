@@ -8,18 +8,18 @@ const Card = ({ data }) => {
         setSelectedCard(selectedCard === obj ? null : obj);
     };
 
-    const renderData = (dataName, input) => (
+    const renderData = (dataName, data) => (
         <div className={dataName.replace(/\s+/g, '-')} key={dataName}>
             <h4 className='Data-Heading'>{dataName}</h4>
-            <p className='Data-Data'>{input}</p>
+            <p className='Data-Data'>{data}</p>
         </div>
     );
 
     const dataFields = [
-        { name: 'Cumulative Hazard Rating', getValue: (obj) => obj.ps_cum },
-        { name: 'Diameter', getValue: (obj) => `${obj.diameter} km` },
-        { name: 'Hyperbolic Excess Velocity', getValue: (obj) => `${obj.v_inf} km/s` },
-        { name: 'Range', getValue: (obj) => `Years: ${obj.range}` },
+        { name: 'Cumulative Hazard Rating', data: (obj) => obj.ps_cum },
+        { name: 'Diameter', data: (obj) => `${obj.diameter} km` },
+        { name: 'Hyperbolic Excess Velocity', data: (obj) => `${obj.v_inf} km/s` },
+        { name: 'Range', data: (obj) => `Years: ${obj.range}` },
     ];
 
     return (
@@ -38,7 +38,7 @@ const Card = ({ data }) => {
                     <section
                         className={`Card-Data ${selectedCard?.id === obj.id ? 'visible' : ''}`}
                         aria-label='Detailed card data'>
-                        {dataFields.map(({ name, getValue }) => renderData(name, getValue(obj)))}
+                        {dataFields.map(({ name, data }) => renderData(name, data(obj)))}
                     </section>
                 </article>
 
