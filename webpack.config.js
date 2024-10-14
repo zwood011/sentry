@@ -1,12 +1,9 @@
 const path = require('path');
-const TerserPlugin = require('terser-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const { DefinePlugin } = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
-const CompressionPlugin = require('compression-webpack-plugin');
 
 module.exports = {
     mode: 'production',
@@ -16,9 +13,9 @@ module.exports = {
         style: './src/styles/Sentry.css',
     },
     output: {
-        filename: '[name].[contenthash].js',
-        chunkFilename: '[name].[contenthash].chunk.js',
-        path: path.resolve(__dirname, 'dist'),
+        filename: '[name].js',
+        chunkFilename: '[name].chunk.js',
+        path: path.resolve(__dirname, 'build'),
         publicPath: '/',
     },
     module: {
@@ -47,7 +44,7 @@ module.exports = {
                     },
                 },
                 generator: {
-                    filename: 'images/[hash][ext][query]',
+                    filename: 'images/[name][ext][query]',
                 },
             },
         ],
@@ -55,54 +52,17 @@ module.exports = {
     resolve: {
         extensions: ['.js', '.jsx'],
     },
-    performance: {
-        hints: 'warning',
-        maxEntrypointSize: 512000,
-        maxAssetSize: 512000,
-    },
-    optimization: {
-        minimize: true,
-        minimizer: [
-            new TerserPlugin({
-                terserOptions: {
-                    compress: {
-                        drop_console: true,
-                        drop_debugger: true,
-                    },
-                },
-                extractComments: false,
-            }),
-            new CssMinimizerPlugin(),
-        ],
-        splitChunks: {
-            chunks: 'all',
-            cacheGroups: {
-                vendor: {
-                    test: /[\\/]node_modules[\\/]/,
-                    name: 'vendors',
-                    chunks: 'all',
-                },
-            },
-        },
-        runtimeChunk: 'single',
+    devtool: 'source-map',
+    devServer: {
+        historyApiFallback: true,
+        hot: true,
+        open: true,
     },
     plugins: [
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
             template: './public/index.html',
             favicon: './public/favicons/favicon-48.png',
-            minify: {
-                removeComments: true,
-                collapseWhitespace: true,
-                removeRedundantAttributes: true,
-                useShortDoctype: true,
-                removeEmptyAttributes: true,
-                removeStyleLinkTypeAttributes: true,
-                keepClosingSlash: true,
-                minifyJS: true,
-                minifyCSS: true,
-                minifyURLs: true,
-            },
         }),
         new CopyWebpackPlugin({
             patterns: [
@@ -117,15 +77,11 @@ module.exports = {
             ],
         }),
         new DefinePlugin({
-            'process.env.NODE_ENV': JSON.stringify('production'),
+            'process.env.NODE_ENV': JSON.stringify('development'),
         }),
         new MiniCssExtractPlugin({
-            filename: '[name].[contenthash].css',
-            chunkFilename: '[id].[contenthash].css',
-        }),
-        new CompressionPlugin({
-            test: /\.(js|css|html|svg)$/,
-            algorithm: 'gzip',
+            filename: '[name].css',
+            chunkFilename: '[id].css',
         }),
     ],
 };
