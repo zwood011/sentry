@@ -1,88 +1,82 @@
 {
-    "name": "sentrygrabber",
-    "version": "0.1.0",
-    "private": true,
-    "dependencies": {
-        "@emotion/css": "^11.11.2",
-        "@emotion/react": "^11.11.4",
-        "@testing-library/jest-dom": "^5.17.0",
-        "@testing-library/react": "^13.4.0",
-        "@testing-library/user-event": "^14.5.2",
-        "@tsparticles/interaction-external-trail": "^3.4.0",
-        "@tsparticles/react": "^3.0.0",
-        "@tsparticles/slim": "^3.4.0",
-        "clean-webpack-plugin": "^4.0.0",
-        "copy-webpack-plugin": "^12.0.2",
-        "critical": "^7.1.2",
-        "eslint-config-react-app": "^7.0.1",
-        "express": "^4.19.2",
-        "imagemagick": "^0.1.3",
-        "react": "^18.3.1",
-        "react-dom": "^18.3.1",
-        "react-helmet-async": "^2.0.5",
-        "react-scripts": "^5.0.1",
-        "react-tsparticles": "^2.12.2",
-        "serve": "^14.2.3",
-        "serverless-http": "^3.2.0",
-        "tsparticles": "^3.4.0",
-        "webpack-cli": "^5.1.4",
-        "webpack-dev-server": "^5.0.4"
-    },
-    "scripts": {
-        "start": "react-scripts start",
-        "build": "webpack --config webpack.config.js",
-        "test": "react-scripts test",
-        "eject": "react-scripts eject",
-        "generate-sitemap": "node generate-sitemap.js"
-    },
-    "eslintConfig": {
-        "extends": [
-            "react-app",
-            "react-app/jest"
-        ]
-    },
-    "browserslist": {
-        "production": [
-            ">0.2%",
-            "not dead",
-            "not op_mini all"
-        ],
-        "development": [
-            "last 1 chrome version",
-            "last 1 firefox version",
-            "last 1 safari version"
-        ]
-    },
-    "devDependencies": {
-        "@babel/core": "^7.24.7",
-        "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
-        "@babel/plugin-transform-runtime": "^7.25.7",
-        "@babel/preset-env": "^7.24.7",
-        "@babel/preset-react": "^7.24.7",
-        "axios": "^1.7.2",
-        "babel-loader": "^9.1.3",
-        "compression-webpack-plugin": "^11.1.0",
-        "css-loader": "^7.1.2",
-        "css-minimizer-webpack-plugin": "^7.0.0",
-        "file-loader": "^6.2.0",
-        "html-webpack-plugin": "^5.6.0",
-        "mini-css-extract-plugin": "^2.9.1",
-        "react-router-dom": "^6.23.1",
-        "style-loader": "^4.0.0",
-        "terser-webpack-plugin": "^5.3.10",
-        "url-loader": "^4.1.1",
-        "uuid": "^10.0.0",
-        "webpack": "^5.92.0",
-        "webpack-bundle-analyzer": "^4.10.2"
-    },
-    "main": "webpack.config.js",
-    "keywords": [
-        "Sentry Grabber",
-        "CNEOS",
-        "NASA",
-        "API"
+  "name": "sentrygrabber",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@emotion/css": "^11.11.2",
+    "@emotion/react": "^11.11.4",
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^14.5.2",
+    "@tsparticles/react": "^3.0.0",
+    "@tsparticles/slim": "^3.4.0",
+    "clean-webpack-plugin": "^4.0.0",
+    "copy-webpack-plugin": "^12.0.2",
+    "eslint-config-react-app": "^7.0.1",
+    "express": "^4.19.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-helmet-async": "^2.0.5",
+    "react-scripts": "^5.0.1",
+    "react-tsparticles": "^2.12.2",
+    "serve": "^14.2.3",
+    "serverless-http": "^3.2.0",
+    "sweetalert2": "^11.14.2",
+    "tsparticles": "^3.4.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.0.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "webpack --config webpack.config.js",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "generate-sitemap": "node generate-sitemap.js"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
     ],
-    "author": "Zachary Wood",
-    "license": "ISC",
-    "description": "Dependencies for Sentry Grabber"
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@babel/core": "^7.24.7",
+    "@babel/plugin-transform-runtime": "^7.25.7",
+    "@babel/preset-env": "^7.24.7",
+    "@babel/preset-react": "^7.24.7",
+    "axios": "^1.7.2",
+    "babel-loader": "^9.1.3",
+    "compression-webpack-plugin": "^11.1.0",
+    "css-loader": "^7.1.2",
+    "css-minimizer-webpack-plugin": "^7.0.0",
+    "html-webpack-plugin": "^5.6.0",
+    "mini-css-extract-plugin": "^2.9.1",
+    "react-router-dom": "^6.23.1",
+    "terser-webpack-plugin": "^5.3.10",
+    "webpack": "^5.92.0",
+    "webpack-bundle-analyzer": "^4.10.2"
+  },
+  "main": "webpack.config.js",
+  "keywords": [
+    "Sentry Grabber",
+    "CNEOS",
+    "NASA",
+    "API"
+  ],
+  "author": "Zachary Wood",
+  "license": "ISC",
+  "description": "Dependencies for Sentry Grabber"
 }
