@@ -20,8 +20,9 @@ const Card = ({ data }) => {
             html: cardPopupHtml,
             width: 600,
             padding: '3em',
-            color: '#716add',
-            background: '#fff',
+            color: '#ffffff',
+            background: '#505050',
+            confirmButtonColor: '#ff9aa3',
         });
     };
 
