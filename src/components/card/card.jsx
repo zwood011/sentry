@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import ReactDOMServer from 'react-dom/server';
 import Swal from 'sweetalert2';
@@ -37,7 +38,7 @@ const Card = ({ data }) => {
         { name: 'Hyperbolic Excess Velocity', data: (obj) => `${obj.v_inf} km/s` },
         { name: 'Range', data: (obj) => `Years: ${obj.range}` },
     ];
-    
+
     return (
         <>
             {data.map((obj) => (
@@ -46,6 +47,10 @@ const Card = ({ data }) => {
                     key={obj.id}
                     onClick={() => handleClick(obj)}
                     aria-label={`Card for ${obj.fullname}`}>
+
+                    {selectedCard?.id === obj.id && (
+                        <button className="btn btn-dark header-button text-dark" onClick={() => handlePopup(obj)}
+                            style={{ position: 'absolute', top: -30, left: 20, fontSize: '0.7em', padding: '.2rem 1rem .2rem 1rem' }}>?</button>)}
 
                     <div className='Card-Header'>
                         <h1 className='Card-Name'>{obj.fullname}</h1>
@@ -56,7 +61,6 @@ const Card = ({ data }) => {
                         className={`Card-Data ${selectedCard?.id === obj.id ? 'visible' : ''}`}
                         aria-label='Detailed card data'>
                         {dataFields.map(({ name, data }) => renderData(name, data(obj)))}
-                        <button onClick={() => handlePopup(obj)}>?</button> {/* trigger popup here */}
                     </section>
                 </article>
             ))}

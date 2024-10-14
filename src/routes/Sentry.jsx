@@ -7,6 +7,8 @@ import { Helmet } from 'react-helmet-async';
 import axios from 'axios';
 import useFilters from '../hooks/usefilters';
 
+import '../styles/Sentry.css';
+
 import BGParticles from '../components/BGParticles';
 import Loading from '../components/loading';
 import CardHandler from '../components/card/cardhandler';
