@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
+import ReactDOMServer from 'react-dom/server';
+import Swal from 'sweetalert2';
+
 import '../../styles/CardHandler.css';
+import CardPopup from './CardPopup';
 
 const Card = ({ data }) => {
     const [selectedCard, setSelectedCard] = useState(null);
@@ -8,9 +12,21 @@ const Card = ({ data }) => {
         setSelectedCard(selectedCard === obj ? null : obj);
     };
 
-    const renderData = (name, input) => (
-        <div className={name.replace(/\s+/g, '-')} key={name}>
-            <h4 className='Data-Heading'>{name}</h4>
+    const handlePopup = (obj) => {
+        const cardPopupHtml = ReactDOMServer.renderToString(<CardPopup obj={obj} />);
+        Swal.fire({
+            title: `${obj.fullname}`,
+            html: cardPopupHtml,
+            width: 600,
+            padding: '3em',
+            color: '#716add',
+            background: '#fff',
+        });
+    };
+
+    const renderData = (data, input) => (
+        <div className={data.replace(/\s+/g, '-')} key={data}>
+            <h4 className='Data-Heading'>{data}</h4>
             <p className='Data-Data'>{input}</p>
         </div>
     );
@@ -21,27 +37,28 @@ const Card = ({ data }) => {
         { name: 'Hyperbolic Excess Velocity', data: (obj) => `${obj.v_inf} km/s` },
         { name: 'Range', data: (obj) => `Years: ${obj.range}` },
     ];
-
+    
     return (
         <>
             {data.map((obj) => (
                 <article
-                    className={`Card ${obj.id} ${selectedCard?.id === obj.id ? 'selected' : null}`}
+                    className={`Card ${obj.id} ${selectedCard?.id === obj.id ? 'selected' : ''}`}
                     key={obj.id}
                     onClick={() => handleClick(obj)}
                     aria-label={`Card for ${obj.fullname}`}>
+
                     <div className='Card-Header'>
                         <h1 className='Card-Name'>{obj.fullname}</h1>
                         <time className="time-text">Last observed: {obj.last_obs}</time>
                     </div>
 
                     <section
-                        className={`Card-Data ${selectedCard?.id === obj.id ? 'visible' : null}`}
+                        className={`Card-Data ${selectedCard?.id === obj.id ? 'visible' : ''}`}
                         aria-label='Detailed card data'>
                         {dataFields.map(({ name, data }) => renderData(name, data(obj)))}
+                        <button onClick={() => handlePopup(obj)}>?</button> {/* trigger popup here */}
                     </section>
                 </article>
-
             ))}
         </>
     );
