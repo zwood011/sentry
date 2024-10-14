@@ -3,15 +3,9 @@
 
 TODO:   Add a question mark button (?) that renders a popup
 
-?       Add animation to cards when .Button-Load (Load More) is clicked
-
-*       Add a couple more filter options
+*       Clarify filters, make it useful
 
 *       The large asteroid name still has irregular sizing
-
-TODO:   Add a github repo and possibly contact info to the footer of sentry and landing
-
-TODO:   Finish off meta tags(and seo), aria, favicon implementation, etc in index.html
 */
 
 import React, { useEffect } from 'react';
@@ -23,7 +17,7 @@ import ErrorBoundary from './components/ErrorBoundary';
 import LandingPage from '../src/landingpage';
 
 import Sentry from '../src/routes/Sentry.jsx';
-import Error404 from './routes/Error404'; // Assume NotFound component is created
+import Error404 from './routes/Error404';
 
 const App = () => {
     useEffect(() => {
