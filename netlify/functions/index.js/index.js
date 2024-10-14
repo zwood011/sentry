@@ -1,8 +1,6 @@
-// netlify/functions/proxy.js
-
 const axios = require('axios');
 
-const API_URL = 'https://ssd-api.jpl.nasa.gov/sentry.api';
+const API_URL = 'https://ssd-api.jpl.nasa.gov/sentry.api'; //public api endpoint
 
 exports.handler = async (event, context) => {
     try {
