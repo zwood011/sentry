@@ -12,6 +12,9 @@ import React, { useEffect } from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
+import { Provider } from 'react-redux';
+
+import store from './redux/store.js';
 
 import ErrorBoundary from './components/ErrorBoundary';
 import LandingPage from '../src/landingpage';
@@ -31,11 +34,13 @@ const App = () => {
         <Router>
             <HelmetProvider>
                 <ErrorBoundary>
-                    <Routes>
-                        <Route path="/" element={<LandingPage />} />
-                        <Route path="/sentry" element={<Sentry />} />
-                        <Route path="*" element={<Error404 />} />
-                    </Routes>
+                    <Provider store={store}>
+                        <Routes>
+                            <Route path="/" element={<LandingPage />} />
+                            <Route path="/sentry" element={<Sentry />} />
+                            <Route path="*" element={<Error404 />} />
+                        </Routes>
+                    </Provider>
                 </ErrorBoundary>
             </HelmetProvider>
         </Router>
