@@ -24,7 +24,9 @@ const LandingPage = () => {
                     <div className='title'>
                         <AnimatedLetters text='Sentry Grabber' className="letter-color-fade" />
                     </div>
+
                     <h2 className='subtitle'>Explore potentially hazardous asteroid data with ease</h2>
+
                     <div className='sub-text fadein'>
                         <p>Your go-to platform for accessing real-time data from NASA. Discover detailed information and asteroid specifications through intuitive multi-card formatting</p>
                         <nav>
