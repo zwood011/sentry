@@ -1,9 +1,8 @@
 /*
-!       Design cards futher with UX in mind- the cards need clarification
+!       Add some more clarity in the Cards, show what the data means
 
-TODO:   Add a question mark button (?) that renders a popup
-
-*       Clarify filters, make it useful
+TODO:   Complete and design the question mark button (?) that renders a popup
+*       ^ Clarify filters, make it useful
 
 *       The large asteroid name still has irregular sizing
 */
