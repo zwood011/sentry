@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'; // import useEffect
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
@@ -10,18 +10,9 @@ import BGParticles from './components/BGParticles';
 import Footer from './components/Footer';
 
 const LandingPage = () => {
+    // Bing submission API
     useEffect(() => {
-        const submitUrlBatch = async () => {
-            try {
-                // make sure to use the correct URL for your netlify function
-                const response = await axios.post('/.netlify/functions/submit-url'); // hitting the netlify function directly
-                console.log('url batch submitted successfully:', response.data);
-            } catch (error) {
-                console.error('error submitting url batch:', error);
-            }
-        };
-
-        submitUrlBatch(); // call the function when the component mounts
+        axios.post('/.netlify/functions/submit-url');
     }, []);
 
     return (
