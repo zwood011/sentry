@@ -30,6 +30,7 @@ const Sentry = () => {
     axios
       .get('/.netlify/functions/index')
       .then((response) => {
+        console.log(response.data);
         const objects = response.data.data.map((obj) => ({
           fullname: obj.fullname,
           ps_cum: obj.ps_cum,
