@@ -16,7 +16,7 @@ import { Provider } from 'react-redux';
 import store from './redux/store.js';
 
 import ErrorBoundary from './components/ErrorBoundary';
-import LandingPage from '../src/landingpage';
+import LandingPage from './routes/landingpage.jsx';
 
 import Sentry from '../src/routes/Sentry.jsx';
 import Error404 from './routes/Error404';
