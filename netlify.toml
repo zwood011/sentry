@@ -1,6 +1,7 @@
 [build]
 publish = "build"
 command = "npm run build"
+functions = "functions"
 
 [[redirects]]
 from = "/*"
@@ -28,3 +29,9 @@ Content-Type = "text/html"
 for = "/*.css"
 [headers.values]
 Content-Type = "text/css"
+
+[build.environment]
+SUBMIT_URL = "false" # Toggle for the Bing Submission API- executes during build
+
+[[plugins]]
+package = "@netlify/plugin-functions-install-core"
