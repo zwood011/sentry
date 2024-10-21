@@ -1,5 +1,5 @@
 [build.environment]
-SUBMIT_URL = "false" #! toggle for the Bing Submission API- executes during build
+SUBMIT_URL = "true" #! toggle for the Bing Submission API- executes during build
 
 [build]
 publish = "build"
