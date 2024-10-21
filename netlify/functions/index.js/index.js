@@ -1,10 +1,11 @@
 const axios = require('axios');
 
-const API_URL = 'https://ssd-api.jpl.nasa.gov/sentry.api'; //public api endpoint
+const API_URL = process.env.NASA_API_URL;
 
-exports.handler = async (event, context) => {
+exports.handler = async () => {
     try {
         const response = await axios.get(API_URL);
+        console.log(process.env.NASA_API_URL);
         return {
             statusCode: 200,
             body: JSON.stringify(response.data),
