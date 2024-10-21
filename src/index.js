@@ -26,30 +26,23 @@ const App = () => {
             ]
         };
 
-        fetch("https://cors-anywhere.herokuapp.com/https://api.indexnow.org/IndexNow", {
+        fetch("https://api.indexnow.org/IndexNow", {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json',
+                'Content-Type': 'application/json; charset=utf-8',
             },
             body: JSON.stringify(indexNowData),
         })
             .then(response => {
                 if (!response.ok) {
-                    console.error(`HTTP error! status: ${response.status}`);
-                    return response.text(); // get the text to see what went wrong
+                    throw new Error(`HTTP error! status: ${response.status}`);
                 }
-                return response.json(); // if okay, parse as json
+                return response.json();
             })
-            .then(data => {
-                if (data) { // check if data is valid
-                    console.log(data);
-                } else {
-                    console.warn('no data returned');
-                }
-            })
-            .catch(error => console.error('error:', error));
+            .then(data => console.log(data))
+            .catch(error => console.error('Error:', error));
 
-    }, []); // add empty dependency array to run only once
+    }, []); // Added missing dependency array for useEffect
 
     return (
         <Router>
