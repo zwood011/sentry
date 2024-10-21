@@ -1,20 +1,20 @@
 [build.environment]
-SUBMIT_URL = "false" #! toggle for the bing submission api- executes during build
+SUBMIT_URL = "false" #! toggle for the Bing Submission API- executes during build
 
 [build]
 publish = "build"
 command = "npm run build"
 
 [[redirects]]
+from = "/404"
+to = "/404.html"
+status = 404
+
+[[redirects]]
 from = "/*"
 to = "/index.html"
 status = 200
 conditions = { Language = "!*" } # prevents the netlify functions from being redirected
-
-[[redirects]]
-from = "/404"
-to = "/404.html"
-status = 404
 
 [[headers]]
 for = "/*"
