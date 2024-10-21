@@ -6,11 +6,6 @@ functions = "functions"
 [build.environment]
 SUBMIT_URL = "false" #! toggle for the bing submission api - executes during build
 
-[[redirects]]
-from = "/.netlify/functions/*"
-to = "/.netlify/functions/:splat"
-status = 200
-
 [[headers]]
 for = "/*"
 [headers.values]
