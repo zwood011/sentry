@@ -8,6 +8,7 @@ import ErrorBoundary from './components/ErrorBoundary';
 import LandingPage from '../src/landingpage';
 import Sentry from '../src/routes/Sentry.jsx';
 import Error404 from './routes/Error404';
+import axios from 'axios'; // import axios here
 
 const App = () => {
     useEffect(() => {
@@ -26,21 +27,20 @@ const App = () => {
             ]
         };
 
-        fetch("https://cors-anywhere.herokuapp.com/https://api.indexnow.org/IndexNow", {
-            method: 'POST',
+        console.log('sending data to IndexNow...');
+
+        axios.post("https://api.indexnow.org/IndexNow", indexNowData, {
             headers: {
                 'Content-Type': 'application/json; charset=utf-8',
             },
-            body: JSON.stringify(indexNowData),
+            // no need for the cors proxy if ur testing locally, unless there's a CORS issue
         })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-                return response.json();
-            })
-            .then(data => console.log(data))
-            .catch(error => console.error('Error:', error));
+        .then(response => {
+            console.log('Response data:', response.data); // log the response
+        })
+        .catch(error => {
+            console.error('Error:', error.response ? error.response.data : error.message);
+        });
 
     }, []); // Added missing dependency array for useEffect
 
