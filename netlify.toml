@@ -5,12 +5,16 @@ SUBMIT_URL = "false" #! toggle for the bing submission api- executes during buil
 publish = "build"
 command = "npm run build"
 
-# redirect all pages to index.html except for functions
 [[redirects]]
 from = "/*"
 to = "/index.html"
 status = 200
-conditions = { Language = "!*" } # this line prevents redirecting to functions
+conditions = { Language = "!*" } # prevents the netlify functions from being redirected
+
+[[redirects]]
+from = "/404"
+to = "/404.html"
+status = 404
 
 [[headers]]
 for = "/*"
