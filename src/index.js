@@ -26,7 +26,7 @@ const App = () => {
             ]
         };
 
-        fetch("https://api.indexnow.org/IndexNow", {
+        fetch("https://cors-anywhere.herokuapp.com/https://api.indexnow.org/IndexNow", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json; charset=utf-8',
