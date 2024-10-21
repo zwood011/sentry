@@ -1,10 +1,10 @@
 /*
-!       Add some more clarity in the Cards, show what the data means
+!       add some more clarity in the cards, show what the data means
 
-TODO:   Complete and design the question mark button (?) that renders a popup
-*       ^ Clarify filters, make it useful
+TODO:   complete and design the question mark button (?) that renders a popup
+*       ^ clarify filters, make it useful
 
-*       The large asteroid name still has irregular sizing
+*       the large asteroid name still has irregular sizing
 */
 
 import React, { useEffect } from 'react';
@@ -39,17 +39,23 @@ const App = () => {
             ]
         };
 
-        fetch("https://api.indexnow.org/IndexNow", {
-            method: "POST",
+        fetch("https://cors-anywhere.herokuapp.com/https://api.indexnow.org/IndexNow", {
+            method: 'POST',
             headers: {
-                "Content-Type": "application/json; charset=utf-8"
+                'Content-Type': 'application/json',
             },
-            body: JSON.stringify(indexNowData)
+            body: JSON.stringify(indexNowData),
         })
-            .then(response => response.json())
-            .then(data => console.log('indexnow response:', data))
-            .catch(error => console.error('error:', error));
-    }, []);
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(data => console.log(data))
+            .catch(error => console.error('Error:', error));
+
+    }, []); // make sure to add an empty dependency array to run this once
 
     return (
         <Router>
