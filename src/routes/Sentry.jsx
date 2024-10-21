@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import useFilters from '../hooks/useFilters';
+import useFilters from '../hooks/usefilters';
 import useFetchData from '../hooks/useFetchData'; // new custom hook
 
 import '../styles/Sentry.css';
