@@ -67,7 +67,6 @@ module.exports = {
         new CopyWebpackPlugin({
             patterns: [
                 { from: './public/robots.txt', to: './' },
-                { from: './public/BingSiteAuth.xml', to: './' },
                 { from: './public/manifest.webmanifest', to: './' },
                 { from: './public/favicons/favicon-48.png', to: './' },
                 { from: './public/favicons/mstile-150.png', to: './' },
