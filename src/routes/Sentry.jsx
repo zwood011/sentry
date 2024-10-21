@@ -28,7 +28,7 @@ const Sentry = () => {
   const fetchData = useCallback(() => { //? Create and move this to a custom hook IF refactored
     setLoading(true);
     axios
-      .get('https://sentrygrabber.netlify.app/.netlify/functions/index')
+      .get('/.netlify/functions/index')
       .then((response) => {
         const objects = response.data.data.map((obj) => ({
           fullname: obj.fullname,
