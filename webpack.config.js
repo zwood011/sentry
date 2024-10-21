@@ -67,6 +67,7 @@ module.exports = {
         new CopyWebpackPlugin({
             patterns: [
                 { from: './public/robots.txt', to: './' },
+                { from: './public/489094d643c948c1aac3ff5cb9b981e2.txt', to: './' },
                 { from: './public/manifest.webmanifest', to: './' },
                 { from: './public/favicons/favicon-48.png', to: './' },
                 { from: './public/favicons/mstile-150.png', to: './' },
