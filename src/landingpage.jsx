@@ -9,14 +9,13 @@ import { AnimatedLetters } from './components/animations';
 import BGParticles from './components/BGParticles';
 import Footer from './components/Footer';
 
-import submitUrl from '../netlify/functions/submit-url';
-
 const LandingPage = () => {
     useEffect(() => {
         const submitUrlBatch = async () => {
             try {
-                await axios.post(submitUrl); // hitting the netlify function directly
-                console.log('url batch submitted successfully.');
+                // make sure to use the correct URL for your netlify function
+                const response = await axios.post('/.netlify/functions/submit-url'); // hitting the netlify function directly
+                console.log('url batch submitted successfully:', response.data);
             } catch (error) {
                 console.error('error submitting url batch:', error);
             }
