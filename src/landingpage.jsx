@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 import './styles/Landing.css';
 
@@ -9,6 +10,31 @@ import BGParticles from './components/BGParticles';
 import Footer from './components/Footer';
 
 const LandingPage = () => {
+    useEffect(() => {
+        const submitUrlBatch = async () => {
+            const requestData = {
+                siteUrl: "https://sentrygrabber.netlify.app",
+                urlList: [
+                    "https://sentrygrabber.netlify.app",
+                    "https://sentrygrabber.netlify.app/sentry",
+                ]
+            };
+
+            try {
+                const response = await axios.post('https://ssl.bing.com/webmaster/api.svc/json/SubmitUrlbatch?apikey=sampleapikeyEDECC1EA4AE341CC8B6', requestData, {
+                    headers: {
+                        'Content-Type': 'application/json; charset=utf-8'
+                    }
+                });
+                console.log('Response from SubmitUrlbatch:', response.data);
+            } catch (error) {
+                console.error('Error submitting URL batch:', error);
+            }
+        };
+
+        submitUrlBatch();
+    }, []);
+
     return (
         <>
             <Helmet>
