@@ -21,14 +21,13 @@ const LandingPage = () => {
             };
 
             try {
-                const response = await axios.post('https://cors-anywhere.herokuapp.com/https://ssl.bing.com/webmaster/api.svc/json/SubmitUrlbatch?apikey=sampleapikeyEDECC1EA4AE341CC8B6', requestData, {
+                await axios.post('https://ssl.bing.com/webmaster/api.svc/json/SubmitUrlbatch?apikey=32c8d1d8c05f4e1d85b7173019fbb751', requestData, {
                     headers: {
                         'Content-Type': 'application/json; charset=utf-8'
                     }
                 });
-                console.log('Response from SubmitUrlbatch:', response.data);
-            } catch (error) {
-                console.error('Error submitting URL batch:', error);
+            } catch {
+                console.error('Error submitting URL batch.');
             }
         };
 
