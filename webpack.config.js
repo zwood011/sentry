@@ -73,10 +73,11 @@ module.exports = {
                 { from: './public/favicons/apple-touch-icon.png', to: './' },
                 { from: './public/dataflow.png', to: './' },
                 { from: './public/index.css', to: './' },
+                { from: './public/_redirects', to: './' },
             ],
         }),
         new DefinePlugin({
-            'process.env.NODE_ENV': JSON.stringify('development'),
+            'process.env.NODE_ENV': JSON.stringify('production'),
         }),
         new MiniCssExtractPlugin({
             filename: '[name].css',
