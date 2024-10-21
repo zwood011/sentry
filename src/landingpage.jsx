@@ -21,7 +21,7 @@ const LandingPage = () => {
             };
 
             try {
-                const response = await axios.post('https://ssl.bing.com/webmaster/api.svc/json/SubmitUrlbatch?apikey=sampleapikeyEDECC1EA4AE341CC8B6', requestData, {
+                const response = await axios.post('https://cors-anywhere.herokuapp.com/https://ssl.bing.com/webmaster/api.svc/json/SubmitUrlbatch?apikey=sampleapikeyEDECC1EA4AE341CC8B6', requestData, {
                     headers: {
                         'Content-Type': 'application/json; charset=utf-8'
                     }
