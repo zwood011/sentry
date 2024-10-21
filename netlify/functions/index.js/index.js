@@ -5,7 +5,6 @@ const API_URL = process.env.NASA_API_URL;
 exports.handler = async () => {
     try {
         const response = await axios.get(API_URL);
-        console.log(process.env.NASA_API_URL);
         return {
             statusCode: 200,
             body: JSON.stringify(response.data),
