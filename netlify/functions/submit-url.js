@@ -12,7 +12,7 @@ exports.handler = async (event) => {
     `;
 
     try {
-        const response = await axios.post(`https://ssl.bing.com/webmaster/api.svc/xml/SubmitUrlBatch?apikey=32c8d1d8c05f4e1d85b7173019fbb751`, requestData, {
+        const response = await axios.post(`https://ssl.bing.com/webmaster/api.svc/pox/SubmitUrlBatch?apikey=32c8d1d8c05f4e1d85b7173019fbb751`, requestData, {
             headers: {
                 'Content-Type': 'application/xml; charset=utf-8',
             },
