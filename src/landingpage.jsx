@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect } from 'react'; // import useEffect
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
@@ -12,26 +12,15 @@ import Footer from './components/Footer';
 const LandingPage = () => {
     useEffect(() => {
         const submitUrlBatch = async () => {
-            const requestData = {
-                siteUrl: "https://sentrygrabber.netlify.app",
-                urlList: [
-                    "https://sentrygrabber.netlify.app",
-                    "https://sentrygrabber.netlify.app/sentry",
-                ]
-            };
-
             try {
-                await axios.post('https://ssl.bing.com/webmaster/api.svc/json/SubmitUrlbatch?apikey=32c8d1d8c05f4e1d85b7173019fbb751', requestData, {
-                    headers: {
-                        'Content-Type': 'application/json; charset=utf-8'
-                    }
-                });
-            } catch {
-                console.error('Error submitting URL batch.');
+                await axios.post('../netlify/functions/submit-url.js'); // hitting the netlify function directly
+                console.log('url batch submitted successfully.');
+            } catch (error) {
+                console.error('error submitting url batch:', error);
             }
         };
 
-        submitUrlBatch();
+        submitUrlBatch(); // call the function when the component mounts
     }, []);
 
     return (
@@ -40,7 +29,7 @@ const LandingPage = () => {
                 <title>Sentry Grabber</title>
                 <meta
                     name='description'
-                    content='Real-time asteroid data, NASA asteroid data, user-friendly asteroid tracker interface, intuitive asteroid card format, asteroid warning updates'
+                    content='real-time asteroid data, nasa asteroid data, user-friendly asteroid tracker interface, intuitive asteroid card format, asteroid warning updates'
                 />
             </Helmet>
 
@@ -50,13 +39,13 @@ const LandingPage = () => {
                         <AnimatedLetters text='Sentry Grabber' className="letter-color-fade" />
                     </div>
 
-                    <h2 className='subtitle'>Explore potentially hazardous asteroid data with ease</h2>
+                    <h2 className='subtitle'>explore potentially hazardous asteroid data with ease</h2>
 
                     <div className='sub-text fadein'>
-                        <p>Your go-to platform for accessing real-time data from NASA. Discover detailed information and asteroid specifications through intuitive multi-card formatting</p>
+                        <p>your go-to platform for accessing real-time data from nasa. discover detailed information and asteroid specifications through intuitive multi-card formatting</p>
                         <nav>
-                            <Link to='/sentry' className='Button-Landing' aria-label='View Project'>
-                                Explore Project
+                            <Link to='/sentry' className='Button-Landing' aria-label='view project'>
+                                explore project
                             </Link>
                         </nav>
                     </div>
@@ -64,18 +53,18 @@ const LandingPage = () => {
 
                 <main className='features' role='main'>
                     <section className='feature'>
-                        <h2 className='featureTitle'>Detailed Specifications</h2>
-                        <p className='featureDescription'>Access detailed specifications and data for each asteroid, presented in an easy-to-read card structure</p>
+                        <h2 className='featureTitle'>detailed specifications</h2>
+                        <p className='featureDescription'>access detailed specifications and data for each asteroid, presented in an easy-to-read card structure</p>
                     </section>
 
                     <section className='feature'>
-                        <h2 className='featureTitle'>Real-time Updates</h2>
-                        <p className='featureDescription'>Stay updated with the latest information from NASA's Sentry API, ensuring you have current data at your fingertips</p>
+                        <h2 className='featureTitle'>real-time updates</h2>
+                        <p className='featureDescription'>stay updated with the latest information from nasa's sentry api, ensuring you have current data at your fingertips</p>
                     </section>
 
                     <section className='feature'>
-                        <h2 className='featureTitle'>User-Friendly Interface</h2>
-                        <p className='featureDescription'>Critically designed to support a user-friendly interface for seamless interaction</p>
+                        <h2 className='featureTitle'>user-friendly interface</h2>
+                        <p className='featureDescription'>critically designed to support a user-friendly interface for seamless interaction</p>
                     </section>
                 </main>
 
