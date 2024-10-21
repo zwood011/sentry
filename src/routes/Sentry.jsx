@@ -1,11 +1,8 @@
-/* Breaking down this supermassive component will potentially
-   add useless complexity for the scope of this portfolio project. */
-
-import React, { useState, useEffect, useCallback } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import axios from 'axios';
-import useFilters from '../hooks/usefilters';
+import useFilters from '../hooks/useFilters';
+import useFetchData from '../hooks/useFetchData'; // new custom hook
 
 import '../styles/Sentry.css';
 
@@ -17,52 +14,9 @@ import Filters from '../components/filters';
 import Footer from '../components/Footer';
 
 const Sentry = () => {
-  const [loading, setLoading] = useState(true);
-  const [errorMessage, setErrorMessage] = useState(null);
-  const [count, setCount] = useState(null);
+  const { loading, errorMessage, objects, count, refetch } = useFetchData('/.netlify/functions/index');
 
-  /* [objects, setObjects] is used as a storage for the original indexing of fetched data.
-     This state is then passed down as a parameter to the useFilters.js custom hook for reference. [Line 56] */
-  const [objects, setObjects] = useState([]);
-
-  const fetchData = useCallback(() => { //? Create and move this to a custom hook IF refactored
-    setLoading(true);
-    axios
-      .get('/.netlify/functions/index')
-      .then((response) => {
-        const objects = response.data.data.map((obj) => ({
-          fullname: obj.fullname,
-          ps_cum: obj.ps_cum,
-          des: obj.des,
-          diameter: obj.diameter,
-          h: obj.h,
-          id: obj.id,
-          ip: obj.ip,
-          last_obs: obj.last_obs,
-          last_obs_jd: obj.last_obs_jd,
-          n_imp: obj.n_imp,
-          ps_max: obj.ps_max,
-          range: obj.range,
-          ts_max: obj.ts_max,
-          v_inf: obj.v_inf,
-        }));
-        setCount(response.data.count);
-        setObjects(objects); // Stores the original raw data to be passed down to useFilters.js. [Line 62]
-        setLoading(false);   // My own take on creating conditional loading without React Suspense. [Line 68]
-      })
-      .catch((error) => {
-        setErrorMessage(error.message); // Prop drilled 2 layers, from Sentry.jsx --> CardHandler.jsx --> Error.jsx [Line 119, CardHandler.jsx Line 15]
-        setLoading(false);
-      });
-  }, []);
-
-  // Send the original objects to useFilters.js so it can construct functions for filtering the raw data.
   const { filteredObjects, filters } = useFilters(objects);
-  // Refactor the functions & filteredObjects state exported by useFilters.js.
-
-  useEffect(() => {
-    fetchData(); // Fetch the data when the component has loaded.
-  }, [fetchData]); //? If this project migrates to Next.js then it would be better to fetch this on the server.
 
   if (loading) return <Loading />;
 
@@ -100,18 +54,15 @@ const Sentry = () => {
                   </p>
                 </div>
 
-                {/* Functions, refactored from useFilters.js [Line 56], get assigned to buttons
-                 in Filters.jsx below. Functions are invoked when a button element is clicked. */}
                 <Filters
                   className='app-nav-item'
-                  onFilterName={filters.onFilterName} p
+                  onFilterName={filters.onFilterName}
                   onFilterSize={filters.onFilterSize}
                   onFilterOldest={filters.onFilterOldest}
                   onFilterNewest={filters.onFilterNewest}
                   onClear={filters.onClear}
-                  aria-label='Interactive filtering options for Earth impact data' />
-                {/* When a function is invoked, the filteredObjects state is updated to reflect the new filtering order.
-                  This updated state is then passed down to CardHandler for rendering. */}
+                  aria-label='Interactive filtering options for Earth impact data'
+                />
               </nav>
             </div>
           </header>
@@ -120,12 +71,12 @@ const Sentry = () => {
             <CardHandler
               isLoading={loading}
               errorMessage={errorMessage}
-              retryFetch={fetchData}
-              count={count}
+              retryFetch={refetch} // refetch is still available for retries
+              count={count} // pass count to CardHandler if needed
               aria-live='polite'
               aria-relevant='additions removals'
-              objects={filteredObjects} />
-            {/* Pass down the updated objects for rendering. The default state value for [filteredObjects] will always match [objects] unless a filter is invoked. */}
+              objects={filteredObjects} // filtered objects for rendering
+            />
           </main>
 
           <Footer />
