@@ -29,11 +29,10 @@ const App = () => {
 
         console.log('sending data to IndexNow...');
 
-        axios.post("https://api.indexnow.org/IndexNow", indexNowData, {
+        axios.post("https://cors-anywhere.herokuapp.com/https://api.indexnow.org/IndexNow", indexNowData, {
             headers: {
                 'Content-Type': 'application/json; charset=utf-8',
             },
-            // no need for the cors proxy if ur testing locally, unless there's a CORS issue
         })
         .then(response => {
             console.log('Response data:', response.data); // log the response
