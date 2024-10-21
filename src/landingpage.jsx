@@ -1,6 +1,5 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
 
 import './styles/Landing.css';
 
@@ -10,11 +9,6 @@ import BGParticles from './components/BGParticles';
 import Footer from './components/Footer';
 
 const LandingPage = () => {
-    // Bing submission API
-    useEffect(() => {
-        axios.post('/.netlify/functions/submit-url');
-    }, []);
-
     return (
         <>
             <Helmet>
