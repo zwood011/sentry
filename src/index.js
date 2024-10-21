@@ -1,20 +1,9 @@
-/*
-!       add some more clarity in the cards, show what the data means
-
-TODO:   complete and design the question mark button (?) that renders a popup
-*       ^ clarify filters, make it useful
-
-*       the large asteroid name still has irregular sizing
-*/
-
 import React, { useEffect } from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
-
 import { Provider } from 'react-redux';
 import store from './redux/store.js';
-
 import ErrorBoundary from './components/ErrorBoundary';
 import LandingPage from '../src/landingpage';
 import Sentry from '../src/routes/Sentry.jsx';
@@ -22,13 +11,11 @@ import Error404 from './routes/Error404';
 
 const App = () => {
     useEffect(() => {
-        // remove the noscript element if it exists
         const noscriptElement = document.querySelector('noscript');
         if (noscriptElement) {
             noscriptElement.remove();
         }
 
-        // make the IndexNow request
         const indexNowData = {
             host: "sentrygrabber.netlify.app",
             key: "489094d643c948c1aac3ff5cb9b981e2",
@@ -48,14 +35,21 @@ const App = () => {
         })
             .then(response => {
                 if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
+                    console.error(`HTTP error! status: ${response.status}`);
+                    return response.text(); // get the text to see what went wrong
                 }
-                return response.json();
+                return response.json(); // if okay, parse as json
             })
-            .then(data => console.log(data))
-            .catch(error => console.error('Error:', error));
+            .then(data => {
+                if (data) { // check if data is valid
+                    console.log(data);
+                } else {
+                    console.warn('no data returned');
+                }
+            })
+            .catch(error => console.error('error:', error));
 
-    }, []); // make sure to add an empty dependency array to run this once
+    }, []); // add empty dependency array to run only once
 
     return (
         <Router>
