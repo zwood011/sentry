@@ -1,11 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
+
+// Custom Hooks
 import useFilters from '../hooks/usefilters';
-import useFetchData from '../hooks/useFetchData'; // new custom hook
+import useFetchData from '../hooks/useFetchData';
 
 import '../styles/Sentry.css';
 
+// Custom Components
 import BGParticles from '../components/BGParticles';
 import Loading from '../components/loading';
 import CardHandler from '../components/card/cardhandler';
@@ -15,7 +18,6 @@ import Footer from '../components/Footer';
 
 const Sentry = () => {
   const { loading, errorMessage, objects, count, refetch } = useFetchData('/.netlify/functions/index');
-
   const { filteredObjects, filters } = useFilters(objects);
 
   if (loading) return <Loading />;
@@ -71,11 +73,11 @@ const Sentry = () => {
             <CardHandler
               isLoading={loading}
               errorMessage={errorMessage}
-              retryFetch={refetch} // refetch is still available for retries
-              count={count} // pass count to CardHandler if needed
+              retryFetch={refetch}
+              count={count}
               aria-live='polite'
               aria-relevant='additions removals'
-              objects={filteredObjects} // filtered objects for rendering
+              objects={filteredObjects}
             />
           </main>
 

@@ -4,8 +4,8 @@ import axios from 'axios';
 const useFetchData = (url) => {
     const [loading, setLoading] = useState(true);
     const [errorMessage, setErrorMessage] = useState(null);
-    const [objects, setObjects] = useState([]); // stores ur mapped data
-    const [count, setCount] = useState(null); // store the count of objects
+    const [objects, setObjects] = useState([]);
+    const [count, setCount] = useState(null);
 
     const fetchData = useCallback(() => {
         setLoading(true);
@@ -29,8 +29,8 @@ const useFetchData = (url) => {
                     v_inf: obj.v_inf,
                 }));
 
-                setCount(response.data.count); // set the count
-                setObjects(mappedObjects); // update the mapped objects
+                setCount(response.data.count);
+                setObjects(mappedObjects);
                 setLoading(false);
             })
             .catch((error) => {
@@ -43,7 +43,7 @@ const useFetchData = (url) => {
         fetchData();
     }, [fetchData]);
 
-    return { loading, errorMessage, objects, count, refetch: fetchData }; // return objects and count now
+    return { loading, errorMessage, objects, count, refetch: fetchData };
 };
 
 export default useFetchData;
