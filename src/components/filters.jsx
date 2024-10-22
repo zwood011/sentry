@@ -46,6 +46,7 @@ const Filters = ({ onFilterName, onFilterSize, onFilterOldest, onFilterNewest, o
                         </button>
                         <input
                             type='text'
+                            name='Asteroid Name'
                             placeholder='Filter by name'
                             value={name}
                             onChange={handleNameChange}
