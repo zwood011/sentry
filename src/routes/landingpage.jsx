@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 import '../styles/Landing.css';
 
 import { Helmet } from 'react-helmet-async';
-import { AnimatedLetters } from '../components/animations';
-import BGParticles from '../components/BGParticles';
+import { AnimatedLetters } from '../components/Visuals/animations';
+import BGParticles from '../components/Visuals/BGParticles';
 import Footer from '../components/Footer';
 
 const LandingPage = () => {

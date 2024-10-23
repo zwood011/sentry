@@ -1,5 +1,5 @@
 import React from 'react';
-import { AnimatedLoader } from './animations';
+import { AnimatedLoader } from './Visuals/animations';
 
 import '../styles/Loading-Errors.css';
 

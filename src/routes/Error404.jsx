@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import BGParticles from '../components/BGParticles';
+import BGParticles from '../components/Visuals/BGParticles';
 
 const Error404 = () => {
     const navigate = useNavigate();

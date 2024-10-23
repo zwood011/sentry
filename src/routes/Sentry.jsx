@@ -9,10 +9,10 @@ import useFetchData from '../hooks/useFetchData';
 import '../styles/Sentry.css';
 
 // Custom Components
-import BGParticles from '../components/BGParticles';
+import BGParticles from '../components/Visuals/BGParticles';
 import Loading from '../components/loading';
 import CardHandler from '../components/card/cardhandler';
-import { headerAnimation, mainAnimation } from '../components/animations';
+import { headerAnimation, mainAnimation } from '../components/Visuals/animations';
 import Filters from '../components/filters';
 import Footer from '../components/Footer';
 
