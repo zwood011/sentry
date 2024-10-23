@@ -1,25 +1,22 @@
-/*
-!       Add some more clarity in the Cards, show what the data means
-
-TODO:   Complete and design the question mark button (?) that renders a popup
-*       ^ Clarify filters, make it useful
-
-*       The large asteroid name still has irregular sizing
-*/
-
 import React, { useEffect } from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
-import { Provider } from 'react-redux';
 
-import store from './redux/store.js';
-
+// Custom Component
 import ErrorBoundary from './components/ErrorBoundary';
-import LandingPage from './routes/landingpage.jsx';
 
+// Custom Routes
+import LandingPage from './routes/landingpage.jsx';
 import Sentry from '../src/routes/Sentry.jsx';
 import Error404 from './routes/Error404';
+
+// MUI
+import '@mui/material/styles';
+import '@fontsource/roboto/300.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
 
 const App = () => {
     useEffect(() => {
@@ -33,13 +30,11 @@ const App = () => {
         <Router>
             <HelmetProvider>
                 <ErrorBoundary>
-                    <Provider store={store}>
-                        <Routes>
-                            <Route path="/" element={<LandingPage />} />
-                            <Route path="/sentry" element={<Sentry />} />
-                            <Route path="*" element={<Error404 />} />
-                        </Routes>
-                    </Provider>
+                    <Routes>
+                        <Route path="/" element={<LandingPage />} />
+                        <Route path="/sentry" element={<Sentry />} />
+                        <Route path="*" element={<Error404 />} />
+                    </Routes>
                 </ErrorBoundary>
             </HelmetProvider>
         </Router>
