@@ -41,6 +41,7 @@ const Sentry = () => {
             <div className='app-header'>
               <nav>
                 <h1 className='app-nav-item h1-sentry'>Earth Impact Data</h1>
+
                 <div className='app-nav-side container-fluid'>
                   <h2 className='app-nav-item h2-sentry'>
                     Experience Seamless and Real-Time Updates with a User-Centric design
