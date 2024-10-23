@@ -1,7 +1,9 @@
+//! Currently bugged
+
 const axios = require('axios');
 
 exports.handler = async () => {
-    const submitUrls = process.env.SUBMIT_URL === 'true'; // reference value for the toggle in netlify.toml
+    const submitUrls = process.env.SUBMIT_URL === 'true'; // Reference value for the toggle in netlify.toml
 
     if (submitUrls) {
         const requestData = {
