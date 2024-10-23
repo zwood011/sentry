@@ -44,7 +44,7 @@ const Sentry = () => {
 
                 <div className='app-nav-side container-fluid'>
                   <h2 className='app-nav-item h2-sentry'>
-                    Experience Seamless and Real-Time Updates with a User-Centric design
+                    Experience Seamless and Real-Time Updates with a User-Centric Design
                   </h2>
                   <p className="app-nav-item h3-sentry">
                     CNEOS Impact Monitoring {' '}
