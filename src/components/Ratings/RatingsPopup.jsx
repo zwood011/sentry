@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Rating from '@mui/material/Rating';
 
 const RatingsPopup = ({ onRatingChange }) => {
-    const [value, setValue] = useState(0); // Make sure all stars are unactivated by default to prevent false values from being submitted
+    const [value, setValue] = useState(0); // Default all stars to unselected
 
     const handleRatingChange = (newValue) => {
         setValue(newValue);
@@ -13,9 +13,14 @@ const RatingsPopup = ({ onRatingChange }) => {
         <div className="ratings-popup-container">
             <div className="Ratings-Container">
                 <Rating
-                    name="size-medium"
+                    name="customized-rating"
                     value={value}
                     onChange={(event, newValue) => handleRatingChange(newValue)}
+                    sx={{
+                        '& .MuiRating-iconEmpty': {
+                            color: 'white', // Set outline of empty stars to white
+                        },
+                    }}
                 />
             </div>
 
