@@ -5,7 +5,7 @@ import React from 'react';
 
 const BGParticles = () => {
     const [init, setInit] = useState(false);
-    const [enabled, setEnabled] = useState(true); // Use state for enabled
+    const [enabled, setEnabled] = useState(true);
     const particleCountRef = useRef(60);
 
     useEffect(() => {
@@ -21,7 +21,7 @@ const BGParticles = () => {
         interactivity: {
             events: {
                 onClick: {
-                    enable: enabled, // Use the state value
+                    enable: enabled,
                     mode: "push",
                 },
                 onHover: {
@@ -82,8 +82,6 @@ const BGParticles = () => {
         } else {
             setEnabled(false);
         }
-        console.log(particleCountRef.current);
-        console.log(enabled);
     };
 
     useEffect(() => {
