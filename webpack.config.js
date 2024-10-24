@@ -70,7 +70,7 @@ module.exports = {
                 { from: './public/robots.txt', to: './' },
                 { from: './public/manifest.webmanifest', to: './' },
                 { from: './public/favicons/favicon-48.png', to: './' },
-                { from: './public/favicons/mTstile-150.png', to: './' },
+                { from: './public/favicons/mstile-150.png', to: './' },
                 { from: './public/favicons/apple-touch-icon.png', to: './' },
                 { from: './public/dataflow.png', to: './' },
                 { from: './public/index.css', to: './' },
