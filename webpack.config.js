@@ -70,7 +70,7 @@ module.exports = {
                 { from: './public/robots.txt', to: './' },
                 { from: './public/manifest.webmanifest', to: './' },
                 { from: './public/favicons/favicon-48.png', to: './' },
-                { from: './public/favicons/mstile-150.png', to: './' },
+                { from: './public/favicons/mTstile-150.png', to: './' },
                 { from: './public/favicons/apple-touch-icon.png', to: './' },
                 { from: './public/dataflow.png', to: './' },
                 { from: './public/index.css', to: './' },
@@ -79,6 +79,9 @@ module.exports = {
         }),
         new DefinePlugin({
             'process.env.NODE_ENV': JSON.stringify('production'),
+            'process.env.REACT_APP_FIREBASE_API_KEY': JSON.stringify(process.env.REACT_APP_FIREBASE_API_KEY),
+            'process.env.REACT_APP_AUTH_DOMAIN': JSON.stringify(process.env.REACT_APP_AUTH_DOMAIN),
+            'process.env.REACT_APP_APP_ID': JSON.stringify(process.env.REACT_APP_APP_ID),
         }),
         new MiniCssExtractPlugin({
             filename: '[name].css',

@@ -4,7 +4,7 @@ import { getFirestore } from 'firebase/firestore';
 import { getPerformance } from "firebase/performance";
 
 const firebaseConfig = {
-    apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+    apiKey: process.env.REACT_APP_FIREBASE_KEY,
     authDomain: process.env.REACT_APP_AUTH_DOMAIN,
     projectId: "sentry-grabber",
     storageBucket: "sentry-grabber.appspot.com",
