@@ -69,12 +69,10 @@ module.exports = {
             patterns: [
                 { from: './public/robots.txt', to: './' },
                 { from: './public/manifest.webmanifest', to: './' },
-                { from: './public/favicons/favicon-48.png', to: './' },
-                { from: './public/favicons/mstile-150.png', to: './' },
-                { from: './public/favicons/apple-touch-icon.png', to: './' },
                 { from: './public/dataflow.png', to: './' },
                 { from: './public/index.css', to: './' },
                 { from: './public/_redirects', to: './' },
+                { from: './public/favicons/**/*', to: './favicons/[name][ext]' },
             ],
         }),
         new DefinePlugin({

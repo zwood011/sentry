@@ -1,7 +1,6 @@
 // src/firebase.js
 import { initializeApp } from 'firebase/app';
 import { getFirestore } from 'firebase/firestore';
-import { getPerformance } from "firebase/performance";
 
 const firebaseConfig = {
     apiKey: process.env.REACT_APP_FIREBASE_KEY,
@@ -15,9 +14,6 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-
-// eslint-disable-next-line no-undef
-const perf = getPerformance(app); // eslint-disable-line no-unused-vars
 
 // Initialize Firestore
 const db = getFirestore(app);
