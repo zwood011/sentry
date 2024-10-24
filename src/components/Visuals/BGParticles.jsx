@@ -1,10 +1,12 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
 import React from 'react';
 
 const BGParticles = () => {
     const [init, setInit] = useState(false);
+    const [enabled, setEnabled] = useState(true); // Use state for enabled
+    const particleCountRef = useRef(60);
 
     useEffect(() => {
         initParticlesEngine(async (engine) => {
@@ -19,7 +21,7 @@ const BGParticles = () => {
         interactivity: {
             events: {
                 onClick: {
-                    enable: true,
+                    enable: enabled, // Use the state value
                     mode: "push",
                 },
                 onHover: {
@@ -58,7 +60,7 @@ const BGParticles = () => {
                 density: {
                     enable: true,
                 },
-                value: 60,
+                value: particleCountRef.current,
             },
             opacity: {
                 value: 0.4,
@@ -71,12 +73,37 @@ const BGParticles = () => {
             },
         },
         detectRetina: true,
-    }), []);
+    }), [enabled]);
+
+    // Global click handler
+    const handleClick = () => {
+        if (particleCountRef.current < 130) {
+            particleCountRef.current += 3;
+        } else {
+            setEnabled(false);
+        }
+        console.log(particleCountRef.current);
+        console.log(enabled);
+    };
+
+    useEffect(() => {
+        window.addEventListener('click', handleClick);
+        return () => {
+            window.removeEventListener('click', handleClick);
+        }; // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
+
     return (
         <>
-            {init && <Particles id="tsparticles" className="particles" options={options} />}
+            {init && (
+                <Particles
+                    id="tsparticles"
+                    className="particles"
+                    options={options}
+                />
+            )}
         </>
-    )
+    );
 };
 
 export default BGParticles;
