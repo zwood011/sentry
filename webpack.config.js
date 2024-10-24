@@ -4,6 +4,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const { DefinePlugin } = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+require('dotenv').config(); // Load .env file
 
 module.exports = {
     mode: 'production',
@@ -78,6 +79,9 @@ module.exports = {
         }),
         new DefinePlugin({
             'process.env.NODE_ENV': JSON.stringify('production'),
+            'process.env.REACT_APP_FIREBASE_API_KEY': JSON.stringify(process.env.REACT_APP_FIREBASE_API_KEY),
+            'process.env.REACT_APP_AUTH_DOMAIN': JSON.stringify(process.env.REACT_APP_AUTH_DOMAIN),
+            'process.env.REACT_APP_APP_ID': JSON.stringify(process.env.REACT_APP_APP_ID),
         }),
         new MiniCssExtractPlugin({
             filename: '[name].css',
