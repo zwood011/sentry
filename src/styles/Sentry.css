@@ -67,8 +67,11 @@ nav {
 }
 
 .h2-sentry {
-    font-size: 1em;
-    padding-bottom: 1.5rem;
+    padding: .5rem;
+}
+
+.h3-sentry {
+    padding: .5rem;
 }
 
 .App {
@@ -140,39 +143,12 @@ nav {
     box-shadow: var(--box-shadow);
 }
 
-.card-count {
-    padding: 1rem;
-}
-
-.Footer-Landing {
-    width: 100%;
-    background: rgb(21, 21, 21);
-    color: var(--text-light);
-    padding: 2rem;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-}
-
-.Footer-Description {
-    position: relative;
-    z-index: 5;
-    padding: 1rem 2rem 1rem 2rem;
-    border-radius: var(--border-radius);
-    align-self: center;
-    width: 100%;
-}
-
-.Description-Text {
-    display: inline;
-}
-
 @media only screen and (min-width: 1200px) {
     .h2-sentry {
-        font-size: 1.8em;
+        font-size: 2.0em;
     }
 
     .h3-sentry {
-        font-size: 1.4em;
+        font-size: 1.6em;
     }
 }

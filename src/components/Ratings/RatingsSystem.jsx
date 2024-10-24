@@ -70,7 +70,7 @@ const RatingSystem = () => {
     };
 
     return (
-        <Link className="Hyperlink" onClick={handleRatingsPopup}>Rate Project!</Link>
+        <Link className="Hyperlink" onClick={handleRatingsPopup}>Rate Project</Link>
     );
 };
 

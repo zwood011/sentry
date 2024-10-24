@@ -31,7 +31,7 @@ const LandingPage = () => {
                         <p>Your go-to platform for accessing real-time data from NASA. Discover detailed information and asteroid specifications through intuitive multi-card formatting.</p>
                         <nav>
                             <Link to='/sentry' className='Button-Landing' aria-label='view project'>
-                                Explore project
+                                - Explore project -
                             </Link>
                         </nav>
                     </div>

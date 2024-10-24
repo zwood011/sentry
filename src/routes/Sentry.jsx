@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 
 // Custom Hooks
@@ -44,17 +43,12 @@ const Sentry = () => {
 
                 <div className='app-nav-side container-fluid'>
                   <h2 className='app-nav-item h2-sentry'>
-                    Experience Seamless and Real-Time Updates with a User-Centric Design
+                    Discover Earth Impact Data with Ease
                   </h2>
-                  <p className="app-nav-item h3-sentry">
-                    CNEOS Impact Monitoring {' '}
-                    <Link
-                      className='Hyperlink'
-                      to='https://cneos.jpl.nasa.gov/sentry/'
-                      aria-label='CNEOS impact monitoring system'>
-                      API
-                    </Link>
-                  </p>
+
+                  <h3 className="app-nav-item h3-sentry">
+                    Asteroid Insights
+                  </h3>
                 </div>
 
                 <Filters

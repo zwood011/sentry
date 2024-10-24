@@ -6,27 +6,29 @@ const Footer = () => {
     const date = new Date().getFullYear();
 
     return (
-        <footer className='Footer-Landing' role='contentinfo'>
-            <p className='footerText'>© {date} Zachary Wood. All rights reserved.</p>
-
-            <p className='footerText'>
+        <footer className='Footer' role='contentinfo'>
+            <div className='footerText'>
+                © {date} Zachary Wood. All rights reserved.
                 Powered by{' '}
                 <Link
                     className='Hyperlink'
                     to='https://cneos.jpl.nasa.gov/sentry/'
-                    aria-label='CNEOS impact monitoring system'>
-                    CNEOS
+                    aria-label='CNEOS impact monitoring sxstem'>
+                    Sentry
                 </Link>{' '}
-                impact monitoring system. Visit the{' '}
+            </div>
+
+            <div className="footerText">
+                Visit the{' '}
                 <Link
                     className='Hyperlink'
                     to='https://github.com/zwood011/sentry'
                     aria-label='GitHub project repository'>
                     Github
-                </Link> Repository.{' '}
+                </Link> Repository{' | '}
 
                 <RatingSystem />
-            </p>
+            </div>
         </footer>
     );
 };
