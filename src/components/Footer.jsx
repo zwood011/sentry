@@ -13,7 +13,7 @@ const Footer = () => {
                 <Link
                     className='Hyperlink'
                     to='https://cneos.jpl.nasa.gov/sentry/'
-                    aria-label='CNEOS impact monitoring sxstem'>
+                    aria-label='CNEOS impact monitoring system'>
                     Sentry
                 </Link>{' '}
             </div>
