@@ -5,11 +5,11 @@ import { getFirestore } from 'firebase/firestore';
 const firebaseConfig = {
     apiKey: process.env.REACT_APP_FIREBASE_KEY,
     authDomain: process.env.REACT_APP_AUTH_DOMAIN,
-    projectId: "sentry-grabber",
-    storageBucket: "sentry-grabber.appspot.com",
-    messagingSenderId: "577550175553",
+    projectId: "sentry-grab",
+    storageBucket: "sentry-grab.appspot.com",
+    messagingSenderId: "231342136763",
     appId: process.env.REACT_APP_APP_ID,
-    measurementId: "G-RGGE69VMC1"
+    measurementId: "G-N3HHR9R98E"
 };
 
 // Initialize Firebase

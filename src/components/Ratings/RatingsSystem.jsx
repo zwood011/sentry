@@ -42,7 +42,7 @@ const RatingSystem = () => {
                 }
 
                 try {
-                    const docRef = doc(db, 'sentry-grabber', 'ratings');
+                    const docRef = doc(db, 'sentry-grab', 'ratings');
                     const docSnap = await getDoc(docRef);
 
                     if (docSnap.exists()) {
