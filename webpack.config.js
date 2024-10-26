@@ -72,6 +72,7 @@ module.exports = {
                 { from: './public/dataflow.png', to: './' },
                 { from: './public/index.css', to: './' },
                 { from: './public/_redirects', to: './' },
+                { from: './public/sitemap_index.xml', to: './' },
                 { from: './public/favicons/**/*', to: './favicons/[name][ext]' },
             ],
         }),
