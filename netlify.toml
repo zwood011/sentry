@@ -1,6 +1,3 @@
-[build.environment]
-SUBMIT_URL = "true" #! toggle for the Bing Submission API- currently bugged
-
 [build]
 publish = "build"
 command = "npm run build"
