@@ -24,11 +24,13 @@ const RatingSystem = () => {
             title: `How am I doing?`,
             html: '<div id="ratings-popup-container"></div>',
             width: 600,
-            padding: '3em',
-            color: 'var(--text-light)', // Updated to match your theme's text color
-            background: 'rgb(47, 47, 47)', // Updated to match your Card background
+            padding: '1rem',
+            color: 'var(--text-light)',
+            background: 'rgb(47, 47, 47)',
             confirmButtonText: 'Submit',
-            confirmButtonColor: 'var(--primary-accent)', // Matches accent color in theme
+            confirmButtonColor: 'var(--primary-accent)',
+            showCancelButton: true,
+            cancelButtonText: 'Close',
             didOpen: () => {
                 const container = document.getElementById('ratings-popup-container');
                 const root = createRoot(container);

@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import Rating from '@mui/material/Rating';
+import Divider from '@mui/material/Divider';
+
+import '../../styles/Ratings.css';
 
 const RatingsPopup = ({ onRatingChange }) => {
     const [value, setValue] = useState(0); // Default all stars to unselected
@@ -11,6 +14,10 @@ const RatingsPopup = ({ onRatingChange }) => {
 
     return (
         <div className="ratings-popup-container">
+            <div className="Ratings-Divider">
+                <Divider variant="middle" component="" sx={{ backgroundColor: '#9c9c9c' }} />
+            </div>
+
             <div className="Ratings-Container">
                 <Rating
                     name="customized-rating"
@@ -18,15 +25,12 @@ const RatingsPopup = ({ onRatingChange }) => {
                     onChange={(event, newValue) => handleRatingChange(newValue)}
                     sx={{
                         '& .MuiRating-iconEmpty': {
-                            color: 'white', // Set outline of empty stars to white
+                            color: '#9da2ab', // Set outline of empty stars to white
                         },
                     }}
                 />
             </div>
 
-            <div className="Ratings-Text">
-                <p>Click outside of the popup to exit without submitting a rating.</p>
-            </div>
         </div>
     );
 };
