@@ -58,7 +58,7 @@ const RatingSystem = () => {
                         });
 
                         Swal.fire('Thank you!', 'Rating submitted successfully', 'success');
-                        localStorage.setItem(uniqueClientId, 'true');
+                        localStorage.setItem(uniqueClientId, 'submitted');
 
                     } else {
                         Swal.fire('Oops!', 'Ratings document does not exist!', 'error');
