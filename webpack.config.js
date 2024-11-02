@@ -87,6 +87,6 @@ module.exports = {
             filename: '[name].css',
             chunkFilename: '[id].css',
         }),
-        new Dotenv(), // Add dotenv-webpack plugin
+        new Dotenv(),
     ],
 };
