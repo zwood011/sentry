@@ -52,6 +52,9 @@
     flex-direction: column;
     background: var(--background-dark);
     color: var(--text-light);
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .btn-loading-retry {
@@ -110,6 +113,7 @@
 
 .AnimatedLoader {
     display: inline;
+    padding: 1rem;
 }
 
 .AnimatedLoader span {
