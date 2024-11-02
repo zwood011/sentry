@@ -34,12 +34,12 @@
 }
 
 .Card:hover {
-    border-color: var(--primary-accent);
     background-color: rgb(51, 51, 51);
     color: var(--text-light);
 }
 
 .Card.selected {
+    border-color: var(--primary-accent);
     transform: scale(1.1);
 }
 
