@@ -59,7 +59,7 @@ const Card = ({ data }) => {
                     </div>
 
                     <section
-                        className={`Card-Data ${selectedCard?.id === obj.id ? 'visible' : ''}`}
+                        className={`Card-Data ${selectedCard?.id === obj.id ? 'visible' : 'unvisible'}`}
                         aria-label='Detailed card data'>
                         {dataFields.map(({ name, data }) => renderData(name, data(obj)))}
                     </section>
