@@ -1,4 +1,4 @@
-###### Last updated: 10/26/2024
+ [![Netlify status](https://api.netlify.com/api/v1/badges/4a2c2b1f-33bb-4141-9771-d0529a2435df/deploy-status)](https://sentrygrabber.netlify.app)
 
 ## Stack
 
@@ -6,6 +6,3 @@
 
 <br>
 
-## Site Hosting
-
-[![Netlify status](https://api.netlify.com/api/v1/badges/4a2c2b1f-33bb-4141-9771-d0529a2435df/deploy-status)](https://sentrygrabber.netlify.app)
