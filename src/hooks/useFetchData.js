@@ -12,7 +12,7 @@ const useFetchData = (url) => {
         axios
             .get(url)
             .then((response) => {
-                const mappedObjects = response.data.data.map((obj) => ({
+                const mappedObjects = response.data.map((obj) => ({
                     fullname: obj.fullname,
                     ps_cum: obj.ps_cum,
                     des: obj.des,

@@ -1,23 +1,28 @@
 const axios = require('axios');
 
-exports.handler = async (event, context) => {
-    const API_URL = 'https://ssd-api.jpl.nasa.gov/sentry.api';
+const API_URL = 'https://ssd-api.jpl.nasa.gov/sentry.api';
 
+exports.handler = async () => {
     try {
         const response = await axios.get(API_URL);
-
         return {
             statusCode: 200,
+            body: JSON.stringify(response.data),
             headers: {
                 'Content-Type': 'application/json',
                 'Access-Control-Allow-Origin': '*',
+                'X-Robots-Tag': 'all',
             },
-            body: JSON.stringify(response.data),
         };
     } catch (error) {
         return {
             statusCode: 500,
-            body: JSON.stringify({ message: 'Error fetching data', error: error.message }),
+            body: JSON.stringify({ error: 'Failed to fetch data' }),
+            headers: {
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*',
+                'X-Robots-Tag': 'all',
+            },
         };
     }
 };
