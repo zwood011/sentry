@@ -10,13 +10,7 @@ const useFetchData = (url) => {
     const fetchData = useCallback(() => {
         setLoading(true);
         axios
-            .get(url, {
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Access-Control-Allow-Origin': '*',
-                    'X-Robots-Tag': 'all'
-                }
-            })
+            .get(url)
             .then((response) => {
                 const mappedObjects = response.data.data.map((obj) => ({
                     fullname: obj.fullname,

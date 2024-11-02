@@ -16,7 +16,7 @@ import Filters from '../components/filters';
 import Footer from '../components/Footer';
 
 const Sentry = () => {
-  const { loading, errorMessage, objects, count, refetch } = useFetchData('https://ssd-api.jpl.nasa.gov/sentry.api');
+  const { loading, errorMessage, objects, count, refetch } = useFetchData('/netlify/functions/proxy.js');
   const { filteredObjects, filters } = useFilters(objects);
 
   if (loading) return <Loading />;
