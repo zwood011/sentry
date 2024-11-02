@@ -26,7 +26,7 @@ const RatingSystem = () => {
             width: 600,
             padding: '1rem',
             color: 'var(--text-light)',
-            background: 'rgb(47, 47, 47)',
+            background: 'rgba(64, 64, 64)',
             confirmButtonText: 'Submit',
             confirmButtonColor: 'var(--primary-accent)',
             showCancelButton: true,
