@@ -8,9 +8,6 @@
     min-height: 100vh;
     background-color: var(--background-dark);
     color: var(--text-light);
-    -webkit-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
 }
 
 .particles {
@@ -25,7 +22,6 @@
 .title {
     font-size: 3em;
     color: var(--text-light);
-    /* Use theme text color */
 }
 
 h1 {
@@ -98,7 +94,7 @@ h1 {
     display: inline;
 }
 
-/* Apply animation to each letter */
+/* Applies animation to each letter */
 .AnimatedLetters span {
     display: inline-block;
     opacity: 0;
