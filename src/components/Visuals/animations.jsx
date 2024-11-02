@@ -2,54 +2,26 @@ import React from 'react';
 import { keyframes, css } from '@emotion/css';
 import { useState, useEffect } from 'react';
 
-const slideInFromTop = keyframes`
+const HeaderFadeIn = keyframes`
   0% {
     transform: translateY(-100%);
-    opacity: 0;
-  }
-  20% {
-    opacity: 0.2;
-  }
-  40% {
-    opacity: 0.4;
-  }
-  60% {
-    opacity: 0.6;
-  }
-  80% {
-    opacity: 0.8;
   }
   100% {
     transform: translateY(0);
-    opacity: 1;
   }
 `;
 
-const slideInFromBottom = keyframes`
-0% {
-    transform: translateY(100%);
-    opacity: 0;
+const CardHandlerFadeIn = keyframes`
+  0% {
+    transform: translateY(15%);
   }
-  20% {
-    opacity: 0;
-    }
-    40% {
-      opacity: 0;
-      }
-      60% {
-        opacity: 0.4;
-        }
-        80% {
-          opacity: 0.5;
-          }
-          100% {
-            transform: translateY(0);
-            opacity: 1;
-            }
-            `;
+  100% {
+    transform: translateY(0);
+  }
+`;
 
-const headerAnimation = css`animation: ${slideInFromTop} 0.5s ease;`;
-const mainAnimation = css`animation: ${slideInFromBottom} 0.8s ease;`;
+const headerAnimation = css`animation: ${HeaderFadeIn} 0.5s ease;`;
+const mainAnimation = css`animation: ${CardHandlerFadeIn} 0.8s ease;`;
 
 const AnimatedLetters = ({ text }) => {
   const [letters, setLetters] = useState([]);
