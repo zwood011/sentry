@@ -5,19 +5,24 @@ import Error from '../error';
 import '../../styles/CardHandler.css';
 
 const CardHandler = ({ objects, errorMessage, isLoading, retryFetch, count }) => {
-    const [displayIndex, setDisplayIndex] = useState(9); // Default cards displayed on render
+    const [displayIndex, setDisplayIndex] = useState(0);
     const width = useRef(window.innerWidth);
 
+    const calculateDisplayIndex = (width) => {
+        if (width <= 1148 && width >= 651) {
+            return 8;
+        }
+        return 9;
+    };
+
     useEffect(() => {
+        setDisplayIndex(calculateDisplayIndex(width.current));
+
         const handleResize = () => {
             width.current = window.innerWidth;
-            if (width.current <= 1148 && width.current >= 651) {
-                setDisplayIndex(8); // Needed to even the indexing out so a single card doesn't take up an entire column
-            } else {
-                setDisplayIndex(9);
-            }
+            setDisplayIndex(calculateDisplayIndex(width.current));
         };
-        handleResize();
+
         window.addEventListener('resize', handleResize);
         return () => window.removeEventListener('resize', handleResize);
     }, []);
