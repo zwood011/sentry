@@ -1,8 +1,10 @@
+// netlify/functions/proxy.js
+
 const axios = require('axios');
 
 const API_URL = 'https://ssd-api.jpl.nasa.gov/sentry.api';
 
-exports.handler = async () => {
+exports.handler = async (event, context) => {
     try {
         const response = await axios.get(API_URL);
         return {
@@ -11,7 +13,7 @@ exports.handler = async () => {
             headers: {
                 'Content-Type': 'application/json',
                 'Access-Control-Allow-Origin': '*',
-                'X-Robots-Tag': 'all',
+                'X-Robots-Tag': 'all'
             },
         };
     } catch (error) {
@@ -21,7 +23,7 @@ exports.handler = async () => {
             headers: {
                 'Content-Type': 'application/json',
                 'Access-Control-Allow-Origin': '*',
-                'X-Robots-Tag': 'all',
+                'X-Robots-Tag': 'all'
             },
         };
     }
