@@ -25,11 +25,6 @@ const Sentry = () => {
     <>
       <Helmet>
         <title>Sentry Grabber | Card Fetcher</title>
-        <meta
-          name='description'
-          data-rh='true'
-          content='Explore comprehensive data related to Earth impact risk, close-approaches, and asteroid monitoring from Neo-Nasareal-time asteroid data, NASA asteroid data, user-friendly asteroid tracker interface, intuitive asteroid card format, asteroid warning updates.'
-        />
       </Helmet>
 
       {!loading && (
