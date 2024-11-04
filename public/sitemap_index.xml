@@ -6,10 +6,4 @@
         <priority>1.0</priority>
         <changefreq>daily</changefreq>
     </url>
-    <url>
-        <loc>https://sentrygrabber.netlify.app/sentry</loc>
-        <lastmod>2023-10-07T00:00:00+00:00</lastmod>
-        <priority>0.8</priority>
-        <changefreq>weekly</changefreq>
-    </url>
 </urlset>
