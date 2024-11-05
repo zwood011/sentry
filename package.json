@@ -80,27 +80,6 @@
     "webpack": "^5.92.0",
     "webpack-bundle-analyzer": "^4.10.2"
   },
-  "main": "webpack.config.js",
-  "keywords": [
-    "sentry grabber",
-    "nasa api",
-    "asteroid information",
-    "space cards",
-    "cneos",
-    "data retrieval",
-    "astronomy",
-    "sentry system",
-    "nasa data",
-    "space exploration",
-    "asteroid tracking",
-    "sentry alerts",
-    "sentry",
-    "grabber",
-    "sentry",
-    "grab",
-    "CNEOS",
-    "NASA"
-  ],
   "author": "Zachary Wood",
   "license": "ISC",
   "description": "Dependencies for Sentry Grabber"
