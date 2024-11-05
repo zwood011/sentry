@@ -31,19 +31,13 @@ const Sentry = () => {
         <div className='App' role='main'>
           <header className={headerAnimation}>
             <div className='padding-space'></div>
-
             <div className='app-header'>
               <nav>
                 <h1 className='app-nav-item h1-sentry'>Earth Impact Data</h1>
 
                 <div className='app-nav-side container-fluid'>
-                  <h2 className='app-nav-item h2-sentry'>
-                    Discover Earth Impact Data with Ease
-                  </h2>
-
-                  <h3 className="app-nav-item h3-sentry">
-                    Asteroid Insights
-                  </h3>
+                  <h2 className='app-nav-item h2-sentry'>Discover Earth Impact Data with Ease</h2>
+                  <h3 className="app-nav-item h3-sentry">Asteroid Insights</h3>
                 </div>
 
                 <Filters
@@ -67,8 +61,7 @@ const Sentry = () => {
               count={count}
               aria-live='polite'
               aria-relevant='additions removals'
-              objects={filteredObjects}
-            />
+              objects={filteredObjects} />
           </main>
 
           <Footer />
