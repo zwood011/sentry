@@ -12,22 +12,24 @@ const useFetchData = (url) => {
         axios
             .get(url)
             .then((response) => {
-                const mappedObjects = response.data.data.map((obj) => ({
-                    fullname: obj.fullname,
-                    ps_cum: obj.ps_cum,
-                    des: obj.des,
-                    diameter: obj.diameter,
-                    h: obj.h,
-                    id: obj.id,
-                    ip: obj.ip,
-                    last_obs: obj.last_obs,
-                    last_obs_jd: obj.last_obs_jd,
-                    n_imp: obj.n_imp,
-                    ps_max: obj.ps_max,
-                    range: obj.range,
-                    ts_max: obj.ts_max,
-                    v_inf: obj.v_inf,
-                }));
+                const mappedObjects = response.data.data
+                    .map((obj) => ({
+                        fullname: obj.fullname,
+                        ps_cum: obj.ps_cum,
+                        des: obj.des,
+                        diameter: obj.diameter,
+                        h: obj.h,
+                        id: obj.id,
+                        ip: obj.ip,
+                        last_obs: obj.last_obs,
+                        last_obs_jd: obj.last_obs_jd,
+                        n_imp: obj.n_imp,
+                        ps_max: obj.ps_max,
+                        range: obj.range,
+                        ts_max: obj.ts_max,
+                        v_inf: obj.v_inf,
+                    }))
+                    .filter((obj) => obj.id !== 'a0101955'); // broken object
 
                 setCount(response.data.count);
                 setObjects(mappedObjects);
