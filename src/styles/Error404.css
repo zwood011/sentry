@@ -1,0 +1,42 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+.container-404 {
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    background-color: #3a3a3a;
+}
+
+.text-404 {
+    color: rgb(254, 162, 162);
+}
+
+.header-button {
+    padding: .5em;
+    margin: 1rem 0;
+    position: relative;
+    border-radius: var(--border-radius);
+    border: none;
+    font-family: 'Arial Narrow Bold', sans-serif;
+    font-size: 1.1em;
+    font-weight: bold;
+    background: rgb(254, 162, 162);
+    color: rgb(57, 57, 57);
+    transition: var(--transition);
+    cursor: pointer;
+    z-index: 3;
+    text-decoration: none;
+}
+
+.divider {
+    width: 50%;
+    height: 2px;
+    background-color: rgb(254, 162, 162);
+    margin: 1rem 0;
+    border: none;
+}
