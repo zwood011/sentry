@@ -50,7 +50,7 @@ const Card = ({ data }) => {
 
                     {selectedCard?.id === obj.id && (
                         <button className="btn btn-dark header-button text-dark" onClick={() => handlePopup(obj)}
-                            style={{ position: 'absolute', bottom: -30, right: 20, fontSize: '0.7em', padding: '.2rem 1rem .2rem 1rem' }}>?</button>)}
+                            style={{ position: 'absolute', bottom: 0, right: 20, fontSize: '0.5em', padding: '.2rem 1rem .2rem 1rem' }}>?</button>)}
 
                     <div className='Card-Header'>
                         <h1 className='Card-Name'>{obj.fullname}</h1>
