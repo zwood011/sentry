@@ -5,7 +5,7 @@ import Divider from '@mui/material/Divider';
 import '../../styles/Ratings.css';
 
 const RatingsPopup = ({ onRatingChange }) => {
-    const [value, setValue] = useState(0); // Default all stars to unselected
+    const [value, setValue] = useState(0);
 
     const handleRatingChange = (newValue) => {
         setValue(newValue);
@@ -25,7 +25,7 @@ const RatingsPopup = ({ onRatingChange }) => {
                     onChange={(event, newValue) => handleRatingChange(newValue)}
                     sx={{
                         '& .MuiRating-iconEmpty': {
-                            color: '#9da2ab', // Set outline of empty stars to white
+                            color: '#9da2ab', // Set outline of empty stars to white for visual clarity
                         },
                     }}
                 />
