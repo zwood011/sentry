@@ -46,7 +46,6 @@
 .header-button:hover {
     background-color: rgba(243, 155, 155, 0.837);
     color: #000000;
-    border: .1rem solid rgba(253, 149, 149, 0.856);
 }
 
 .dropdown-menu.show {
