@@ -30,7 +30,6 @@ const RatingsPopup = ({ onRatingChange }) => {
                     }}
                 />
             </div>
-
         </div>
     );
 };
