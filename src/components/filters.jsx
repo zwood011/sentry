@@ -4,16 +4,22 @@ import { Link } from 'react-router-dom';
 import '../styles/Filters.css';
 
 const Filters = ({ onFilterName, onFilterSize, onFilterOldest, onFilterNewest, onClear }) => {
+    const [placeholder, setPlaceholder] = useState("Search");
     const [name, setName] = useState('');
 
     const handleNameChange = (event) => {
         setName(event.target.value);
         onFilterName(event.target.value);
+
+        if (placeholder === '') {
+            setPlaceholder('Search');
+        };
     };
 
     const clearHandler = () => {
         setName('');
         onClear();
+        setPlaceholder('Search');
     };
 
     return (
@@ -40,8 +46,19 @@ const Filters = ({ onFilterName, onFilterSize, onFilterOldest, onFilterNewest, o
 
                 <div className='dropdown-menu' aria-labelledby='dropdownMenuButton'>
                     <div className='dropdown-flex'>
+                        <input
+                            type='text'
+                            name='Asteroid Name'
+                            placeholder={placeholder}
+                            value={name}
+                            onChange={handleNameChange}
+                            onClick={() => setPlaceholder('')}
+                            aria-label='Filter objects by name'
+                            className='Filter-Input dropdown-item'
+                            autoComplete='off'
+                        />
                         <button onClick={onFilterSize} className='dropdown-item' aria-label='Filter by largest size'>
-                            Filter Largest
+                            Largest
                         </button>
                         <button onClick={onFilterOldest} className='dropdown-item' aria-label='Filter by oldest'>
                             Oldest
@@ -49,15 +66,6 @@ const Filters = ({ onFilterName, onFilterSize, onFilterOldest, onFilterNewest, o
                         <button onClick={onFilterNewest} className='dropdown-item' aria-label='Filter by newest'>
                             Newest
                         </button>
-                        <input
-                            type='text'
-                            name='Asteroid Name'
-                            placeholder='Filter by name'
-                            value={name}
-                            onChange={handleNameChange}
-                            aria-label='Filter objects by name'
-                            className='Filter-Input dropdown-item'
-                        />
                     </div>
                 </div>
             </div>
