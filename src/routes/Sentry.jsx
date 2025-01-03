@@ -46,8 +46,7 @@ const Sentry = () => {
                 onFilterOldest={filters.onFilterOldest}
                 onFilterNewest={filters.onFilterNewest}
                 onClear={filters.onClear}
-                aria-label='Interactive filtering options for Earth impact data'
-              />
+                aria-label='Interactive filtering options for Earth impact data' />
             </nav>
           </header>
 
