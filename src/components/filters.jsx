@@ -11,13 +11,18 @@ const Filters = ({ onFilterName, onFilterSize, onFilterOldest, onFilterNewest, o
         onFilterName(event.target.value);
     };
 
+    const clearHandler = () => {
+        setName('');
+        onClear();
+    };
+
     return (
         <div className='Filters container-fluid'>
             <Link to='/' className='btn btn-secondary header-button' aria-label='Home page'>
                 Home Page
             </Link>
 
-            <button onClick={onClear} className='btn btn-secondary header-button' aria-label='Clear filters'>
+            <button onClick={clearHandler} className='btn btn-secondary header-button' aria-label='Clear filters'>
                 Filter Reset
             </button>
 
