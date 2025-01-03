@@ -22,6 +22,12 @@ const Filters = ({ onFilterName, onFilterSize, onFilterOldest, onFilterNewest, o
         setPlaceholder('Search');
     };
 
+    const handleBlur = () => {
+        if (placeholder === '') {
+            setPlaceholder('Search');
+        }
+    };
+
     return (
         <div className='Filters container-fluid'>
             <Link to='/' className='btn btn-secondary header-button' aria-label='Home page'>
@@ -53,16 +59,19 @@ const Filters = ({ onFilterName, onFilterSize, onFilterOldest, onFilterNewest, o
                             value={name}
                             onChange={handleNameChange}
                             onClick={() => setPlaceholder('')}
+                            onBlur={handleBlur}
                             aria-label='Filter objects by name'
                             className='Filter-Input dropdown-item'
-                            autoComplete='off'
-                        />
+                            autoComplete='off' />
+
                         <button onClick={onFilterSize} className='dropdown-item' aria-label='Filter by largest size'>
                             Largest
                         </button>
+
                         <button onClick={onFilterOldest} className='dropdown-item' aria-label='Filter by oldest'>
                             Oldest
                         </button>
+
                         <button onClick={onFilterNewest} className='dropdown-item' aria-label='Filter by newest'>
                             Newest
                         </button>
