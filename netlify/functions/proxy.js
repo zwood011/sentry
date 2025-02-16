@@ -2,7 +2,7 @@
 
 const axios = require('axios');
 
-const API_URL = 'https://ssd-api.jpl.nasa.gov/sentry.api';
+const API_URL = 'https://ssd-api.jpl.nasa.gov/sentry.api'; // Public endpoint
 
 exports.handler = async (event, context) => {
     try {
