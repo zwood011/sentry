@@ -25,7 +25,7 @@ const RatingsPopup = ({ onRatingChange }) => {
                     onChange={(event, newValue) => handleRatingChange(newValue)}
                     sx={{
                         '& .MuiRating-iconEmpty': {
-                            color: '#9da2ab', // Set outline of empty stars to white for visual clarity
+                            color: '#9da2ab',
                         },
                     }}
                 />

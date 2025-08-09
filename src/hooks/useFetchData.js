@@ -29,7 +29,7 @@ const useFetchData = (url) => {
                         ts_max: obj.ts_max,
                         v_inf: obj.v_inf,
                     }))
-                    .filter((obj) => obj.id !== 'a0101955'); // Removed for now, need to resize the text as it ruins the layout
+                    .filter((obj) => obj.id !== 'a0101955'); // ! Removed for now, need to resize the text as it ruins the layout
 
                 setCount(response.data.count);
                 setObjects(mappedObjects);
