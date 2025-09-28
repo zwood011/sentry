@@ -8,7 +8,7 @@ const Footer = () => {
     return (
         <footer className='Footer' role='contentinfo'>
             <div className='footerText'>
-                © {date} Zachary Wood. All rights reserved.
+                © {date} Zach Wood. All rights reserved.
                 Powered by{' '}
                 <Link
                     className='Hyperlink'
